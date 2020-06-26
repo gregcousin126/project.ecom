@@ -4,10 +4,8 @@ var app = express();
 var http = require('http');
 var httpServer = new http.Server(app);
 
-const config = require('./config');
-
-var serverport = config.dev.port;
-var hostchoice = config.dev.host;
+var serverport = 'xotopio.com';
+var hostchoice = 1000;
 
 app.use(express.static(__dirname + '/docs'));
 
