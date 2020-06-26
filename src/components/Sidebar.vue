@@ -7,14 +7,12 @@
       <input type="text" id="search-input" class="form-control"  name="search"  placeholder="Search" autocomplete="off" @input="filtered($event)">
     </form>
   </div>
-    
     <div class="aside-block">
       <label for="pricerange">Maximum Price: <span>${{ pricerange }}</span></label>
       <input class="slider" id="pricerange" tabindex="0" :value="pricerange" type="range" :min="min" :max="max" step="0.1" @input="updateHighPrice($event)" />
       <span class="min">${{ min }}</span>
       <span class="max">${{ max }}</span>
     </div>
-    
     <div class="aside-block">
         <h4>Super Sale</h4>
         <label class="checkbox-control">
@@ -45,8 +43,6 @@ export default {
   },
   
   computed: { 
-
-    
     pricerange() {
       return this.$store.state.highprice
     },
@@ -54,16 +50,14 @@ export default {
     checked() {
       return this.$store.state.sale;
     }
-    
   },
+  
   methods: {
     updateHighPrice($event) {
       this.$store.commit('setHighPrice', $event.target.value)
     },
     
     filtered($event) {
-      // this.$store
-      // console.log('this.$store: ', this.$store);
       this.$store.commit('setSearchName', $event.target.value)
     },
     
@@ -74,50 +68,44 @@ export default {
   },
   
   mounted() {
+    const body = document.querySelector('body');
+    const searchBtn = document.querySelector('#search');
+    const searchInput = document.querySelector('#search-input');
     
-       
-const body = document.querySelector('body');
-const searchBtn = document.querySelector('#search');
-const searchInput = document.querySelector('#search-input');
-let active = false;
+    let active = false;
 
-body.addEventListener('click', (e) => {
-  if(e.target.id === 'search' || e.target.id === 'search-input' || e.target.id === 'search-icon') {
-    if(!active) {
-      searchBtn.classList.add('active');
-      searchInput.classList.add('active');
-      active = true;
-    }
-  } else {
-      searchBtn.classList.remove('active');
-      searchInput.classList.remove('active');
-      searchInput.value = '';
-      active = false;
-  }
-});
+    body.addEventListener('click', (e) => {
+      if(e.target.id === 'search' || e.target.id === 'search-input' || e.target.id === 'search-icon') {
+        if(!active) {
+          searchBtn.classList.add('active');
+          searchInput.classList.add('active');
+          active = true;
+          // searchBtn.focus
+            // searchInput.focus()
+        }
+      } 
+    });
+    
+
 
   }
-  
-
 }
+
 </script>
 
 <style lang="css">
-
 #search {
-margin-top: 40px;
+    margin-top: 40px;
     height: 100%;
     color: rgba(84, 84, 84, 0.989);
     width: 100%;
     border: solid 2px;
     padding: 0px 6px 0px 6px;
-    /* border-radius: 50px; */
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    /* justify-content: center; */
     border-color: rgba(216, 216, 216, 0.687);
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -126,10 +114,13 @@ margin-top: 40px;
     -webkit-transition: 0.3s;
     transition: 0.3s;
 }
+#search:hover {
+cursor: text;
+}
 
 #search-input {
 height: 100%;
-    width: 0;
+    width:0;
     font-size: 17px;
     font-weight: 500;
     background: none;
@@ -145,18 +136,16 @@ height: 100%;
 
 #search.active {
     width: 100%;
-    /* margin-left: 16px; */
     visibility: visible;
 }
 
 #search-input.active {
-width: 100%;
-    /* margin-left: 16px; */
+    width: 100%;
     visibility: visible;
 }
 
   .aside-block {
-padding: 38px 0;
+    padding: 38px 0;
     border-bottom: 1px solid #eee;
     font-size: 15px;
   }

@@ -1,4 +1,5 @@
 const digitsRE = /(\d{3})(?=\d)/g
+// console.log('digitsRE: ', digitsRE);
 
 export function currency (value, currency, decimals) {
   value = parseFloat(value)
@@ -6,12 +7,13 @@ export function currency (value, currency, decimals) {
   currency = currency != null ? currency : '$'
   decimals = decimals != null ? decimals : 2
 
+  // Values
   var stringified = Math.abs(value).toFixed(decimals)
-  var _int = decimals ? stringified.slice(0, -1 - decimals) : stringified
-  var i = _int.length % 3
-  var head = i > 0 ? (_int.slice(0, i) + (_int.length > 3 ? ',' : '')) : ''
-  var _float = decimals ? stringified.slice(-1 - decimals) : ''
+  var theInt = decimals ? stringified.slice(0, -1 - decimals) : stringified
+  var index = theInt.length % 3
+  var head = index > 0 ? (theInt.slice(0, index) + (theInt.length > 3 ? ',' : '')) : ''
+  var theFloat = decimals ? stringified.slice(-1 - decimals) : ''
   var sign = value < 0 ? '-' : ''
-
-  return sign + currency + head + _int.slice(i).replace(digitsRE, '$1,') + _float
+  
+  return sign + currency + head + theInt.slice(index).replace(digitsRE, '$1,') + theFloat
 }

@@ -1,7 +1,8 @@
 <template>
   <section class="decoration">
-    <h1>Decor</h1>
-    <ProductList category="decor"/>
+    <h1>Decoration</h1>
+       <hr>
+    <ProductList category="decoration"/>
   </section>
 </template>
 
@@ -10,7 +11,7 @@ import ProductList from '@/components/ProductList'
 import SideMainLayout from '@/layout/SideMainLayout'
 
 export default {
-  name: 'index',
+  name: 'decoration',
   components: {
     ProductList,
     SideMainLayout

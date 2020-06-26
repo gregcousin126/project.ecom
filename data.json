@@ -4,10 +4,10 @@
     "title": "Faux Strelitzia Leaf Pair",
     "description": "saved sit chest score dig exciting volume whispered",
     "price": 100,
-    "category": "decor",
+    "category": "decoration",
     "sale": false,
     "img": "planter1.jpg",
-    "inventory": 2
+    "inventory": 1
   },
   {
     "id": 1,
@@ -25,6 +25,16 @@
     "description": "tiny result compare spent saddle there exciting market",
     "price": 179.99,
     "category": "furniture",
+    "sale": false,
+    "img": "basket-table.jpg",
+    "inventory": 20
+  },
+  {
+    "id": 44,
+    "title": "Basket",
+    "description": "tiny result compare spent saddle there exciting market",
+    "price": 179.99,
+    "category": "wall",
     "sale": false,
     "img": "basket-table.jpg",
     "inventory": 20
@@ -54,7 +64,7 @@
     "title": "10 Marble Planter",
     "description": "prevent development above signal son possible aboard shinning",
     "price": 58.99,
-    "category": "decor",
+    "category": "decoration",
     "sale": true,
     "img": "planter2.jpg",
     "inventory": 20
@@ -74,7 +84,7 @@
     "title": "Leni Leaning Mirror",
     "description": "dinner tired creature atom jungle smile movement promised",
     "price": 139.9,
-    "category": "decor",
+    "category": "decoration",
     "sale": true,
     "img": "mirror1.jpg",
     "inventory": 0
@@ -94,7 +104,7 @@
     "title": "Symbology Banner",
     "description": "gulf trade blanket regular knife vegetable income beauty",
     "price": 129.99,
-    "category": "decor",
+    "category": "decoration",
     "sale": false,
     "img": "bunting.jpg",
     "inventory": 20
@@ -124,7 +134,7 @@
     "title": "Polka Dot Wicker Basket",
     "description": "brave shade different prove struck hunt mighty pink",
     "price": 69,
-    "category": "decor",
+    "category": "decoration",
     "sale": false,
     "img": "wicker.jpg",
     "inventory": 20
@@ -134,7 +144,7 @@
     "title": "Stripe Rag Rug",
     "description": "national dear north blank some belong said upper",
     "price": 29.99,
-    "category": "decor",
+    "category": "decoration",
     "sale": false,
     "img": "rag.jpg",
     "inventory": 20
@@ -160,3 +170,9 @@
     "inventory": 20
   }
 ]
+
+
+
+
+
+

@@ -20,4 +20,4 @@ export default {
   }
 }
 </script>
-<style> @import './assets/styles.css'; </style>
+<style> @import './assets/styles.css'; @import './assets/fonts.css';</style>

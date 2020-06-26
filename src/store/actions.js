@@ -1,37 +1,39 @@
-import shop from '@/api/shop'
+import shop from '@/api/shop';
 
-export default { // actions = mehtods
-  fetchProducts (context) {
+export default {
+  // actions = methods
+  fetchProducts(context) {
     return new Promise(function (resolve, reject) {
       shop.getProducts(products => {
-        context.commit('setProducts', products)
-        resolve()
-      })
-    })
+        context.commit('setProducts', products);
+        resolve();
+      });
+    });
   },
 
-  addProductToCart (context, product) {
+  addProductToCart(context, product) {      
     // if(product.inventory > 0)
     if (context.getters.productInStock(product)) {
-      const cartItem = context.state.cart.find(item => item.id === product.id)
+      const cartItem = context.state.cart.find(item => item.id === product.id);
       if (!cartItem) {
-        context.commit('pushProductToCart', product.id)
+        context.commit('pushProductToCart', product.id);
       } else {
-        context.commit('incrementItemQty', cartItem)
+        context.commit('incrementItemQty', cartItem);
       }
-
-      context.commit('decrementProductInventory', product)
+      context.commit('decrementProductInventory', product);
+      
     }
   },
 
-  checkout (context) {
-    shop.buyProducts(context.state.cart, () => {
-      context.commit('emptyCart')
-      context.commit('setCheckoutStatus', 'success')
-    },
+  checkout(context) {
+    shop.buyProducts(context.state.cart,
       () => {
-        context.commit('setCheckoutStatus', 'fail')
+        context.commit('emptyCart');
+        context.commit('setCheckoutStatus', 'success');
+      },
+      () => {
+        context.commit('setCheckoutStatus', 'fail');
       }
-    )
-  }
-}
+    );
+  },
+};

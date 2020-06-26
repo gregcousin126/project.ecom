@@ -1,8 +1,8 @@
 <template>
-  <section class="furniture">
-    <h1>Furniture</h1>
+  <section class="wall">
+    <h1>Walls</h1>
        <hr>
-    <ProductList category="furniture"/>
+    <ProductList category="wall"/>
   </section>
 </template>
 
@@ -11,7 +11,7 @@ import ProductList from '@/components/ProductList'
 import SideMainLayout from '@/layout/SideMainLayout'
 
 export default {
-  name: 'furniture',
+  name: 'wall',
   components: {
     ProductList,
     SideMainLayout

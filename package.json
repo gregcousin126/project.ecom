@@ -1,12 +1,13 @@
 {
-  "name": "xotosphere",
+  "name": "xotopolo",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "Gregoire COusin",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
+    "prod": "webpack-dev-server --inline --progress --config build/webpack.prod.conf.js",
+    "start": "npm run prod",
     "build": "node build/build.js",
     "deploy": "node ./node_modules/vue-gh-pages/index.js",
     "test": "npm run unit && npm run e2e",
@@ -14,10 +15,15 @@
     "lint-fix": "eslint --fix .js,.vue,.html,.md,.json ./src/*"
   },
   "dependencies": {
+    "crypto-js": "^4.0.0",
+    "firebase": "^7.15.1",
+    "js-cookie": "^2.2.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vue-star-rating": "^1.6.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "vuex-persist": "^2.2.0",
+    "vuex-persistedstate": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -31,6 +37,7 @@
     "babel-preset-stage-2": "^6.22.0",
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^3.1.0",
     "eslint": "^3.14.1",
     "eslint-config-standard": "^6.2.1",
     "eslint-friendly-formatter": "^2.0.7",
@@ -38,7 +45,6 @@
     "eslint-plugin-html": "^2.0.0",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
-    "css-loader": "^3.1.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
@@ -59,7 +65,7 @@
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
-    "webpack": "^3.6.0",
+    "webpack": "^3.12.0",
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-dev-server": "^2.9.1",
     "webpack-merge": "^4.1.0"

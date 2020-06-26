@@ -2,18 +2,25 @@
   <div class="product-list">
     <p v-if="loading">Loading....</p>
       <transition-group name="card" tag="ul" v-else>
-        <li v-for="product in products" :key="product.id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ]" tabindex="0" v-show="category === product.category || category === 'all'">
+        
+        <!-- <li v-for="product in products" :key="product.id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ]" tabindex="0" v-show="category === product.category"> -->
+        <li v-for="product in products" :key="product.id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ]" tabindex="0" v-show="category === product.category || category === 'allproducts'">
+ 
           <span class="sale-banner" v-if="product.sale">Sale</span>
           <span class="out-of-stock-banner" v-show="!productInStock(product)">Out of Stock</span>
-          <div class="container"><img :src="`./static/images/${product.img}`" :alt="`image of ${product.title}`"><div class="overlay"><div class="text">{{product.description}}</div></div></div>
+          <div class="container">
+            <img :src="`./static/images/${product.img}`" :alt="`image of ${product.title}`">
+              <div class="overlay">
+                <div class="text">{{product.description}}</div>
+              </div>
+          </div>
           <span class="product-title">{{product.title}}</span>
+       
           <span class="product-price"> {{product.price | currency}}</span>
           <button @click="addProductToCart(product)" class="add-to-cart-btn">Add to cart</button>
-          
-<!-- <div class="container"> -->
-  <!-- <img src="img_avatar.png" alt="Avatar" class="image"> -->
-
+          <!-- <div class="container"> <img src="img_avatar.png" alt="Avatar" class="image"> -->
         </li>
+     
       </transition-group>
   </div>
 </template>
@@ -21,16 +28,19 @@
 <script>
 import {mapState, mapGetters, mapActions} from 'vuex'
 
+
 export default {
+  
   name: 'ProductList',
   data() {
     return {
-      // products: []
       loading: false,
-      highprice: 100,
+      highprice: 2000,
+      // products: []
       // searchQuery : '', 
     };
   },
+  
   props: {
     category: {
       type: String,
@@ -41,52 +51,48 @@ export default {
     // ...mapState({
     //   products: state => state.products
     // }),
-    
-      // filtered () {
-      //     return this.$store.state.products.filter.filter(function(item){
-      //         // console.log('item: ', item);
-      //         return item.title.toLowerCase().indexOf(this.searchQuery.toLowerCase()) > -1;
-      //     }.bind(this));
-      // },
-    
-    
+
+    // filtered () {
+    //     return this.$store.state.products.filter.filter(function(item){
+    //         // 
+    //         return item.title.toLowerCase().indexOf(this.searchQuery.toLowerCase()) > -1;
+    //     }.bind(this));
+    // },
+
     products() {
-      
-      // return this.$store.state
-      // console.log('this.$store.state: ', this.$store.state);
-      
+      // console.log('highprice): ', this.$store.state.products.filter(el => this.$store.state.sale ? el.price < this.$store.state.highprice && el.sale : el.price < this.$store.state.highprice));
       return this.$store.state.products.filter(el => this.$store.state.sale ? el.price < this.$store.state.highprice && el.sale : el.price < this.$store.state.highprice)
     },
     
-    
     ...mapGetters({
-      productInStock: 'productInStock'
+      productInStock: 'productInStock',
+      // // availableProducts: 'availableProducts',
     })
   },
+  
   // computed: {
   //   products() {
   //     return this.$store.state.products
-  //     // return this.$store.getters.availableProducts
   //   },
   //   productInStock() {
   //     return this.$store.getters.productInStock
   //   }
   // },
+  
   created() {
     // shop.getProducts(products => {
     //   // this.products = products;
     //   store.commit('setProducts',products)
     // });
-    this.loading = true
+    this.loading = true;
     // this.$store.dispatch('fetchProducts')
-    this.fetchProducts()
-      .then(() => this.loading = false)
+    this.fetchProducts().then(() => this.loading = false);
   },
+  
   methods : {
     ...mapActions({
       fetchProducts: 'fetchProducts',
-      addProductToCart: 'addProductToCart'
-
+      addProductToCart: 'addProductToCart',
     }),
 
     // addProductToCart(product) {
@@ -94,13 +100,11 @@ export default {
     // }
   }
 }
+
 </script>
 
 <style lang="css">
-.container {
-position: relative;
-width: 100%;
-}
+.container { position: relative;width: 100%; }
 
 /* .image {
   display: block;
@@ -109,38 +113,51 @@ width: 100%;
 } */
 
 .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  border-radius: 7px;
-  left: 0;
-  right: 0;
-  max-height: 228px;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: rgba(114, 114, 114, 0.822);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-radius: 4px;
+    left: 0;
+    right: 0;
+    max-height: 228px;
+    width: 100%;
+    opacity: 0;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 39, 0.5);
 }
+
+
 
 .container:hover .overlay {
   opacity: 1;
 }
 
 .text {
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    width: 170px;
-    font-family: monospace;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+color: white;
+    /* font-weight: bold; */
+    font-size: 11px;
+    /* padding-top: 40%; */
+    /* padding-bottom: 40%; */
+    /* width: 100%; */
+    padding: 20px;
+    font-family: Bungee;
+    align-content: ;
+    margin: 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* top: 50%; */
+    align-content: center;
+    height: 100%;
+    /* left: 50%; */
+    /* -webkit-transform: translate(-50%, -50%); */
+    /* transform: translate(-50%, -50%); */
     text-align: center;
 }
-
-
 
 .sale-banner {
   border-radius: 7px 0px;
@@ -197,13 +214,17 @@ width: 100%;
  }
 
  .product-title {
-   margin-top: 10px;
+   margin-top: 15px;
    margin-bottom: 5px;
  }
 
  .product-description {
-   margin-top: 10px;
-   margin-bottom: 5px;
+    margin-top: -3px;
+    width: 50%;
+    font-size: 10px;
+    font-family: Helvetica Neue;
+    color: rgba(110, 110, 110, 0.773);
+    margin-bottom: 10px;
  }
  .product-price {
    font-weight: bold;
