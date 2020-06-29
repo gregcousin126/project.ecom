@@ -4,7 +4,7 @@
   <div id="search">
     <i class="fas fa-search" id="search-icon"></i>
     <form>
-      <input type="text" id="search-input" class="form-control"  name="search"  placeholder="Search" autocomplete="off" @input="filtered($event)">
+      <input type="text" id="search-input" class="form-control"  name="search"  placeholder="Search" autocomplete="off" @input="searchFilter($event)">
     </form>
   </div>
     <div class="aside-block">
@@ -56,8 +56,8 @@ export default {
       this.$store.commit('setHighPrice', $event.target.value)
     },
     
-    filtered($event) {
-      this.$store.commit('setSearchName', $event.target.value)
+    searchFilter($event) {
+      this.$store.dispatch('setSearchName', $event.target.value)
     },
     
     updateSale() {
@@ -118,15 +118,15 @@ cursor: text;
 }
 
 #search-input {
-height: 100%;
-    width:0;
-    font-size: 17px;
+    height: 100%;
+    width: 0;
+    font-size: 16px;
     font-weight: 500;
     background: none;
     color: black;
     font-family: monospace;
     border: none;
-    padding: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 7px;
     outline: 0;
     visibility: hidden;
     -webkit-transition: 0.3s;
@@ -144,7 +144,7 @@ height: 100%;
 }
 
   .aside-block {
-    padding: 38px 0;
+    padding: 30px 0;
     border-bottom: 1px solid #eee;
     font-size: 15px;
   }
@@ -170,6 +170,7 @@ height: 100%;
     cursor: pointer;
     float: left;
     top: 0px;
+    margin-top: 2.5px;
     margin-right: 10px;
   }
 

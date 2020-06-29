@@ -27,17 +27,15 @@ export default {
 		state.cartItems--;
 	},
 	
-	
   removeCartItem(state, cart) {
 			state.cart = cart;
-				state.cartItems--;
+			state.cartItems--;
 	}, 
 	
 	decrementProductInventory(state, product) {
 		product.inventory--;
 	},
   
-	
 	setCheckoutStatus(state, status) { state.checkoutStatus = status;},
 	
 	emptyCart(state) {
@@ -49,13 +47,4 @@ export default {
 	
 	toggleSale(state) { state.sale = !state.sale;},
 	
-	setSearchName(state, event) {
-		if (state.products.length < 0) {
-			state.products = state.products.filter(function(item) { return (item.title.toLowerCase().indexOf(event.toString().toLowerCase()) > -1); }.bind(this));
-		} else {
-			shop.getProducts(products => { 
-				
-				state.products = products.filter(function(item) { return (item.title.toLowerCase().indexOf(event.toString().toLowerCase()) > -1); }); });
-		}
-	}
 };

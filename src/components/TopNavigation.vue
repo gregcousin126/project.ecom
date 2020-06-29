@@ -22,10 +22,13 @@
         </router-link>
         <router-link to="/userinfo">
          <div class="log-link"> user&nbsp;&nbsp;
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 481.5 481.5" xml:space="preserve"><g><g><path d="M382.4,0H99C44.4,0,0,44.4,0,99v58.2c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5V99c0-39.7,32.3-72,72-72h283.5    c39.7,0,72,32.3,72,72v283.5c0,39.7-32.3,72-72,72H99c-39.7,0-72-32.3-72-72V325c0-7.5-6-13.5-13.5-13.5S0,317.5,0,325v57.5    c0,54.6,44.4,99,99,99h283.5c54.6,0,99-44.4,99-99V99C481.4,44.4,437,0,382.4,0z"></path></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
          </div>
         </router-link>
         <router-link to="/">
-         <button @click="signOut" class="log-link"> signout&nbsp;&nbsp;</button>
+         <a @click="signOut" class="log-link"> signout&nbsp;&nbsp;
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 481.5 481.5" xml:space="preserve"><g><g><path d="M382.4,0H99C44.4,0,0,44.4,0,99v58.2c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5V99c0-39.7,32.3-72,72-72h283.5    c39.7,0,72,32.3,72,72v283.5c0,39.7-32.3,72-72,72H99c-39.7,0-72-32.3-72-72V325c0-7.5-6-13.5-13.5-13.5S0,317.5,0,325v57.5    c0,54.6,44.4,99,99,99h283.5c54.6,0,99-44.4,99-99V99C481.4,44.4,437,0,382.4,0z"></path></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+         </a>
         </router-link>
         </div>
       </div>
@@ -332,15 +335,17 @@ display: -webkit-box;
 
 .dropdown {
 background: #f8f8f8;
-    padding: 3px;
+    /* padding: 3px; */
     border-radius: 4px;
     height: auto;
-    width: 130px;
+    width: 120px;
+    /* width: 111%; */
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
     justify-content: space-around;
+    padding: 3px 14px 3px 15px;
     font-size: 1.1rem;
     cursor: pointer;
     -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
@@ -508,16 +513,17 @@ nav a.router-link-active {
 
 .cart-link__count {
     position: absolute;
-    width: 19px;
-    height: 19px;
+    width: 21px;
+    height: 21px;
     border-radius: 100%;
-    top: -9px;
+    top: -12px;
     right: -6px;
-    padding: 0px;
-    /* text-align: center; */
+    /* font-weight: lighter; */
+    padding: 5%;
+    text-align: center;
     background: #5044ff;
     color: #fff;
-    font-size: 13px;
-    font-weight: 400;
+    font-size: 11px;
+    font-weight: 600;
 }
 </style>

@@ -12,6 +12,7 @@ export default new Vuex.Store({
   state: {
     products: [],
     cart: [],
+    firebaseCart: [], 
     cartItems: 0,
     checkoutStatus: null,
     highprice: 2000,

@@ -14,7 +14,7 @@ function authStatusChange(loggedIn, user) {
 	if (store) {
 			store.commit('authStateChange');
 		if (user) {
-			store.dispatch('getShoppingCart');
+			store.dispatch('firebaseShoppingCart');
 		}
 	}
 }

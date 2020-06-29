@@ -15,7 +15,13 @@ export default {
   availableProducts(state, getters) {
     return state.products.filter(product => product.inventory > 0);
   },
- 
+  
+  
+  // firebaseCartProducts(state, getters) {
+    // return state.products./filter(product => product.inventory > 0);
+  // },
+  
+  
   cartProducts(state) {
     return state.cart.map(cartItem => { 
       // const product = state.products.find(product => product.id === cartItem.id);

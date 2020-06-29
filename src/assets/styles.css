@@ -8,10 +8,34 @@ input[type='button'],
 button { background: none; border: 0; color: inherit; font: inherit; line-height: normal; overflow: visible; padding: 0; -webkit-appearance: button; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; } 
 input::-moz-focus-inner,
 button::-moz-focus-inner { border: 0; padding: 0; } 
-hr { height: 35px; color: rgba(0, 0, 0, 0.1); 
-border: none; margin-bottom: 23px; margin-top: -30px; 
-background: rgba(0, 0, 0, 0.1); width: 100%; }
-button {padding: 9px 33px; font-size: 13px; font-weight: 600; border-radius: 10px; cursor: pointer; background: white; color: #5044ff; border: 1px solid #5044ff; text-transform: uppercase; margin: 10px; -webkit-transition: 0.15s all ease-out; transition: 0.15s all ease-out; -moz-transition: 0.15s all ease-out; -ms-transition: 0.15s all ease-out; -o-transition: 0.15s all ease-out; } 
+hr { 
+	
+    height: 25px;
+    color: rgba(0, 0, 0, 0.1);
+    border: none;
+    margin-bottom: 20px;
+    margin-top: -20px;
+    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+
+}
+button {
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    background: white;
+    color: #5044ff;
+    border: 1px solid #5044ff;
+    text-transform: uppercase;
+    margin: 10px;
+    -webkit-transition: 0.15s all ease-out;
+    transition: 0.15s all ease-out;
+    -moz-transition: 0.15s all ease-out;
+    -ms-transition: 0.15s all ease-out;
+    -o-transition: 0.15s all ease-out;
+}
 button:hover, button:focus { background: #5044ff; color: white; -webkit-transition: 0.2s all ease-in; transition: 0.2s all ease-in; outline: none; } 
 *,
 *:before,
@@ -27,7 +51,13 @@ input::-webkit-input-placeholder,
 input::-moz-placeholder,
 input:-ms-input-placeholder,
 input:-moz-placeholder { color: #aab8c3; } 
-h1 { text-align: left; margin-bottom: 40px; font-size: 20px; } 
+h1 {
+    text-align: left;
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: 100;
+    font-family: Bungee;
+}
 .content-wrapper { padding: 80px 30px; min-height: 98vh; max-width: 100%; margin: 0 auto; position: relative; top: 50px; margin-bottom: 50px; } 
 @media (min-width: 1400px){
 .content-wrapper { max-width: 1280px; padding: 80px 0px; } 

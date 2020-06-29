@@ -30,8 +30,6 @@ export default {
     return {
       loading: false,
       highprice: 2000,
-      // products: []
-      // searchQuery : '', 
     };
   },
   props: {
@@ -40,33 +38,29 @@ export default {
       default: false
     },
   },
-  computed : {
-    // ...mapState({
-    //   products: state => state.products
-    // }),
-    // filtered () {
-    //     return this.$store.state.products.filter.filter(function(item){
-    //         // 
-    //         return item.title.toLowerCase().indexOf(this.searchQuery.toLowerCase()) > -1;
-    //     }.bind(this));
-    // },
-    products() {
+  
+  computed :{
+          products() {
+      // return this.$store.state.products.filter(el => this.$store.state.sale ? el.price < this.$store.state.highprice && el.sale : el.price < this.$store.state.highprice);
       const mainJsonCart = this.$store.state.products.filter(el => this.$store.state.sale ? el.price < this.$store.state.highprice && el.sale : el.price < this.$store.state.highprice).map(x => x)
       const firebaseCart = this.$store.state.cart.map(x => x.product)
       const replacedResult = mainJsonCart.map(item =>  firebaseCart.find(item2 => item.id === item2.id) || item)
       return replacedResult
     },
-    
     ...mapGetters({
       productInStock: 'productInStock',
     })
   },
  
   created() {
+    
+    // function () {  }
+    
+    // this.products
     // let uid = this.$store.getters.currentUser;
     //  this.listenToProductList();
-    // this.getShoppingCart();
-    // console.log('this.getShoppingCart();: ', this.getShoppingCart());
+    // this.firebaseShoppingCart();
+    // console.log('this.firebaseShoppingCart();: ', this.firebaseShoppingCart());
     // shop.getProducts(products => {
     //   store.commit('setProducts',products)
     // });
@@ -112,13 +106,12 @@ export default {
 .text {
 color: white;
     /* font-weight: bold; */
-    font-size: 11px;
+    font-size: 15px;
     /* padding-top: 40%; */
     /* padding-bottom: 40%; */
     /* width: 100%; */
     padding: 20px;
     font-family: Bungee;
-    align-content: ;
     margin: 0 auto;
     display: inline-flex;
     align-items: center;
@@ -135,7 +128,7 @@ color: white;
     text-align: center;
 }
 .sale-banner {
-  border-radius: 7px 0px;
+  border-radius: 4px 0px;
     background: rgb(232, 35, 25);
     color: white;
     font-family: sans-serif;
@@ -147,7 +140,7 @@ color: white;
     font-weight: 700;
 }
 .out-of-stock-banner {
-  border-radius: 7px 0px;
+  border-radius: 4px 0px;
   background: #505050;
   color: #f9f9f9;
   font-family: sans-serif;
@@ -156,7 +149,7 @@ color: white;
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 700;
-  z-index: 99;
+  z-index: 1;
 }
  .add-to-cart-btn {
    opacity: 0;
@@ -181,7 +174,7 @@ color: white;
    opacity: 1;
  }
  .product-title {
-   margin-top: 15px;
+   margin-top: 10px;
    margin-bottom: 5px;
  }
  .product-description {

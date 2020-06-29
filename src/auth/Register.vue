@@ -31,14 +31,17 @@ export default {
       linkedGoogle () {
         return !!this.authUser.providerData.find(provider => provider.providerId === 'google.com')
       },
+      
       linkedPassword () {
         return !!this.authUser.providerData.find(provider => provider.providerId === 'password')
       }
     },
+    
     methods: {
       signOut () {
         firebase.auth().signOut();
       },
+      
       register () {
         firebase.auth().createUserWithEmailAndPassword(this.email, this.password).catch(error => alert('🤕' + error.message)).then(() => {
         firebaseAuth().currentUser.updateProfile({displayName: this.displayName}).catch(error => alert('🤕' + error.message)).then(() => {
@@ -51,19 +54,24 @@ export default {
         const provider = new firebase.auth.GoogleAuthProvider()
         this.authUser.linkWithPopup(provider).catch(error => alert('🤕' + error.message))
       },
+      
       unlinkGoogle () {
         this.authUser.unlink('google.com')
       },
+      
       updateProfile () {
         this.authUser.updateProfile({ displayName: this.displayName, photoURL: this.photoURL })
       },
+      
       updateCustomDetails () {
         firebase.database().ref('users').child(this.authUser.uid)
           .update({favoriteFood: this.favoriteFood})
       },
+      
       updateEmail () {
         this.authUser.updateEmail(this.email)
       },
+      
       updatePassword () {
         this.authUser.updatePassword(this.newPassword)
           .then(() => { this.newPassword = null }).catch(error => alert('🤕' + error.message))
