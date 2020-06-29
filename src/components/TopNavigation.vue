@@ -1,39 +1,34 @@
 <template>
     <nav>
   <div class="header">
-                   <router-link to="/" exact>
+      <router-link to="/" exact>
         <div class="logo"><logo></logo><p>XOTOPOLO</p></div>
       </router-link>
-      
-      
-       <div class="nav-link">
-   
- 
-<div class="dropdown-container">
-  <label for="openDropdown" class="dropdown">
-    Login
-    <i class="fas fa-angle-down"></i>
-  </label>
-  
-  <input type="checkbox" id="openDropdown" hidden>
-
-  <div class="dropdown-menu">
-  <router-link to="/register">
-          <div class="log-link">
-register&nbsp;&nbsp;
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 481.5 481.5" style="enable-background:new 0 0 481.5 481.5;" xml:space="preserve"><g><g><path d="M0,240.7c0,7.5,6,13.5,13.5,13.5h326.1l-69.9,69.9c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4l93-93    c5.3-5.3,5.3-13.8,0-19.1l-93-93c-5.3-5.3-13.8-5.3-19.1,0c-5.3,5.3-5.3,13.8,0,19.1l69.9,69.9h-326C6,227.2,0,233.2,0,240.7z"/><path d="M382.4,0H99C44.4,0,0,44.4,0,99v58.2c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5V99c0-39.7,32.3-72,72-72h283.5    c39.7,0,72,32.3,72,72v283.5c0,39.7-32.3,72-72,72H99c-39.7,0-72-32.3-72-72V325c0-7.5-6-13.5-13.5-13.5S0,317.5,0,325v57.5    c0,54.6,44.4,99,99,99h283.5c54.6,0,99-44.4,99-99V99C481.4,44.4,437,0,382.4,0z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
-            </div>
+    <div class="nav-link">
+      <div class="dropdown-container">
+        <label v-if="JSON.stringify(currentUser) !== '{}'" for="openDropdown" class="dropdown">{{currentUser.displayName}}<i class="fas fa-angle-down"></i></label>
+        <label v-if="JSON.stringify(currentUser) === '{}'" for="openDropdown" class="dropdown">login<i class="fas fa-angle-down"></i></label>
+        <input type="checkbox" id="openDropdown" hidden>
+        <div class="dropdown-menu">
+        <router-link to="/register">
+          <div class="log-link"> register&nbsp;&nbsp;
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 481.5 481.5" style="enable-background:new 0 0 481.5 481.5;" xml:space="preserve"><g><g><path d="M0,240.7c0,7.5,6,13.5,13.5,13.5h326.1l-69.9,69.9c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4l93-93    c5.3-5.3,5.3-13.8,0-19.1l-93-93c-5.3-5.3-13.8-5.3-19.1,0c-5.3,5.3-5.3,13.8,0,19.1l69.9,69.9h-326C6,227.2,0,233.2,0,240.7z"/><path d="M382.4,0H99C44.4,0,0,44.4,0,99v58.2c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5V99c0-39.7,32.3-72,72-72h283.5    c39.7,0,72,32.3,72,72v283.5c0,39.7-32.3,72-72,72H99c-39.7,0-72-32.3-72-72V325c0-7.5-6-13.5-13.5-13.5S0,317.5,0,325v57.5    c0,54.6,44.4,99,99,99h283.5c54.6,0,99-44.4,99-99V99C481.4,44.4,437,0,382.4,0z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+          </div>
         </router-link>
-          <router-link to="/signin">
-             <div class="log-link">
-               
-        signin&nbsp;&nbsp;
-               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 481.5 481.5" xml:space="preserve"><g><g><path d="M382.4,0H99C44.4,0,0,44.4,0,99v58.2c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5V99c0-39.7,32.3-72,72-72h283.5    c39.7,0,72,32.3,72,72v283.5c0,39.7-32.3,72-72,72H99c-39.7,0-72-32.3-72-72V325c0-7.5-6-13.5-13.5-13.5S0,317.5,0,325v57.5    c0,54.6,44.4,99,99,99h283.5c54.6,0,99-44.4,99-99V99C481.4,44.4,437,0,382.4,0z"></path></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></div>
+        <router-link to="/signin">
+         <div class="log-link"> signin&nbsp;&nbsp;
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 481.5 481.5" xml:space="preserve"><g><g><path d="M382.4,0H99C44.4,0,0,44.4,0,99v58.2c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5V99c0-39.7,32.3-72,72-72h283.5    c39.7,0,72,32.3,72,72v283.5c0,39.7-32.3,72-72,72H99c-39.7,0-72-32.3-72-72V325c0-7.5-6-13.5-13.5-13.5S0,317.5,0,325v57.5    c0,54.6,44.4,99,99,99h283.5c54.6,0,99-44.4,99-99V99C481.4,44.4,437,0,382.4,0z"></path></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+         </div>
         </router-link>
-
-  </div>
-</div>
-
+        <router-link to="/userinfo">
+         <div class="log-link"> user&nbsp;&nbsp;
+         </div>
+        </router-link>
+        <router-link to="/">
+         <button @click="signOut" class="log-link"> signout&nbsp;&nbsp;</button>
+        </router-link>
+        </div>
+      </div>
      <router-link to="/cart" exact>
         <div class="cart-link">
           <div v-if="noItems > 0" class="cart-link__count">{{ noItems }}</div>
@@ -44,45 +39,62 @@ register&nbsp;&nbsp;
         </div>
         </router-link>
       </div>
-
-  <input class="menu-btn" type="checkbox" id="menu-btn" />
-  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-
-      
-
-      
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
     <!-- <li> -->
-           <span v-for="categlories in products">
+        <span v-for="categlories in products">
           <router-link class="router-links" :to="`${categlories}`">{{categlories}}</router-link>
       </span>
     <!-- </li> -->
-  </ul>
- 
-     
-   
-
-</div>
-      
-      
+    </ul>
+    </div>
     </nav>
-    
-    
-
 </template>
 
 <script>
 import index from '@/store/index'
 import logo from '@/assets/logo'
+import firebase from 'firebase'
+import {mapState, mapGetters, mapActions} from 'vuex'
+import { firebaseAuth } from '../../config/firebase'
 
 export default {
   name:'TopNavigation',
+      data() {
+      return {
+        email: '',
+        password: '',
+        displayName: null,
+        photoURL: null,
+        newPassword: null,
+        favoriteFood: null,
+        authUser: null
+      }
+    },
   components: {
     logo, 
     // Authchange,
   },
-  
+  methods :{
+        signOut () {
+        // console.log(' this.$store.state: ',  this.$store.state);
+        firebaseAuth().signOut();
+        this.$store.state.cartItems = 0; 
+        this.$store.state.cart= []; 
+        
+      },
+      
+      
+      
+      
+      
+      
+  },
   computed: {
+   
+ 
+    
     products() {
       var arr = []; 
       this.$store.state.products.forEach((item) => {arr.push(item.category)});
@@ -90,25 +102,43 @@ export default {
       return arrayFiltered; 
     },
     
+    
+    
+    
     noItems() {
       return this.$store.state.cartItems
-    }
+    },
     
+      // computed: {
+    ...mapGetters({
+          currentUser : 'currentUser',
+    }),
   },
-  mounted: {
-    function() {
-      const $drowdownArrow = document.querySelector('.fa-angle-down');
-      const $checkbox = document.getElementById('openDropdown');
-      const $dropdownMenu = document.querySelector('.dropdown-menu');
-      $checkbox.addEventListener('change', () => {
-      $drowdownArrow.classList.toggle('rotate-dropdown-arrow');
+  
+  
+mounted () {
+// console.log('currentUser :>> ', this.currentUser);
+  
+  
+    // function() {
+      const drowdownArrow = document.querySelector('.fa-angle-down');
+      const checkbox = document.getElementById('openDropdown');
+      const dropdownMenu = document.querySelector('.dropdown-menu');
+      
+      
+      checkbox.addEventListener('change', () => {
+        drowdownArrow.classList.toggle('rotate-dropdown-arrow');
       });
-      $dropdownMenu.addEventListener('click', (e) => {
-      $checkbox.checked = false;
-      $checkbox.dispatchEvent(new Event('change'));
+      dropdownMenu.addEventListener('click', (e) => {
+      checkbox.checked = false;
+      checkbox.dispatchEvent(new Event('change'));
       })
-    }
+    // }
   },
+  
+  
+  // created() {
+  // }
 
 }
 </script>

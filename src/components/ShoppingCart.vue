@@ -1,43 +1,31 @@
 <template>
   <div class="shopping-cart">
     <div v-if="$store.state.cart.length <= 0" class="empty-cart">
+      <!-- <p>{{$store.state.cart}}</p> -->
       <p>Your cart is currently empty.</p>
       <router-link to="/"><button>Shop Now!</button></router-link>
     </div>
     <div v-else class="shopping-cart-items">
       <ul>
         <li v-for="product in products" class="card cart-product-card">
-          		<!-- <a class="card-image"> -->
-
+          <!-- <h2>{{product}}</h2> -->
           <img :src="`./static/images/${product.img}`" :alt="`Image of ${product.title}`">
-          	<!-- </a> -->
-            
-            		<!-- <a class="card-description" href="https://vulfpeck.bandcamp.com/album/the-beautiful-game" target="_blank"> -->
-
-          <!-- <div class="card-description"> -->
           <span class="product-title">{{product.title}}</span>
           <span class="product-description"> {{product.description }}</span>
           <span class="product-price"> {{product.price | currency}} </span>
-          
-          <!-- <span class="product-cart-quantity">Quantity:  </span> -->
-  
-  <div class="quantity">
-    <a href="#" class="quantity__minus"><span>-</span></a>
-    <input name="quantity" type="text" class="quantity__input" :value="`${product.quantity}`">
-    <a href="#" class="quantity__plus"><span>+</span></a>
-  </div>
-
+        <div class="quantity">
+          <a href="#" class="quantity__minus"><span>-</span></a>
+          <input name="quantity" type="text" class="quantity__input" :value="`${product.quantity}`">
+          <a href="#" class="quantity__plus"><span>+</span></a>
+        </div>
         </li>
-        
       </ul>
       <div class="cart-checkout">
         <h3>Cart total : </h3>
-        
         <p>{{ total | currency}}</p>
         <!-- <button :disabled="$store.state.cart.length <= 0" @click="$store.dispatch('checkout')">Checkout</button> -->
         <!-- <p class="status" v-if="$store.state.checkoutStatus">{{$store.state.checkoutStatus}}</p> -->
         <!-- <button :disabled="$store.state.cart.length <= 0" @click="$store.dispatch('checkout')">Checkout</button> -->
-        
         <button @click="checkout">Checkout</button>
         <p class="status" >{{checkoutStatus}}</p>
         <!-- <p class="status" v-if="checkoutStatus">{{checkoutStatus}}</p> -->
@@ -52,22 +40,22 @@ import {mapState, mapGetters, mapActions} from 'vuex'
 
 export default {
   name: 'ShoppingCart',
-  computed: {
-    ...mapGetters({ products:'cartProducts', total:'cartTotal' }),
-    ...mapState({ checkoutStatus: 'checkoutStatus' })
-  },
-  methods: {
-    ...mapActions({ checkout: 'checkout' })
-  }
-  // computed: {
-  //   products() {
-  //     return this.$store.getters.cartProducts
-  //   },
-  //   total() {
-  //     return this.$store.getters.cartTotal
-  //   }
-  // }
+  computed: { 
+    
+    
+    ...mapGetters({ products:'cartProducts', total:'cartTotal', currentUser : 'currentUser',}), 
+    
+    
+    ...mapState({ checkoutStatus: 'checkoutStatus' }) },
+  methods: { 
+    
+    ...mapActions({ checkout: 'checkout'}) 
   
+  
+  
+  
+  },
+ 
 }
 </script>
 

@@ -1,40 +1,45 @@
 import shop from '@/api/shop';
-
+import { ref } from '../../config/firebase';
 export default {
-  // = computed properties
-
-  availableProducts(state, getters) {
-    // console.log('product.inventory > 0): ', state.products.filter(product => product.inventory > 0));
-    return state.products.filter(product => product.inventory > 0);
+  isLoggedIn(state)  { 
+    return state.isLoggedIn; 
   },
 
+	currentUser(state, context)  {
+		if (state && state.user) {
+      return state.user; 
+		} else {
+			return {};
+		}
+	},
+  
+  availableProducts(state, getters) {
+    return state.products.filter(product => product.inventory > 0);
+  },
+  
   cartProducts(state) {
+    console.log('state: ', state);
+
     return state.cart.map(cartItem => {
-      const product = state.products.find(
-        product => product.id === cartItem.id
-      );
+      // const product = state.products.find(product => product.id === cartItem.id);
       return {
-        title: product.title,
-        price: product.price,
-        description: product.description,
-        img: product.img,
+        title: cartItem.product.title,
+        price: cartItem.product.price,
+        description: cartItem.product.description,
+        img: cartItem.product.img,
         quantity: cartItem.quantity,
+        // title: product.title, price: product.price, description: product.description, img: product.img, quantity: cartItem.quantity,
       };
     });
   },
-
+  
   cartTotal(state, getters) {
-    // let total = 0; getters.cartProducts.forEach(product => { total = total + product.price * product.quantity }); return total;
-    return getters.cartProducts.reduce(
-      (total, product) => total + product.price * product.quantity, 0
-    );
+    return getters.cartProducts.reduce((total, product) => total + product.price * product.quantity, 0);
   },
-
+  
   productInStock() {
-      // console.log(' product.inventory > 0;: ',  product.inventory > 0);
     return product => {
       return product.inventory > 0;
     };
   },
 };
-

@@ -38,7 +38,6 @@ export default {
       min: 0,
       max: 2000,
       check: this.checked,
-      // searchQuery : '', 
     };
   },
   

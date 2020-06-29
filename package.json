@@ -17,6 +17,7 @@
     "crypto-js": "^4.0.0",
     "firebase": "^7.15.1",
     "js-cookie": "^2.2.1",
+    "toastr": "^2.1.4",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vue-star-rating": "^1.6.1",

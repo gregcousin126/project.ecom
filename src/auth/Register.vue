@@ -1,37 +1,29 @@
 <template>
 <body>
-    <div v-if="authUser">
-        <authchange/>
-    </div>
-    <div v-else>
-      
+    <!-- <div v-if="authUser"> <div v-else> -->
       <form @submit.prevent="register">
         <h2>Register</h2>
         <input type="email"  class="inputbox with-transform" v-model="email" placeholder="Type your email">
         <input type="password"  class="inputbox with-transform" v-model="password" placeholder="Pick your password">
+        <input type="displayName"  class="inputbox with-transform" v-model="displayName" placeholder="Whats your name">
         <button>Register</button>
       </form>
-    </div>
-  </div>
+    <!-- </div> -->
 </body>
 </template>
 <script>
 
 import firebase from 'firebase'
 import Authchange from '@/auth/Authchange'
-
+import { ref, firebaseAuth } from '../../config/firebase';
 
 export default {
-  
 	  name: 'Register',
     data() {
       return {
         email: '',
         password: '',
         displayName: null,
-        photoURL: null,
-        newPassword: null,
-        favoriteFood: null,
         authUser: null
       }
     },
@@ -44,8 +36,15 @@ export default {
       }
     },
     methods: {
+      signOut () {
+        firebase.auth().signOut();
+      },
       register () {
-        firebase.auth().createUserWithEmailAndPassword(this.email, this.password).catch(error => alert('🤕' + error.message))
+        firebase.auth().createUserWithEmailAndPassword(this.email, this.password).catch(error => alert('🤕' + error.message)).then(() => {
+        firebaseAuth().currentUser.updateProfile({displayName: this.displayName}).catch(error => alert('🤕' + error.message)).then(() => {
+        this.$router.push('/');
+        });
+        })
       },
 
       linkGoogle () {
@@ -70,29 +69,6 @@ export default {
           .then(() => { this.newPassword = null }).catch(error => alert('🤕' + error.message))
       }
     },
-		
-    created () {
-      firebase.auth().onAuthStateChanged(user => {
-        this.authUser = user
-        if (user) {
-          this.displayName = user.displayName
-          this.photoURL = user.photoURL
-          this.email = user.email
-          firebase.database().ref('users').child(user.uid).once('value', snapshot => {
-            if (snapshot.val()) {
-              this.favoriteFood = snapshot.val().favoriteFood
-              Vue.set(this.authUser, 'favoriteFood', this.favoriteFood)
-            }
-          })
-        }
-      })
-    },
-    
-    
-    components: {
-      Authchange
-    }
-    
 }
 </script>
 
