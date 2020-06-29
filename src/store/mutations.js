@@ -22,10 +22,22 @@ export default {
 		state.cartItems++;
 	},
   
+	decrementItemQty(state, cartItem, product) {
+		cartItem.quantity--;
+		state.cartItems--;
+	},
+	
+	
+  removeCartItem(state, cart) {
+			state.cart = cart;
+				state.cartItems--;
+	}, 
+	
 	decrementProductInventory(state, product) {
 		product.inventory--;
 	},
   
+	
 	setCheckoutStatus(state, status) { state.checkoutStatus = status;},
 	
 	emptyCart(state) {
@@ -41,7 +53,9 @@ export default {
 		if (state.products.length < 0) {
 			state.products = state.products.filter(function(item) { return (item.title.toLowerCase().indexOf(event.toString().toLowerCase()) > -1); }.bind(this));
 		} else {
-			shop.getProducts(products => { state.products = products.filter(function(item) { return (item.title.toLowerCase().indexOf(event.toString().toLowerCase()) > -1); }); });
+			shop.getProducts(products => { 
+				
+				state.products = products.filter(function(item) { return (item.title.toLowerCase().indexOf(event.toString().toLowerCase()) > -1); }); });
 		}
 	}
 };

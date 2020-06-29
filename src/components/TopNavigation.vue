@@ -78,7 +78,6 @@ export default {
   },
   methods :{
         signOut () {
-        // console.log(' this.$store.state: ',  this.$store.state);
         firebaseAuth().signOut();
         this.$store.state.cartItems = 0; 
         this.$store.state.cart= []; 

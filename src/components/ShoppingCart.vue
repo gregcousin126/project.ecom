@@ -1,22 +1,20 @@
 <template>
   <div class="shopping-cart">
     <div v-if="$store.state.cart.length <= 0" class="empty-cart">
-      <!-- <p>{{$store.state.cart}}</p> -->
       <p>Your cart is currently empty.</p>
       <router-link to="/"><button>Shop Now!</button></router-link>
     </div>
     <div v-else class="shopping-cart-items">
       <ul>
         <li v-for="product in products" class="card cart-product-card">
-          <!-- <h2>{{product}}</h2> -->
           <img :src="`./static/images/${product.img}`" :alt="`Image of ${product.title}`">
           <span class="product-title">{{product.title}}</span>
           <span class="product-description"> {{product.description }}</span>
           <span class="product-price"> {{product.price | currency}} </span>
         <div class="quantity">
-          <a href="#" class="quantity__minus"><span>-</span></a>
+          <a @click="subtractCartItem(product)" href="#" class="quantity__minus" ><span>-</span></a>
           <input name="quantity" type="text" class="quantity__input" :value="`${product.quantity}`">
-          <a href="#" class="quantity__plus"><span>+</span></a>
+          <a @click="addCartItem(product)" href="#" class="quantity__plus"><span>+</span></a>
         </div>
         </li>
       </ul>
@@ -26,9 +24,9 @@
         <!-- <button :disabled="$store.state.cart.length <= 0" @click="$store.dispatch('checkout')">Checkout</button> -->
         <!-- <p class="status" v-if="$store.state.checkoutStatus">{{$store.state.checkoutStatus}}</p> -->
         <!-- <button :disabled="$store.state.cart.length <= 0" @click="$store.dispatch('checkout')">Checkout</button> -->
+        <!-- <p class="status" v-if="checkoutStatus">{{checkoutStatus}}</p> -->
         <button @click="checkout">Checkout</button>
         <p class="status" >{{checkoutStatus}}</p>
-        <!-- <p class="status" v-if="checkoutStatus">{{checkoutStatus}}</p> -->
       </div>
     </div>
   </div>
@@ -40,20 +38,14 @@ import {mapState, mapGetters, mapActions} from 'vuex'
 
 export default {
   name: 'ShoppingCart',
+  
   computed: { 
-    
-    
     ...mapGetters({ products:'cartProducts', total:'cartTotal', currentUser : 'currentUser',}), 
+    ...mapState({ checkoutStatus: 'checkoutStatus' }) 
+    },
     
-    
-    ...mapState({ checkoutStatus: 'checkoutStatus' }) },
   methods: { 
-    
-    ...mapActions({ checkout: 'checkout'}) 
-  
-  
-  
-  
+    ...mapActions({ checkout: 'checkout', addCartItem: 'addCartItem', subtractCartItem: 'subtractCartItem'}), 
   },
  
 }
@@ -72,8 +64,6 @@ margin: 5px;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    /* padding: 3px; */
-    /* border: 1.5px solid rgba(0,0,0,0.2); */
     border-radius: 6px;
     -webkit-box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.2);
 }

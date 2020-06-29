@@ -51,29 +51,23 @@ export default {
     //     }.bind(this));
     // },
     products() {
-      return this.$store.state.products.filter(el => this.$store.state.sale ? el.price < this.$store.state.highprice && el.sale : el.price < this.$store.state.highprice)
+      const mainJsonCart = this.$store.state.products.filter(el => this.$store.state.sale ? el.price < this.$store.state.highprice && el.sale : el.price < this.$store.state.highprice).map(x => x)
+      const firebaseCart = this.$store.state.cart.map(x => x.product)
+      const replacedResult = mainJsonCart.map(item =>  firebaseCart.find(item2 => item.id === item2.id) || item)
+      return replacedResult
     },
+    
     ...mapGetters({
       productInStock: 'productInStock',
-      // // availableProducts: 'availableProducts',
     })
   },
-  // computed: {
-  //   products() {
-  //     return this.$store.state.products
-  //   },
-  //   productInStock() {
-  //     return this.$store.getters.productInStock
-  //   }
-  // },
+ 
   created() {
     // let uid = this.$store.getters.currentUser;
-      // console.log('uid: name', uid);
-      // console.log('uid: ', uid);
-      //  this.listenToProductList();
-      // this.getShoppingCart({uid, currentCart: this.$store.getters.cartItemList});
+    //  this.listenToProductList();
+    // this.getShoppingCart();
+    // console.log('this.getShoppingCart();: ', this.getShoppingCart());
     // shop.getProducts(products => {
-    //   // this.products = products;
     //   store.commit('setProducts',products)
     // });
     this.loading = true;
