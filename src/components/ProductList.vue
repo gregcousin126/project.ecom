@@ -14,7 +14,7 @@
           </div>
           <span class="product-title">{{product.title}}</span>
           <span class="product-price"> {{product.price | currency}}</span>
-          <button @click="addProductToCart(product)" class="add-to-cart-btn">Add to cart</button>
+          <button @click="addProductToCart(product)" class="add-to-cart-btn" id="buttonToggle">Add to cart</button>
           <!-- <div class="container"> <img src="img_avatar.png" alt="Avatar" class="image"> -->
         </li>
       </transition-group>
@@ -40,7 +40,7 @@ export default {
   },
   
   computed :{
-          products() {
+      products() {
       // return this.$store.state.products.filter(el => this.$store.state.sale ? el.price < this.$store.state.highprice && el.sale : el.price < this.$store.state.highprice);
       const mainJsonCart = this.$store.state.products.filter(el => this.$store.state.sale ? el.price < this.$store.state.highprice && el.sale : el.price < this.$store.state.highprice).map(x => x)
       const firebaseCart = this.$store.state.cart.map(x => x.product)
@@ -53,29 +53,19 @@ export default {
   },
  
   created() {
-    
-    // function () {  }
-    
-    // this.products
-    // let uid = this.$store.getters.currentUser;
-    //  this.listenToProductList();
-    // this.firebaseShoppingCart();
-    // console.log('this.firebaseShoppingCart();: ', this.firebaseShoppingCart());
-    // shop.getProducts(products => {
-    //   store.commit('setProducts',products)
-    // });
-    this.loading = true;
-    // this.$store.dispatch('fetchProducts')
-    this.fetchProducts().then(() => this.loading = false);
+    this.loading = true; // this.$store.dispatch('fetchProducts')
+    this.fetchProducts().then(() => this.loading = false).then(() => {
+  
+    });
   },
+  
+  
   methods : {
     ...mapActions({
       fetchProducts: 'fetchProducts',
       addProductToCart: 'addProductToCart',
     }),
-    // addProductToCart(product) {
-    //   this.$store.dispatch('addProductToCart',product)
-    // }
+    // addProductToCart(product) { this.$store.dispatch('addProductToCart',product) }
   }
 }
 </script>
@@ -194,6 +184,9 @@ color: white;
  .product-card.out-of-stock button {
    display: none;
  }
+ 
+
+ 
  .product-card.out-of-stock img {
    opacity: 0.6;
  }

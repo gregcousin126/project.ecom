@@ -24,13 +24,17 @@
     
     <div class="aside-block">
       <h4>Support</h4>
-      <p>Get in touch with us for any queries at <a href="#">xotopolo@gmail.com</a></p>
+                  <!-- <label v-if="JSON.stringify(currentUser) !== '{}'" for="openDropdown" class="dropdown"></label> -->
+
+      <p><p style="display:inline" v-if="JSON.stringify(currentUser) !== '{}'">{{currentUser.displayName}}, </p>Get in touch with us for any queries at <a href="#">xotopolo@gmail.com</a></p>
     </div>
   </aside>
 </template>
 
 <script>
 import store from '@/store/index'
+import {mapState, mapGetters, mapActions} from 'vuex'
+
 export default {
   name: 'Sidebar',
   data() {
@@ -38,6 +42,7 @@ export default {
       min: 0,
       max: 2000,
       check: this.checked,
+      displayName: null,
     };
   },
   
@@ -48,7 +53,10 @@ export default {
     
     checked() {
       return this.$store.state.sale;
-    }
+    },
+        ...mapGetters({
+          currentUser : 'currentUser',
+    }),
   },
   
   methods: {
@@ -93,13 +101,15 @@ export default {
 </script>
 
 <style lang="css">
+
+
 #search {
-    margin-top: 40px;
+    /* margin-top: 40px; */
     height: 100%;
     color: rgba(84, 84, 84, 0.989);
     width: 100%;
     border: solid 2px;
-    padding: 0px 6px 0px 6px;
+    padding: 2px 8px 2px 8px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -159,19 +169,26 @@ cursor: text;
     margin-bottom: 10px;
   }
   .checkbox-control {
-    position: relative;
-    display: inline-block;
+
+    grid-auto-flow: column;
+        position: relative;
+    display: inline-grid;
+    place-items: center;
+    /* width: 59%; */
+    /* padding-bottom: 8px; */
+    grid-gap: 10px;
+    vertical-align: middle;
+    /* white-space: break-spaces; */
   }
   .checkbox-box {
-    width: 18px;
+width: 18px;
     height: 18px;
     border: 2px solid #131313;
     position: relative;
     cursor: pointer;
     float: left;
     top: 0px;
-    margin-top: 2.5px;
-    margin-right: 10px;
+    margin-top: 2.2px;
   }
 
   input[type="checkbox"] {
