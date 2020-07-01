@@ -11,10 +11,10 @@
               <div class="overlay">
                 <div class="text">{{product.description}}</div>
               </div>
+                <button @click="addProductToCart(product)" class="add-to-cart-btn" id="buttonToggle">Add to cart</button>
           </div>
           <span class="product-title">{{product.title}}</span>
           <span class="product-price"> {{product.price | currency}}</span>
-          <button @click="addProductToCart(product)" class="add-to-cart-btn" id="buttonToggle">Add to cart</button>
           <!-- <div class="container"> <img src="img_avatar.png" alt="Avatar" class="image"> -->
         </li>
       </transition-group>
@@ -141,8 +141,15 @@ color: white;
   font-weight: 700;
   z-index: 1;
 }
+/* 
+#buttonToggle {
+  display: none;
+} */
  .add-to-cart-btn {
-   opacity: 0;
+   z-index: 0;
+    display: block;
+    opacity: 0;
+    margin-top: -30px;
  }
  @media (max-width: 600px) {
    .add-to-cart-btn {
@@ -154,7 +161,12 @@ color: white;
    outline: none;
  }
  .product-card:hover .add-to-cart-btn{
+   overflow: hidden;
+
+   transition: margin-top .3s, opacity .5s;
    opacity: 1;
+   margin-top: 14px;
+   display: block;
  }
 /* For keyboard controls */
  /* .product-card:focus .add-to-cart-btn {

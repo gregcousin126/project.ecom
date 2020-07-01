@@ -3,33 +3,22 @@
       
 <header class="header">
   <router-link to="/" exact><div class="logo"><logo></logo><p>XOTOPOLO</p></div></router-link>
-
   <!-- <a href="" class="logo">CSS Nav</a> -->
   <input class="menu-btn" type="checkbox" id="menu-btn" />
-  
-   <!-- <div class="nav-link"> -->
-      <!-- <div class="dropdown-container"> -->
-     
-      <!-- </div> -->
-    <!-- <ul class="menu">
-    <li><router-link  to="/register"> <a class="log-link" href=""> register </a></router-link></li>
-    <li><router-link  to="/signin"> <a class="log-link" href=""> signin </a></router-link></li>
-    <li><router-link  to="/userinfo"> <a class="log-link" href=""> user </a></router-link></li>
-    <li><router-link  @click="signOut" to="/"> <a class="log-link" href=""> signout </a></router-link></li>
-  </ul>
-   -->
   <ul class="menu">
-
-    
     <div class="main-nav-info-container">
-      <div class="main-nav-info">
-        <router-link  to="/register">
-            <label v-if="JSON.stringify(currentUser) !== '{}'" for="openDropdown" class="dropdown">{{currentUser.displayName}}</label>
-        </router-link>
-        <router-link  to="/register">
-         <label v-if="JSON.stringify(currentUser) === '{}'" for="openDropdown" class="dropdown">Authenticate</label>
-        </router-link>
+      
+      <div class="main-nav-info" v-if="JSON.stringify(currentUser) !== '{}'" >
+        <router-link  to="/register"><label for="openDropdown" class="dropdown">{{currentUser.displayName}}</label></router-link>
       </div>
+      <div class="main-nav-info" v-if="JSON.stringify(currentUser) === '{}'">
+          <router-link  to="/register"><label for="openDropdown" class="dropdown">Register</label></router-link>
+      </div>
+      
+      <div class="main-nav-info" v-if="JSON.stringify(currentUser) === '{}'" >
+        <router-link  to="/signin"><label for="openDropdown" class="dropdown">Signin</label></router-link>
+      </div>
+      
       <div class="main-nav-info">
           <router-link to="/cart" exact>
             <div class="cart-link">
@@ -48,12 +37,8 @@
   </ul>
 
   <label class="menu-icon" for="menu-btn"><span class="navicon">
-    
       <div v-if="noItems > 0" class="cart-link__count__menu-btn">{{ noItems }}</div>
-    
-    
   </span>
-  
   </label>
   
 </header>
@@ -141,25 +126,15 @@ export default {
         
       },
       
-      
-      
-      
-      
-      
   },
   computed: {
    
- 
-    
     products() {
       var arr = []; 
       this.$store.state.products.forEach((item) => {arr.push(item.category)});
       var arrayFiltered = arr.filter((v, i, a) => a.indexOf(v) === i); 
       return arrayFiltered; 
     },
-    
-    
-    
     
     noItems() {
       return this.$store.state.cartItems
@@ -171,16 +146,13 @@ export default {
     }),
   },
   
-  
 mounted () {
 // console.log('currentUser :>> ', this.currentUser);
-  
   
     // function() {
       // const drowdownArrow = document.querySelector('.fa-angle-down');
       // const checkbox = document.getElementById('openDropdown');
       // const dropdownMenu = document.querySelector('.dropdown-menu');
-      
       
       // checkbox.addEventListener('change', () => {
       //   drowdownArrow.classList.toggle('rotate-dropdown-arrow');
@@ -191,7 +163,6 @@ mounted () {
       // })
     // }
   },
-  
   
   // created() {
   // }
@@ -215,7 +186,7 @@ float: right;
     /* width: 8%; */
     float: left;
     /* font-size: 2em; */
-    padding: 28px 20px 20px 10px;
+    padding: 20px 20px 15px 10px;
     text-decoration: none;
     /* right: 0; */
     /* position: relative; */
@@ -230,7 +201,6 @@ float: right;
     background-color: #fff;
     height: 100%;
 }
-
 
 .header {
     /* -webkit-box-align: center; */
@@ -260,16 +230,11 @@ float: right;
 
 .header li a {
 display: block;
-    padding: 0px 22px 25px;
+    padding: 0px 22px 26px;
     /* padding-bottom: 30px; */
     border-right: 1px solid #f4f4f4;
     text-decoration: none;
 }
-
-
-
-
-
 
 .header li a:hover,
 .header .menu-btn:hover {
@@ -278,12 +243,12 @@ display: block;
 
 .cart-link__count__menu-btn {
     position: absolute;
-    width: 23px;
+    width: 22px;
     height: 22px;
     border-radius: 50%;
     top: -21px;
     z-index: 1;
-    left: 14px;
+    left: 15px;
     /* right: -21px; */
     padding: 7%;
     text-align: center;
@@ -301,7 +266,7 @@ display: block;
     /* font-size: 2em; */
     top: 2px;
     margin: 0 auto;
-    padding: 15%;
+    padding: 5px 10px 5px 10px;
     text-decoration: none;
         float: left;
     position: relative;
@@ -325,7 +290,7 @@ display: block;
     cursor: pointer;
     display: inline-block;
     /* float: right; */
-    padding: 40px 20px;
+    padding: 35px 20px;
     position: relative;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -354,7 +319,7 @@ background: #f8f8f8;
     display: block;
     -ms-flex-pack: distribute;
     justify-content: space-around;
-    padding: 3px 14px 3px 15px;
+    padding: 3px 10px 3px 10px;
     font-size: 1.1rem;
     cursor: pointer;
     -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
@@ -415,7 +380,7 @@ background: #f8f8f8;
     background: none;
   }
 }
-@media (min-width: 48em) {
+@media (min-width: 51em) {
 
   /* .header li a:hover,
 .header .menu-btn:hover {
@@ -426,7 +391,7 @@ background: #f8f8f8;
     float: left;
   }
   .header li a {
-    padding: 32px 22px;
+    padding: 25px 21px;
   }
   .header .menu {
     clear: none;
@@ -442,7 +407,6 @@ body {
   font-family: Helvetica, sans-serif;
   background-color: #f4f4f4;
 }
-
 
 .router-links {
   font-family: 'Roboto Condensed', sans-serif;
@@ -469,7 +433,6 @@ border-spacing: 3px;
     -webkit-border-radius: 50%;
 }
 
-
 .logo svg {
   width: 40px;
   height: 40px;
@@ -494,7 +457,6 @@ width: 35px;
     border-radius: 4px;
 }
 
-
 .cart-link__count {
 position: absolute;
     width: 23px;
@@ -516,6 +478,8 @@ position: absolute;
   }
   
 }
+
+
 /* 
 body {
   margin: 0;
@@ -527,11 +491,8 @@ a {
   color: #000;
 }
 
-
-
 .header {
     background-color: #fff;
-    
     
     width: 100%;
     height: 0;
@@ -558,15 +519,9 @@ a {
   background-color: #f4f4f4;
 }
 
-
-
 .header .menu {
   
-  
-
 }
-
-
 
 .header .menu-icon {
     cursor: pointer;
@@ -611,8 +566,6 @@ a {
   top: -5px;
 }
 
-
-
 .header .menu-btn {
   display: none;
 }
@@ -633,12 +586,9 @@ a {
     border-width: medium;
 }
 
-
 @media (min-width: 660px) {
 
-  
 }
-
 
 .dropdown-container {
 display: -webkit-box;
@@ -795,7 +745,6 @@ nav a.router-link-active {
     -o-border-radius: 20%;
 }
 
-
 .logo {
     float: left;
     position: relative;
@@ -812,7 +761,6 @@ nav a.router-link-active {
 .logo p {
 }
 
-  
   nav {
     padding: 20px;
   }
@@ -827,7 +775,6 @@ nav a.router-link-active {
     float: right;
 }
 
-
 .log-link {
     position: relative;
     float: right;
@@ -838,7 +785,6 @@ nav a.router-link-active {
     color: black;
     text-transform: uppercase;
 }
-
 
 .dropdown-menu svg {
   width: 20px;
