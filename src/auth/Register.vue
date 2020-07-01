@@ -5,7 +5,7 @@
     <div class="top-register-container">
     <div class="register-container">
         <div class="image">
-            <h1>Welcome To <span class="colorspan">Xotpolo</span></h1>
+            <h1 class="register-banner">Welcome To <span class="colorspan">Xotpolo</span></h1>
         </div>
         <div class="register-content">
             <h1>Register</h1>
@@ -16,7 +16,7 @@
         <input type="displayName"  class="inputbox with-transform" v-model="displayName" placeholder="Whats your name">
              <a class="fp" href="index.html">Forgot Password?</a>
             <br>
-            <button type="button" class="btn-register">Register</button>
+            <button type="submit" class="btn-register">Register</button>
         </form>
             <router-link  to="/signin"><button class="btn-register" href="">signin</button></router-link>
         </div>
@@ -25,12 +25,12 @@
     </div>
 
     <div v-if="currentUser.displayName">
-        <h2>Hi {{currentUser.displayName}},</h2><br> <p>looks like you are already signed in. What do you want to do?</p>
+        <h2>Hi {{currentUser.displayName}},</h2><br> <p>It Looks like you are already signed in 🧐. What would you like to do?</p>
         <ul class="authchoice">
-          <li><router-link  to="/register"><a class="log-link" href="">register</a></router-link></li>
-          <li><router-link  to="/signin"><a class="log-link" href="">signin</a></router-link></li>
-          <li><router-link  to="/userinfo"><a class="log-link" href="">user</a></router-link></li>
-          <li><router-link   to="/"><a @click="signOut" class="log-link" href="">signout</a></router-link></li>
+          <li><router-link  to="/register"><a class="dropdown log-link" href="">register</a></router-link></li>
+          <li><router-link  to="/signin"><a class="dropdown log-link" href="">signin</a></router-link></li>
+          <li><router-link  to="/userinfo"><a class="dropdown log-link" href="">user</a></router-link></li>
+          <li><router-link   to="/"><a @click="signOut" class="dropdown log-link" href="">signout</a></router-link></li>
         </ul>
   </div>
 
@@ -77,7 +77,7 @@ export default {
       
       register () {
         firebase.auth().createUserWithEmailAndPassword(this.email, this.password).catch(error => alert('🤕' + error.message)).then(() => {
-        firebaseAuth().currentUser.updateProfile({displayName: this.displayName}).catch(error => alert('🤕' + error.message)).then(() => {
+          firebaseAuth().currentUser.updateProfile({displayName: this.displayName}).catch(error => alert('🤕' + error.message)).then(() => {
         this.$router.push('/');
         });
         })
@@ -134,17 +134,24 @@ export default {
 }
 
 
+.dropdown {
+  
+}
+
 .authchoice {
-      display: grid;
+    display: grid;
     grid-auto-flow: column;
-    border-radius: 2px;
+    /* border-radius: 2px; */
     /* border: 2px solid; */
     list-style: none;
+    margin-top: 30px;
+    font-weight: 500;
     padding: 0px;
     font-size: 17px;
-    margin: 25px;
+    width: 30%;
+    margin: 24px auto;
     font-family: 'Roboto Condensed', sans-serif;
-    grid-gap: 21px;
+    grid-gap: 20px;
 }
 
 .top-register-container {
@@ -181,7 +188,7 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .image {
@@ -194,7 +201,7 @@ body {
 }
 
 .image h1 {
-    margin-top: 50%;
+    margin-top: 42%;
     padding-left: 20px;
     padding-right: 20px;
     letter-spacing: 2px;
@@ -209,12 +216,13 @@ body {
     flex: 50%;
     background-color: white;
     text-align: center;
+    padding: 10px;
     font-family: 'Montserrat', sans-serif;
 }
 
 .register-content h1 {
     /* padding: 40px; */
-    padding-top: 30px;
+    padding-top: 10px;
     /* bottom: -9px; */
     margin-bottom: 0px;
     padding-bottom: -10px;
@@ -224,6 +232,10 @@ body {
     color: #c446c9;
 }
 
+.register-banner{
+ font-size: 25px;
+    line-height: 35px;
+}
 #txt {
     margin: 10px;
     padding: 5px;
@@ -259,8 +271,8 @@ body {
 }
 
 .btn-register {
-    width: 28%;
-    margin: 0px 0px 30px;
+    width: 34%;
+    margin: 0px 0px 20px;
     display: inline-flex;
     place-content: center;
     border: none;
@@ -288,7 +300,8 @@ body {
   }
   
   .register-container {
-    width: 100%;
+      width: 100%;
+    padding: 15px;
   }
   .register-content{
     border-radius: 5px;

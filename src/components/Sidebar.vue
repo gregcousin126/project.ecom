@@ -209,5 +209,13 @@ width: 18px;
     left: 2px;
     background: #5044ff;
   }
+  
+  
+  @media (max-width: 48em) {
+
+    #search {
+          padding: 4px 8px 4px 8px;
+    }
+}
 
 </style>

@@ -12,15 +12,14 @@ button::-moz-focus-inner { border: 0; padding: 0; }
 
 hr { 
 	
-height: 20px;
+    height: 25px;
     color: rgba(0,0,0,.1);
     border: none;
     border-radius: 2px;
     margin-bottom: 20px;
-    margin-top: -23px;
-    background: rgba(0,0,0,.1);
+    margin-top: -21px;
+    background: rgba(0,0,0,.05);
     width: 100%;
-
 }
 
 
@@ -61,11 +60,12 @@ input::-moz-placeholder,
 input:-ms-input-placeholder,
 input:-moz-placeholder { color: #aab8c3; } 
 h1 {
-    text-align: left;
+text-align: left;
     margin-bottom: 40px;
     font-size: 20px;
-    font-weight: 100;
-    font-family: Bungee;
+    font-weight: 700;
+    margin-top: -6px;
+    font-family: 'Overpass';
 }
 .content-wrapper {
   padding: 80px 30px;

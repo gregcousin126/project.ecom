@@ -150,19 +150,19 @@ color: white;
    }
  }
  .product-card:hover, .product-card:focus  {
-   box-shadow: 1px 0rem 14px 0px #eee;
+   /* box-shadow: 1px 0rem 14px 0px #eee; */
    outline: none;
  }
  .product-card:hover .add-to-cart-btn{
    opacity: 1;
  }
 /* For keyboard controls */
- .product-card:focus .add-to-cart-btn {
+ /* .product-card:focus .add-to-cart-btn {
    opacity: 1;
  }
  .add-to-cart-btn:focus {
    opacity: 1;
- }
+ } */
  .product-title {
    margin-top: 10px;
    margin-bottom: 5px;

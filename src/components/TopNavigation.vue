@@ -215,7 +215,7 @@ float: right;
     /* width: 8%; */
     float: left;
     /* font-size: 2em; */
-    padding: 28px 20px 21px 0px;
+    padding: 28px 20px 20px 10px;
     text-decoration: none;
     /* right: 0; */
     /* position: relative; */
@@ -280,10 +280,10 @@ display: block;
     position: absolute;
     width: 23px;
     height: 22px;
-    border-radius: 12%;
-    top: -19px;
+    border-radius: 50%;
+    top: -21px;
     z-index: 1;
-    left: 12px;
+    left: 14px;
     /* right: -21px; */
     padding: 7%;
     text-align: center;
@@ -466,7 +466,7 @@ border-spacing: 3px;
     margin-bottom: -2px;
     border-radius: 20%;
     overflow: hidden;
-    -webkit-border-radius: 20%;
+    -webkit-border-radius: 50%;
 }
 
 
@@ -501,7 +501,7 @@ position: absolute;
     height: 22px;
     border-radius: 100%;
     top: -9px;
-    right: -7px;
+    right: -8px;
     padding: 7%;
     text-align: center;
     background: #5044ff;
