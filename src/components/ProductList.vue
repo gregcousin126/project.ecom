@@ -154,7 +154,9 @@ color: white;
  @media (max-width: 600px) {
    .add-to-cart-btn {
      opacity: 1;
+     margin-top: 10px
    }
+   
  }
  .product-card:hover, .product-card:focus  {
    /* box-shadow: 1px 0rem 14px 0px #eee; */

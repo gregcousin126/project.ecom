@@ -87,8 +87,6 @@ export default {
           searchBtn.classList.add('active');
           searchInput.classList.add('active');
           active = true;
-          // searchBtn.focus
-            // searchInput.focus()
         }
       } 
     });

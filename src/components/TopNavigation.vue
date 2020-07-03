@@ -1,47 +1,44 @@
 <template>
-    <nav>
-      
-<header class="header">
-  <router-link to="/" exact><div class="logo"><logo></logo><p>XOTOPOLO</p></div></router-link>
-  <!-- <a href="" class="logo">CSS Nav</a> -->
-  <input class="menu-btn" type="checkbox" id="menu-btn" />
-  <ul class="menu">
-    <div class="main-nav-info-container">
-      
-      <div class="main-nav-info" v-if="JSON.stringify(currentUser) !== '{}'" >
-        <router-link  to="/register"><label for="openDropdown" class="dropdown">{{currentUser.displayName}}</label></router-link>
+  <nav>
+  <header class="header">
+    <router-link to="/" exact><div class="logo"><logo></logo><p>XOTOPOLO</p></div></router-link>
+    <input @click="hambergerCheck" class="menu-btn" type="checkbox" 
+    id="menu-btn"
+    ref="selected"
+    />
+    <ul class="menu">
+      <div class="main-nav-info-container">
+        <div class="main-nav-info" v-if="JSON.stringify(currentUser) !== '{}'" >
+          <router-link  to="/register"><label for="openDropdown" class="dropdown">{{currentUser.displayName}}</label></router-link>
+        </div>
+        <div class="main-nav-info" v-if="JSON.stringify(currentUser) === '{}'">
+            <router-link  to="/register"><label for="openDropdown" class="dropdown">Register</label></router-link>
+        </div>
+        <div class="main-nav-info" v-if="JSON.stringify(currentUser) === '{}'" >
+          <router-link  to="/signin"><label for="openDropdown" class="dropdown">Signin</label></router-link>
+        </div>
+        <div class="main-nav-info">
+            <router-link to="/cart" exact>
+              <div class="cart-link">
+                <div v-if="noItems > 0" class="cart-link__count">{{ noItems }}</div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-labelledby="shopicon" role="presentation" width="30" height="30">
+                  <title id="cart">Shopping Cart</title>
+                  <path fill="black" d="M8.01 10c-1.104 0-2 .896-2 2 0 1.105.896 2 2 2h10.376l10.53 49.813c-.107 1.14.952 2.245 2.095 2.187h50c1.057.015 2.03-.943 2.03-2s-.973-2.015-2.03-2H32.637l-1.688-8H85.01c.896-.01 1.742-.69 1.938-1.562l7-30c.26-1.16-.748-2.43-1.937-2.438H23.76l-1.78-8.437c-.2-.884-1.063-1.57-1.97-1.563zm16.594 14H89.51l-6.093 26H30.104zM42.01 72c-4.946 0-9 4.053-9 9s4.054 9 9 9c4.948 0 9-4.053 9-9s-4.052-9-9-9zm28 0c-4.946 0-9 4.053-9 9s4.054 9 9 9c4.948 0 9-4.053 9-9s-4.052-9-9-9zm-28 4c2.786 0 5 2.215 5 5s-2.214 5-5 5c-2.784 0-5-2.215-5-5s2.216-5 5-5zm28 0c2.786 0 5 2.215 5 5s-2.214 5-5 5c-2.784 0-5-2.215-5-5s2.216-5 5-5z"/>
+                </svg>
+              </div>
+            </router-link>
+        </div>
       </div>
-      <div class="main-nav-info" v-if="JSON.stringify(currentUser) === '{}'">
-          <router-link  to="/register"><label for="openDropdown" class="dropdown">Register</label></router-link>
-      </div>
-      
-      <div class="main-nav-info" v-if="JSON.stringify(currentUser) === '{}'" >
-        <router-link  to="/signin"><label for="openDropdown" class="dropdown">Signin</label></router-link>
-      </div>
-      
-      <div class="main-nav-info">
-          <router-link to="/cart" exact>
-            <div class="cart-link">
-              <div v-if="noItems > 0" class="cart-link__count">{{ noItems }}</div>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-labelledby="shopicon" role="presentation" width="30" height="30">
-                <title id="cart">Shopping Cart</title>
-                <path fill="black" d="M8.01 10c-1.104 0-2 .896-2 2 0 1.105.896 2 2 2h10.376l10.53 49.813c-.107 1.14.952 2.245 2.095 2.187h50c1.057.015 2.03-.943 2.03-2s-.973-2.015-2.03-2H32.637l-1.688-8H85.01c.896-.01 1.742-.69 1.938-1.562l7-30c.26-1.16-.748-2.43-1.937-2.438H23.76l-1.78-8.437c-.2-.884-1.063-1.57-1.97-1.563zm16.594 14H89.51l-6.093 26H30.104zM42.01 72c-4.946 0-9 4.053-9 9s4.054 9 9 9c4.948 0 9-4.053 9-9s-4.052-9-9-9zm28 0c-4.946 0-9 4.053-9 9s4.054 9 9 9c4.948 0 9-4.053 9-9s-4.052-9-9-9zm-28 4c2.786 0 5 2.215 5 5s-2.214 5-5 5c-2.784 0-5-2.215-5-5s2.216-5 5-5zm28 0c2.786 0 5 2.215 5 5s-2.214 5-5 5c-2.784 0-5-2.215-5-5s2.216-5 5-5z"/>
-              </svg>
-            </div>
-          </router-link>
-      </div>
-    </div>
-    <li v-for="categlories in products">
-        <router-link class="router-links" :to="`${categlories}`">{{categlories}}</router-link>
-    </li>
-  </ul>
-
-  <label class="menu-icon" for="menu-btn"><span class="navicon">
-      <div v-if="noItems > 0" class="cart-link__count__menu-btn">{{ noItems }}</div>
-  </span>
-  </label>
-  
-</header>
+      <li v-for="categlories in products">
+          <router-link class="router-links" :to="`${categlories}`">{{categlories}}</router-link>
+      </li>
+    </ul>
+    <label class="menu-icon" for="menu-btn" ><span class="navicon">
+        <div v-if="noItems > 0" class="cart-link__count__menu-btn" id="cart-link__count__function">{{ noItems }}</div>
+    </span>
+    </label>
+    
+  </header>
 <!--       
   <div class="header">
       <router-link to="/" exact><div class="logo"><logo></logo><p>XOTOPOLO</p></div></router-link>
@@ -109,6 +106,7 @@ export default {
         password: '',
         displayName: null,
         photoURL: null,
+        // check: this.checked,
         newPassword: null,
         favoriteFood: null,
         authUser: null
@@ -119,6 +117,32 @@ export default {
     // Authchange,
   },
   methods :{
+    
+    // function() { 
+      
+      
+      
+      
+
+      // if(this.$refs.selected.checked == true) {
+
+    //  if (checkbox.checked = true) {
+
+      
+      
+      
+ 
+    //  } else {
+       
+    //  } else {
+      // mainContainer.animate([  { padding: '80px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+      // }
+      
+      
+     
+    // },
+    
+    
         signOut () {
         firebaseAuth().signOut();
         this.$store.state.cartItems = 0; 
@@ -126,9 +150,17 @@ export default {
         
       },
       
+       hambergerCheck() {
+        var checkbox = document.getElementById("menu-btn");
+        var sign = document.getElementById("cart-link__count__function");
+        if (checkBox.checked == true && sign != null){ sign.style.display = "none"; } 
+        else if (checkBox.checked != true && sign != null) { sign.style.display = "block"; }
+      },
+      
   },
   computed: {
-   
+
+    
     products() {
       var arr = []; 
       this.$store.state.products.forEach((item) => {arr.push(item.category)});
@@ -140,62 +172,47 @@ export default {
       return this.$store.state.cartItems
     },
     
-      // computed: {
     ...mapGetters({
           currentUser : 'currentUser',
     }),
   },
   
 mounted () {
-// console.log('currentUser :>> ', this.currentUser);
   
-    // function() {
-      // const drowdownArrow = document.querySelector('.fa-angle-down');
-      // const checkbox = document.getElementById('openDropdown');
-      // const dropdownMenu = document.querySelector('.dropdown-menu');
+      var headerLink = document.querySelectorAll('.header a, .header li a');
+      console.log('headerLink: ', headerLink);
+      headerLink.forEach(element => { element.addEventListener('click', function() { document.getElementById("menu-btn").checked.checked = false; }, true);});
+  
+  if (document.getElementById("menu-btn").checked == true) {
+    
+    
+    
+      // var checkbox = document.getElementById("menu-btn");
+      // var mainContainer = document.getElementById('wrapper');
       
-      // checkbox.addEventListener('change', () => {
-      //   drowdownArrow.classList.toggle('rotate-dropdown-arrow');
-      // });
-      // dropdownMenu.addEventListener('click', (e) => {
-      // checkbox.checked = false;
-      // checkbox.dispatchEvent(new Event('change'));
-      // })
-    // }
-  },
-  
-  // created() {
-  // }
-
+      
+      
+        window.addEventListener('resize', function() { if (window.matchMedia('(min-width: 51em)').matches) { document.getElementById("menu-btn").checked = false} }, true);
+    }
+  }
 }
 </script>
 
 <style lang="css">
 .main-nav-info-container{
   float: right;
-  /* align-self: center; */
 }
 .main-nav-info {
-float: right;
-    /* display: -webkit-box; */
+    float: right;
     display: -ms-flexbox;
-    /* clear: none; */
-    /* float: right; */
-    /* top: 0; */
     display: block;
-    /* width: 8%; */
     float: left;
-    /* font-size: 2em; */
     padding: 20px 20px 15px 10px;
     text-decoration: none;
-    /* right: 0; */
-    /* position: relative; */
-    /* display: -webkit-box; */
     display: block;
     max-height: none;
     margin: 0;
     place-self: center;
-    /* padding: 0; */
     list-style: none;
     overflow: hidden;
     background-color: #fff;
@@ -203,19 +220,14 @@ float: right;
 }
 
 .header {
-    /* -webkit-box-align: center; */
     -ms-flex-align: center;
-    /* align-items: center; */
     background-color: #fff;
     -webkit-box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
     position: fixed;
-    /* align-content: baseline; */
     width: 100%;
     z-index: 3;
     place-content: space-between;
-    /* align-content: center; */
-    /* display: -webkit-box; */
     display: -ms-flexbox;
     display: flex;
 }
@@ -231,7 +243,6 @@ float: right;
 .header li a {
 display: block;
     padding: 0px 22px 26px;
-    /* padding-bottom: 30px; */
     border-right: 1px solid #f4f4f4;
     text-decoration: none;
 }
@@ -272,7 +283,7 @@ display: block;
     position: relative;
     /* top: -17px; */
     color: mediumpurple;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
 }
 
@@ -353,7 +364,6 @@ background: #f8f8f8;
 
 .header .menu-btn:checked ~ .menu {
  max-height: 400px;
-    margin-top: 78px;
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -375,33 +385,7 @@ background: #f8f8f8;
 
 /* 48em = 768px */
 
-@media (max-width: 48em) {
-      .header li a:hover, .header .menu-btn:hover{
-    background: none;
-  }
-}
-@media (min-width: 51em) {
 
-  /* .header li a:hover,
-.header .menu-btn:hover {
-  background-color: transparent;
-} */
-
-  .header li {
-    float: left;
-  }
-  .header li a {
-    padding: 25px 21px;
-  }
-  .header .menu {
-    clear: none;
-    /* float: right; */
-    max-height: none;
-  }
-  .header .menu-icon {
-    display: none;
-  }
-}
 body {
   margin: 0;
   font-family: Helvetica, sans-serif;
@@ -479,6 +463,49 @@ position: absolute;
   
 }
 
+@media (max-width: 48em) {
+  .cart-link svg {
+    width: 44px;
+    border: 2px solid;
+    padding: 3px;
+    height: 44px;
+    border-radius: 4px;
+  }
+  .dropdown {
+    padding: 7px 14px 6px 14px;
+    font-size: 1.2em;
+  }
+      .header li a:hover, .header .menu-btn:hover{
+    background: none;
+  }
+    .header li a {
+      padding: 5px 0px 25px;
+    border-right: 0px;
+  /* background-color: transparent; */
+}
+.main-nav-info {
+      padding: 15px 15px 25px 15px;
+}
+}
+@media (min-width: 51em) {
+
+
+
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 25px 21px;
+  }
+  .header .menu {
+    clear: none;
+    /* float: right; */
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
 
 /* 
 body {

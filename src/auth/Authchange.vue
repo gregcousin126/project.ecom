@@ -45,7 +45,8 @@ export default {
       return {
         email: '',
         password: '',
-        displayName: null,       photoURL: null,
+        displayName: null,       
+        photoURL: null,
         newPassword: null,
         favoriteFood: null,
         authUser: null,

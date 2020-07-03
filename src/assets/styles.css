@@ -33,7 +33,7 @@ button {
     /* display: none; */
     border-radius: 5px;
     cursor: pointer;
-    background: white;
+    /* background: white; */
     color: #5044ff;
     border: 1px solid #5044ff;
     text-transform: uppercase;
