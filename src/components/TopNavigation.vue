@@ -8,16 +8,16 @@
     />
     <ul class="menu">
       <div class="main-nav-info-container">
-        <div class="main-nav-info" v-if="JSON.stringify(currentUser) !== '{}'" >
+        <div class="main-nav-info" @click="hambergerOff" v-if="JSON.stringify(currentUser) !== '{}'" >
           <router-link  to="/register"><label for="openDropdown" class="dropdown">{{currentUser.displayName}}</label></router-link>
         </div>
-        <div class="main-nav-info" v-if="JSON.stringify(currentUser) === '{}'">
+        <div class="main-nav-info" @click="hambergerOff" v-if="JSON.stringify(currentUser) === '{}'">
             <router-link  to="/register"><label for="openDropdown" class="dropdown">Register</label></router-link>
         </div>
-        <div class="main-nav-info" v-if="JSON.stringify(currentUser) === '{}'" >
+        <div class="main-nav-info" @click="hambergerOff" v-if="JSON.stringify(currentUser) === '{}'" >
           <router-link  to="/signin"><label for="openDropdown" class="dropdown">Signin</label></router-link>
         </div>
-        <div class="main-nav-info">
+        <div class="main-nav-info" @click="hambergerOff">
             <router-link to="/cart" exact>
               <div class="cart-link">
                 <div v-if="noItems > 0" class="cart-link__count">{{ noItems }}</div>
@@ -30,11 +30,13 @@
         </div>
       </div>
       <li v-for="categlories in products">
-          <router-link class="router-links" :to="`${categlories}`">{{categlories}}</router-link>
+        <div @click="hambergerOff">
+          <router-link class="router-links"   :to="`${categlories}`">{{categlories}}</router-link>
+        </div>
       </li>
     </ul>
     <label class="menu-icon" for="menu-btn" ><span class="navicon">
-        <div v-if="noItems > 0" class="cart-link__count__menu-btn" id="cart-link__count__function">{{ noItems }}</div>
+        <div v-if="noItems > 0"  class="cart-link__count__menu-btn" id="cart-link__count__function">{{ noItems }}</div>
     </span>
     </label>
     
@@ -97,6 +99,8 @@ import logo from '@/assets/logo'
 import firebase from 'firebase'
 import {mapState, mapGetters, mapActions} from 'vuex'
 import { firebaseAuth } from '../../config/firebase'
+// import './function'
+
 
 export default {
   name:'TopNavigation',
@@ -117,33 +121,8 @@ export default {
     // Authchange,
   },
   methods :{
-    
-    // function() { 
-      
-      
-      
-      
 
-      // if(this.$refs.selected.checked == true) {
-
-    //  if (checkbox.checked = true) {
-
-      
-      
-      
- 
-    //  } else {
-       
-    //  } else {
-      // mainContainer.animate([  { padding: '80px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
-      // }
-      
-      
-     
-    // },
-    
-    
-        signOut () {
+      signOut () {
         firebaseAuth().signOut();
         this.$store.state.cartItems = 0; 
         this.$store.state.cart= []; 
@@ -152,15 +131,27 @@ export default {
       
        hambergerCheck() {
         var checkbox = document.getElementById("menu-btn");
+        var mainContainer = document.getElementById('wrapper');
         var sign = document.getElementById("cart-link__count__function");
-        if (checkBox.checked == true && sign != null){ sign.style.display = "none"; } 
-        else if (checkBox.checked != true && sign != null) { sign.style.display = "block"; }
+        if (checkbox.checked == true) {
+          mainContainer.animate([ { padding: '80px 20px' }, { padding: '330px 20px' }, ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+          if (checkbox.checked == true && sign != null){ sign.style.display = "none"; } 
+          else if (checkbox.checked != true && sign != null) { sign.style.display = "block"; }
+        } else if (checkbox.checked != true) {
+          mainContainer.animate([  { padding: '330px 20px' },{ padding: '80px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+        }
       },
+      
+      hambergerOff() { 
+        var mainContainer = document.getElementById('wrapper');
+        var checkbox = document.getElementById("menu-btn");
+        checkbox.checked = false;
+        mainContainer.animate([  { padding: '330px 20px' },{ padding: '80px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+       }
+      
       
   },
   computed: {
-
-    
     products() {
       var arr = []; 
       this.$store.state.products.forEach((item) => {arr.push(item.category)});
@@ -173,35 +164,25 @@ export default {
     },
     
     ...mapGetters({
-          currentUser : 'currentUser',
+      currentUser : 'currentUser',
     }),
   },
   
 mounted () {
-  
-      var headerLink = document.querySelectorAll('.header a, .header li a');
-      console.log('headerLink: ', headerLink);
-      headerLink.forEach(element => { element.addEventListener('click', function() { document.getElementById("menu-btn").checked.checked = false; }, true);});
-  
-  if (document.getElementById("menu-btn").checked == true) {
-    
-    
-    
-      // var checkbox = document.getElementById("menu-btn");
-      // var mainContainer = document.getElementById('wrapper');
-      
-      
-      
-        window.addEventListener('resize', function() { if (window.matchMedia('(min-width: 51em)').matches) { document.getElementById("menu-btn").checked = false} }, true);
-    }
+  window.addEventListener('resize', function() {
+			if (window.matchMedia('(min-width: 51em)').matches) { document.getElementById("menu-btn").checked = false }
+		}, true);
   }
 }
+
+
 </script>
 
 <style lang="css">
 .main-nav-info-container{
   float: right;
 }
+
 .main-nav-info {
     float: right;
     display: -ms-flexbox;
@@ -270,18 +251,12 @@ display: block;
 }
 
 .header .logo {
-    display: inline-block;
-    /* text-align: center; */
-    float: left;
-    /* padding: 5px; */
-    /* font-size: 2em; */
+    display: block;
     top: 2px;
-    margin: 0 auto;
     padding: 5px 10px 5px 10px;
     text-decoration: none;
-        float: left;
+    float: left;
     position: relative;
-    /* top: -17px; */
     color: mediumpurple;
     font-size: 12px;
     font-weight: 500;
@@ -465,10 +440,10 @@ position: absolute;
 
 @media (max-width: 48em) {
   .cart-link svg {
-    width: 44px;
+    width: 42px;
     border: 2px solid;
     padding: 3px;
-    height: 44px;
+    height: 42px;
     border-radius: 4px;
   }
   .dropdown {
@@ -484,7 +459,7 @@ position: absolute;
   /* background-color: transparent; */
 }
 .main-nav-info {
-      padding: 15px 15px 25px 15px;
+      padding: 15px 14px 16px 14px;
 }
 }
 @media (min-width: 51em) {
