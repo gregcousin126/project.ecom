@@ -125,18 +125,28 @@ export default {
         var checkbox = document.getElementById("menu-btn");
         var mainContainer = document.getElementById('wrapper');
         var sign = document.getElementById("cart-link__count__function");
-        if (checkbox.checked == true) {
-          mainContainer.animate([ { padding: '80px 20px' }, { padding: '330px 20px' }, ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
-          if (checkbox.checked == true && sign != null){ sign.style.display = "none"; } 
-          else if (checkbox.checked != true && sign != null) { sign.style.display = "block"; }
-        } else if (checkbox.checked != true) {
-          mainContainer.animate([  { padding: '330px 20px' },{ padding: '80px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+        if (checkbox.checked == true && this.userAgentChecker() != true) {
+          mainContainer.animate([ { padding: '100px 20px' }, { padding: '320px 20px' }, ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+          if (checkbox.checked == true && sign != null && this.userAgentChecker() != true){ sign.style.display = "none"; } 
+          else if (checkbox.checked != true && sign != null && this.userAgentChecker() != true) { sign.style.display = "block"; }
+        } else if (checkbox.checked != true && this.userAgentChecker() != true) {
+          mainContainer.animate([  { padding: '320px 20px' },{ padding: '100px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+        } 
+   
+        
+      },
+      
+      userAgentChecker() {
+        if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          return false 
+        } else {
+          return true
         }
       },
       
       hambergerOff() { 
         document.getElementById("menu-btn").checked = false;
-        document.getElementById('wrapper').animate([  { padding: '330px 20px' },{ padding: '80px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+        document.getElementById('wrapper').animate([  { padding: '320px 20px' },{ padding: '100px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
        }
       
       

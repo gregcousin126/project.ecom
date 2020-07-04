@@ -202,7 +202,7 @@ ul {
 .cart-product-card:hover {
 	transform: translateY(-0.3rem) translateX(-0.3rem) scale(1.0125);
 	box-shadow: 6px 6px 1.5px 0px rgba(0,0,0,0.2);
-    border-radius: 4px;
+  border-radius: 4px;
 	/* box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5); */
 }
 
