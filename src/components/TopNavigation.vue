@@ -3,29 +3,26 @@
   <header class="header">
     <router-link to="/" exact><div class="logo"><logo></logo><p>XOTOPOLO</p></div></router-link>
     <input @click="hambergerCheck" class="menu-btn" type="checkbox" id="menu-btn" ref="selected" />
-    <ul class="menu">
-      <div class="main-nav-info-container">
-        <div class="main-nav-info" @click="hambergerOff" v-if="JSON.stringify(currentUser) !== '{}'" >
-          <router-link  to="/register"><label for="openDropdown" class="dropdown">{{currentUser.displayName}}</label></router-link>
-        </div>
-        <div class="main-nav-info" @click="hambergerOff" v-if="JSON.stringify(currentUser) === '{}'">
-            <router-link  to="/register"><label for="openDropdown" class="dropdown">Register</label></router-link>
-        </div>
-        <div class="main-nav-info" @click="hambergerOff" v-if="JSON.stringify(currentUser) === '{}'" >
-          <router-link  to="/signin"><label for="openDropdown" class="dropdown">Signin</label></router-link>
-        </div>
-        <div class="main-nav-info" @click="hambergerOff">
-            <router-link to="/cart" exact>
-              <div class="cart-link">
-                <div v-if="noItems > 0" class="cart-link__count">{{ noItems }}</div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-labelledby="shopicon" role="presentation" width="30" height="30">
-                  <title id="cart">Shopping Cart</title>
-                  <path fill="black" d="M8.01 10c-1.104 0-2 .896-2 2 0 1.105.896 2 2 2h10.376l10.53 49.813c-.107 1.14.952 2.245 2.095 2.187h50c1.057.015 2.03-.943 2.03-2s-.973-2.015-2.03-2H32.637l-1.688-8H85.01c.896-.01 1.742-.69 1.938-1.562l7-30c.26-1.16-.748-2.43-1.937-2.438H23.76l-1.78-8.437c-.2-.884-1.063-1.57-1.97-1.563zm16.594 14H89.51l-6.093 26H30.104zM42.01 72c-4.946 0-9 4.053-9 9s4.054 9 9 9c4.948 0 9-4.053 9-9s-4.052-9-9-9zm28 0c-4.946 0-9 4.053-9 9s4.054 9 9 9c4.948 0 9-4.053 9-9s-4.052-9-9-9zm-28 4c2.786 0 5 2.215 5 5s-2.214 5-5 5c-2.784 0-5-2.215-5-5s2.216-5 5-5zm28 0c2.786 0 5 2.215 5 5s-2.214 5-5 5c-2.784 0-5-2.215-5-5s2.216-5 5-5z"/>
-                </svg>
-              </div>
+    <ul class="menu" id="menu">
+      <li class="main-nav-info-container">
+        <a class="main-nav-info" @click="hambergerOff" v-if="JSON.stringify(currentUser) !== '{}'" >
+          <router-link to="/register"><label for="openDropdown" class="dropdown router-links">{{currentUser.displayName}}</label></router-link>
+        </a>
+        <a class="main-nav-info" @click="hambergerOff" v-if="JSON.stringify(currentUser) === '{}'">
+            <router-link  to="/register"><label for="openDropdown" class="dropdown router-links">Register</label></router-link>
+        </a>
+        <a class="main-nav-info" @click="hambergerOff" v-if="JSON.stringify(currentUser) === '{}'" >
+          <router-link  to="/signin"><label for="openDropdown" class="dropdown router-links">Signin</label></router-link>
+        </a>
+        <a class="main-nav-info" @click="hambergerOff" v-if="JSON.stringify(currentUser) === '{}'" >
+            <router-link to="/cart" >
+         <label for="openDropdown" class="dropdown router-links cart-link">
+        <div v-if="noItems > 0" class="cart-link__count" id="link__count__regular">{{ noItems }}</div>
+        <i class="fas fa-shopping-basket"></i>
+            </label>
             </router-link>
-        </div>
-      </div>
+        </a>
+      </li>
       <li v-for="categlories in products">
         <div @click="hambergerOff">
           <router-link class="router-links"   :to="`${categlories}`">{{categlories}}</router-link>
@@ -33,7 +30,7 @@
       </li>
     </ul>
     <label class="menu-icon" for="menu-btn" ><span class="navicon">
-        <div v-if="noItems > 0"  class="cart-link__count__menu-btn" id="cart-link__count__function">{{ noItems }}</div>
+        <div v-if="noItems > 0"  class="cart-link__count__menu-btn" id="link__count__burger"> {{ noItems }}</div>
     </span>
     </label>
     
@@ -124,27 +121,25 @@ export default {
        hambergerCheck() {
         var checkbox = document.getElementById("menu-btn");
         var mainContainer = document.getElementById('wrapper');
-        var sign = document.getElementById("cart-link__count__function");
+        var burger = document.getElementById("link__count__burger");
         
         
-        // for desktops
-        if (checkbox.checked == true && this.userAgentChecker() != true) {
-          mainContainer.animate([ { padding: '100px 20px' }, { padding: '320px 20px' }, ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
-          if (checkbox.checked == true && sign != null && this.userAgentChecker() != true){ sign.style.display = "none"; } 
-          else if (checkbox.checked != true && sign != null && this.userAgentChecker() != true) { sign.style.display = "block"; }
-        } else if (checkbox.checked != true && this.userAgentChecker() != true) {
-          mainContainer.animate([  { padding: '320px 20px' },{ padding: '100px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
-           sign.style.display = "block";
-        } 
+        // for desktop
+        if (window.matchMedia('(min-width: 51em)').matches) { burger.style.display = "none"}
+        if (checkbox.checked == true && this.userAgentChecker() != true) {mainContainer.animate([ { padding: '100px 20px' }, { padding: '320px 20px' }, ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+        if (checkbox.checked == true && burger != null && this.userAgentChecker() != true){ burger.style.display = "none"; } 
+        else if (checkbox.checked != true && burger != null && this.userAgentChecker() != true) { burger.style.display = "block"; }} 
+        else if (checkbox.checked != true && this.userAgentChecker() != true) {mainContainer.animate([  { padding: '320px 20px' },{ padding: '100px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });burger.style.display = "block";} 
+        
         
         // for mobile
         if (checkbox.checked == true && this.userAgentChecker() == true) {
           mainContainer.animate([ { padding: '100px 20px' }, { padding: '380px 20px' }, ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
-          if (checkbox.checked == true && sign != null && this.userAgentChecker() == true){ sign.style.display = "none"; } 
-          else if (checkbox.checked != true && sign != null && this.userAgentChecker() == true) { sign.style.display = "block"; }
+          if (checkbox.checked == true && burger != null && this.userAgentChecker() == true){ burger.style.display = "none"; } 
+          else if (checkbox.checked != true && burger != null && this.userAgentChecker() == true) { burger.style.display = "block"; }
         } else if (checkbox.checked != true && this.userAgentChecker() == true) {
           mainContainer.animate([  { padding: '380px 20px' },{ padding: '100px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
-           sign.style.display = "block";
+           burger.style.display = "block";
         } 
         
         
@@ -185,9 +180,17 @@ export default {
   },
   
 mounted () {
+
   window.addEventListener('resize', function() {
-			if (window.matchMedia('(min-width: 51em)').matches) { document.getElementById("menu-btn").checked = false }
+			if (window.matchMedia('(min-width: 51em)').matches) { 
+        document.getElementById("menu-btn").checked = false 
+        
+        } 
 		}, true);
+    
+ 
+    
+    
   }
 }
 
@@ -196,24 +199,33 @@ mounted () {
 
 <style lang="css">
 .main-nav-info-container{
-  float: right;
+    /* float: right; */
+    /* height: 100%; */
+    z-index: 0;
+    width: auto;
+    /* display: grid; */
+    /* grid-auto-flow: row; */
+    display: inline-block;
 }
 
 .main-nav-info {
-    float: right;
+    /* float: right; */
     display: -ms-flexbox;
-    display: block;
-    float: left;
-    padding: 20px 20px 15px 10px;
+    /* display: block; */
+    /* float: inherit; */
+    /* padding: 20px 20px 15px 10px; */
     text-decoration: none;
-    display: block;
+    display: inline-block;
     max-height: none;
-    margin: 0;
+    /* width: 108px; */
+    margin: 0 auto;
+    place-content: space-evenly;
     place-self: center;
-    list-style: none;
-    overflow: hidden;
+    /* list-style: none; */
+    /* overflow: hidden; */
     background-color: #fff;
-    height: 100%;
+    overflow-wrap: anywhere;
+    /* height: 100%; */
 }
 
 .header {
@@ -238,32 +250,32 @@ mounted () {
 }
 
 .header li a {
-display: block;
-    padding: 0px 22px 26px;
-    border-right: 1px solid #f4f4f4;
+display: inline-block;
+    /* padding: 0px 22px 26px; */
+    /* border-right: 1px solid #f4f4f4; */
     text-decoration: none;
 }
 
-.header li a:hover,
+.header li:hover,
 .header .menu-btn:hover {
   background-color: #ededed;
 }
 
 .cart-link__count__menu-btn {
-    position: absolute;
-    width: 22px;
-    height: 22px;
+position: absolute;
+    width: 23px;
+    height: 23px;
     border-radius: 50%;
-    top: -21px;
+    top: -22px;
     z-index: 1;
     left: 15px;
     /* right: -21px; */
-    padding: 7%;
+    padding: 3px;
     text-align: center;
     background: #5044ffff;
     color: #fff;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .header .logo {
@@ -281,7 +293,9 @@ display: block;
 /* menu */
 
 .header .menu {
+  align-self: center;
   clear: both;
+  margin: 0 auto;
   max-height: 0;
   transition: max-height .2s ease-out;
 }
@@ -313,20 +327,27 @@ display: block;
 .dropdown {
 background: #f8f8f8;
     border-radius: 4px;
-    height: auto;
-    width: 100%;
+    /* height: auto; */
+    /* width: 100%; */
     display: -webkit-box;
     display: -ms-flexbox;
-    border: 2px solid;
-    display: block;
+    
+    
+    /* border: 2px solid; */
+    display: inline-block;
     -ms-flex-pack: distribute;
-    justify-content: space-around;
-    padding: 3px 10px 3px 10px;
-    font-size: 1.1rem;
+    /* justify-content: space-around; */
+    /* padding: 3px 10px 3px 10px; */
+    /* font-size: 1.1rem; */
     cursor: pointer;
-    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+    /* -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3); */
+    box-shadow: inset 0 0 0 2px black, inset 0 0 0 10px white;
 }
+
+/* 
+.shopping-cart {
+  background: white;
+} */
 
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
@@ -338,6 +359,8 @@ background: #f8f8f8;
   transition: all .2s ease-out;
   width: 100%;
 }
+
+
 
 .header .menu-icon .navicon:before {
   top: 7px;
@@ -354,7 +377,7 @@ background: #f8f8f8;
 }
 
 .header .menu-btn:checked ~ .menu {
- max-height: 400px;
+ max-height: 700px;
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -409,8 +432,9 @@ border-spacing: 3px;
 }
 
 .logo svg {
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 .logo p {
 }
@@ -420,35 +444,32 @@ border-spacing: 3px;
 }
 
 .cart-link {
-  float: right;
+  /* float: right; */
   position: relative;
 
 }
-.cart-link svg {
-width: 35px;
-    border: 2px solid;
-    padding: 4px;
-    height: 33px;
-    border-radius: 4px;
-}
+
 
 .cart-link__count {
 position: absolute;
-    width: 23px;
-    height: 22px;
     border-radius: 100%;
-    top: -9px;
-    right: -8px;
-    padding: 7%;
+    /* top: 0; */
+    /* z-index: 0; */
+    height: 25px;
+    top: -8px;
+    /* right: -8px; */
+    width: 26px;
+    margin-left: 16px;
+    padding: 6px;
     text-align: center;
     background: #5044ff;
     color: #fff;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 500;
 } 
 
 @media(max-width: 660px) {
-  .header li a:hover, .header .menu-btn:hover{
+  .header li:hover, .header .menu-btn:hover{
     background: none;
   }
   
@@ -456,22 +477,22 @@ position: absolute;
 
 @media (max-width: 48em) {
   .cart-link svg {
-    width: 42px;
-    border: 2px solid;
-    padding: 3px;
-    height: 42px;
-    border-radius: 4px;
+    /* width: 42px; */
+    /* border: 2px solid; */
+    /* padding: 3px; */
+    /* height: 42px; */
+    /* border-radius: 4px; */
   }
   .dropdown {
-    padding: 7px 14px 6px 14px;
+    /* padding: 7px 14px 6px 14px; */
     font-size: 1.2em;
   }
-      .header li a:hover, .header .menu-btn:hover{
+      .header li:hover, .header .menu-btn:hover{
     background: none;
   }
     .header li a {
-      padding: 0px 0px 20px;
-    border-right: 0px;
+      /* padding: 0px 0px 20px; */
+    /* border-right: 0px; */
   /* background-color: transparent; */
 }
 .main-nav-info {
@@ -483,10 +504,10 @@ position: absolute;
 
 
   .header li {
-    float: left;
+    float: right;
   }
-  .header li a {
-    padding: 25px 21px;
+  .header li{
+    padding: 10px 10px;
   }
   .header .menu {
     clear: none;
@@ -532,7 +553,7 @@ a {
   text-decoration: none;
 }
 
-.header li a:hover,
+.header li:hover,
 .header .menu-btn:hover {
   background-color: #f4f4f4;
 }
