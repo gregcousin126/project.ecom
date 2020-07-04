@@ -125,14 +125,28 @@ export default {
         var checkbox = document.getElementById("menu-btn");
         var mainContainer = document.getElementById('wrapper');
         var sign = document.getElementById("cart-link__count__function");
+        
+        
+        // for desktops
         if (checkbox.checked == true && this.userAgentChecker() != true) {
           mainContainer.animate([ { padding: '100px 20px' }, { padding: '320px 20px' }, ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
           if (checkbox.checked == true && sign != null && this.userAgentChecker() != true){ sign.style.display = "none"; } 
           else if (checkbox.checked != true && sign != null && this.userAgentChecker() != true) { sign.style.display = "block"; }
         } else if (checkbox.checked != true && this.userAgentChecker() != true) {
           mainContainer.animate([  { padding: '320px 20px' },{ padding: '100px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+           sign.style.display = "block";
         } 
-   
+        
+        // for mobile
+        if (checkbox.checked == true && this.userAgentChecker() == true) {
+          mainContainer.animate([ { padding: '100px 20px' }, { padding: '380px 20px' }, ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+          if (checkbox.checked == true && sign != null && this.userAgentChecker() == true){ sign.style.display = "none"; } 
+          else if (checkbox.checked != true && sign != null && this.userAgentChecker() == true) { sign.style.display = "block"; }
+        } else if (checkbox.checked != true && this.userAgentChecker() == true) {
+          mainContainer.animate([  { padding: '380px 20px' },{ padding: '100px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+           sign.style.display = "block";
+        } 
+        
         
       },
       
@@ -145,8 +159,10 @@ export default {
       },
       
       hambergerOff() { 
+      if (!window.matchMedia('(min-width: 51em)').matches) {
         document.getElementById("menu-btn").checked = false;
         document.getElementById('wrapper').animate([  { padding: '320px 20px' },{ padding: '100px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+       }
        }
       
       
