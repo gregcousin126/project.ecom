@@ -2,10 +2,7 @@
   <nav>
   <header class="header">
     <router-link to="/" exact><div class="logo"><logo></logo><p>XOTOPOLO</p></div></router-link>
-    <input @click="hambergerCheck" class="menu-btn" type="checkbox" 
-    id="menu-btn"
-    ref="selected"
-    />
+    <input @click="hambergerCheck" class="menu-btn" type="checkbox" id="menu-btn" ref="selected" />
     <ul class="menu">
       <div class="main-nav-info-container">
         <div class="main-nav-info" @click="hambergerOff" v-if="JSON.stringify(currentUser) !== '{}'" >
@@ -99,8 +96,6 @@ import logo from '@/assets/logo'
 import firebase from 'firebase'
 import {mapState, mapGetters, mapActions} from 'vuex'
 import { firebaseAuth } from '../../config/firebase'
-// import './function'
-
 
 export default {
   name:'TopNavigation',
@@ -110,7 +105,6 @@ export default {
         password: '',
         displayName: null,
         photoURL: null,
-        // check: this.checked,
         newPassword: null,
         favoriteFood: null,
         authUser: null
@@ -118,7 +112,6 @@ export default {
     },
   components: {
     logo, 
-    // Authchange,
   },
   methods :{
 
@@ -126,7 +119,6 @@ export default {
         firebaseAuth().signOut();
         this.$store.state.cartItems = 0; 
         this.$store.state.cart= []; 
-        
       },
       
        hambergerCheck() {
@@ -143,10 +135,8 @@ export default {
       },
       
       hambergerOff() { 
-        var mainContainer = document.getElementById('wrapper');
-        var checkbox = document.getElementById("menu-btn");
-        checkbox.checked = false;
-        mainContainer.animate([  { padding: '330px 20px' },{ padding: '80px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+        document.getElementById("menu-btn").checked = false;
+        document.getElementById('wrapper').animate([  { padding: '330px 20px' },{ padding: '80px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
        }
       
       
@@ -454,12 +444,12 @@ position: absolute;
     background: none;
   }
     .header li a {
-      padding: 5px 0px 25px;
+      padding: 0px 0px 20px;
     border-right: 0px;
   /* background-color: transparent; */
 }
 .main-nav-info {
-      padding: 15px 14px 16px 14px;
+      padding: 15px 13px 16px 13px;
 }
 }
 @media (min-width: 51em) {
