@@ -14,15 +14,14 @@
           <h1>Register</h1>
           <!-- <h1>{{authUser}}</h1> -->
           <form @submit.prevent="register">
-            <input type="email" class="inputbox with-transform" v-model="email" placeholder="Type your email"/>
-            <input type="password" class="inputbox with-transform" v-model="password" placeholder="Pick your password"/>
-            <input type="displayName" class="inputbox with-transform" v-model="displayName" placeholder="Whats your name"/>
+            <input type="displayName" class="inputbox with-transform" v-model="displayName" placeholder="Hi 🖐️, whats your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'We need your name 😉'"/>
+            <input type="email" class="inputbox with-transform" v-model="email" placeholder="Type your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Do you have an email❓'"/>
+            <input type="password" class="inputbox with-transform" v-model="password" placeholder="Pick a password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your data is safe 🔒'"/>
             <a class="fp" href="index.html">Forgot Password?</a>
-            <br />
             <button type="submit" class="btn-register">Register</button>
+            <button type="button"  class="btn-register" @click="signinAnim" >signin</button>
           </form>
           <!-- <router-link to="/signin"> -->
-            <button class="btn-register" @click="signinAnim" >signin</button>
           <!-- </router-link> -->
         </div>
       </div>
@@ -211,7 +210,7 @@ display: grid;
 .top-register-container {
   z-index: 0;
   text-align: -webkit-center;
-  margin: 0 auto;
+   margin: 20px auto;
   
   /* border-radius: 10px;
       top: 50%;
@@ -332,7 +331,7 @@ body {
   font-size: small;
   transition: 0.3s;
   display: block;
-  margin: 10px;
+  margin: 15px;
 }
 
 .fp:hover {
@@ -341,19 +340,22 @@ body {
 
 .btn-register {
   width: 95px;
-  margin: 0px 0px 20px;
+  margin: 0px 4px 20px;
   display: inline-flex;
   place-content: center;
   border: none;
   background: -webkit-gradient(linear, left top, right top, from(#4568dc), to(#b06ab3));
   background: linear-gradient(to right, #4568dc, #b06ab3);
   border-radius: 4px;
-  -webkit-transition: 0.3s;
-  transition: 0.4s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .btn-register:hover {
   transform: scale(1.1);
+      /* transform: scale(1.1); */
+    /* font-family: 'Overpass'; */
+    letter-spacing: 1px;
 }
 
 .btn-register {
@@ -361,20 +363,7 @@ body {
   color: white;
 }
 
-@media (max-width: 48em) {
-  .image-register {
-    display: none;
-  }
 
-  .register-container {
-    
-    width: 100%;
-    padding: 15px;
-  }
-  .register-content {
-    border-radius: 5px;
-  }
-}
 
 /* animations */
 
@@ -391,6 +380,9 @@ body {
   -webkit-animation: shadeanm 6s ease-in-out infinite, fadeup .7s ease-in-out;
   animation: shadeanm 6s ease-in-out infinite, fadeup .7s ease-in-out;
 }
+
+
+
 
 .card:hover {
   transform: rotate3D(0, 0, 0, 0deg);
@@ -409,13 +401,13 @@ body {
 }
 @keyframes shadeanm {
   0% {
-    box-shadow: 0 5px 13px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 9px 8px -1px rgba(0, 0, 0, 0.65);
   }
   50% {
-    box-shadow: 0 20px 13px 0px rgba(0, 0, 0, 0.2);
+    box-shadow:0 10px 10px 4px rgba(0, 0, 0, 0.2);
   }
   100% {
-    box-shadow: 0 5px 13px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 9px 8px -1px rgba(0, 0, 0, 0.65);
   }
 }
 
@@ -445,6 +437,39 @@ body {
     -moz-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
+  }
+}
+
+
+@media (max-width: 48em) {
+  .image-register {
+    display: none;
+  }
+  
+  .card {
+  background: white;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transition: none;
+  transition:none;
+  -webkit-animation: none;
+  animation: none;
+}
+.cardcontainer {
+    -webkit-animation: none;
+    animation: none;
+}
+.register-container {
+  box-shadow: 0px 9px 19px -7px rgba(0, 0, 0, 0.603);
+}
+
+  .register-container {
+    
+    width: 100%;
+    padding: 15px;
+  }
+  .register-content {
+    border-radius: 5px;
   }
 }
 </style>

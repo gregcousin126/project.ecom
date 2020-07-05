@@ -14,18 +14,18 @@
         <a class="main-nav-info" @click="hambergerOff" v-if="JSON.stringify(currentUser) === '{}'" >
           <router-link  to="/signin"><label for="openDropdown" class="dropdown router-links">Signin</label></router-link>
         </a>
-        <a class="main-nav-info" @click="hambergerOff" v-if="JSON.stringify(currentUser) === '{}'" >
-            <router-link to="/cart" >
-         <label for="openDropdown" class="dropdown router-links cart-link">
-        <div v-if="noItems > 0" class="cart-link__count" id="link__count__regular">{{ noItems }}</div>
-        <i class="fas fa-shopping-basket"></i>
-            </label>
-            </router-link>
+        <a class="main-nav-info" @click="hambergerOff" >
+        <router-link to="/cart" >
+          <label for="openDropdown" class="dropdown router-links cart-link">
+           <div v-if="noItems > 0" class="cart-link__count" id="link__count__regular">{{ noItems }}</div>
+           <i class="fas fa-shopping-basket"></i>
+          </label>
+        </router-link>
         </a>
       </li>
-      <li v-for="categlories in products">
+      <li v-for="categlories in products" class="products-highlight">
         <div @click="hambergerOff">
-          <router-link class="router-links"   :to="`${categlories}`">{{categlories}}</router-link>
+          <router-link class="router-links" :to="`${categlories}`">{{categlories}}</router-link>
         </div>
       </li>
     </ul>
@@ -124,21 +124,23 @@ export default {
         var burger = document.getElementById("link__count__burger");
         
         
+        
+        
         // for desktop
         if (window.matchMedia('(min-width: 51em)').matches) { burger.style.display = "none"}
-        if (checkbox.checked == true && this.userAgentChecker() != true) {mainContainer.animate([ { padding: '100px 20px' }, { padding: '320px 20px' }, ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+        if (checkbox.checked == true && this.userAgentChecker() != true) {mainContainer.animate([ { padding: '100px 15px' }, { padding: '340px 20px' }, ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
         if (checkbox.checked == true && burger != null && this.userAgentChecker() != true){ burger.style.display = "none"; } 
         else if (checkbox.checked != true && burger != null && this.userAgentChecker() != true) { burger.style.display = "block"; }} 
-        else if (checkbox.checked != true && this.userAgentChecker() != true) {mainContainer.animate([  { padding: '320px 20px' },{ padding: '100px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });burger.style.display = "block";} 
+        else if (checkbox.checked != true && this.userAgentChecker() != true) {mainContainer.animate([  { padding: '340px 20px' },{ padding: '100px 15px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });burger.style.display = "block";} 
         
         
         // for mobile
         if (checkbox.checked == true && this.userAgentChecker() == true) {
-          mainContainer.animate([ { padding: '100px 20px' }, { padding: '380px 20px' }, ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+          mainContainer.animate([ { padding: '100px 15px' }, { padding: '330px 20px' }, ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
           if (checkbox.checked == true && burger != null && this.userAgentChecker() == true){ burger.style.display = "none"; } 
           else if (checkbox.checked != true && burger != null && this.userAgentChecker() == true) { burger.style.display = "block"; }
         } else if (checkbox.checked != true && this.userAgentChecker() == true) {
-          mainContainer.animate([  { padding: '380px 20px' },{ padding: '100px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+          mainContainer.animate([  { padding: '330px 20px' },{ padding: '100px 15px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
            burger.style.display = "block";
         } 
         
@@ -156,7 +158,7 @@ export default {
       hambergerOff() { 
       if (!window.matchMedia('(min-width: 51em)').matches) {
         document.getElementById("menu-btn").checked = false;
-        document.getElementById('wrapper').animate([  { padding: '320px 20px' },{ padding: '100px 20px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
+        document.getElementById('wrapper').animate([  { padding: '320px 20px' },{ padding: '100px 15px' } ], { duration: 100, easing: "ease-in", direction: "normal", fill: "forwards" });
        }
        }
       
@@ -182,11 +184,28 @@ export default {
 mounted () {
 
   window.addEventListener('resize', function() {
+
 			if (window.matchMedia('(min-width: 51em)').matches) { 
-        document.getElementById("menu-btn").checked = false 
+			// if (window.matchMedia('(max-width: 48em)').matches) { 
+        document.getElementById("menu-btn").checked = false;
+                if (document.getElementById("menu-btn").checked != true) {
+        // document.getElementById('wrapper').animate([ { padding: '340px 20px' }, { padding: '100px 15px' },], { duration: 2, easing: "ease-in", direction: "normal", fill: "forwards" });
+// document.getElementById("wrapper").style.padding = "100px 15px";
+
+            // document.getElementById('wrapper').style.padding = '100px 15px';
+                }
         
-        } 
+        
+        
+        // document.getElementById('wrapper').style.padding = '350px 20px';
+        // document.getElementById('wrapper').style.padding = '100px 15px';
+        // } else {
+          
+        }
+        
 		}, true);
+    
+    
     
  
     
@@ -198,15 +217,6 @@ mounted () {
 </script>
 
 <style lang="css">
-.main-nav-info-container{
-    /* float: right; */
-    /* height: 100%; */
-    z-index: 0;
-    width: auto;
-    /* display: grid; */
-    /* grid-auto-flow: row; */
-    display: inline-block;
-}
 
 .main-nav-info {
     /* float: right; */
@@ -218,7 +228,7 @@ mounted () {
     display: inline-block;
     max-height: none;
     /* width: 108px; */
-    margin: 0 auto;
+    margin-left: 10px;
     place-content: space-evenly;
     place-self: center;
     /* list-style: none; */
@@ -256,7 +266,7 @@ display: inline-block;
     text-decoration: none;
 }
 
-.header li:hover,
+.products-highlight:hover,
 .header .menu-btn:hover {
   background-color: #ededed;
 }
@@ -264,15 +274,17 @@ display: inline-block;
 .cart-link__count__menu-btn {
 position: absolute;
     width: 23px;
-    height: 23px;
-    border-radius: 50%;
-    top: -22px;
+    /* height: 23px; */
+    border-radius: 16px;
+    top: -19px;
     z-index: 1;
-    left: 15px;
-    /* right: -21px; */
-    padding: 3px;
-    text-align: center;
-    background: #5044ffff;
+    /* text-align: center; */
+    border: 2px solid #5044ff;
+    left: 13px;
+    /* margin: 0 auto; */
+    padding: 0;
+    /* text-align: center; */
+    background: #5044ff;
     color: #fff;
     font-size: 12px;
     font-weight: 500;
@@ -286,8 +298,9 @@ position: absolute;
     float: left;
     position: relative;
     color: mediumpurple;
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 800;
+    font-family: SpaceMono;
 }
 
 /* menu */
@@ -407,9 +420,9 @@ body {
 }
 
 .router-links {
-  font-family: 'Roboto Condensed', sans-serif;
+  /* font-family: 'Roboto Condensed', sans-serif; */
   padding: 12px;
-  font-size: 20px;
+  /* font-size: 20px; */
   font-weight: bold;
   text-decoration: none;
   text-transform: capitalize;
@@ -428,7 +441,7 @@ border-spacing: 3px;
     margin-bottom: -2px;
     border-radius: 20%;
     overflow: hidden;
-    -webkit-border-radius: 50%;
+    -webkit-border-radius: 30px;
 }
 
 .logo svg {
@@ -450,18 +463,16 @@ border-spacing: 3px;
 }
 
 
+
 .cart-link__count {
-position: absolute;
-    border-radius: 100%;
-    /* top: 0; */
-    /* z-index: 0; */
-    height: 25px;
-    top: -8px;
-    /* right: -8px; */
-    width: 26px;
-    margin-left: 16px;
-    padding: 6px;
-    text-align: center;
+    position: absolute;
+    width: 23px;
+    border-radius: 16px;
+    top: -6px;
+    z-index: 1;
+    border: 4px solid #5044ff;
+    left: 27px;
+    padding: 0;
     background: #5044ff;
     color: #fff;
     font-size: 12px;
@@ -469,7 +480,7 @@ position: absolute;
 } 
 
 @media(max-width: 660px) {
-  .header li:hover, .header .menu-btn:hover{
+  .products-highlight:hover, .header .menu-btn:hover{
     background: none;
   }
   
@@ -485,9 +496,9 @@ position: absolute;
   }
   .dropdown {
     /* padding: 7px 14px 6px 14px; */
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
   }
-      .header li:hover, .header .menu-btn:hover{
+      .products-highlight:hover, .header .menu-btn:hover{
     background: none;
   }
     .header li a {
@@ -496,7 +507,10 @@ position: absolute;
   /* background-color: transparent; */
 }
 .main-nav-info {
-      padding: 15px 13px 16px 13px;
+      margin-left: -10px;
+
+      /* padding: 15px 13px 16px 13px; */
+      padding: 15px 10px 16px 10px;
 }
 }
 @media (min-width: 51em) {
@@ -507,7 +521,7 @@ position: absolute;
     float: right;
   }
   .header li{
-    padding: 10px 10px;
+    padding: 10px 9px;
   }
   .header .menu {
     clear: none;
@@ -518,6 +532,27 @@ position: absolute;
     display: none;
   }
 }
+
+.main-nav-info-container:hover {
+  background-color: none;
+}
+
+
+.main-nav-info-container{
+    /* float: right; */
+    /* height: 100%; */
+    z-index: 0;
+    /* font-family: 'SpaceMono'; */
+    width: auto;
+    /* display: grid; */
+    /* grid-auto-flow: row; */
+    display: inline-block;
+}
+
+/* .products-highlight {
+  font-family: 'Overpass';
+} */
+
 
 /* 
 body {
@@ -553,7 +588,7 @@ a {
   text-decoration: none;
 }
 
-.header li:hover,
+.products-highlight:hover,
 .header .menu-btn:hover {
   background-color: #f4f4f4;
 }

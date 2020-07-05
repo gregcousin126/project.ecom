@@ -1,7 +1,7 @@
 <template>
   <div class="shopping-cart">
     <div v-if="$store.state.cart.length <= 0" class="empty-cart">
-      <p>Your cart is currently empty.</p>
+      <p>Your cart is currently empty. 😱</p>
       <router-link to="/"><button>Shop Now!</button></router-link>
     </div>
     <div v-else class="shopping-cart-items">
@@ -13,7 +13,7 @@
           <span class="product-price"> {{product.price | currency}} </span>
         <div class="quantity">
           <a @click="subtractCartItem(product)" href="#" class="quantity__minus" ><span>-</span></a>
-          <input name="quantity" type="text" class="quantity__input" :value="`${product.quantity}`">
+          <p name="quantity" type="text" class="quantity__input" :value="`${product.quantity}`">{{product.quantity}}</p>
           <a @click="addCartItem(product)" href="#" class="quantity__plus"><span>+</span></a>
         </div>
         </li>
@@ -54,7 +54,7 @@ export default {
 <style lang="css" scoped>
 
 .quantity {
-margin: 5px;
+margin: 13px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -64,34 +64,40 @@ margin: 5px;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    border-radius: 6px;
-    -webkit-box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.2);
+    /* border-radius: 6px; */
+    /* -webkit-box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.2); */
 }
 
 .quantity__minus,
 .quantity__plus {
-  display: block;
-  width: 22px;
-   border-radius: 6px;
-  height: 23px;
-  margin: 0;
-  background: #dee0ee;
-  text-decoration: none;
-  text-align: center;
-  line-height: 23px;
+display: block;
+    width: 33px;
+    border-radius: 20px;
+    height: 33px;
+    margin: 0;
+    background: #dee0ee;
+    text-decoration: none;
+    text-align: center;
+    line-height: 33px;
 }
 .quantity__minus:hover,
 .quantity__plus:hover {
   background: #575b716d;
   color: #fff;
 } 
-.quantity__minus {
+/* .quantity__minus {
 border-radius: 4px 0 0 6px;
 }
 .quantity__plus {
   border-radius: 0 6px 6px 0;
-}
+} */
+
 .quantity__input {
+  margin: 0px 11px 0px 11px;
+    font-size: 16px;
+    font-family: 'Overpass';
+}
+/* .quantity__input {
     width: 32px;
     height: 23px;
     margin: 0;
@@ -101,9 +107,8 @@ border-radius: 4px 0 0 6px;
     border-bottom: 2px solid #dee0ee;
     border-left: 1px solid #dee0ee;
     border-right: 2px solid #dee0ee;
-    /* background: #fff; */
     color: #8184a1;
-}
+} */
 .quantity__minus:link,
 .quantity__plus:link {
   color: #8184a1;
@@ -217,6 +222,36 @@ img {
 }
 
 @media(max-width: 600px) {
+  .cart-product-card {
+    width: 240px;
+  }
+  
+  .cart-product-card {
+	/* transform: translateY(-0.3rem) translateX(-0.3rem) scale(1.0125); */
+	box-shadow: 6px 6px 1.5px 0px rgba(0,0,0,0.2);
+  border-radius: 4px;
+	/* box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5); */
+}
+.cart-product-card:hover {
+	transform: none;
+	/* box-shadow: none; */
+  /* border-radius: none; */
+	/* box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5); */
+}
+  
+  .quantity__minus, .quantity__plus {
+      display: block;
+    width: 40px;
+    border-radius: 20px;
+    height: 40px;
+    font-size: 25px;
+    margin: 0;
+    background: #dee0ee;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+
+  }  
   .shopping-cart-items {
     flex-direction: column;
   }

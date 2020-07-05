@@ -154,7 +154,7 @@ color: white;
  @media (max-width: 600px) {
    .add-to-cart-btn {
      opacity: 1;
-     margin-top: 10px
+     margin-top: 14px
    }
    
  }
