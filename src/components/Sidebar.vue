@@ -7,26 +7,15 @@
       <input type="text" id="search-input" class="form-control"  name="search"  placeholder="Search" autocomplete="off" @input="searchFilter($event)">
     </form>
   </div>
-  
-  
-  
-          <button type="checkbox" class="sidebarbutton">
+
+      <button type="checkbox" class="sidebarbutton">
         <a id="show-sidebar" @click="showSidebar">
-            <!-- <input class="filterbutton" > -->
-            <!-- <span class="filter-btn"> -->
-            <span  class="filter-btn" ><p id="remove-filter">filter +</p><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect class="fltr-line1" x="7" y="10" width="18" height="1" fill="var(--my-blue)"/><rect class="fltr-line2" x="7" y="20" width="18" height="1" fill="var(--my-blue)"/><circle class="fltr-crcl1" cx="13" cy="20.5" r="2.5" fill="white" stroke="var(--bg-secondary)"/><circle class="fltr-crcl2" cx="19" cy="10.5" r="2.5" fill="white" stroke="var(--bg-secondary)"/></svg></span>
-              
-              <!-- </span > -->
+            <span  class="filter-btn" ><p id="remove-filter">filter +</p><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="10" width="18" height="2" fill="var(--my-blue)" class="fltr-line1"></rect><rect x="7" y="20" width="18" height="2" fill="var(--my-blue)" class="fltr-line2"></rect><circle cx="13" cy="21" r="2.5" fill="white" stroke="var(--my-blue)" class="fltr-crcl1"></circle><circle cx="19" cy="11" r="2.5" fill="white" stroke="var(--my-blue)" class="fltr-crcl2"></circle></svg></span>
          </a>
-          </button> 
-           
+      </button> 
+      
     <div class="expandable-sidebar" id="expandable-sidebar">
-    <div class="aside-block">
-      <label for="pricerange">Maximum Price: <span>${{ pricerange }}</span></label>
-      <input class="slider" id="pricerange" tabindex="0" :value="pricerange" type="range" :min="min" :max="max" step="0.1" @input="updateHighPrice($event)" />
-      <span class="min">${{ min }}</span>
-      <span class="max">${{ max }}</span>
-    </div>
+
     <div class="aside-block">
         <h4>Super Sale</h4>
         <label class="checkbox-control">
@@ -40,6 +29,12 @@
       <p><p style="display:inline" v-if="JSON.stringify(currentUser) !== '{}'">{{currentUser.displayName}}, </p>Get in touch with us for any queries at <a href="#">xotopolo@gmail.com</a></p>
     </div>
   </div>
+     <div class="aside-block">
+      <label for="pricerange">Maximum Price: <span>${{ pricerange }}</span></label>
+      <input class="slider" id="pricerange" tabindex="0" :value="pricerange" type="range" :min="min" :max="max" step="0.1" @input="updateHighPrice($event)" />
+      <span class="min">${{ min }}</span>
+      <span class="max">${{ max }}</span>
+    </div>
   </aside>
 </template>
 
@@ -59,13 +54,8 @@ export default {
   },
   
   computed: { 
-    pricerange() {
-      return this.$store.state.highprice
-    },
-    
-    checked() {
-      return this.$store.state.sale;
-    },
+    pricerange() { return this.$store.state.highprice },
+    checked() { return this.$store.state.sale;},
         ...mapGetters({
           currentUser : 'currentUser',
     }),
@@ -76,11 +66,10 @@ export default {
     showSidebar() {
       var ptag = document.getElementById('remove-filter');
       var expander = document.getElementById('expandable-sidebar');
-      if (!expander.classList.contains('maxheight-expand-sidebar')) { expander.classList.add("maxheight-expand-sidebar");
-      ptag.style.display = 'none'
-      
-      } 
-      else { expander.classList.remove("maxheight-expand-sidebar");
+      if (!expander.classList.contains('maxheight-expand-sidebar')) { 
+        expander.classList.add("maxheight-expand-sidebar");
+        ptag.style.display = 'none'
+      } else { expander.classList.remove("maxheight-expand-sidebar");
        ptag.style.display = 'block'
       }
       
@@ -100,35 +89,6 @@ export default {
   },
   
   mounted() {
-    // var ptag = document.getElementById('remove-filter');
-
-    // var expander = document.getElementById('expandable-sidebar');
-    // var button = document.getElementById('show-sidebar');
-    
-    
-    // expander.addEventListener('mouseleave', function (e) {
-    //   expander.classList.remove("maxheight-expand-sidebar");
-      
-    //   });
-    
-    // if(!expander.matches(':hover')) {
-      
-      //  ptag.style.display = 'block';
-    // button.addEventListener('mouseleave', function (e) {
-
-      // expander.classList.remove("maxheight-expand-sidebar");
-      
-      // });
-      
-    // } 
-    
-    // if (!button.matches(':hover')) {
-      //  ptag.style.display = 'block';
-    // }
-    
-    
-    
-    
     const body = document.querySelector('body');
     const searchBtn = document.querySelector('#search');
     const searchInput = document.querySelector('#search-input');
@@ -143,9 +103,6 @@ export default {
         }
       } 
     });
-    
-
-
   }
 }
 
@@ -156,46 +113,32 @@ export default {
 
 
  .filter-btn {
-    /* display: -webkit-inline-box;  */
-    /* display: -ms-inline-flexbox; */
     display: flex;
     -webkit-box-align: center;
-    /* grid-auto-flow: column; */
-    /* grid-template-columns: 15px 32px; */
-    /* grid-column: auto; */
-    /* grid-gap: 8px; */
     -ms-flex-align: center;
     align-items: center;
     width: 100%;
     place-content: center;
-    /* padding: 5px; */
   }
 
-#show-sidebar span svg * { 
-  transition: .15s cubic-bezier(0.35, 0.35, 0, 1.0);}
+
+#show-sidebar span svg * { transition: .15s cubic-bezier(0.35, 0.35, 0, 1.0);}
 #show-sidebar span circle { will-change: transform;}
 #show-sidebar span rect { transform-origin: 50% 50%;}
-#show-sidebar span:hover .fltr-crcl1 { transform: translateX(6px) }
-#show-sidebar span:hover .fltr-crcl2 { transform: translateX(-6px) }
+#show-sidebar span:active .fltr-crcl1 { transform: translateX(6px) }
+#show-sidebar span:active .fltr-crcl2 { transform: translateX(-6px) }
 
+#show-sidebar  svg { width: 30px;height: 30px;}
 
-
-#show-sidebar  svg {
-    width: 30px;
-    height: 30px;
-}
 .sidebarbutton {
     font-size: 13px;
     padding: 2px;
     letter-spacing: 1px;
     font-weight: 700;
     width: -webkit-fill-available;
-    /* display: none; */
     border-radius: 0px;
     opacity: .7;
     cursor: pointer;
-    /* background: white; */
-    /* color: var(--my-blue); */
     border: 2px solid var(--my-blue);
     text-transform: uppercase;
     margin: 20px 0px 0px 0px;
@@ -224,11 +167,11 @@ export default {
 }
 
 #search {
-    /* margin-top: 40px; */
+/* margin-top: 40px;  */
     height: 100%;
     color: var(--text-primary);
     width: 100%;
-    border: solid 2px;
+    border: solid 3px;
     padding: 2px 8px 2px 8px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -342,7 +285,7 @@ width: 20px;
     }
 
     #search {
-          padding: 4px 8px 4px 8px;
+          padding: 8px;
     }
 }
 

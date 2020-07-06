@@ -170,13 +170,7 @@ color: white;
    margin-top: 12px;
    display: block;
  }
-/* For keyboard controls */
- /* .product-card:focus .add-to-cart-btn {
-   opacity: 1;
- }
- .add-to-cart-btn:focus {
-   opacity: 1;
- } */
+
  .product-title {
    /* margin-top: 10px; */
    margin-bottom: 8px;

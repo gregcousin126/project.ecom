@@ -246,16 +246,16 @@ img {
 }
  
   .quantity__minus, .quantity__plus {
-      display: block;
-    width: 40px;
-    border-radius: 20px;
-    height: 40px;
-    font-size: 25px;
-    margin: 8px;
+display: block;
+    width: 44px;
+    border-radius: 24px;
+    height: 44px;
+    font-size: 22px;
+    margin: 12px 12px 12px 12px;
     background: var(--text-floogle);
     text-decoration: none;
     text-align: center;
-    line-height: 40px;
+    line-height: 44px;
 
   }  
   .shopping-cart-items {

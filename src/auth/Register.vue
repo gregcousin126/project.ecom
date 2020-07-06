@@ -402,6 +402,7 @@ body {
     transform: translatey(0px);
   }
 }
+
 @keyframes shadeanm {
   0% {
     box-shadow: 0 9px 8px -1px rgba(0, 0, 0, 0.65);
@@ -453,10 +454,12 @@ body {
   background: white;
   -webkit-perspective: 1000px;
   perspective: 1000px;
-  -webkit-transition: none;
-  transition:none;
-  -webkit-animation: none;
-  animation: none;
+  
+   transition: fadeup 0.6s ease;
+  -webkit-animation: fadeup .7s ease-in-out;
+  
+  
+  animation: fadeup .7s ease-in-out;
 }
 .cardcontainer {
     -webkit-animation: none;

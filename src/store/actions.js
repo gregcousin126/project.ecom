@@ -54,6 +54,10 @@ export default {
 
         }
 		if (JSON.stringify(context.getters.currentUser) !== '{}') { ref.child('users').child(context.getters.currentUser.displayName).child('cart/').set(context.state.cart) }
+		
+
+		
+		
 	},
 
 	// addCartItem(context, product) {

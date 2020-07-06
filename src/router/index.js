@@ -10,9 +10,15 @@ import wall from '@/sections/wall'
 import Vue from 'vue'
 import Router from 'vue-router'
 
+
 Vue.use(Router); 
 
 export default new Router({
+    base: process.env.BASE_URL,
+
+  mode: 'history',
+
+// });
   routes: [
     {
       path: '/',
@@ -30,5 +36,16 @@ export default new Router({
     { path: '/cart', name: 'cart', component: cart },
     // {path: '*', redirect: '/' }
 
-  ]
+  ],
+   scrollBehavior: (to, from, savedPosition) => {
+    if (savedPosition) {
+      return savedPosition;
+    } else if (to.hash) {
+      return {
+        selector: to.hash
+      };
+    } else {
+      return { x: 0, y: 0 };
+    }
+  },
 })
