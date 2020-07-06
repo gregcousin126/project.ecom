@@ -54,7 +54,8 @@ button {
     -ms-transition: 0.15s all ease-out;
     -o-transition: 0.15s all ease-out;
 }
-button:hover, button:focus { background: var(--my-blue); color: white; -webkit-transition: 0.2s all ease-in; transition: 0.2s all ease-in; outline: none; } 
+button:hover  { background: var(--text-floogle); color: white; -webkit-transition: 0.2s all ease-in; transition: 0.2s all ease-in; outline: none; } 
+/* button:hover, button:focus { background: var(--my-blue); color: white; -webkit-transition: 0.2s all ease-in; transition: 0.2s all ease-in; outline: none; }  */
 *,
 *:before,
 *:after { -webkit-box-sizing: border-box; box-sizing: border-box; margin: 0; } 
@@ -123,7 +124,7 @@ a:hover {
 
 .product-list-wrap { -webkit-box-flex: 5; -ms-flex: 5; flex: 5; } 
 }
-.product-list ul { display: grid; grid-template-columns: repeat(4,1fr); padding: 0; grid-gap: 30px; } 
+.product-list ul { display: grid; grid-template-columns: repeat(4,1fr); padding: 0; grid-gap: 20px 25px; } 
 @media(max-width: 1024px){
    
 .product-list ul { grid-template-columns: repeat(3,1fr); } 

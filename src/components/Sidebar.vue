@@ -1,5 +1,5 @@
 <template>
-  <aside>
+  <aside id="sidebar-info">
     
   <div id="search">
     <i class="fas fa-search" id="search-icon"></i>
@@ -7,6 +7,20 @@
       <input type="text" id="search-input" class="form-control"  name="search"  placeholder="Search" autocomplete="off" @input="searchFilter($event)">
     </form>
   </div>
+  
+  
+  
+          <button type="checkbox" class="sidebarbutton">
+        <a id="show-sidebar" @click="showSidebar">
+            <!-- <input class="filterbutton" > -->
+            <!-- <span class="filter-btn"> -->
+            <span  class="filter-btn" ><p id="remove-filter">filter +</p><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect class="fltr-line1" x="7" y="10" width="18" height="1" fill="var(--my-blue)"/><rect class="fltr-line2" x="7" y="20" width="18" height="1" fill="var(--my-blue)"/><circle class="fltr-crcl1" cx="13" cy="20.5" r="2.5" fill="white" stroke="var(--bg-secondary)"/><circle class="fltr-crcl2" cx="19" cy="10.5" r="2.5" fill="white" stroke="var(--bg-secondary)"/></svg></span>
+              
+              <!-- </span > -->
+         </a>
+          </button> 
+           
+    <div class="expandable-sidebar" id="expandable-sidebar">
     <div class="aside-block">
       <label for="pricerange">Maximum Price: <span>${{ pricerange }}</span></label>
       <input class="slider" id="pricerange" tabindex="0" :value="pricerange" type="range" :min="min" :max="max" step="0.1" @input="updateHighPrice($event)" />
@@ -21,11 +35,11 @@
           <div class="checkbox-box"></div>
         </label>
     </div>
-    
     <div class="aside-block">
       <h4>Support</h4>
       <p><p style="display:inline" v-if="JSON.stringify(currentUser) !== '{}'">{{currentUser.displayName}}, </p>Get in touch with us for any queries at <a href="#">xotopolo@gmail.com</a></p>
     </div>
+  </div>
   </aside>
 </template>
 
@@ -58,6 +72,19 @@ export default {
   },
   
   methods: {
+    
+    showSidebar() {
+      var ptag = document.getElementById('remove-filter');
+      var expander = document.getElementById('expandable-sidebar');
+      if (!expander.classList.contains('maxheight-expand-sidebar')) { expander.classList.add("maxheight-expand-sidebar");
+      ptag.style.display = 'none'
+      
+      } 
+      else { expander.classList.remove("maxheight-expand-sidebar");
+       ptag.style.display = 'block'
+      }
+      
+    },
     updateHighPrice($event) {
       this.$store.commit('setHighPrice', $event.target.value)
     },
@@ -73,12 +100,40 @@ export default {
   },
   
   mounted() {
+    // var ptag = document.getElementById('remove-filter');
+
+    // var expander = document.getElementById('expandable-sidebar');
+    // var button = document.getElementById('show-sidebar');
+    
+    
+    // expander.addEventListener('mouseleave', function (e) {
+    //   expander.classList.remove("maxheight-expand-sidebar");
+      
+    //   });
+    
+    // if(!expander.matches(':hover')) {
+      
+      //  ptag.style.display = 'block';
+    // button.addEventListener('mouseleave', function (e) {
+
+      // expander.classList.remove("maxheight-expand-sidebar");
+      
+      // });
+      
+    // } 
+    
+    // if (!button.matches(':hover')) {
+      //  ptag.style.display = 'block';
+    // }
+    
+    
+    
+    
     const body = document.querySelector('body');
     const searchBtn = document.querySelector('#search');
     const searchInput = document.querySelector('#search-input');
     
     let active = false;
-
     body.addEventListener('click', (e) => {
       if(e.target.id === 'search' || e.target.id === 'search-input' || e.target.id === 'search-icon') {
         if(!active) {
@@ -98,6 +153,75 @@ export default {
 
 <style lang="css">
 
+
+
+ .filter-btn {
+    /* display: -webkit-inline-box;  */
+    /* display: -ms-inline-flexbox; */
+    display: flex;
+    -webkit-box-align: center;
+    /* grid-auto-flow: column; */
+    /* grid-template-columns: 15px 32px; */
+    /* grid-column: auto; */
+    /* grid-gap: 8px; */
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    place-content: center;
+    /* padding: 5px; */
+  }
+
+#show-sidebar span svg * { 
+  transition: .15s cubic-bezier(0.35, 0.35, 0, 1.0);}
+#show-sidebar span circle { will-change: transform;}
+#show-sidebar span rect { transform-origin: 50% 50%;}
+#show-sidebar span:hover .fltr-crcl1 { transform: translateX(6px) }
+#show-sidebar span:hover .fltr-crcl2 { transform: translateX(-6px) }
+
+
+
+#show-sidebar  svg {
+    width: 30px;
+    height: 30px;
+}
+.sidebarbutton {
+    font-size: 13px;
+    padding: 2px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    width: -webkit-fill-available;
+    /* display: none; */
+    border-radius: 0px;
+    opacity: .7;
+    cursor: pointer;
+    /* background: white; */
+    /* color: var(--my-blue); */
+    border: 2px solid var(--my-blue);
+    text-transform: uppercase;
+    margin: 20px 0px 0px 0px;
+    -webkit-transition: 0.15s all ease-out;
+    transition: 0.15s all ease-out;
+    -moz-transition: 0.15s all ease-out;
+    -ms-transition: 0.15s all ease-out;
+    -o-transition: 0.15s all ease-out;
+}
+
+
+#show-sidebar button:checked ~ span circle { opacity: 0;}
+#show-sidebar button:checked ~ span .fltr-line1 { transform: rotate(45deg) translateY(5.5px);}
+#show-sidebar button:checked ~ span .fltr-line2 { transform: rotate(-45deg) translateY(-4.5px);}
+
+
+.expandable-sidebar {
+  overflow: hidden;
+  transition: all var(--transition-speed) ease-in-out;
+  max-height: 0px;
+ }
+ 
+ .maxheight-expand-sidebar {
+  overflow: scroll;
+  max-height: 500px;
+}
 
 #search {
     /* margin-top: 40px; */
@@ -164,6 +288,8 @@ cursor: text;
   .aside-block h4 {
     margin-bottom: 10px;
   }
+  
+ 
   .checkbox-control {
 
     grid-auto-flow: column;
@@ -208,10 +334,12 @@ width: 20px;
   
   
   @media (max-width: 48em) {
-  .checkbox-box {
-
-    top: 1px;
-  }
+    
+    #show-sidebar svg {
+    width: 45px;
+    height: 45px;
+    
+    }
 
     #search {
           padding: 4px 8px 4px 8px;

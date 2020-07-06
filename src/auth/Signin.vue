@@ -103,7 +103,7 @@ export default {
     padding: 3px;
     display: flex;
         font-size: 13px; */
-  color: black;
+    color: var(--text-secondary);
   text-transform: uppercase;
 }
 

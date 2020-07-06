@@ -8,14 +8,20 @@
       <ul>
         <li v-for="product in products" class="cart-product-card">
           <img :src="`./static/images/${product.img}`" :alt="`Image of ${product.title}`">
-          <span class="product-title">{{product.title}}</span>
-          <span class="product-description"> {{product.description }}</span>
-          <span class="product-price"> {{product.price | currency}} X {{product.quantity}} </span>
+          <div class="cart-detail">
+            
+          <p class="product-title">{{product.title}}</p>
+          <p class="product-description"> {{product.description }}</p>
+          <p class="product-price"> {{product.price | currency}} X {{product.quantity}} </p>
+          
+          
         <div class="quantity">
           <a @click="subtractCartItem(product)" href="#" class="quantity__minus" ><span>-</span></a>
           <!-- <p name="quantity" type="text" class="quantity__input" :value="`${product.quantity}`">{{product.quantity}}</p> -->
           <a @click="addCartItem(product)" href="#" class="quantity__plus"><span>+</span></a>
         </div>
+          </div>
+        
         </li>
       </ul>
       <div class="cart-checkout">
@@ -54,7 +60,7 @@ export default {
 <style lang="css" scoped>
 
 .quantity {
-margin: 5px;
+/* margin: px; */
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -142,6 +148,10 @@ border-radius: 4px 0 0 6px;
 }
  */
 
+.cart-detail {
+  margin: 15px;
+}
+
 .empty-cart {
   position: absolute;
   top: 45%;
@@ -197,7 +207,7 @@ ul {
     background: var(--bg-primary);
     margin-bottom: 40px;
     border-radius: 2px;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
     box-shadow: 2px 3px 4.5px .5px rgba(0,0,0,0.3);
     -webkit-transition: -webkit-transform 0.25s ease-in-out, -webkit-box-shadow 0.25s;
     transition: -webkit-transform 0.25s ease-in-out, -webkit-box-shadow 0.25s;
@@ -234,9 +244,7 @@ img {
 .cart-product-card:hover {
 	transform: none;
 }
-  .product-description {
-    font-size: 11px;
-  }
+ 
   .quantity__minus, .quantity__plus {
       display: block;
     width: 40px;

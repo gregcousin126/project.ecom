@@ -122,24 +122,24 @@ color: white;
     background: rgb(232, 35, 25);
     color: white;
     font-family: sans-serif;
-    position: absolute;
-    padding: 2px 10px 4px;
+     position: absolute;
+    padding: 4px 10px 5px;
     text-transform: uppercase;
-    font-size: 13px;
-    z-index: 1;
+    font-size: 12px;
     font-weight: 700;
+    z-index: 1;
 }
 .out-of-stock-banner {
-  border-radius: 2px 0px;
-  background: #505050;
-  color: #f9f9f9;
-  font-family: sans-serif;
-  position: absolute;
-  padding: 2px 10px 4px;
-  text-transform: uppercase;
-  font-size: 13px;
-  font-weight: 700;
-  z-index: 1;
+    border-radius: 2px 0px;
+    background: #505050;
+    color: #f9f9f9;
+    font-family: sans-serif;
+    position: absolute;
+    padding: 4px 10px 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    z-index: 1;
 }
 /* 
 #buttonToggle {
@@ -149,7 +149,7 @@ color: white;
    z-index: 0;
     display: block;
     opacity: 0;
-    margin-top: -30px;
+    margin-top: -45px;
  }
  @media (max-width: 600px) {
    .add-to-cart-btn {
@@ -178,13 +178,14 @@ color: white;
    opacity: 1;
  } */
  .product-title {
-   margin-top: 10px;
-   margin-bottom: 5px;
+   /* margin-top: 10px; */
+   margin-bottom: 8px;
  }
  .product-description {
     margin-top: -3px;
-    width: 50%;
-    font-size: 10px;
+    width: 100%;
+    padding: 0px 20px 0px 20px;
+    font-size: 11px;
     font-family: Helvetica Neue;
     color: rgba(110, 110, 110, 0.773);
     margin-bottom: 10px;
