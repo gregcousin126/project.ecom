@@ -25,7 +25,7 @@
             <input type="password" class="inputbox with-transform" v-model="password" placeholder="Pick your password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your data is safe 🔒'"/>
             <a class="fp" href="index.html">Forgot Password?</a>
             <button type="submit" class="btn-signin">Login</button>
-             <button type="button" class="btn-signin" @click="registerAnim">Register</button>
+            <button type="button" class="btn-signin" @click="registerAnim">Register</button>
           </form>
           <!-- <router-link to="/signin"> -->
           <!-- </router-link> -->
@@ -367,10 +367,10 @@ body {
   background: white;
   -webkit-perspective: 1000px;
   perspective: 1000px;
-  -webkit-transition: none;
+  /* -webkit-transition: none;
   transition:none;
   -webkit-animation: none;
-  animation: none;
+  animation: none; */
 }
 .cardcontainer {
     -webkit-animation: none;

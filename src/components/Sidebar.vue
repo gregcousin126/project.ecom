@@ -8,11 +8,19 @@
     </form>
   </div>
 
+
+
       <button type="checkbox" class="sidebarbutton">
         <a id="show-sidebar" @click="showSidebar">
             <span  class="filter-btn" ><p id="remove-filter">filter +</p><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="10" width="18" height="2" fill="var(--blue-primary)" class="fltr-line1"></rect><rect x="7" y="20" width="18" height="2" fill="var(--blue-primary)" class="fltr-line2"></rect><circle cx="13" cy="21" r="2.5" fill="white" stroke="var(--blue-primary)" class="fltr-crcl1"></circle><circle cx="19" cy="11" r="2.5" fill="white" stroke="var(--blue-primary)" class="fltr-crcl2"></circle></svg></span>
          </a>
       </button> 
+      
+      
+      <!-- <img src="./static/images/pick-dress.gif" alt="description of gif" /> -->
+
+        <div class="mygif"></div>
+
       
     <div class="expandable-sidebar" id="expandable-sidebar">
 
@@ -109,6 +117,21 @@ export default {
 </script>
 
 <style lang="css">
+
+.mygif {
+/* flex: 50%;  */
+display: none;
+transform: scale(.8);
+    /* width: ay; */
+    border-radius: 27px;
+    margin: -20px 0px -45px 0px;
+    filter: grayscale(0) brightness(1.6) saturate(1);
+    height: 361px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url(/static/img/pick-dress.fa3d91e.gif);
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/static/img/pick-dress.fa3d91e.gif);
+    background-size: cover;
+    text-align: center;
+}
 
 
 
@@ -275,8 +298,23 @@ width: 20px;
     background: #5044ff;
   }
   
+  /* @media (min-width: 48em) { */
+/*   
+   .mygif {
+      display: none;
+    } */
+    
+  /* } */
   
+  
+  
+  @media (max-width: 660px) {
+   .mygif {
+      display: block;
+    } 
+  }
   @media (max-width: 48em) {
+  
     
     #show-sidebar svg {
     width: 45px;
