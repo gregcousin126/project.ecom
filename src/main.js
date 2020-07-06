@@ -6,7 +6,6 @@ import router from './router'
 import { firebaseListener, ref } from '../config/firebase';
 
 
-
 Vue.config.productionTip = false;
 Vue.filter('currency', currency);
 
@@ -23,6 +22,16 @@ function authStatusChange(loggedIn, user) {
 
 /* eslint-disable no-new */
 new Vue({
+	
+	
+
+created : function () {
+
+
+
+}, 
+	
+	
   el: '#app',
   router,
   store,

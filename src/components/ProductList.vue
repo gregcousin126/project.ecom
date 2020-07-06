@@ -1,6 +1,22 @@
 <template>
   <div class="product-list">
-    <p v-if="loading">Loading....</p>
+    <!-- <p > -->
+      
+      <div id='preloader' v-if="loading">
+        <div class='preloader loading spinner'>
+          <span class='slice'></span>
+          <span class='slice'></span>
+          <span class='slice'></span>
+          <span class='slice'></span>
+          <span class='slice'></span>
+          <span class='slice'></span>
+        </div>
+      </div>
+    <!-- </p> -->
+    <!-- <p v-if="loading">Loading....</p> -->
+    
+    
+    
       <transition-group name="card" tag="ul" v-else>
         <!-- <li v-for="product in products" :key="product.id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ]" tabindex="0" v-show="category === product.category"> -->
         <li v-for="product in products" :key="product.id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ]" tabindex="0" v-show="category === product.category || category === 'allproducts'">
@@ -54,8 +70,12 @@ export default {
  
   created() {
     this.loading = true; // this.$store.dispatch('fetchProducts')
-    this.fetchProducts().then(() => this.loading = false).then(() => {
-  
+    this.fetchProducts().then(() => 
+
+      this.loading = false
+ 
+    ).then(() => {
+      
     });
   },
   
@@ -70,6 +90,26 @@ export default {
 }
 </script>
 <style lang="css">
+
+li {
+  opacity: 0;
+  animation: fadeIn 0.5s 1;
+  animation-fill-mode: forwards;
+}
+
+
+
+/*...*/
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
+
 .container { position: relative;width: 100%; }
 /* .image {
   display: block;

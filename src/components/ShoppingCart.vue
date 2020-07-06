@@ -88,7 +88,7 @@ display: block;
 }
 .quantity__minus:hover,
 .quantity__plus:hover {
-  background: var(--my-blue);
+  background: var(--blue-primary);
   color: var(--text-floogle);
 } 
 /* .quantity__minus {
