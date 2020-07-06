@@ -19,7 +19,7 @@
             <input type="password" class="inputbox with-transform" v-model="password" placeholder="Pick a password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your data is safe 🔒'"/>
             <a class="fp" href="index.html">Forgot Password?</a>
             <button type="submit" class="btn-register">Register</button>
-            <button type="button"  class="btn-register" @click="signinAnim" >signin</button>
+            <button type="button"  class="btn-register" @click="signinAnim" >Login</button>
           </form>
           <!-- <router-link to="/signin"> -->
           <!-- </router-link> -->
@@ -44,7 +44,7 @@
       </li>
       <li>
         <router-link to="/signin">
-          <a class="dropdown log-link" href>signin</a>
+          <a class="dropdown log-link" href>log-in</a>
         </router-link>
       </li>
       <li>
@@ -188,23 +188,26 @@ export default {
 /* } */
 
 .authchoice {
-display: grid;
+    display: grid;
     grid-auto-flow: column;
     /* border-radius: 2px; */
     /* border: 2px solid; */
+    margin-top: 25px;
+    border-radius: 4px;
     list-style: none;
+    border: 2px solid;
     place-content: center;
     /* margin-top: 30px; */
-    grid-auto-columns: min-content;
+    grid-auto-columns: -webkit-min-content;
+    /* grid-auto-columns: min-content; */
     font-weight: 500;
-    padding: 31px;
+    padding: 22px;
     /* margin: 0 auto; */
-    font-size: 17px;
+    font-size: 14px;
     width: 100%;
     /* margin: 24px auto; */
     font-family: 'Roboto Condensed', sans-serif;
-    grid-gap: 25px;
-    /* top: 15px; */
+    grid-gap: 28px;
 }
 
 .top-register-container {
@@ -282,7 +285,7 @@ body {
 
 .register-content {
   flex: 50%;
-  /* background-color: white; */
+  background-color: var(--my-white);
   text-align: center;
   padding: 5%;
   font-family: 'Montserrat', sans-serif;
@@ -331,7 +334,7 @@ body {
   font-size: small;
   transition: 0.3s;
   display: block;
-  margin: 15px;
+  margin: 30px;
 }
 
 .fp:hover {

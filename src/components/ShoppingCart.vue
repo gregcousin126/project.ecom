@@ -6,7 +6,7 @@
     </div>
     <div v-else class="shopping-cart-items">
       <ul>
-        <li v-for="product in products" class="card cart-product-card">
+        <li v-for="product in products" class="cart-product-card">
           <img :src="`./static/images/${product.img}`" :alt="`Image of ${product.title}`">
           <span class="product-title">{{product.title}}</span>
           <span class="product-description"> {{product.description }}</span>
@@ -54,7 +54,7 @@ export default {
 <style lang="css" scoped>
 
 .quantity {
-margin: 13px;
+margin: 5px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -75,15 +75,15 @@ display: block;
     border-radius: 20px;
     height: 33px;
     margin: 0;
-    background: #dee0ee;
+    background: var(--text-floogle);
     text-decoration: none;
     text-align: center;
     line-height: 33px;
 }
 .quantity__minus:hover,
 .quantity__plus:hover {
-  background: #575b716d;
-  color: #fff;
+  background: var(--my-blue);
+  color: var(--text-floogle);
 } 
 /* .quantity__minus {
 border-radius: 4px 0 0 6px;
@@ -93,7 +93,7 @@ border-radius: 4px 0 0 6px;
 } */
 
 .quantity__input {
-  margin: 0px 11px 0px 11px;
+  margin: 0px 14px 0px 14px;
     font-size: 16px;
     font-family: 'Overpass';
 }
@@ -194,10 +194,11 @@ ul {
     margin-right: 48px;
     overflow: hidden;
     width: 210px;
+    background: var(--bg-primary);
     margin-bottom: 40px;
-        border-radius: 4px;
+    border-radius: 4px;
     padding-bottom: 20px;
-    box-shadow: 2px 3px 8px 0px rgba(0,0,0,0.2);
+    box-shadow: 2px 3px 4.5px .5px rgba(0,0,0,0.3);
     -webkit-transition: -webkit-transform 0.25s ease-in-out, -webkit-box-shadow 0.25s;
     transition: -webkit-transform 0.25s ease-in-out, -webkit-box-shadow 0.25s;
     transition: transform 0.25s ease-in-out, box-shadow 0.25s;
@@ -227,16 +228,11 @@ img {
   }
   
   .cart-product-card {
-	/* transform: translateY(-0.3rem) translateX(-0.3rem) scale(1.0125); */
 	box-shadow: 6px 6px 1.5px 0px rgba(0,0,0,0.2);
   border-radius: 4px;
-	/* box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5); */
 }
 .cart-product-card:hover {
 	transform: none;
-	/* box-shadow: none; */
-  /* border-radius: none; */
-	/* box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5); */
 }
   
   .quantity__minus, .quantity__plus {
@@ -246,7 +242,7 @@ img {
     height: 40px;
     font-size: 25px;
     margin: 0;
-    background: #dee0ee;
+    background: var(--text-floogle);
     text-decoration: none;
     text-align: center;
     line-height: 40px;

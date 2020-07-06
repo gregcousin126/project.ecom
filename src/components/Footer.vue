@@ -13,7 +13,7 @@ footer {
   text-align: center;
   font-size: 16px;
   padding: 20px;
-  background: #eee;
+  background: var(--text-floogle);
 }
 
 </style>

@@ -159,7 +159,7 @@ color: white;
    
  }
  .product-card:hover, .product-card:focus  {
-   /* box-shadow: 1px 0rem 14px 0px #eee; */
+  
    outline: none;
  }
  .product-card:hover .add-to-cart-btn{

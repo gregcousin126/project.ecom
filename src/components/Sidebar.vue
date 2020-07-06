@@ -24,8 +24,6 @@
     
     <div class="aside-block">
       <h4>Support</h4>
-                  <!-- <label v-if="JSON.stringify(currentUser) !== '{}'" for="openDropdown" class="dropdown"></label> -->
-
       <p><p style="display:inline" v-if="JSON.stringify(currentUser) !== '{}'">{{currentUser.displayName}}, </p>Get in touch with us for any queries at <a href="#">xotopolo@gmail.com</a></p>
     </div>
   </aside>
@@ -104,7 +102,7 @@ export default {
 #search {
     /* margin-top: 40px; */
     height: 100%;
-    color: rgba(84, 84, 84, 0.989);
+    color: var(--text-primary);
     width: 100%;
     border: solid 2px;
     padding: 2px 8px 2px 8px;
@@ -113,7 +111,7 @@ export default {
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    border-color: rgba(216, 216, 216, 0.687);
+    border-color: var(--text-floogle);
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -131,7 +129,7 @@ cursor: text;
     font-size: 16px;
     font-weight: 500;
     background: none;
-    color: black;
+    color: var(--text-primary);
     font-family: monospace;
     border: none;
     padding: 5px 5px 5px 7px;
@@ -153,7 +151,7 @@ cursor: text;
 
   .aside-block {
     padding: 30px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--text-floogle);
     font-size: 15px;
   }
   .min {
@@ -181,7 +179,7 @@ cursor: text;
   .checkbox-box {
 width: 18px;
     height: 18px;
-    border: 2px solid #131313;
+    border: 2px solid var(--text-floogle);
     position: relative;
     cursor: pointer;
     float: left;

@@ -24,7 +24,8 @@
             <input type="email" class="inputbox with-transform" v-model="email" placeholder="Type your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Do you have an email❓'"/>
             <input type="password" class="inputbox with-transform" v-model="password" placeholder="Pick your password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your data is safe 🔒'"/>
             <a class="fp" href="index.html">Forgot Password?</a>
-            <button type="submit" class="btn-signin">Signin</button>
+            <button type="submit" class="btn-signin">Login</button>
+             <button type="button" class="btn-signin" @click="registerAnim">Register</button>
           </form>
           <!-- <router-link to="/signin"> -->
           <!-- </router-link> -->
@@ -68,6 +69,14 @@ export default {
     },
     
     methods: {
+      
+          registerAnim() {
+        const target = document.getElementById("target");
+        target.style.opacity = '0'
+        setTimeout( () => { this.$router.push('/register');}, 300); 
+    },
+    
+    
       signIn () {
       firebaseAuth().signInWithEmailAndPassword(this.email, this.password).catch(error => alert('🤕' + error.message))
         this.$router.push('/')
@@ -100,25 +109,35 @@ export default {
 
 
 .authchoice {
-display: grid;
+    display: grid;
     grid-auto-flow: column;
     /* border-radius: 2px; */
     /* border: 2px solid; */
+    margin-top: 25px;
+    border-radius: 4px;
     list-style: none;
+    border: 2px solid;
     place-content: center;
     /* margin-top: 30px; */
-    grid-auto-columns: min-content;
+    grid-auto-columns: -webkit-min-content;
+    /* grid-auto-columns: min-content; */
     font-weight: 500;
-    padding: 31px;
+    padding: 22px;
     /* margin: 0 auto; */
-    font-size: 17px;
+    font-size: 14px;
     width: 100%;
     /* margin: 24px auto; */
     font-family: 'Roboto Condensed', sans-serif;
-    grid-gap: 25px;
-    /* top: 15px; */
+    grid-gap: 28px;
 }
 
+
+#target {
+  
+    height: 100px;
+    /* background-color: red; */
+    transition: opacity .2s;
+}
 .top-signin-container {
   z-index: 0;
   text-align: -webkit-center;
@@ -156,11 +175,6 @@ body {
 }
 
 
-#target {
-    height: 100px;
-    /* background-color: red; */
-    transition: opacity .2s;
-}
 
 
 .image-signin {
@@ -188,7 +202,7 @@ body {
 
 .signin-content {
   flex: 50%;
-  /* background-color: white; */
+  background-color: var(--my-white);
   text-align: center;
   padding: 5%;
   font-family: 'Montserrat', sans-serif;
@@ -210,6 +224,7 @@ body {
   font-size: 25px;
   line-height: 35px;
 }
+
 #txt {
   margin: 10px;
   padding: 5px;
@@ -237,7 +252,7 @@ body {
   font-size: small;
   transition: 0.3s;
   display: block;
-  margin: 15px;
+  margin: 30px;
 }
 
 .fp:hover {
