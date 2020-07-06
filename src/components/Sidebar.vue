@@ -152,7 +152,7 @@ cursor: text;
   .aside-block {
     padding: 30px 0;
     border-bottom: 1px solid var(--text-floogle);
-    font-size: 15px;
+    /* font-size: 15px; */
   }
   .min {
     float: left;
@@ -177,8 +177,8 @@ cursor: text;
     /* white-space: break-spaces; */
   }
   .checkbox-box {
-width: 18px;
-    height: 18px;
+width: 20px;
+    height: 20px;
     border: 2px solid var(--text-floogle);
     position: relative;
     cursor: pointer;
@@ -199,8 +199,8 @@ width: 18px;
   input[type="checkbox"]:checked ~ .checkbox-box::before {
     content: '';
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     top: 2px;
     left: 2px;
     background: #5044ff;
@@ -208,6 +208,10 @@ width: 18px;
   
   
   @media (max-width: 48em) {
+  .checkbox-box {
+
+    top: 1px;
+  }
 
     #search {
           padding: 4px 8px 4px 8px;

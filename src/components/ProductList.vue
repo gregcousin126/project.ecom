@@ -80,7 +80,7 @@ export default {
     position: absolute;
     top: 0;
     bottom: 0;
-    border-radius: 4px;
+    border-radius: 2px;
     left: 0;
     right: 0;
     max-height: 228px;
@@ -118,7 +118,7 @@ color: white;
     text-align: center;
 }
 .sale-banner {
-  border-radius: 4px 0px;
+  border-radius: 2px 0px;
     background: rgb(232, 35, 25);
     color: white;
     font-family: sans-serif;
@@ -130,7 +130,7 @@ color: white;
     font-weight: 700;
 }
 .out-of-stock-banner {
-  border-radius: 4px 0px;
+  border-radius: 2px 0px;
   background: #505050;
   color: #f9f9f9;
   font-family: sans-serif;
@@ -154,7 +154,7 @@ color: white;
  @media (max-width: 600px) {
    .add-to-cart-btn {
      opacity: 1;
-     margin-top: 14px
+     margin-top: 12px
    }
    
  }
@@ -167,7 +167,7 @@ color: white;
 
    transition: margin-top .3s, opacity .5s;
    opacity: 1;
-   margin-top: 14px;
+   margin-top: 12px;
    display: block;
  }
 /* For keyboard controls */

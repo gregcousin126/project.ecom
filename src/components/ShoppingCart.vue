@@ -10,10 +10,10 @@
           <img :src="`./static/images/${product.img}`" :alt="`Image of ${product.title}`">
           <span class="product-title">{{product.title}}</span>
           <span class="product-description"> {{product.description }}</span>
-          <span class="product-price"> {{product.price | currency}} </span>
+          <span class="product-price"> {{product.price | currency}} X {{product.quantity}} </span>
         <div class="quantity">
           <a @click="subtractCartItem(product)" href="#" class="quantity__minus" ><span>-</span></a>
-          <p name="quantity" type="text" class="quantity__input" :value="`${product.quantity}`">{{product.quantity}}</p>
+          <!-- <p name="quantity" type="text" class="quantity__input" :value="`${product.quantity}`">{{product.quantity}}</p> -->
           <a @click="addCartItem(product)" href="#" class="quantity__plus"><span>+</span></a>
         </div>
         </li>
@@ -71,14 +71,14 @@ margin: 5px;
 .quantity__minus,
 .quantity__plus {
 display: block;
-    width: 33px;
-    border-radius: 20px;
-    height: 33px;
-    margin: 0;
+    width: 34px;
+    border-radius: 5px;
+    height: 34px;
+    margin: 6px;
     background: var(--text-floogle);
     text-decoration: none;
     text-align: center;
-    line-height: 33px;
+    line-height: 34px;
 }
 .quantity__minus:hover,
 .quantity__plus:hover {
@@ -196,7 +196,7 @@ ul {
     width: 210px;
     background: var(--bg-primary);
     margin-bottom: 40px;
-    border-radius: 4px;
+    border-radius: 2px;
     padding-bottom: 20px;
     box-shadow: 2px 3px 4.5px .5px rgba(0,0,0,0.3);
     -webkit-transition: -webkit-transform 0.25s ease-in-out, -webkit-box-shadow 0.25s;
@@ -208,7 +208,7 @@ ul {
 .cart-product-card:hover {
 	transform: translateY(-0.3rem) translateX(-0.3rem) scale(1.0125);
 	box-shadow: 6px 6px 1.5px 0px rgba(0,0,0,0.2);
-  border-radius: 4px;
+  border-radius: 2px;
 	/* box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5); */
 }
 
@@ -234,14 +234,16 @@ img {
 .cart-product-card:hover {
 	transform: none;
 }
-  
+  .product-description {
+    font-size: 11px;
+  }
   .quantity__minus, .quantity__plus {
       display: block;
     width: 40px;
     border-radius: 20px;
     height: 40px;
     font-size: 25px;
-    margin: 0;
+    margin: 8px;
     background: var(--text-floogle);
     text-decoration: none;
     text-align: center;

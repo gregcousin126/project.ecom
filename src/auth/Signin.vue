@@ -21,7 +21,7 @@
         <div class="signin-content">
           <h1>Sign in</h1>
           <form @submit.prevent="signIn">
-            <input type="email" class="inputbox with-transform" v-model="email" placeholder="Type your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Do you have an email❓'"/>
+            <input type="email" class="inputbox with-transform" v-model="email" placeholder="Type your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Do you have an email 📧'"/>
             <input type="password" class="inputbox with-transform" v-model="password" placeholder="Pick your password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your data is safe 🔒'"/>
             <a class="fp" href="index.html">Forgot Password?</a>
             <button type="submit" class="btn-signin">Login</button>
@@ -141,7 +141,7 @@ export default {
 .top-signin-container {
   z-index: 0;
   text-align: -webkit-center;
-  margin: 20px auto;
+  margin: 0px auto;
   /* border-radius: 10px;
       top: 50%;
     left: 50%;
@@ -210,7 +210,7 @@ body {
 
 .signin-content h1 {
   /* padding: 40px; */
-  padding-top: 10px;
+  padding-bottom: 11px;
   /* bottom: -9px; */
   margin-bottom: 0px;
   padding-bottom: -10px;
@@ -382,8 +382,8 @@ body {
 
   .signin-container {
     
-    width: 100%;
-    padding: 15px;
+    width: 90%;
+    padding: 20px;
   }
   .signin-content {
     border-radius: 5px;

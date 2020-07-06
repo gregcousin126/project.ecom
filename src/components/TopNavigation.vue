@@ -1,10 +1,12 @@
 <template>
 <header class="header">
-<nav class="navbar">
+<nav class="navbar" id="navbar">
   
  <ul class="navbar-nav">
       <li class="logo">
+        <router-link to="/">
         <a href="#" class="nav-link"><span class="link-text logo-text">XOTOPOLO</span><svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x"><g class="fa-group"><path fill="currentColor" d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z" class="fa-secondary"></path><path fill="currentColor" d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z" class="fa-primary"></path></g></svg></a>
+        </router-link>
       </li>
       
       <li class="nav-item" v-if="JSON.stringify(currentUser) !== '{}'">
@@ -147,21 +149,26 @@ export default {
   },
   
 mounted () {
+  
+    var element = document.getElementById('product-line');
+    var navbar = document.getElementById('navbar');
+    navbar.addEventListener('mouseleave', function (e) {
+      element.style.display = 'none'
+    });
  
-  var tmp = null;
-   const themeMap = { dark: "light", light: "dark" }; // light: "solar", 
-   
-        const theme = localStorage.getItem('theme') || (tmp = Object.keys(themeMap)[0], localStorage.setItem('theme', tmp), tmp);
-        const bodyClass = document.body.classList;
-        bodyClass.add(theme);
-        function toggleTheme() {
-          const current = localStorage.getItem('theme');
-          const next = themeMap[current];
+      var tmp = null;
+      const themeMap = { dark: "light", light: "dark" }; // light: "solar", 
+      const theme = localStorage.getItem('theme') || (tmp = Object.keys(themeMap)[0], localStorage.setItem('theme', tmp), tmp);
+      const bodyClass = document.body.classList;
+      bodyClass.add(theme);
+      function toggleTheme() {
+        const current = localStorage.getItem('theme');
+        const next = themeMap[current];
 
-          bodyClass.replace(current, next);
-          localStorage.setItem('theme', next);
-        }
-        document.getElementById('themeButton').onclick = toggleTheme;
+        bodyClass.replace(current, next);
+        localStorage.setItem('theme', next);
+      }
+      document.getElementById('themeButton').onclick = toggleTheme;
 
   }
 }
@@ -259,10 +266,10 @@ mounted () {
  */
 
 
-:root { font-size: 16px; font-family: 'Open Sans'; --text-primary: #b6b6b6; --text-secondary: #ececec; --bg-primary: #23232e; --bg-secondary: #141418; --transition-speed: 300ms;--my-blue: #5044ff ; --my-white: #fff } 
+:root { font-size: 16px; font-family: 'Open Sans'; --text-primary: #b6b6b6; --text-secondary: #ececec; --bg-primary: #23232e; --bg-secondary: #141418; --transition-speed: 170ms;--my-blue: #5044ff ; --my-white: #fff } 
 /* body { color: black; background-color: white; margin: 0; padding: 0; }  */
 main { margin-left: 4rem; padding: 1rem; } 
-.navbar { z-index: 2;position: fixed; background-color: var(--bg-primary); transition: width 220ms ease; overflow: scroll; width: 100%;
+.navbar { z-index: 2;position: fixed; background-color: var(--bg-primary); transition: width 170ms ease-out; overflow: scroll; width: 100%;
 -webkit-box-shadow: inset -15px 0px 16px -20px rgba(0,0,0,0.68);
 -moz-box-shadow: inset -15px 0px 16px -20px rgba(0,0,0,0.68);
 box-shadow: inset -15px 0px 16px -20px rgba(0,0,0,0.68);
@@ -389,7 +396,7 @@ font-family: 'Overpass';
  
 
 .dark { --text-primary: #b6b6b6; --text-secondary: #ececec; --bg-primary: #23232e; --bg-secondary: #141418;  --text-floogle: #4c475f62;  } 
-.light { --text-primary: #1f1f1f; --text-secondary: #000000; --bg-primary: #ffffff; --bg-secondary: #e4e4e4; --text-floogle: #ececec; } 
+.light { --text-primary: #1f1f1f; --text-secondary: #000000; --bg-primary: #ffffff; --bg-secondary: #e4e4e4; --text-floogle: #dfdfdf; } 
 .solar { --text-primary: #576e75; --text-secondary: #35535c; --bg-primary: #fdf6e3; --bg-secondary: #f5e5b8; --text-floogle: #ececec; } 
 .theme-icon { display: none; 
 

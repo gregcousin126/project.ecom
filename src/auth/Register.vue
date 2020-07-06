@@ -15,7 +15,7 @@
           <!-- <h1>{{authUser}}</h1> -->
           <form @submit.prevent="register">
             <input type="displayName" class="inputbox with-transform" v-model="displayName" placeholder="Hi 🖐️, whats your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'We need your name 😉'"/>
-            <input type="email" class="inputbox with-transform" v-model="email" placeholder="Type your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Do you have an email❓'"/>
+            <input type="email" class="inputbox with-transform" v-model="email" placeholder="Type your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Do you have an email 📧'"/>
             <input type="password" class="inputbox with-transform" v-model="password" placeholder="Pick a password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your data is safe 🔒'"/>
             <a class="fp" href="index.html">Forgot Password?</a>
             <button type="submit" class="btn-register">Register</button>
@@ -213,7 +213,7 @@ export default {
 .top-register-container {
   z-index: 0;
   text-align: -webkit-center;
-   margin: 20px auto;
+   margin: 0px auto;
   
   /* border-radius: 10px;
       top: 50%;
@@ -293,7 +293,7 @@ body {
 
 .register-content h1 {
   /* padding: 40px; */
-  padding-top: 10px;
+ padding-bottom: 11px;
   /* bottom: -9px; */
   margin-bottom: 0px;
   padding-bottom: -10px;
@@ -468,8 +468,8 @@ body {
 
   .register-container {
     
-    width: 100%;
-    padding: 15px;
+    width: 90%;
+    padding: 20px;
   }
   .register-content {
     border-radius: 5px;
