@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <TopNavigation/>
+
     <div class="content-wrapper" id="wrapper">
       <router-view/>
     </div>
@@ -24,9 +25,6 @@ export default {
 @import './assets/styles.css'; 
 @import './assets/loading.css'; 
 @import './assets/fonts.css';
-
-
-
 
 
 

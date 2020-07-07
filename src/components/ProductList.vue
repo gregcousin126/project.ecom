@@ -12,13 +12,17 @@
           <span class='slice'></span>
         </div>
       </div>
-    <!-- </p> -->
-    <!-- <p v-if="loading">Loading....</p> -->
-    
-    
+      
+      
+      
+      
     
       <transition-group name="card" tag="ul" v-else>
         <!-- <li v-for="product in products" :key="product.id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ]" tabindex="0" v-show="category === product.category"> -->
+          
+        <!-- <button type="button">Explode</button> -->
+          
+          
         <li v-for="product in products" :key="product.id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ]" tabindex="0" v-show="category === product.category || category === 'allproducts'">
           <span class="sale-banner" v-if="product.sale">Sale</span>
           <span class="out-of-stock-banner" v-show="!productInStock(product)">Out of Stock</span>
@@ -33,6 +37,7 @@
           <span class="product-price"> {{product.price | currency}}</span>
           <!-- <div class="container"> <img src="img_avatar.png" alt="Avatar" class="image"> -->
         </li>
+        
       </transition-group>
   </div>
 </template>
@@ -90,6 +95,24 @@ export default {
 }
 </script>
 <style lang="css">
+
+/* :root {
+	font-size: calc(16px + (48 - 16)*(100vw - 320px)/(2560 - 320));
+}
+body, button {
+	font: 1em/1.5 "Hind", sans-serif;
+}
+body {
+	background: #e3e4e8;
+	display: flex;
+	height: 100vh;
+	overflow: hidden;
+} */
+
+
+ 
+
+/* end button */
 
 li {
   opacity: 0;

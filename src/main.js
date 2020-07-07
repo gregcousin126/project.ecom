@@ -22,16 +22,9 @@ function authStatusChange(loggedIn, user) {
 
 /* eslint-disable no-new */
 new Vue({
-	
-	
-
 created : function () {
-
-
-
+	// first ever function
 }, 
-	
-	
   el: '#app',
   router,
   store,

@@ -31,7 +31,7 @@
         <!-- <p class="status" v-if="$store.state.checkoutStatus">{{$store.state.checkoutStatus}}</p> -->
         <!-- <button :disabled="$store.state.cart.length <= 0" @click="$store.dispatch('checkout')">Checkout</button> -->
         <!-- <p class="status" v-if="checkoutStatus">{{checkoutStatus}}</p> -->
-        <button @click="checkout">Checkout</button>
+         <button type="checkbox" @click="checkout">Checkout</button>
         <p class="status" >{{checkoutStatus}}</p>
       </div>
     </div>
@@ -58,6 +58,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+
 
 .quantity {
 /* margin: px; */

@@ -50,6 +50,7 @@
 import store from '@/store/index'
 import {mapState, mapGetters, mapActions} from 'vuex'
 
+
 export default {
   name: 'Sidebar',
   data() {
@@ -118,6 +119,7 @@ export default {
 
 <style lang="css">
 
+
 .mygif {
 /* flex: 50%;  */
 display: none;
@@ -127,8 +129,10 @@ transform: scale(.8);
     margin: -20px 0px -45px 0px;
     filter: grayscale(0) brightness(1.6) saturate(1);
     height: 361px;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url(/static/img/pick-dress.fa3d91e.gif);
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/static/img/pick-dress.fa3d91e.gif);
+    /* background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url(/static/img/pick-dress.fa3d91e.gif); */
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/pick-dress.gif');
+    background-repeat: no-repeat;
+
     background-size: cover;
     text-align: center;
 }
