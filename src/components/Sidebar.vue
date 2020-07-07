@@ -19,7 +19,7 @@
       
       <!-- <img src="./static/images/pick-dress.gif" alt="description of gif" /> -->
 
-        <div class="mygif"></div>
+        <!-- <div class="mygif"></div> -->
 
       
     <div class="expandable-sidebar" id="expandable-sidebar">
@@ -119,23 +119,25 @@ export default {
 
 <style lang="css">
 
-
+/* 
 .mygif {
-/* flex: 50%;  */
-display: none;
-transform: scale(.8);
-    /* width: ay; */
+flex: 50%; 
+    display: none;
+    -webkit-transform: scale(.8);
+    transform: scale(.8);
+    position: relative;
     border-radius: 27px;
     margin: -20px 0px -45px 0px;
-    filter: grayscale(0) brightness(1.6) saturate(1);
-    height: 361px;
-    /* background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url(/static/img/pick-dress.fa3d91e.gif); */
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/pick-dress.gif');
+    -webkit-filter: grayscale(0) brightness(1.6) saturate(1);
+    filter: grayscale(0) brightness(1.1) saturate(1);
+    height: 348px;
+    background: url(/static/img/pick-dress.fa3d91e.gif);
+    background: url(/static/img/pick-dress.fa3d91e.gif);
+    background: url(/static/img/pick-dress.fa3d91e.gif);
     background-repeat: no-repeat;
-
-    background-size: cover;
+    background-size: contain;
     text-align: center;
-}
+} */
 
 
 
