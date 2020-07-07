@@ -1,5 +1,9 @@
 <template>
   <section class="decoration">
+    
+    <Banner/>
+    
+    
     <h1>Decoration</h1>
        <hr>
     <ProductList category="decoration"/>
@@ -9,10 +13,12 @@
 <script>
 import ProductList from '@/components/ProductList'
 import SideMainLayout from '@/layout/SideMainLayout'
+import Banner from '@/layout/Banner'
 
 export default {
-  name: 'decoration',
+  name: 'wall',
   components: {
+    Banner,
     ProductList,
     SideMainLayout
   }

@@ -1,7 +1,6 @@
 <template>
   <div class="product-list">
-    <!-- <p > -->
-      
+
       <div id='preloader' v-if="loading">
         <div class='preloader loading spinner'>
           <span class='slice'></span>
@@ -13,31 +12,30 @@
         </div>
       </div>
       
-      
-      
-      
-    
-      <transition-group name="card" tag="ul" v-else>
-        <!-- <li v-for="product in products" :key="product.id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ]" tabindex="0" v-show="category === product.category"> -->
-          
-        <!-- <button type="button">Explode</button> -->
-          
-          
-        <li v-for="product in products" :key="product.id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ]" tabindex="0" v-show="category === product.category || category === 'allproducts'">
-          <span class="sale-banner" v-if="product.sale">Sale</span>
-          <span class="out-of-stock-banner" v-show="!productInStock(product)">Out of Stock</span>
-          <div class="container">
-            <img :src="`./static/images/${product.img}`" :alt="`image of ${product.title}`">
-              <div class="overlay">
-                <div class="text">{{product.description}}</div>
+      <transition-group name="card" tag="div" v-else>
+      <div class="eachstore" v-for="(store, key) in stores" :key="key" >
+        <h1>{{store.store_name}}</h1>
+        <hr>
+          <ul>
+          <li v-for="product in products" :key="product.product_id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ]" tabindex="0" v-show="category === product.category || category === 'allproducts'">
+              <div v-if="store.store_id == product.store_id">
+              <span class="sale-banner" v-if="product.sale">Sale</span>
+              <span class="out-of-stock-banner" v-show="!productInStock(product)">Out of Stock</span>
+              <div class="product-list-container">
+                <img :src="`./stores/static/${store.store_name.toLowerCase()}/images/${product.img}`" :alt="`image of ${product.title}`">
+                  <div class="overlay">
+                    <div class="text">{{product.description}}</div>
+                  </div>
+                    <button @click="addProductToCart(product)" class="add-to-cart-btn" id="buttonToggle">Add to cart</button>
               </div>
-                <button @click="addProductToCart(product)" class="add-to-cart-btn" id="buttonToggle">Add to cart</button>
-          </div>
-          <span class="product-title">{{product.title}}</span>
-          <span class="product-price"> {{product.price | currency}}</span>
-          <!-- <div class="container"> <img src="img_avatar.png" alt="Avatar" class="image"> -->
-        </li>
-        
+              <span class="product-store">{{store.store_name}}</span>
+              <br>
+              <span class="product-title">{{product.title}}</span>
+              <span class="product-price"> {{product.price | currency}}</span>
+            </div>
+            </li>
+          </ul>
+      </div>
       </transition-group>
   </div>
 </template>
@@ -61,11 +59,12 @@ export default {
   },
   
   computed :{
+       stores() { return this.$store.state.stores },
       products() {
       // return this.$store.state.products.filter(el => this.$store.state.sale ? el.price < this.$store.state.highprice && el.sale : el.price < this.$store.state.highprice);
       const mainJsonCart = this.$store.state.products.filter(el => this.$store.state.sale ? el.price < this.$store.state.highprice && el.sale : el.price < this.$store.state.highprice).map(x => x)
       const firebaseCart = this.$store.state.cart.map(x => x.product)
-      const replacedResult = mainJsonCart.map(item =>  firebaseCart.find(item2 => item.id === item2.id) || item)
+      const replacedResult = mainJsonCart.map(item =>  firebaseCart.find(item2 => item.product_id === item2.product_id) || item)
       return replacedResult
     },
     ...mapGetters({
@@ -74,71 +73,28 @@ export default {
   },
  
   created() {
-    this.loading = true; // this.$store.dispatch('fetchProducts')
-    this.fetchProducts().then(() => 
-
-      this.loading = false
- 
-    ).then(() => {
-      
-    });
+    this.loading = true; 
+    this.fetchProducts().then(() => {
+      this.fetchStores().then(() => {
+      this.loading = false; 
+      })
+    })
   },
-  
   
   methods : {
     ...mapActions({
+      fetchStores: 'fetchStores',
       fetchProducts: 'fetchProducts',
       addProductToCart: 'addProductToCart',
     }),
-    // addProductToCart(product) { this.$store.dispatch('addProductToCart',product) }
   }
 }
+
 </script>
 <style lang="css">
 
-/* :root {
-	font-size: calc(16px + (48 - 16)*(100vw - 320px)/(2560 - 320));
-}
-body, button {
-	font: 1em/1.5 "Hind", sans-serif;
-}
-body {
-	background: #e3e4e8;
-	display: flex;
-	height: 100vh;
-	overflow: hidden;
-} */
+.product-list-container { position: relative;width: 100%; }
 
-
- 
-
-/* end button */
-
-li {
-  opacity: 0;
-  animation: fadeIn 0.5s 1;
-  animation-fill-mode: forwards;
-}
-
-
-
-/*...*/
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0.0;
-  }
-  100% {
-    opacity: 1.0;
-  }
-}
-
-.container { position: relative;width: 100%; }
-/* .image {
-  display: block;
-  width: 100%;
-  height: auto;
-} */
 .overlay {
     position: absolute;
     top: 0;
@@ -153,9 +109,14 @@ li {
     transition: .5s ease;
     background-color: rgba(0, 0, 39, 0.5);
 }
-.container:hover .overlay {
+.product-list-container:hover .overlay {
   opacity: 1;
 }
+
+.eachstore {
+  display: block;
+}
+
 .text {
 color: white;
     /* font-weight: bold; */
@@ -181,13 +142,15 @@ color: white;
     text-align: center;
 }
 .sale-banner {
-  border-radius: 2px 0px;
+border-radius: 2px 0px;
     background: rgb(232, 35, 25);
     color: white;
     font-family: sans-serif;
-     position: absolute;
+    position: absolute;
     padding: 4px 10px 5px;
     text-transform: uppercase;
+    left: 0;
+    top: 0;
     font-size: 12px;
     font-weight: 700;
     z-index: 1;
@@ -200,10 +163,13 @@ color: white;
     position: absolute;
     padding: 4px 10px 5px;
     text-transform: uppercase;
+    left: 0;
+    top: 0;
     font-size: 12px;
     font-weight: 700;
     z-index: 1;
 }
+
 /* 
 #buttonToggle {
   display: none;
@@ -257,12 +223,15 @@ color: white;
    display: none;
  }
  
-
- 
  .product-card.out-of-stock img {
    opacity: 0.6;
  }
  .product-card.out-of-stock .product-price,  .product-card.out-of-stock .product-title{
    opacity: 0.6;
  }
+ 
+ li:empty {
+   display: none;
+ }
+ 
 </style>

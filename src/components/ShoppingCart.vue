@@ -1,20 +1,24 @@
 <template>
   <div class="shopping-cart">
-    <div v-if="$store.state.cart.length <= 0" class="empty-cart">
+    <div v-if="$store.state.cart.length <= 0" class="empty-cart-container">
+      
+         <div  class="empty-cart">
       <p>Your cart is currently empty. 😱</p>
       <router-link to="/"><button>Shop Now!</button></router-link>
     </div>
+    </div>
+ 
     <div v-else class="shopping-cart-items">
       <ul>
         <li v-for="product in products" class="cart-product-card">
-          <img :src="`./static/images/${product.img}`" :alt="`Image of ${product.title}`">
+          
+          <!-- <p>{{product.store_name}}</p> -->
+          
+          <img :src="`./stores/static/${product.store_name.toLowerCase()}/images/${product.img}`" :alt="`Image of ${product.title}`">
           <div class="cart-detail">
-            
           <p class="product-title">{{product.title}}</p>
-          <p class="product-description"> {{product.description }}</p>
+          <p class="product-description"> {{product.description}}</p>
           <p class="product-price"> {{product.price | currency}} X {{product.quantity}} </p>
-          
-          
         <div class="quantity">
           <a @click="subtractCartItem(product)" href="#" class="quantity__minus" ><span>-</span></a>
           <!-- <p name="quantity" type="text" class="quantity__input" :value="`${product.quantity}`">{{product.quantity}}</p> -->
@@ -100,6 +104,9 @@ border-radius: 4px 0 0 6px;
   border-radius: 0 6px 6px 0;
 } */
 
+.empty-cart-container {
+      padding: 90px;
+}
 .quantity__input {
   margin: 0px 14px 0px 14px;
     font-size: 16px;
@@ -175,8 +182,8 @@ ul {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     max-width: 800px;
-    -webkit-box-flex: 10;
-    -ms-flex: 10;
+    /* -webkit-box-flex: 10;
+    -ms-flex: 10; */
     flex: 10;
     /* padding: 41px; */
     padding-left: 0;
@@ -194,6 +201,9 @@ ul {
   margin-top: 10px;
   margin-bottom: 20px;
   font-size: 18px;
+}
+.shopping-cart{
+    position: relative;
 }
 
 .cart-product-card {

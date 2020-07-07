@@ -1,7 +1,6 @@
 <template>
   <section class="allproducts">
-    <h1>Products</h1>
-      <hr>
+
     <ProductList category="allproducts"/>
   </section>
 </template>

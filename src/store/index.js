@@ -11,6 +11,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     products: [],
+    stores: [],
     cart: [],
     firebaseCart: [], 
     cartItems: 0,

@@ -1,12 +1,17 @@
-/**
- * MOCKING CLIENT-SERVER PROCESSING
- */
+/*** MOCKING CLIENT-SERVER PROCESSING */
 
-var _products = require('../../data.json')
+var data = require('../../stores/data.json')
+
+var _products = [], _stores = []; 
+data.forEach(element => { _products.push(...element.store_items); _stores.push(...element.store_data );});
 
 export default {
   getProducts (cb) {
     setTimeout(() => cb(_products), 100)
+  },
+  
+  getStores (cb) {
+    setTimeout(() => cb(_stores), 100)
   },
   
   buyProducts (products, cb, errorCb) {
@@ -17,4 +22,3 @@ export default {
     }, 100)
   }
 }
-

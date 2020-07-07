@@ -5,19 +5,33 @@ export default {
 	
 	// actions = methods
 	fetchProducts(context) {
-		console.log('context: ', context);
     return new Promise(function (resolve, reject) {
       shop.getProducts(products => {
         context.commit('setProducts', products);
-        // context.commit('editproducts', products);
+        resolve();
+      });
+    });
+	},
+	
+	fetchStores(context) {
+		// console.log('context: ', context);
+    return new Promise(function (resolve, reject) {
+      shop.getStores(stores => {
+        context.commit('setStores', stores);
         resolve();
       });
     });
 	},
 
 	addProductToCart(context, product) { 
+
+
     if (context.getters.productInStock(product)) {
-      const cartItem = context.state.cart.find(item => item.id === product.id);
+			var store = context.state.stores.find(item => item.store_id == product.store_id)
+			var product = {... store, ...product}
+			
+      const cartItem = context.state.cart.find(item => item.product_id === product.product_id);
+			
       if (!cartItem) {
         context.commit('pushProductToCart', product);
       } else {
@@ -30,39 +44,31 @@ export default {
 
   // in cart
 	subtractCartItem(context, product) {
-		const cartItem = context.state.cart.find(item => item.id === product.id);
+		const cartItem = context.state.cart.find(item => item.product_id === product.product_id);
 		if (cartItem && cartItem.quantity > 1) {
 			context.commit('decrementItemQty', cartItem, product);
 		} else {
-			var newCart = context.state.cart.filter((item) => {return item.id !== product.id})
+			var newCart = context.state.cart.filter((item) => {return item.product_id !== product.product_id})
 			context.commit('removeCartItem', newCart);
 		}
 		if (JSON.stringify(context.getters.currentUser) !== '{}') { ref.child('users').child(context.getters.currentUser.displayName).child('cart/').set(context.state.cart) }
 	},
 
 	addCartItem(context, product) {
-        if (context.getters.productInStock(product)) {
-
-		const cartItem = context.state.cart.find(item => item.id === product.id);
+	if (context.getters.productInStock(product)) {
+		const cartItem = context.state.cart.find(item => item.product_id === product.product_id);
 		if (cartItem) { context.commit('incrementItemQty', cartItem, product); }
         } else {
-          
           alert(`out of this stock for , ${product.title}`)
-          			// var newCart = context.state.cart.filter((item) => {return item.id !== product.id})
-
-          			// context.commit('removeCartItem', newCart);
-
+					// var newCart = context.state.cart.filter((item) => {return item.product_id !== product.product_id})
+					// context.commit('removeCartItem', newCart);
         }
 		if (JSON.stringify(context.getters.currentUser) !== '{}') { ref.child('users').child(context.getters.currentUser.displayName).child('cart/').set(context.state.cart) }
-		
-
-		
-		
 	},
 
 	// addCartItem(context, product) {
 	//   // if (context.getters.productInStock(product)) {
-	//     const cartItem = context.state.cart.find(item => item.id === product.id);
+	//     const cartItem = context.state.cart.find(item => item.product_id === product.product_id);
 	//     // 
 	//     // 
 	//     if (!cartItem) {
@@ -91,8 +97,8 @@ export default {
         var fireBaseUserCart = cart.val();
           if (fireBaseUserCart !== null) {
             fireBaseUserCart.forEach(items => {
-              // context.state.firebaseCart.push({id: items.id, product: items.product,  quantity: items.quantity});
-              context.state.cart.push({id: items.id, product: items.product,  quantity: items.quantity});
+              // context.state.firebaseCart.push({id: items.product_id, product: items.product,  quantity: items.quantity});
+              context.state.cart.push({id: items.product_id, product: items.product,  quantity: items.quantity});
             }); 
            const quantityAmount = fireBaseUserCart.map(x => x.quantity).reduce((a, b) => a + b, 0);
           context.state.cartItems = quantityAmount;
@@ -101,12 +107,8 @@ export default {
 		}
 	},
 	
-	// editCartItem(product) {
-	//   
-	// },
 
 	checkout(context) {
-    
     shop.buyProducts(context.state.cart,
       () => {
         context.commit('emptyCart');

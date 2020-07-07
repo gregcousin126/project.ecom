@@ -132,16 +132,16 @@ export default {
 }
 
 
-#target {
-  
-    height: 100px;
-    /* background-color: red; */
-    transition: opacity .2s;
-}
 .top-signin-container {
-  z-index: 0;
   text-align: -webkit-center;
   margin: 0px auto;
+  justify-content: center;
+    z-index: 0;
+        padding: 5% 7%;
+    transition: opacity .2s;
+    display: flex;
+  text-align: -webkit-center;
+   margin: 0px auto;
   /* border-radius: 10px;
       top: 50%;
     left: 50%;
@@ -165,11 +165,10 @@ body {
 
 .signin-container {
   height: auto;
-  width: 56%;
+  /* width: 60%; */
   -webkit-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.603);
   box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.603);
-  display: -webkit-box;
-  display: -ms-flexbox;
+
   display: flex;
   border-radius: 5px;
 }
@@ -178,7 +177,7 @@ body {
 
 
 .image-signin {
-  flex: 50%;
+  /* flex: 35%; */
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/stylewoman.jpg');
   background-size: cover;
   text-align: center;
@@ -202,9 +201,10 @@ body {
 
 .signin-content {
   flex: 50%;
+  justify-content: center;
   background-color: var(--my-white);
   text-align: center;
-  padding: 5%;
+ padding: 50px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -358,7 +358,8 @@ body {
 
 
 
-@media (max-width: 48em) {
+@media (max-width: 600px) {
+/* @media (max-width: 48em) { */
   .image-signin {
     display: none;
   }
@@ -382,8 +383,8 @@ body {
 
   .signin-container {
     
-    width: 90%;
-    padding: 20px;
+    width: 100%;
+    /* padding: 20px; */
   }
   .signin-content {
     border-radius: 5px;

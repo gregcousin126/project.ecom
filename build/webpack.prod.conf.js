@@ -63,7 +63,11 @@ const webpackConfig = merge(baseWebpackConfig, {
 		// see: https://webpack.js.org/plugins/commons-chunk-plugin/#extra-async-commons-chunk
 		new webpack.optimize.CommonsChunkPlugin({name: 'app', async: 'vendor-async', children: true, minChunks: 3}),
 		// copy custom static assets
-		new CopyWebpackPlugin([{from: path.resolve(__dirname, '../static'), to: config.build.assetsSubDirectory, ignore: ['.*']}])
+		new CopyWebpackPlugin([
+			
+			{from: path.resolve(__dirname, '../stores'), to: config.build.assetsSubDirectory, ignore: ['.*']},
+		
+		])
 	]
 })
 if (config.build.productionGzip) {

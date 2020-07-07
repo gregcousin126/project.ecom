@@ -6,14 +6,20 @@ export default {
 	setProducts(state, products) { 
 		state.products = products;
 	},
+	
+	
+	setStores(state, stores) { 
+		state.stores = stores;
+	},
   
+	
 	authStateChange(state) {
 		state.isLoggedIn = firebaseAuth().currentUser != null;
 		state.user = firebaseAuth().currentUser;
 	},
   
 	pushProductToCart(state, product) {
-		state.cart.push({id: product.id, product: product, quantity: 1});
+		state.cart.push({product_id: product.product_id, store_id: product.store_id, store_name: product.store_name,  product: product, quantity: 1});
 		state.cartItems++;
 	},
   

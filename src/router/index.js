@@ -4,6 +4,7 @@ import Userinfo from '@/auth/Authchange'
 import SideMainLayout from '@/layout/SideMainLayout'
 import cart from '@/sections/cart'
 import decoration from '@/sections/decoration'
+import ErrorPage from '@/sections/error'
 import furniture from '@/sections/furniture'
 import home from '@/sections/home'
 import wall from '@/sections/wall'
@@ -14,12 +15,11 @@ import Router from 'vue-router'
 Vue.use(Router); 
 
 export default new Router({
-    base: process.env.BASE_URL,
+    // base: process.env.BASE_URL,
 
   mode: 'history',
-
-// });
   routes: [
+    
     {
       path: '/',
       component: SideMainLayout,
@@ -27,14 +27,22 @@ export default new Router({
         { path: '/', component: home, name : 'home' },
         { path: '/furniture', name: 'furniture', component: furniture,  meta: { title: 'Nested - furniture Page' }},
         { path: '/wall', name: 'wall', component: wall,  meta: { title: 'Nested - wall Page' }},
-        { path: '/decoration', name: 'decoration', component: decoration, meta: { title: 'Nested - decoration Page' } }
+        { path: '/decoration', name: 'decoration', component: decoration, meta: { title: 'Nested - decoration Page' } },
+        // { path: '/home', name: 'home', component: home, meta: { title: 'Nested - home Page' } }
       ]
     },
+    
+    
+              //  { path: '/Banner', name: 'Banner', component: Banner,  meta: { title: 'Nested - Banner Page' }},
+    
     { path: '/userinfo', component: Userinfo, name: 'Authchange' },
     { path: '/register', component: Register },
     { path: '/signin', component: Signin },
     { path: '/cart', name: 'cart', component: cart },
-    // {path: '*', redirect: '/' }
+    {path: '*', redirect: '/error',  },
+    {path: '/error', component: ErrorPage}
+    
+    
 
   ],
    scrollBehavior: (to, from, savedPosition) => {

@@ -1,10 +1,11 @@
 <template>
   <div id="app">
+    
     <TopNavigation/>
+      <div class="content-wrapper" id="wrapper">
 
-    <div class="content-wrapper" id="wrapper">
-      <router-view/>
-    </div>
+        <router-view/>
+      </div>
     <Footer/>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <transition name="fade" tag="div">
   <div class="shopping-cart-wrap">
     <h1>Shopping Cart</h1>
-       <hr>
+      <hr>
     <ShoppingCart/>
   </div>
 </transition>

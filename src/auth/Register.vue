@@ -2,7 +2,7 @@
 <body >
   <div v-if="!currentUser.displayName" >
     <!-- <div id="imageonly"></div> -->
-    <div class="top-register-container cardcontainer" id="target">
+    <div class="top-register-container register-card-container" id="target">
       <div class="register-container card">
         <div class="image-register">
           <h1 class="register-banner">
@@ -28,7 +28,7 @@
     </div>
     </div>
 
-    <!-- <div class="cardcontainer">
+    <!-- <div class="register-card-container">
   <div class="card">  a</div>
     </div>-->
 
@@ -176,7 +176,7 @@ export default {
     padding: 3px;
     display: flex;
         font-size: 13px; */
-    color: var(--text-secondary);
+  color: var(--text-secondary);
   text-transform: uppercase;
 }
 
@@ -212,8 +212,12 @@ export default {
 
 .top-register-container {
   z-index: 0;
+    justify-content: center;
+        padding: 5% 7%;
+    transition: opacity .2s;
+    display: flex;
   text-align: -webkit-center;
-   margin: 0px auto;
+   /* margin: 0px auto; */
   
   /* border-radius: 10px;
       top: 50%;
@@ -242,26 +246,18 @@ body {
 .register-container {
   
   height: auto;
-  width: 56%;
+  /* width: 80%; */
   -webkit-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.603);
   box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.603);
-  display: -webkit-box;
-  display: -ms-flexbox;
+
   display: flex;
   border-radius: 5px;
 }
 
 
-#target {
-  
-    height: 100px;
-    /* background-color: red; */
-    transition: opacity .2s;
-}
-
 
 .image-register {
-  flex: 50%;
+  flex: 35%;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/jamesbond.jpg');
   background-size: cover;
   text-align: center;
@@ -285,9 +281,11 @@ body {
 
 .register-content {
   flex: 50%;
+  justify-content: center;
   background-color: var(--my-white);
   text-align: center;
-  padding: 5%;
+  /* padding: 5%; */
+ padding: 50px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -370,8 +368,7 @@ body {
 
 /* animations */
 
-.cardcontainer {
-  
+.register-card-container {
   animation: float 6s ease-in-out infinite;
 }
 .card {
@@ -445,7 +442,8 @@ body {
 }
 
 
-@media (max-width: 48em) {
+/* @media (max-width: 48em) { */
+@media (max-width: 600px) {
   .image-register {
     display: none;
   }
@@ -461,7 +459,7 @@ body {
   
   animation: fadeup .7s ease-in-out;
 }
-.cardcontainer {
+.register-card-container {
     -webkit-animation: none;
     animation: none;
 }
@@ -471,8 +469,8 @@ body {
 
   .register-container {
     
-    width: 90%;
-    padding: 20px;
+    width: 100%;
+    /* padding: 20px; */
   }
   .register-content {
     border-radius: 5px;

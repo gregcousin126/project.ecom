@@ -9,10 +9,12 @@
 <script>
 import ProductList from '@/components/ProductList'
 import SideMainLayout from '@/layout/SideMainLayout'
+import Banner from '@/layout/Banner'
 
 export default {
   name: 'wall',
   components: {
+    Banner,
     ProductList,
     SideMainLayout
   }

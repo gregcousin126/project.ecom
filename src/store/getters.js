@@ -23,10 +23,17 @@ export default {
   
   
   cartProducts(state) {
+    
+    
+    
+    
     return state.cart.map(cartItem => { 
-      // const product = state.products.find(product => product.id === cartItem.id);
+      console.log('cartItem: ', cartItem);
+      // const product = state.products.find(product => product.product_id === cartItem.product_id);
       return {
-        id: cartItem.id,
+        product_id: cartItem.product_id,
+        store_id: cartItem.store_id,
+        store_name: cartItem.store_name,
         title: cartItem.product.title,
         price: cartItem.product.price,
         description: cartItem.product.description,
