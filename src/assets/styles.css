@@ -1,9 +1,9 @@
 body,
 html { padding: 0; margin: 0; font-size: 14px; word-spacing: 1px; -ms-text-size-adjust: 100%; 
-/* touch-action: manipulation; */
+touch-action: manipulation;
 
-/* -ms-touch-action: manipulation; */
-width: 100%;
+-ms-touch-action: manipulation;
+/* width: 100%; */
 -webkit-text-size-adjust: 100%; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-box-sizing: border-box; box-sizing: border-box; }
 #app { font-family: 'Overpass'; 
 text-align: center;
