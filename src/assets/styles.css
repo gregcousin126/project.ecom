@@ -140,7 +140,8 @@ form { text-align: -webkit-center; }
 }
 @media(max-width: 600px) {
   .content-wrapper {
-    padding: 85px 20px;
+    
+    padding: 80px 15px;
   }
 
   .product-list ul {
