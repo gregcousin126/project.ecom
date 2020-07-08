@@ -112,18 +112,20 @@ export default {
 
  
 .mygif {
-flex: 50%; 
-display: var(--display-filter);
-    /* display: none; */
-    -webkit-transform: scale(.8);
-    transform: scale(.8);
+-webkit-box-flex: 50%;
+    -ms-flex: 50%;
+    flex: 50%;
+    display: var(--display-primary);
+ 
+    width: 290px;
     position: relative;
     border-radius: 27px;
-    margin: -20px 0px -45px 0px;
-    -webkit-filter: var(--image-filter);
+    margin: 5% auto 0px;
+    /* margin: -20px 0 -55%; */
+    /* -webkit-filter: var(--image-filter); */
     filter: var(--image-filter);
-    height: 348px;
-    background: url('../assets/pick-dress.gif');
+    height: 218px;
+    background: url(/stores/img/pick-dress.fa3d91e.gif);
     background-repeat: no-repeat;
     background-size: contain;
     text-align: center;

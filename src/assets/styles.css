@@ -33,7 +33,16 @@ button { background: none; border: 0; color: inherit; font: inherit; line-height
 input::-moz-focus-inner,
 button::-moz-focus-inner { border: 0; padding: 0; } 
 .header { float: left; } 
-hr { height: 22px; color: rgba(0,0,0,.1); border: none; border-radius: 2px; margin-bottom: 27px; margin-top: -21px; background: var(--text-floogle); width: 100%; } 
+hr {
+  height: 22px;
+  color: rgba(0, 0, 0, .1);
+  border: none;
+  border-radius: 2px;
+  margin-bottom: 27px;
+  margin-top: -23px;
+  background: var(--text-floogle);
+  width: 100%;
+}
 a { color: var(--blue-primary); text-decoration: none; } 
 button { padding: 12px 18px; font-size: 12px; font-weight: 600; /* display: none; */
  border-radius: 5px; cursor: pointer; /* background: white; */
@@ -53,7 +62,19 @@ input::-webkit-input-placeholder,
 input::-moz-placeholder,
 input:-ms-input-placeholder,
 input:-moz-placeholder { color: #aab8c3; } 
-h1 {text-align: left; margin-bottom: 40px; font-size: 22px; font-weight: 700; margin-top: -6px; font-family: 'Overpass'; } 
+h1 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 21px;
+    font-weight: 700;
+    /* top: -30px; */
+    margin-bottom: 32px;
+    margin-top: -5px;
+    /* font-family: Mellody; */
+    font-family: FoobarPro;
+}
+
+
 a:hover { color: var(--my-pink); } 
  input:focus, textarea:focus, select:focus { outline: none; } 
 .content-wrapper { padding: 2% 2%; min-height: 87vh; max-width: 100%; position: relative; display: flow-root;}

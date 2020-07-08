@@ -385,8 +385,8 @@ font-family: 'Overpass';
  font-size: 17px;
  } 
  }
-.dark { --text-primary: #b6b6b6; --text-secondary: #ececec; --bg-primary: #23232e; --bg-secondary: #141418;  --text-floogle: #4c475f62; --bg-low-opacity: #1414181c; --my-turk: #18c2c2; --image-filter: grayscale(0) brightness(1.1) saturate(1); --display-filter: none  } 
-.light { --text-primary: #1f1f1f; --text-secondary: #000000; --bg-primary: #ffffff; --bg-secondary: #e4e4e4; --text-floogle: #dfdfdf;   --bg-low-opacity: #1414181c; --my-turk: #76b7f3; --image-filter: grayscale(0) brightness(1.1) saturate(1); --display-filter: block } 
+.dark { --text-primary: #b6b6b6; --text-secondary: #ececec; --bg-primary: #23232e; --bg-secondary: #141418;  --text-floogle: #4c475f62; --bg-low-opacity: #1414181c; --my-turk: #18c2c2; --image-filter: grayscale(0) brightness(1.1) saturate(1); --display-primary: none  } 
+.light { --text-primary: #1f1f1f; --text-secondary: #000000; --bg-primary: #ffffff; --bg-secondary: #e4e4e4; --text-floogle: #dfdfdf;   --bg-low-opacity: #1414181c; --my-turk: #76b7f3; --image-filter: grayscale(0) brightness(1.1) saturate(1); --display-primary: flex } 
 .solar { --text-primary: #576e75; --text-secondary: #35535c; --bg-primary: #fdf6e3; --bg-secondary: #f5e5b8; --text-floogle: #ececec; } 
 .theme-icon { display: none; 
 } 
