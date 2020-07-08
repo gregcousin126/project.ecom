@@ -415,6 +415,7 @@ ul {
 }
 img {
     width: 100%;
+    object-fit: cover;
     height: 209px;
     /* border-radius: 8px; */
 }

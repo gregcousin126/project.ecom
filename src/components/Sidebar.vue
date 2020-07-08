@@ -267,8 +267,8 @@ cursor: text;
     /* white-space: break-spaces; */
   }
   .checkbox-box {
-width: 20px;
-    height: 20px;
+width: 22px;
+    height: 22px;
     border: 2px solid var(--text-floogle);
     position: relative;
     cursor: pointer;
@@ -289,8 +289,8 @@ width: 20px;
   input[type="checkbox"]:checked ~ .checkbox-box::before {
     content: '';
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     top: 2px;
     left: 2px;
     background: #5044ff;
