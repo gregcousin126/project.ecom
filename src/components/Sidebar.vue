@@ -317,8 +317,14 @@ width: 22px;
   }
   /* @media (max-width: 48em) { */
   @media (max-width: 600px) {
-  
-    
+  input[type="checkbox"]:checked ~ .checkbox-box::before { 
+        width: 16px;
+    height: 16px;
+   }
+    .checkbox-box {
+    width: 24px;
+    height: 24px;
+    }
     #show-sidebar svg {
     width: 45px;
     height: 45px;
