@@ -225,7 +225,7 @@ makeSplatter: function(e) {
 .quantity__plus {
 display: block;
     width: 34px;
-    border-radius: 5px;
+    border-radius: 50px;
     height: 34px;
     margin: 6px;
     background: var(--text-floogle);
@@ -425,7 +425,7 @@ img {
     padding: 5px;
   }
   .cart-product-card {
-    width: 40%;
+    width: 45%;
     /* width: 160px; */
   }
 
@@ -440,7 +440,7 @@ img {
   .quantity__minus, .quantity__plus {
 display: block;
     width: 44px;
-    border-radius: 24px;
+    /* border-radius: 24px; */
     height: 44px;
     font-size: 22px;
     margin: 12px 12px 12px 12px;
