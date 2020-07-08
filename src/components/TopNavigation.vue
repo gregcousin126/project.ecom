@@ -312,7 +312,7 @@ font-family: 'Overpass';
   .nav-link svg {
     width: 2rem;
     min-width: 2.1rem;
-    margin: 0 1.2rem;
+  margin: 0rem 1.2rem -.2rem;
 }
   .expandable-categlory {
     display: none;
