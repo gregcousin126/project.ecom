@@ -25,7 +25,7 @@
     </div>
     <div class="aside-block">
       <h4>Support</h4>
-      <p><p style="display:inline" v-if="JSON.stringify(currentUser) !== '{}'">{{currentUser.displayName}}, </p>Get in touch with us for any queries at <a href="#">xotopolo@gmail.com</a></p>
+      <p><p style="display:inline" v-if="JSON.stringify(currentUser) !== '{}'">{{currentUser.displayName}}, </p>Get in touch with us for any queries at <a href="mailto: xotopolo@gmail.com">xotopolo@gmail.com</a></p>
     </div>
   </div>
     <div class="aside-block">
@@ -307,6 +307,10 @@ width: 20px;
   
   
   @media (max-width: 600px) {
+    
+    .sidebarbutton {
+      font-size: 14px;
+    }
    .mygif {
       display: var(--display-primary);
     } 

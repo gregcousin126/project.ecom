@@ -23,7 +23,7 @@
           <form @submit.prevent="signIn">
             <input type="email" class="inputbox with-transform" v-model="email" placeholder="Type your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Do you have an email 📧'"/>
             <input type="password" class="inputbox with-transform" v-model="password" placeholder="Pick your password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your data is safe 🔒'"/>
-            <a class="fp" href="index.html">Forgot Password?</a>
+            <a class="fp" >Forgot Password?</a>
             <button type="submit" class="btn-signin">Login</button>
             <button type="button" class="btn-signin" @click="registerAnim">Register</button>
           </form>

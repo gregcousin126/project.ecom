@@ -17,7 +17,7 @@
             <input type="displayName" class="inputbox with-transform" v-model="displayName" placeholder="Hi 🖐️, whats your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'We need your name 😉'"/>
             <input type="email" class="inputbox with-transform" v-model="email" placeholder="Type your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Do you have an email 📧'"/>
             <input type="password" class="inputbox with-transform" v-model="password" placeholder="Pick a password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your data is safe 🔒'"/>
-            <a class="fp" href="index.html">Forgot Password?</a>
+            <a class="fp">Forgot Password?</a>
             <button type="submit" class="btn-register">Register</button>
             <button type="button"  class="btn-register" @click="signinAnim" >Login</button>
           </form>
@@ -39,22 +39,22 @@
     <ul class="authchoice">
       <li>
         <router-link to="/register">
-          <a class="dropdown log-link" href>register</a>
+          <a class="dropdown log-link">register</a>
         </router-link>
       </li>
       <li>
         <router-link to="/signin">
-          <a class="dropdown log-link" href>log-in</a>
+          <a class="dropdown log-link">log-in</a>
         </router-link>
       </li>
       <li>
         <router-link to="/userinfo">
-          <a class="dropdown log-link" href>user</a>
+          <a class="dropdown log-link">user</a>
         </router-link>
       </li>
       <li>
         <router-link to="/">
-          <a @click="signOut" class="dropdown log-link" href>signout</a>
+          <a @click="signOut" class="dropdown log-link">signout</a>
         </router-link>
       </li>
     </ul>

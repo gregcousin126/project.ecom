@@ -15,9 +15,9 @@
           <p class="product-description"> {{product.description}}</p>
           <p class="product-price"> {{product.price | currency}} X {{product.quantity}} </p>
         <div class="quantity">
-          <a @click="subtractCartItem(product)" href="#" class="quantity__minus" ><span>-</span></a>
+          <a @click="subtractCartItem(product)" class="quantity__minus" ><span>-</span></a>
           <!-- <p name="quantity" type="text" class="quantity__input" :value="`${product.quantity}`">{{product.quantity}}</p> -->
-          <a @click="addCartItem(product)" href="#" class="quantity__plus"><span>+</span></a>
+          <a @click="addCartItem(product)" class="quantity__plus"><span>+</span></a>
         </div>
           </div>
         </li>
@@ -423,7 +423,7 @@ img {
     margin: 10px;
   }
   .cart-product-card {
-    width: 200px;
+    width: 170px;
   }
 
   
@@ -451,7 +451,7 @@ display: block;
   }
 img {
    width: 100%;
-    height: 200px;
+    height: 185px;
     /* border-radius: 8px; */
 }
   .cart-product-card {
