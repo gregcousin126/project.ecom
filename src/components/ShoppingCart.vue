@@ -423,7 +423,7 @@ img {
     margin: 10px;
   }
   .cart-product-card {
-    width: 170px;
+    width: 168px;
   }
 
   
@@ -455,7 +455,7 @@ img {
     /* border-radius: 8px; */
 }
   .cart-product-card {
-    margin-right: 0px;
+    margin: 0px 5px 20px 5px;
   }
   ul {
     justify-content: space-around;
