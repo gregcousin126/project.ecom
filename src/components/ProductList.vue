@@ -123,27 +123,6 @@ export default {
       this.fetchStores().then(() => {})
         setTimeout(() => { this.loading = false;}, 630);
         
-       
-        
-        
-        
-// }
-
-
-        
-  //       document.getElementById("pricerange").addEventListener("change", function() {
-     
-        // var store = document.getElementById("each-store");
-          
-  //       var fname = document.getElementById("pricerange").value;
-  //       console.log('inputval: ', fname);
-  //    console.log('store: ', store);
-  // store.removeChild(store.childNodes[0]);
-     
-  //       });
-        
-
-		
     })
   },
   
@@ -275,6 +254,26 @@ border-radius: 2px 0px;
     margin-top: -45px;
  }
  @media (max-width: 600px) {
+    .product-title {
+    margin-bottom: 8px;
+    line-height: 22px;
+    font-size: var(--font-mobile-secondary);
+    font-family: FoobarPro;
+ }
+ .product-description {
+    margin-top: -3px;
+    width: 100%;
+    padding: 3px 20px 3px 20px;
+    font-size: 11px;
+    font-family: Helvetica Neue;
+    color: rgba(110, 110, 110, 0.773);
+    margin-bottom: 10px;
+ }
+ .product-price {
+   font-weight: bold;
+    font-size: var(--font-mobile-secondary);
+
+ },
    .add-to-cart-btn {
      opacity: 1;
      margin-top:9px
@@ -290,7 +289,7 @@ border-radius: 2px 0px;
 
    transition: margin-top .3s, opacity .5s;
    opacity: 1;
-   margin-top: 9px;
+   margin-top: 6px;
    display: block;
  }
 

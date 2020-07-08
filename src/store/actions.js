@@ -109,7 +109,8 @@ export default {
 	
 
 	checkout(context) {
-    shop.buyProducts(context.state.cart,
+		setTimeout(() => { 
+			shop.buyProducts(context.state.cart,
       () => {
         context.commit('emptyCart');
         context.commit('setCheckoutStatus', 'success');
@@ -118,5 +119,8 @@ export default {
         context.commit('setCheckoutStatus', 'fail');
       }
     );
+		}, 250);
+		
+
 	},
 };

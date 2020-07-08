@@ -13,12 +13,5 @@
 
 /* IMPORTED */
 
-@font-face {
-font-family: Mellody; 
-src : url('./fonts/Mellody-ajOE.ttf');
-}
-
-@font-face {
-font-family: FoobarPro; 
-src : url('./fonts/FoobarPro.otf');
-}
+@font-face { font-family: Mellody; src : url('./fonts/Mellody-ajOE.ttf');}
+@font-face { font-family: FoobarPro; src : url('./fonts/FoobarPro.otf');}
