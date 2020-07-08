@@ -7,19 +7,14 @@
       <input type="text" id="search-input" class="form-control"  name="search"  placeholder="Search" autocomplete="off" @input="searchFilter($event)">
     </form>
   </div>
-      <button type="checkbox" class="sidebarbutton">
-        <a id="show-sidebar" @click="showSidebar">
-            <span  class="filter-btn" ><p id="remove-filter">filter +</p><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="10" width="18" height="2" fill="var(--blue-primary)" class="fltr-line1"></rect><rect x="7" y="20" width="18" height="2" fill="var(--blue-primary)" class="fltr-line2"></rect><circle cx="13" cy="21" r="2.5" fill="white" stroke="var(--blue-primary)" class="fltr-crcl1"></circle><circle cx="19" cy="11" r="2.5" fill="white" stroke="var(--blue-primary)" class="fltr-crcl2"></circle></svg></span>
-         </a>
-      </button> 
-
+  <button type="checkbox" class="sidebarbutton">
+    <a id="show-sidebar" @click="showSidebar">
+        <span  class="filter-btn" ><p id="remove-filter">filter +</p><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="10" width="18" height="2" fill="var(--blue-primary)" class="fltr-line1"></rect><rect x="7" y="20" width="18" height="2" fill="var(--blue-primary)" class="fltr-line2"></rect><circle cx="13" cy="21" r="2.5" fill="white" stroke="var(--blue-primary)" class="fltr-crcl1"></circle><circle cx="19" cy="11" r="2.5" fill="white" stroke="var(--blue-primary)" class="fltr-crcl2"></circle></svg></span>
+      </a>
+  </button> 
 
     <div class="expandable-sidebar" id="expandable-sidebar">
-
     <div class="mygif"></div>
-
-      
-
     <div class="aside-block">
         <h4>Super Sale</h4>
         <label class="checkbox-control">
@@ -33,12 +28,12 @@
       <p><p style="display:inline" v-if="JSON.stringify(currentUser) !== '{}'">{{currentUser.displayName}}, </p>Get in touch with us for any queries at <a href="#">xotopolo@gmail.com</a></p>
     </div>
   </div>
-     <div class="aside-block">
+    <div class="aside-block">
       <label for="pricerange">Maximum Price: <span>${{ pricerange }}</span></label>
       <input class="slider" id="pricerange" tabindex="0" :value="pricerange" type="range" :min="min" :max="max" step="0.1" @input="updateHighPrice($event)" />
       <span class="min">${{ min }}</span>
       <span class="max">${{ max }}</span>
-    </div>
+   </div>
   </aside>
 </template>
 
@@ -61,9 +56,7 @@ export default {
   computed: { 
     pricerange() { return this.$store.state.highprice },
     checked() { return this.$store.state.sale;},
-        ...mapGetters({
-          currentUser : 'currentUser',
-    }),
+    ...mapGetters({currentUser : 'currentUser'}),
   },
   
   methods: {
@@ -73,13 +66,15 @@ export default {
       var expander = document.getElementById('expandable-sidebar');
       if (!expander.classList.contains('maxheight-expand-sidebar')) { 
         expander.classList.add("maxheight-expand-sidebar");
-        ptag.style.display = 'none'
+        ptag.style.display = 'none';
       } else { expander.classList.remove("maxheight-expand-sidebar");
-       ptag.style.display = 'block'
+       ptag.style.display = 'block';
       }
       
     },
+    
     updateHighPrice($event) {
+      // console.log('$event: ', $event);
       this.$store.commit('setHighPrice', $event.target.value)
     },
     
@@ -118,14 +113,15 @@ export default {
  
 .mygif {
 flex: 50%; 
-    display: none;
+display: var(--display-filter);
+    /* display: none; */
     -webkit-transform: scale(.8);
     transform: scale(.8);
     position: relative;
     border-radius: 27px;
     margin: -20px 0px -45px 0px;
-    -webkit-filter: grayscale(0) brightness(1.6) saturate(1);
-    filter: grayscale(0) brightness(1.1) saturate(1);
+    -webkit-filter: var(--image-filter);
+    filter: var(--image-filter);
     height: 348px;
     background: url('../assets/pick-dress.gif');
     background-repeat: no-repeat;
@@ -165,11 +161,11 @@ flex: 50%;
     border: 2px solid var(--blue-primary);
     text-transform: uppercase;
     margin: 20px 0px 0px 0px;
-    -webkit-transition: 0.15s all ease-out;
-    transition: 0.15s all ease-out;
-    -moz-transition: 0.15s all ease-out;
-    -ms-transition: 0.15s all ease-out;
-    -o-transition: 0.15s all ease-out;
+    -webkit-transition: var(--transition-speed);
+    transition: var(--transition-speed);
+    -moz-transition: var(--transition-speed);
+    -ms-transition: var(--transition-speed);
+    -o-transition: var(--transition-speed);
 }
 
 
@@ -185,7 +181,7 @@ flex: 50%;
  }
  
  .maxheight-expand-sidebar {
-  overflow: scroll;
+  /* overflow: scroll; */
   max-height: 500px;
 }
 
@@ -310,7 +306,7 @@ width: 20px;
   
   @media (max-width: 600px) {
    .mygif {
-      display: block;
+      display: var(--display-filter);
     } 
   }
   /* @media (max-width: 48em) { */

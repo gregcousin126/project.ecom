@@ -92,7 +92,12 @@ export default {
 
 <style lang="css">
 
-.error-page-container { width: 0px; height: 0px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } 
+.error-page-container {
+   width: 0px; height: 0px; position: absolute; top: 50%; left: 50%; 
+   
+   transform: translate(-50%, -50%) scale(.7);; 
+   
+   } 
 .error-page-container .bed { background: #332944; width: 365px; height: 580px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 10px; box-shadow: inset 0px 30px #262038, -50px 7px 0px 10px #262038; } 
 .error-page-container .bed .bed-shadow { width: 100%; height: 100%; position: absolute; top: 0; left: 0; overflow: hidden; } 
 .error-page-container .bed .bed-shadow .window-light { background: #5a5b89; right: -40px; top: 109px; height: 139px; } 
@@ -184,6 +189,16 @@ export default {
 @keyframes yawnForEyes { 0%, 50%, 100% { bottom: 66px; } 75% { bottom: 65px; } }
 @keyframes catHeadShake { 0%, 67%, 100% { transform: rotate(0deg); } 70%, 97% { transform: rotate(-10deg); } }
 @keyframes phoneLCD { 0%, 70%, 100% { background: black; } 72%, 93% { background: white; } }
+
+@media(max-width: 600px) {
+.error-page-container {
+   width: 0px; height: 0px; position: absolute; top: 50%; left: 50%; 
+   
+   transform: translate(-50%, -50%) scale(.5);; 
+   
+   } 
+   
+}
 
 </style>
 

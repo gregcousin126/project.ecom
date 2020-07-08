@@ -309,8 +309,15 @@ font-family: 'Overpass';
 .navbar:hover .logo svg { transform: rotate(-180deg); } 
 /* Small screens */
 @media (max-width: 600px){
-  
+  .nav-link svg {
+    width: 2rem;
+    min-width: 2.1rem;
+    margin: 0 1.2rem;
+}
   .expandable-categlory {
+    display: none;
+  }
+  .expandable-stores {
     display: none;
   }
   
@@ -344,8 +351,13 @@ font-family: 'Overpass';
     #down-triangle {
      margin-left: 0px;
   }
- .navbar { width: 100vw; height: 4rem;
- border-bottom: 4px solid rgba(0,0,0,0.1);
+ .navbar {
+   
+       width: 100vw;
+    overflow: scroll;
+    height: 4rem;
+    border-bottom: 4px solid rgba(0,0,0,0.1);
+    overflow-y: hidden;
   } /*  bottom: 0; */ 
  .logo { display: none; } 
  .navbar-nav { flex-direction: row;
@@ -356,7 +368,7 @@ font-family: 'Overpass';
 /* Large screens */
 @media only screen and (min-width: 600px){
  .navbar { 
-   top: 0;
+    top: 0;  
     position: relative;
     display: inline-flex;
     width: 5rem;
@@ -373,8 +385,8 @@ font-family: 'Overpass';
  font-size: 17px;
  } 
  }
-.dark { --text-primary: #b6b6b6; --text-secondary: #ececec; --bg-primary: #23232e; --bg-secondary: #141418;  --text-floogle: #4c475f62; --bg-low-opacity: #1414181c; --my-turk: #18c2c2;  } 
-.light { --text-primary: #1f1f1f; --text-secondary: #000000; --bg-primary: #ffffff; --bg-secondary: #e4e4e4; --text-floogle: #dfdfdf;   --bg-low-opacity: #1414181c; --my-turk: #76b7f3;  } 
+.dark { --text-primary: #b6b6b6; --text-secondary: #ececec; --bg-primary: #23232e; --bg-secondary: #141418;  --text-floogle: #4c475f62; --bg-low-opacity: #1414181c; --my-turk: #18c2c2; --image-filter: grayscale(0) brightness(1.1) saturate(1); --display-filter: none  } 
+.light { --text-primary: #1f1f1f; --text-secondary: #000000; --bg-primary: #ffffff; --bg-secondary: #e4e4e4; --text-floogle: #dfdfdf;   --bg-low-opacity: #1414181c; --my-turk: #76b7f3; --image-filter: grayscale(0) brightness(1.1) saturate(1); --display-filter: block } 
 .solar { --text-primary: #576e75; --text-secondary: #35535c; --bg-primary: #fdf6e3; --bg-secondary: #f5e5b8; --text-floogle: #ececec; } 
 .theme-icon { display: none; 
 } 

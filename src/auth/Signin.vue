@@ -364,6 +364,13 @@ body {
     display: none;
   }
   
+    .signin-content {
+
+    padding: 20px;
+    
+  }
+  
+  
   .card {
   background: white;
   -webkit-perspective: 1000px;
@@ -377,8 +384,17 @@ body {
     -webkit-animation: none;
     animation: none;
 }
+.top-signin-container {
+      padding: 0%;
+}
+
 .signin-container {
   box-shadow: 0px 9px 19px -7px rgba(0, 0, 0, 0.603);
+  
+  
+  
+  
+  
 }
 
   .signin-container {

@@ -448,6 +448,16 @@ body {
     display: none;
   }
   
+  .top-register-container {
+        padding: 0%;
+  }
+  .register-content {
+
+    padding: 20px;
+    
+  }
+  
+  
   .card {
   background: white;
   -webkit-perspective: 1000px;
