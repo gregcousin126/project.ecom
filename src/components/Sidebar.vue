@@ -125,7 +125,7 @@ export default {
     /* -webkit-filter: var(--image-filter); */
     filter: var(--image-filter);
     height: 218px;
-    background: url(/stores/img/pick-dress.fa3d91e.gif);
+        background: url('../assets/pick-dress.gif');
     background-repeat: no-repeat;
     background-size: contain;
     text-align: center;
@@ -308,7 +308,7 @@ width: 20px;
   
   @media (max-width: 600px) {
    .mygif {
-      display: var(--display-filter);
+      display: var(--display-primary);
     } 
   }
   /* @media (max-width: 48em) { */

@@ -1,103 +1,78 @@
 <template>
+
 <div class="error-page-container">
-  <div class="on-ground-lights">
-    <div class="window-light">
-      <div class="cat">
-        <div class="head"></div>
-      </div>
-    </div>
-    <div class="window-light"></div>
-  </div>
-  <div class="table right">
-    <div class="table-shadow">
-      <div class="window-light"></div>
-    </div>
-  </div>
+  <div class="on-ground-lights"><div class="window-light"><div class="cat"><div class="head"></div></div></div><div class="window-light"></div></div>
+  <div class="table right"><div class="table-shadow"><div class="window-light"></div></div></div>
   <div class="bed">
-    <div class="bed-shadow">
-      <div class="window-light"></div>
-      <div class="window-light"></div>
-    </div>
+    <div class="bed-shadow"><div class="window-light"></div><div class="window-light"></div></div>
     <div class="bed-head"></div>
     <div class="ground-cloth">
       <div class="window-light"></div>
       <div class="window-light"></div>
-      <div class="under-pillow-shadows">
-        <div class="head-shadow"></div>
-        <div class="neck-shadow"></div>
-      </div>
-      <div class="pillow">
-        <div class="window-light"></div>
-        <div class="pillow-shadows">
-          <div class="ear-shadow"></div>
-          <div class="head-shadow"></div>
-        </div>
-      </div>
+      <div class="under-pillow-shadows"><div class="head-shadow"></div><div class="neck-shadow"></div></div>
+      <div class="pillow"><div class="window-light"></div><div class="pillow-shadows"><div class="ear-shadow"></div><div class="head-shadow"></div></div></div>
       <div class="boy">
         <div class="shoulder"></div>
         <div class="neck"></div>
         <div class="ears"></div>
-        <div class="head">
-          <div class="nose"></div>
-          <div class="eyebrows">
-            <div class="eyebrow"></div>
-            <div class="eyebrow"></div>
-          </div>
-          <div class="eyes"></div>
-          <div class="mouth"></div>
-        </div>
-        <div class="hair">
-          <div class="part"></div>
-          <div class="part keen"></div>
-          <div class="part keen"></div>
-          <div class="part keen"></div>
-          <div class="part keen"></div>
-          <div class="part keen"></div>
-          <div class="part"></div>
-          <div class="part"></div>
-        </div>
+        <div class="head"><div class="nose"></div><div class="eyebrows"><div class="eyebrow"></div><div class="eyebrow"></div></div><div class="eyes"></div><div class="mouth"></div></div>
+        <div class="hair"><div class="part"></div><div class="part keen"></div><div class="part keen"></div><div class="part keen"></div><div class="part keen"></div><div class="part keen"></div><div class="part"></div><div class="part"></div></div>
       </div>
     </div>
     <div class="quilt">
-      <div class="top">
-        <div class="window-light"></div>
-        <div class="window-light"></div>
-        <div class="window-light"></div>
-        <div class="window-light"></div>
-      </div>
-      <div class="bottom">
-        <div class="window-light"></div>
-        <div class="window-light"></div>
-      </div>
+      <div class="top"><div class="window-light"></div><div class="window-light"></div><div class="window-light"></div><div class="window-light"></div></div>
+      <div class="bottom"><div class="window-light"></div><div class="window-light"></div></div>
     </div>
   </div>
-  <div class="shoes">
-    <div class="shoe"></div>
-    <div class="shoe"></div>
-  </div>
-  <div class="table left">
-    <div class="lamp">
-      <div class="bulb"></div>
-    </div>
-    <div class="phone"></div>
-  </div>
-</div>
+  <div class="shoes"><div class="shoe"></div><div class="shoe"></div></div>
+  <div class="table left"><div class="lamp"><div class="bulb"></div></div><div class="phone"></div></div>
+</div> 
 </template>
 
 <script>
-export default {
-  
-};
+
+
+
+export default {};
 </script>
 
 <style lang="css">
 
-.error-page-container {
-   width: 0px; height: 0px; position: absolute; top: 50%; left: 50%; 
-   
-   transform: translate(-50%, -50%) scale(.7);; 
-   
-   } 
+/* Options */
+/* body {
+  background-color: #423852;
+  overflow: hidden;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+} */
+
+.empty-cart-svg {
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+
+.selectionDot,
+#menuShadow,
+#dimIconGroup > path,
+.menuHit {
+  pointer-events: none;
+}
+
+.menuItem {
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Man */
+
+.error-page-container { width: 0px; height: 0px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(.7);; } 
 .error-page-container .bed { background: #332944; width: 365px; height: 580px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 10px; box-shadow: inset 0px 30px #262038, -50px 7px 0px 10px #262038; } 
 .error-page-container .bed .bed-shadow { width: 100%; height: 100%; position: absolute; top: 0; left: 0; overflow: hidden; } 
 .error-page-container .bed .bed-shadow .window-light { background: #5a5b89; right: -40px; top: 109px; height: 139px; } 
@@ -190,15 +165,7 @@ export default {
 @keyframes catHeadShake { 0%, 67%, 100% { transform: rotate(0deg); } 70%, 97% { transform: rotate(-10deg); } }
 @keyframes phoneLCD { 0%, 70%, 100% { background: black; } 72%, 93% { background: white; } }
 
-@media(max-width: 600px) {
-.error-page-container {
-   width: 0px; height: 0px; position: absolute; top: 50%; left: 50%; 
-   
-   transform: translate(-50%, -50%) scale(.5);; 
-   
-   } 
-   
-}
+@media(max-width: 600px) { .error-page-container { width: 0px; height: 0px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(.5);; } }
 
 </style>
 
