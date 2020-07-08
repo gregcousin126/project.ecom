@@ -325,6 +325,12 @@ width: 22px;
     width: 24px;
     height: 24px;
     }
+    
+    .checkbox-control {
+
+    grid-template-rows: 18px 30px;
+    }
+    
     #show-sidebar svg {
     width: 45px;
     height: 45px;

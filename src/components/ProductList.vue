@@ -47,9 +47,9 @@
                     </div>
                 </div>
                     <button @click="addProductToCart(product)" class="add-to-cart-btn" id="buttonToggle">Add to cart</button>
-              <span class="product-store">{{store.store_name}}</span>
-              <br>
+              <!-- <span class="product-store">{{store.store_name}}</span> -->
               <span class="product-title">{{product.title}}</span>
+              <br>
               <span class="product-price"> {{product.price | currency}}</span>
             </div>
             </li>
@@ -167,7 +167,7 @@ export default {
     min-width: 1.8rem;
     filter: grayscale(.6) brightness(1.8) saturate(2) contrast(.8);
     margin: 0px 8px -11px 3px;
-    } 
+} 
 
 
 .takeout{
@@ -277,7 +277,7 @@ border-radius: 2px 0px;
  @media (max-width: 600px) {
    .add-to-cart-btn {
      opacity: 1;
-     margin-top: 12px
+     margin-top:9px
    }
    
  }
@@ -290,18 +290,19 @@ border-radius: 2px 0px;
 
    transition: margin-top .3s, opacity .5s;
    opacity: 1;
-   margin-top: 12px;
+   margin-top: 9px;
    display: block;
  }
 
  .product-title {
-   /* margin-top: 10px; */
-   margin-bottom: 8px;
+    margin-bottom: 8px;
+    line-height: 22px;
+    font-family: FoobarPro;
  }
  .product-description {
     margin-top: -3px;
     width: 100%;
-    padding: 0px 20px 0px 20px;
+    padding: 3px 20px 3px 20px;
     font-size: 11px;
     font-family: Helvetica Neue;
     color: rgba(110, 110, 110, 0.773);
