@@ -5,8 +5,12 @@
   --text-secondary: #ececec;
   --bg-primary: #23232e;
   --bg-secondary: #141418;
-  --transition-speed: 200ms;
-	--page-transition-speed: .3s;
+  --transition-speed-primary-slower:.6s;
+  --transition-speed-primary-faster: 150ms;
+  --transition-speed-secondary-faster: 1s;
+  --animation-speed-primary-slower: 6s;
+  --animation-speed-primary-faster: .7s;
+	--page-transition-speed-primary: .3s;
   --blue-primary: #5044ff;
   --my-white: #fff;
   --blue-secondary: #1100ff23;

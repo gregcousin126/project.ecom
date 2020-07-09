@@ -163,11 +163,11 @@ export default {
     border: 2px solid var(--blue-primary);
     text-transform: uppercase;
     margin: 20px 0px 0px 0px;
-    -webkit-transition: var(--transition-speed);
-    transition: var(--transition-speed);
-    -moz-transition: var(--transition-speed);
-    -ms-transition: var(--transition-speed);
-    -o-transition: var(--transition-speed);
+    -webkit-transition: var(--transition-speed-primary-faster);
+    transition: var(--transition-speed-primary-faster);
+    -moz-transition: var(--transition-speed-primary-faster);
+    -ms-transition: var(--transition-speed-primary-faster);
+    -o-transition: var(--transition-speed-primary-faster);
 }
 
 
@@ -178,7 +178,7 @@ export default {
 
 .expandable-sidebar {
   overflow: hidden;
-  transition: all var(--transition-speed) ease-in-out;
+  transition: all var(--transition-speed-primary-faster) ease-in-out;
   max-height: 0px;
  }
  
@@ -205,8 +205,8 @@ export default {
     -ms-flex-align: center;
     align-items: center;
     font-size: 17px;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
+    -webkit-transition: var(--page-transition-speed-primary);
+    transition: var(--page-transition-speed-primary);
 }
 #search:hover {
 cursor: text;
@@ -224,8 +224,8 @@ cursor: text;
     padding: 5px 5px 5px 7px;
     outline: 0;
     visibility: hidden;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
+    -webkit-transition: var(--page-transition-speed-primary);
+    transition: var(--page-transition-speed-primary);
 }
 
 #search.active {

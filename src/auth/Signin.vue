@@ -288,15 +288,15 @@ body {
 /* animations */
 
 .cardcontainer {
-  animation: float 6s ease-in-out infinite;
+  animation: float var(--animation-speed-primary-slower) ease-in-out infinite;
 }
 .card {
   -webkit-perspective: 1000px;
   perspective: 1000px;
-  -webkit-transition: all 0.6s ease;
-  transition: all 0.6s ease;
-  -webkit-animation: shadeanm 6s ease-in-out infinite, fadeup .7s ease-in-out;
-  animation: shadeanm 6s ease-in-out infinite, fadeup .7s ease-in-out;
+  -webkit-transition: all var(--transition-speed-primary-slower) ease;
+  transition: all var(--transition-speed-primary-slower) ease;
+  -webkit-animation: shadeanm var(--animation-speed-primary-slower) ease-in-out infinite, fadeup (--animation-speed-primary-slower) ease-in-out;
+  animation: shadeanm var(--animation-speed-primary-slower) ease-in-out infinite, fadeup (--animation-speed-primary-slower) ease-in-out;
 }
 
 .card:hover {

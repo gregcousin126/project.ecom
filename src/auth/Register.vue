@@ -214,7 +214,7 @@ export default {
   z-index: 0;
     justify-content: center;
         padding: 5% 7%;
-    transition: opacity .2s;
+    transition: opacity var(--transition-speed-primary-faster);
     display: flex;
   text-align: -webkit-center;
    /* margin: 0px auto; */
@@ -330,7 +330,7 @@ body {
   text-decoration: none;
   font-weight: bold;
   font-size: small;
-  transition: 0.3s;
+  transition: var(--transition-speed-primary-faster);
   display: block;
   margin: 30px;
 }
@@ -348,8 +348,8 @@ body {
   background: -webkit-gradient(linear, left top, right top, from(#4568dc), to(#b06ab3));
   background: linear-gradient(to right, #4568dc, #b06ab3);
   border-radius: 4px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: var(--transition-speed-primary-faster);
+  transition: var(--transition-speed-primary-faster);
 }
 
 .btn-register:hover {
@@ -369,16 +369,16 @@ body {
 /* animations */
 
 .register-card-container {
-  animation: float 6s ease-in-out infinite;
+  animation: float var(--animation-speed-primary-slower) ease-in-out infinite;
 }
 .card {
   background: white;
   -webkit-perspective: 1000px;
   perspective: 1000px;
-  -webkit-transition: all 0.6s ease;
-  transition: all 0.6s ease;
-  -webkit-animation: shadeanm 6s ease-in-out infinite, fadeup .7s ease-in-out;
-  animation: shadeanm 6s ease-in-out infinite, fadeup .7s ease-in-out;
+  -webkit-transition: all var(--transition-speed-primary-slower) ease;
+  transition: all var(--transition-speed-primary-slower) ease;
+  -webkit-animation: shadeanm var(--animation-speed-primary-slower) ease-in-out infinite, fadeup var(--animation-speed-primary-faster) ease-in-out;
+  animation: shadeanm var(--animation-speed-primary-slower) ease-in-out infinite, fadeup var(--animation-speed-primary-faster) ease-in-out;
 }
 
 
@@ -464,7 +464,7 @@ body {
   -webkit-perspective: 1000px;
   perspective: 1000px;
   
-   transition: fadeup 0.6s ease;
+   transition: fadeup 0.var(--animation-speed-primary-slower) ease;
   -webkit-animation: fadeup .7s ease-in-out;
   
   

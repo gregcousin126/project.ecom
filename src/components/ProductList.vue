@@ -13,7 +13,7 @@
       </div>
       
       <transition-group name="card" tag="div" v-else>
-      <div id="each-store" v-for="(store, key) in stores" :key="key" >
+      <div id="each-store" v-for="store in stores" :key="store.store_id" >
         <!-- <div id="each-store" > -->
       <h1  id="store-title" class="list-items-title">
         
@@ -120,8 +120,16 @@ export default {
         
     this.loading = true; 
     this.fetchProducts().then(() => {
-      this.fetchStores().then(() => {})
-        setTimeout(() => { this.loading = false;}, 630);
+      
+      this.fetchStores().then(() => {
+        
+        
+      })
+        setTimeout(() => { 
+          this.loading = false;
+          
+        
+        }, 630);
         
     })
   },
@@ -153,14 +161,18 @@ export default {
   display: none;
 }
 
-.product-list-container { position: relative; width: 100%; }
+.product-list-container { 
+  display: grid;
+  position: relative; width: 100%;
+
+ }
 .list-items-title {
       text-align: left;
     margin-bottom: 20px;
     font-size: 19px;
     font-weight: 700;
     top: -30px;
-    margin-top: -6px;
+    margin-top: -10px;
     line-height: 59px;
     font-weight: 900;
     color: var(--text-primary);
@@ -278,7 +290,7 @@ border-radius: 2px 0px;
  }
    .add-to-cart-btn {
      opacity: 1;
-     margin-top:6px
+     margin-top:10px;
    }
    
  }
@@ -289,9 +301,9 @@ border-radius: 2px 0px;
  .product-card:hover .add-to-cart-btn{
    overflow: hidden;
 
-   transition: margin-top .3s, opacity .5s;
+   transition: margin-top var(--transition-speed-primary-faster), opacity var(--transition-speed-primary-faster);
    opacity: 1;
-   margin-top: 6px;
+   margin-top: 10px;
    display: block;
  }
 
