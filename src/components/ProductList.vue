@@ -153,7 +153,7 @@ export default {
   display: none;
 }
 
-.product-list-container { position: relative;width: 100%; }
+.product-list-container { position: relative; width: 100%; }
 .list-items-title {
       text-align: left;
     margin-bottom: 20px;
@@ -170,11 +170,13 @@ export default {
 .overlay {
     position: absolute;
     top: 0;
+    padding: 8%;
     bottom: 0;
     border-radius: 2px;
     left: 0;
     right: 0;
     max-height: 228px;
+    height: 228px;
     width: 100%;
     opacity: 0;
     -webkit-transition: .5s ease;
@@ -273,10 +275,10 @@ border-radius: 2px 0px;
    font-weight: bold;
     font-size: var(--font-mobile-secondary);
 
- },
+ }
    .add-to-cart-btn {
      opacity: 1;
-     margin-top:9px
+     margin-top:6px
    }
    
  }

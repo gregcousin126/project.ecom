@@ -115,7 +115,7 @@ export default {
 -webkit-box-flex: 50%;
     -ms-flex: 50%;
     flex: 50%;
-    display: var(--display-primary);
+    display: none;
  
     width: 290px;
     position: relative;
@@ -184,7 +184,8 @@ export default {
  
  .maxheight-expand-sidebar {
   /* overflow: scroll; */
-  max-height: 500px;
+  /* max-height: 500px; */
+  max-height: 1000px;
 }
 
 #search {

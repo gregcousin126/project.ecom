@@ -18,7 +18,10 @@ a:hover{color:var(--my-pink)}
 input:focus,select:focus,textarea:focus{outline:0}
 .content-wrapper{overflow:auto;padding:2% 2%;min-height:100vh;max-width:100%;position:relative;display:flow-root}
 .product-page{display:-webkit-box;width:100%;display:-ms-flexbox;display:inline-flex}
-.sidebar-wrap{-webkit-box-flex:1;-ms-flex:1;flex:1;padding-right:40px;border-right:1px solid var(--text-floogle)}
+.sidebar-wrap{
+	width: 20%;
+	
+	-webkit-box-flex:1;-ms-flex:1;flex:1;padding-right:40px;border-right:1px solid var(--text-floogle)}
 .product-list-wrap{-webkit-box-flex:4;-ms-flex:4;flex:4;padding-left:40px}
 @media(max-width:1024px){ .product-list-wrap{padding-left:30px} }
 @media(max-width:850px){ .product-list-wrap{-webkit-box-flex:5;-ms-flex:5;flex:5} } .product-list ul{display:grid;grid-template-columns:repeat(4,1fr);padding:0;grid-gap:0 25px} @media(max-width:1024px){ .product-list ul{grid-template-columns:repeat(3,1fr)} }
@@ -33,14 +36,24 @@ img.g{display:none}
 .inputbox:hover{box-shadow:1.7px 4px 0 0 rgba(0,0,0,.75)}
 .inputbox.with-transform:hover{transform:translateY(-6px) translateX(-2px);-webkit-transform:translateY(-6px) translateX(-2px);-moz-transform:translateY(-6px) translateX(-2px);-ms-transform:translateY(-6px) translateX(-2px);-o-transform:translateY(-6px) translateX(-2px)}
 form{text-align:-webkit-center}
-.product-card{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;padding-bottom:35px;position:relative}
-.product-card img{width:100%;border-radius:2px;max-height:228px;-o-object-fit:cover;object-fit:cover;-webkit-border-radius:2px;-moz-border-radius:2px;-ms-border-radius:2px;-o-border-radius:2px}
+.product-card{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;padding-bottom:21px;position:relative}
+.product-card img{
+	-o-object-fit:cover;
+	object-fit:cover;
+	width:100%;
+	border-radius:2px;
+	max-height:228px;
+	height:228px;
+
+}
 .product-card:hover img{background-color:#eee}
-@media(max-width:1024px){ .sidebar-wrap{padding-right:30px}}
+@media(max-width:1024px){ .sidebar-wrap{padding-right:20px}}
 @media(max-width:850px){.sidebar-wrap{-webkit-box-flex:2;-ms-flex:2;flex:2}}
-@media(max-width:600px){ .content-wrapper{padding:80px 15px} .product-list ul{grid-template-columns:repeat(2,1fr)} .sidebar-wrap{padding-right:0;border-right:0;margin-bottom:40px} .aside-block{padding:30px 0} .product-list-wrap{padding-left:0} .product-page{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column} }
+@media(max-width:600px){ .content-wrapper{padding:80px 15px} .product-list ul{grid-template-columns:repeat(2,1fr)} .sidebar-wrap{
+	width: 100%;
+	padding-right:0;border-right:0;margin-bottom:40px} .aside-block{padding:30px 0} .product-list-wrap{padding-left:0} .product-page{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column} }
 @media (max-width:370px){ .product-list ul{grid-template-columns:repeat(1,1fr)} h1{margin-bottom:30px} }
-input[type=range].slider{background:var(--blue-primary);border-radius:50px;-webkit-appearance:none;width:100%;margin:25px 0 15px;-webkit-border-radius:50px;-moz-border-radius:50px;-ms-border-radius:50px;-o-border-radius:50px}
+input[type=range].slider{background:var(--blue-primary);border-radius:50px;-webkit-appearance:none;width:100%;margin:11% 0 15px;-webkit-border-radius:50px;-moz-border-radius:50px;-ms-border-radius:50px;-o-border-radius:50px}
 input[type=range].slider:focus{outline:0}
 input[type=range].slider::-webkit-slider-runnable-track{width:100%;height:4.3px;cursor:pointer;-webkit-box-shadow:0 0 0 rgba(0,0,0,0),0 0 0 rgba(13,13,13,0);box-shadow:0 0 0 rgba(0,0,0,0),0 0 0 rgba(13,13,13,0);background:var(--blue-primary);border-radius:13.7px;border:0 solid rgba(1,1,1,0)}
 input[type=range].slider::-webkit-slider-thumb{-webkit-box-shadow:0 0 0 rgba(0,0,62,0),0 0 0 rgba(0,0,88,0);box-shadow:0 0 0 rgba(0,0,62,0),0 0 0 rgba(0,0,88,0);border:1.9px solid #3e63ea;height:18px;width:18px;border-radius:31px;background:var(--bg-primary);cursor:pointer;-webkit-appearance:none;margin-top:-7px}
