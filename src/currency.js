@@ -17,3 +17,5 @@ export function currency (value, currency, decimals) {
   
   return sign + currency + head + theInt.slice(index).replace(digitsRE, '$1,') + theFloat
 }
+
+

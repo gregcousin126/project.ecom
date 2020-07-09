@@ -2,6 +2,8 @@
   font-size: 16px;
   font-family: 'Open Sans';
   --text-primary: #b6b6b6;
+  --button-font-primary: 12px;
+  --button-font-secondary: 14px;
   --text-secondary: #ececec;
   --bg-primary: #23232e;
   --bg-secondary: #141418;
@@ -9,7 +11,7 @@
   --transition-speed-primary-faster: 150ms;
   --transition-speed-secondary-faster: 1s;
   --animation-speed-primary-slower: 6s;
-  --animation-speed-primary-faster: .7s;
+  --animation-speed-primary-faster: .6s;
 	--page-transition-speed-primary: .3s;
   --blue-primary: #5044ff;
   --my-white: #fff;
@@ -40,13 +42,17 @@
   --bg-low-opacity: #1414181c;
   --my-turk: #18c2c2;
   --image-filter: grayscale(0) brightness(1.1) saturate(1);
-  --display-primary: none
+  --display-primary: none;
+  
+  --button-boxshadow-passive-primary: none;
+  --button-boxshadow-active-primary:  none;
+  
 }
 
 /* Light Theme */
 
 .light {
-  --tag-bg: #55abfcce;
+  --tag-bg: #9bc2f5;
   --text-light: #fcfcfc;
 --tag-bg-hover: #3b2dfa8c;
 --tag-text-color: var(--text-light);
@@ -63,7 +69,11 @@
   --my-turk: #76b7f3;
   --image-filter: grayscale(0) brightness(1.1) saturate(1);
 	
-  --display-primary: flex
+  --display-primary: flex;
+  
+  --button-boxshadow-passive-primary: 0px 1px   .4px  #9bc2f5, 0px 2px  .4px   #8dbaf5, 0px 3px  .4px   #79adf1, 0px 4px  .4px   rgba(113, 168, 241, 0.781), 0px 5px  .4px   #68a4f3ad, 0px 6px  .4px   #5d9becb2, 0px 10px 5px -1px rgba(128, 128, 128, 1);
+  --button-boxshadow-active-primary: 0px 2px 0px  #afcef7, 0px 3px 0px  #98c0f3, 0px 4px 0px  rgb(150, 192, 247), 0px 5px 0px  #89b6f1, 0px 6px 0px  #80b3f7, 0px 7px 0px #72aaf3, 0px 10px 2px 0px rgba(128, 128, 128, 0.6);
+  
 }
 
 /* Solar Theme */

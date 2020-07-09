@@ -68,21 +68,19 @@ a {
 }
 
 button {
-  padding: 10px 10px;
-  font-size: 11px;
-  font-weight: 600;
-  border-radius: 5px;
-  font-weight: 600;
-  cursor: pointer;
-  color: var(--blue-primary);
-  border: 1px solid var(--blue-primary);
-  text-transform: uppercase;
-  margin: 10px auto;
-  -webkit-transition: var(--transition-speed-primary-faster);
-  transition: var(--transition-speed-primary-faster);
-  -moz-transition: var(--transition-speed-primary-faster);
-  -ms-transition: var(--transition-speed-primary-faster);
-  -o-transition: var(--transition-speed-primary-faster)
+    padding: 9px;
+    font-size: 10px;
+    border-radius: 3px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--blue-primary);
+    text-transform: uppercase;
+    margin: 10px auto;
+    -webkit-transition: var(--transition-speed-primary-faster);
+    transition: var(--transition-speed-primary-faster);
+    -moz-transition: var(--transition-speed-primary-faster);
+    -ms-transition: var(--transition-speed-primary-faster);
+    -o-transition: var(--transition-speed-primary-faster);
 }
 
 button:hover {
@@ -633,3 +631,5 @@ input[type=range].slider:focus::-ms-fill-upper {
     -ms-text-size-adjust: 100%
   }
 }
+
+

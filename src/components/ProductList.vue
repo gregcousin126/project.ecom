@@ -20,15 +20,12 @@
       <img :src='`./stores/static/${store.store_name.toLowerCase()}/logo.svg`' class="company-svg">
         {{store.store_name}}<hr>
         
-        
         </h1>
       
-
       <!-- <h1 :class="[  ? 'takeout' : '' ] " id="store-title">{{store.store_name}}<hr></h1> -->
       
       <ul id="store-list">
           <li v-for="product in products" :key="product.product_id" :track-by="product.product_id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ] " tabindex="0" v-show="category === product.category || category === 'allproducts'">
-            
             
             <!-- {{}} -->
             
@@ -46,7 +43,13 @@
                       <div class="text">{{product.description}}</div>
                     </div>
                 </div>
-                    <button @click="addProductToCart(product)" class="add-to-cart-btn" id="buttonToggle">Add to cart</button>
+                    <!-- <button @click="addProductToCart(product)" class="add-to-cart-btn" id="buttonToggle">Add to cart</button> -->
+                    <a @click="addProductToCart(product)" >
+                        <ButtonPress @click="addProductToCart(product)" class="add-to-cart-btn" id="buttonToggle"/>
+                    </a>
+                
+                    
+                    
               <!-- <span class="product-store">{{store.store_name}}</span> -->
               <span class="product-title">{{product.title}}</span>
               <br>
@@ -62,6 +65,8 @@
 <script>
 
 import {mapState, mapGetters, mapActions} from 'vuex'
+import ButtonPress from '../elements/ButtonPress'
+
 
 export default {
   name: 'ProductList',
@@ -90,31 +95,24 @@ export default {
       return productResult
     },
     
-
-    
     ...mapGetters({
       productInStock: 'productInStock',
     })
   },
   
-
- 
   created() {
   // var store = document.getElementById("main-list");
   // console.log('store: ', store);
       
-        
     this.loading = true; 
     this.fetchProducts().then(() => {
       
       this.fetchStores().then(() => {
         
-        
       })
         setTimeout(() => { 
           this.loading = false;
           
-        
         }, 630);
         
     })
@@ -126,11 +124,13 @@ export default {
       fetchProducts: 'fetchProducts',
       addProductToCart: 'addProductToCart',
     }),
+  },
+  components : {
+    ButtonPress
   }
+  
 
 }
-
-
 
 </script>
 <style lang="css">
@@ -178,8 +178,8 @@ export default {
     height: 228px;
     width: 100%;
     opacity: 0;
-    -webkit-transition: .5s ease;
-    transition: .5s ease;
+    -webkit-transition: var(--animation-speed-primary-faster) ease-in-out;
+    transition: var(--animation-speed-primary-faster) ease-in-out;
     background-color: rgba(0, 0, 39, 0.5);
 }
 .product-list-container:hover .overlay {
@@ -189,7 +189,6 @@ export default {
 /* .each-store {
   display: block;
 } */
-
 
 .text {
 color: white;
@@ -252,7 +251,23 @@ border-radius: 2px 0px;
    z-index: 0;
     display: block;
     opacity: 0;
-    margin-top: -50px;
+    margin-bottom: 10px;
+    overflow: visible;
+    margin-top: -55px;
+    height: 48px;
+   
+   
+       /* z-index: 0;
+    display: block;
+    opacity: 0;
+    margin-bottom: 13px;
+    margin-top: -66px;
+    height: 54px; */
+
+   /* z-index: 0;
+    display: block;
+    opacity: 0;
+    margin-top: -50px; */
  }
  @media (max-width: 600px) {
     .product-title {
@@ -289,7 +304,7 @@ border-radius: 2px 0px;
  .product-card:hover .add-to-cart-btn{
    overflow: hidden;
 
-   transition: margin-top var(--transition-speed-primary-faster), opacity var(--transition-speed-primary-faster);
+   transition: margin-top var(--transition-speed-primary-faster) ease-in-out, opacity var(--transition-speed-primary-faster) ease-in-out;
    opacity: 1;
    margin-top: 10px;
    display: block;
@@ -330,7 +345,6 @@ border-radius: 2px 0px;
    display: none;
  }
  
- 
 ul:empty {
   display: none;
 }
@@ -339,5 +353,4 @@ ul:empty {
   display: none;
 }
 
- 
 </style>

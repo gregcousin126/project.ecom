@@ -11,7 +11,7 @@
     <a ontouchstart="" id="show-sidebar" @click="showSidebar">
         <span  class="filter-btn" ><p id="remove-filter">filter +</p><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="10" width="18" height="2" fill="var(--blue-primary)" class="fltr-line1"></rect><rect x="7" y="20" width="18" height="2" fill="var(--blue-primary)" class="fltr-line2"></rect><circle cx="13" cy="21" r="2.5" fill="white" stroke="var(--blue-primary)" class="fltr-crcl1"></circle><circle cx="19" cy="11" r="2.5" fill="white" stroke="var(--blue-primary)" class="fltr-crcl2"></circle></svg></span>
       </a>
-  </button> 
+  </button>
 
   <div class="expandable-sidebar" id="expandable-sidebar">
       <div class="mygif"></div>
@@ -37,6 +37,7 @@
             <!-- <div class="checkbox-box"></div> -->
           </label>
       </div>
+      
       <div class="aside-block">
           <h4>Super Sale</h4>
           <label class="checkbox-control">
@@ -49,12 +50,7 @@
         <h4>Support</h4>
         <p><p style="display:inline" v-if="JSON.stringify(currentUser) !== '{}'">{{currentUser.displayName}}, </p>Get in touch with us for any queries at <a href="mailto: xotopolo@gmail.com">xotopolo@gmail.com</a></p>
       </div>
-    <div class="aside-block">
-      <label for="pricerange">Maximum Price: <span>${{ pricerange }}</span></label>
-      <input class="slider" id="pricerange" tabindex="0" :value="pricerange" type="range" :min="min" :max="max" step="0.1" @input="updateHighPrice($event)" />
-      <span class="min">${{ min }}</span>
-      <span class="max">${{ max }}</span>
-   </div>
+
   </div>
 
   </aside>

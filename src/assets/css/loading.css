@@ -1,4 +1,4 @@
-#preloader { overflow: hidden;background: var(--bg-low-opacity);left: 0;right: 0;top: 0;bottom: 0;position: fixed;z-index: 9999 }
+#preloader { overflow: hidden;background: none;left: 0;right: 0;top: 0;bottom: 0;position: fixed;z-index: 9999 }
 
 @keyframes preload-show-1{from{-webkit-transform:rotateZ(60deg) rotateY(-90deg) rotateX(0deg);transform:rotateZ(60deg) rotateY(-90deg) rotateX(0deg);border-left-color:#9c2f2f}}
 @keyframes preload-hide-1{to{-webkit-transform:rotateZ(60deg) rotateY(-90deg) rotateX(0deg);transform:rotateZ(60deg) rotateY(-90deg) rotateX(0deg);border-left-color:#9c2f2f}}
