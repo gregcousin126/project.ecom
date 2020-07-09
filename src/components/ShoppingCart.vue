@@ -153,7 +153,36 @@ export default {
 
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700);
-.btn-splatter{color:#fff;font-family:inherit;font-weight:700;background-color:#4487ed;width:12em;height:4em;border:0;outline:0;padding:0;margin:0;position:relative;border-radius:.9em;box-shadow:0 .6em .9em rgba(0,0,0,.6);user-select:none;transform:translateY(-.5em);transition:background-color .3s cubic-bezier(.18,.89,.32,1.28),box-shadow .3s cubic-bezier(.18,.89,.32,1.28),transform .3s cubic-bezier(.18,.89,.32,1.28)}
+.btn-splatter{
+  
+  color: #fff;
+    font-family: inherit;
+    font-weight: 700;
+    background-color: #4487ed;
+    width: 10em;
+    height: 3.5em;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    border-radius: .9em;
+    /* -webkit-box-shadow: 0 0.6em 0.9em rgba(0,0,0,.6); */
+    box-shadow: 0 0.3em 0.4em rgba(0,0,0,.2);
+    /* -webkit-user-select: none; */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transform: translateY(-.5em);
+    transform: translateY(-.5em);
+    -webkit-transition: background-color .3s cubic-bezier(.18,.89,.32,1.28),-webkit-box-shadow .3s cubic-bezier(.18,.89,.32,1.28),-webkit-transform .3s cubic-bezier(.18,.89,.32,1.28);
+    transition: background-color .3s cubic-bezier(.18,.89,.32,1.28),-webkit-box-shadow .3s cubic-bezier(.18,.89,.32,1.28),-webkit-transform .3s cubic-bezier(.18,.89,.32,1.28);
+    transition: background-color .3s cubic-bezier(.18,.89,.32,1.28),box-shadow .3s cubic-bezier(.18,.89,.32,1.28),transform .3s cubic-bezier(.18,.89,.32,1.28);
+    transition: background-color .3s cubic-bezier(.18,.89,.32,1.28),box-shadow .3s cubic-bezier(.18,.89,.32,1.28),transform .3s cubic-bezier(.18,.89,.32,1.28),-webkit-box-shadow .3s cubic-bezier(.18,.89,.32,1.28),-webkit-transform .3s cubic-bezier(.18,.89,.32,1.28);
+  
+  /* color:#fff;font-family:inherit;font-weight:700;background-color:#4487ed;width:12em;height:4em;border:0;outline:0;padding:0;margin:0;position:relative;border-radius:.9em;box-shadow:0 .6em .9em rgba(0,0,0,.6);user-select:none;transform:translateY(-.5em);transition:background-color .3s cubic-bezier(.18,.89,.32,1.28),box-shadow .3s cubic-bezier(.18,.89,.32,1.28),transform .3s cubic-bezier(.18,.89,.32,1.28) */
+  
+  }
 .btn-splatter:focus{outline:0}
 .btn-splatter:active{background-color:#2770df;box-shadow:0 0 0 rgba(0,0,0,.5);transform:translateY(0) scale(.9);transition:background-color 150ms ease-out,box-shadow 150ms ease-out,transform 150ms ease-out}
 .splatter{position:absolute;top:0;left:0}
@@ -164,8 +193,25 @@ export default {
 .svg-cart{position:absolute;width:80%;top:20%;left:10%;visibility:hidden}
 #svg-cart-container{position:absolute;width:100%;height:100%;text-align:center;margin-left:auto;margin-right:auto}
 .quantity{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
-.quantity__minus,.quantity__plus{display:block;width:34px;    border-radius: 3px;height:34px;margin:6px;background:var(--text-floogle);text-decoration:none;text-align:center;line-height:34px}
-.quantity__minus:hover,.quantity__plus:hover{background:var(--blue-primary);color:var(--text-floogle)}
+.quantity__minus,.quantity__plus{
+  
+  cursor: pointer;
+  display:block;width:34px;    border-radius: 3px;height:34px;margin:6px;background:var(--text-floogle);text-decoration:none;text-align:center;line-height:34px}
+.quantity__minus:hover:hover {
+    background: var(--bg-subtract);
+    color: var(--text-secondary)
+    
+}
+
+.quantity__plus:hover{
+  
+  
+  background: var(--bg-add);
+  color: var(--text-secondary)
+
+
+
+}
 .button-explode{padding:20px}
 .coin-svg{
       -webkit-animation: float-coin-data-v-ee9c2650 3s ease-in-out infinite;
@@ -201,7 +247,12 @@ grid-gap: 20px;
 .empty-cart-container{padding:90px}
 .quantity__input{margin:0 14px 0 14px;font-size:16px;font-family:Overpass}
 .quantity__minus:link,.quantity__plus:link{color:#8184a1}
-.quantity__minus:visited,.quantity__plus:visited{color:#fff}
+.quantity__minus:visited,.quantity__plus:visited{
+  
+  color:#fff
+
+
+}
 .card-image{display:block;min-height:20rem;background:#fff center center no-repeat;background-size:cover;filter:blur(3px)}
 .card-image.is-loaded{filter:none;transition:filter var(--transition-speed-primary-faster)}
 .cart-detail{padding:15px}
@@ -217,7 +268,7 @@ ul{display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;max-width:800px;flex:10;paddin
 .cart-product-card:hover{transform:translateY(-.3rem) translateX(-.3rem) scale(1.0125);box-shadow:6px 6px 1.5px 0 rgba(0,0,0,.2);border-radius:2px}
 .product-price{margin-bottom:5px}
 img{width:100%;object-fit:cover;height:209px}
-@media(max-width:600px){ .cart-detail{padding:5px} .cart-product-card{width:45%} .cart-product-card{box-shadow:6px 6px 1.5px 0 rgba(0,0,0,.2);border-radius:4px} .cart-product-card:hover{transform:none} .quantity__minus,.quantity__plus{
+@media(max-width:600px){ .cart-detail{padding:5px} .cart-product-card{width:47%} .cart-product-card{box-shadow:6px 6px 1.5px 0 rgba(0,0,0,.2);border-radius:2px} .cart-product-card:hover{transform:none} .quantity__minus,.quantity__plus{
   
   
       border-radius: 3px;

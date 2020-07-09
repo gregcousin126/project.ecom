@@ -11,7 +11,8 @@
         "category": "furniture",
         "sale": true,
         "img": "sofa2.jpg",
-        "inventory": 20
+        "inventory": 3,
+        "product_data": {}
       },
       {
         "product_id": 11,
@@ -22,7 +23,8 @@
         "category": "furniture",
         "sale": false,
         "img": "daybed2.jpg",
-        "inventory": 20
+        "inventory": 1,
+        "product_data": {}
       },
       {
         "product_id": 12,
@@ -33,7 +35,8 @@
         "category": "decoration",
         "sale": false,
         "img": "wicker.jpg",
-        "inventory": 20
+        "inventory": 2,
+        "product_data": {}
       },
       {
         "product_id": 13,
@@ -44,7 +47,8 @@
         "category": "decoration",
         "sale": false,
         "img": "rag.jpg",
-        "inventory": 20
+        "inventory": 0,
+        "product_data": {}
       },
       {
         "product_id": 14,
@@ -55,7 +59,8 @@
         "category": "furniture",
         "sale": false,
         "img": "bed.jpg",
-        "inventory": 20
+        "inventory": 4,
+        "product_data": {}
       },
       {
         "product_id": 15,
@@ -66,7 +71,8 @@
         "category": "furniture",
         "sale": false,
         "img": "vanity.jpg",
-        "inventory": 20
+        "inventory": 5,
+        "product_data": {}
       }
     ]
   },
@@ -82,7 +88,8 @@
         "category": "decoration",
         "sale": false,
         "img": "planter1.jpg",
-        "inventory": 1
+        "inventory": 1,
+        "product_data": {}
       },
       {
         "product_id": 1,
@@ -93,7 +100,8 @@
         "category": "furniture",
         "sale": false,
         "img": "daybed1.jpg",
-        "inventory": 20
+        "inventory": 6,
+        "product_data": {}
       },
       {
         "product_id": 2,
@@ -104,7 +112,8 @@
         "category": "furniture",
         "sale": false,
         "img": "basket-table.jpg",
-        "inventory": 20
+        "inventory": 7,
+        "product_data": {}
       },
       {
         "product_id": 44,
@@ -115,7 +124,8 @@
         "category": "wall",
         "sale": false,
         "img": "basket-table.jpg",
-        "inventory": 20
+        "inventory": 8,
+        "product_data": {}
       },
       {
         "product_id": 3,
@@ -126,7 +136,8 @@
         "category": "furniture",
         "sale": false,
         "img": "sofa1.jpg",
-        "inventory": 20
+        "inventory": 9,
+        "product_data": {}
       },
       {
         "product_id": 4,
@@ -137,7 +148,8 @@
         "category": "furniture",
         "sale": true,
         "img": "rack.jpg",
-        "inventory": 5
+        "inventory": 5,
+        "product_data": {}
       },
       {
         "product_id": 5,
@@ -148,7 +160,8 @@
         "category": "decoration",
         "sale": true,
         "img": "planter2.jpg",
-        "inventory": 20
+        "inventory": 10,
+        "product_data": {}
       },
       {
         "product_id": 6,
@@ -159,7 +172,8 @@
         "category": "men",
         "sale": false,
         "img": "credenza.jpg",
-        "inventory": 20
+        "inventory": 11,
+        "product_data": {}
       },
       {
         "product_id": 7,
@@ -170,7 +184,8 @@
         "category": "decoration",
         "sale": true,
         "img": "mirror1.jpg",
-        "inventory": 0
+        "inventory": 0,
+        "product_data": {}
       },
       {
         "product_id": 8,
@@ -181,7 +196,8 @@
         "category": "other",
         "sale": false,
         "img": "dining.jpg",
-        "inventory": 20
+        "inventory": 12,
+        "product_data": {}
       },
       {
         "product_id": 9,
@@ -192,7 +208,8 @@
         "category": "decoration",
         "sale": false,
         "img": "bunting.jpg",
-        "inventory": 20
+        "inventory": 13,
+        "product_data": {}
       }
     ]
   }

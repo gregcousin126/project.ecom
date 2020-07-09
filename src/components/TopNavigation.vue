@@ -38,13 +38,13 @@
       </li>
      	<li class="nav-item">
             <router-link to="/">
-              <a class="nav-link" id="show-products-categlory" @click="showProductsCateglory">
+              <a class="nav-link" id="show-products-all-products" @click="showProductsAll">
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"><g><g><rect x="159.992" width="192" height="120" style="fill: rgb(82, 121, 145);"></rect></g><g><path d="M507.235,141.633c-0.031-0.055-0.07-0.109-0.102-0.164l-50.891-83.082 C434.188,22.371,394.235,0,351.992,0c-4.422,0-8,3.582-8,8c0,48.523-39.477,88-88,88s-88-39.477-88.008-88c0-4.418-3.586-8-8-8 C117.742,0,77.797,22.371,55.742,58.387L4.75,141.633c-4.203,7.246-2.195,16.328,4.672,21.133l66.836,46.789 c3.664,2.547,8.242,3.461,12.633,2.516c4.359-0.969,8.148-3.742,10.391-7.609l4.711-8.133V496c0,8.82,7.18,16,16,16h272 c8.82,0,16-7.18,16-16V196.328l4.711,8.133c2.242,3.867,6.031,6.641,10.391,7.609c4.391,0.953,8.969,0.039,12.625-2.516 l66.844-46.789C509.43,157.961,511.438,148.879,507.235,141.633z" style="fill: var(--my-turk);"></path></g><g><g><path d="M335.992,215.995c-4.422,0-8-3.578-8-8c0-35.703-18.203-90.035-45.297-114.008 c-3.313-2.926-3.625-7.984-0.695-11.293s8.008-3.605,11.289-0.691c31.32,27.703,50.703,86.969,50.703,125.992 C343.992,212.417,340.414,215.995,335.992,215.995z" style="fill: rgb(255, 149, 0);"></path></g></g><g><path d="M279.992,40h-48c-4.418,0-8-3.582-8-8v-8c0-4.418,3.582-8,8-8h48c4.418,0,8,3.582,8,8v8 C287.992,36.418,284.411,40,279.992,40z" style="fill: rgb(92, 84, 106);"></path></g><g><path d="M99.281,204.461l3.346-5.776L9.664,133.61l-4.914,8.022c-4.203,7.246-2.195,16.328,4.672,21.133 l66.836,46.789c3.664,2.547,8.242,3.461,12.633,2.516C93.25,211.102,97.039,208.328,99.281,204.461z" style="fill: rgb(82, 121, 145);"></path></g><g><path d="M412.719,204.461l-3.346-5.776l92.963-65.074l4.914,8.022c4.203,7.246,2.195,16.328-4.672,21.133 l-66.836,46.789c-3.664,2.547-8.242,3.461-12.633,2.516C418.75,211.102,414.961,208.328,412.719,204.461z" style="fill: rgb(82, 121, 145);"></path></g><g><path d="M103.992,488v8c0,8.82,7.18,16,16,16h272c8.82,0,16-7.18,16-16v-8H103.992z" style="fill: rgb(82, 121, 145);"></path></g><g><path d="M324.679,211.314l-8,8c-3.001,3.001-4.686,7.07-4.686,11.314V296c0,4.418,3.582,8,8,8h32 c4.418,0,8-3.582,8-8v-65.373c0-4.243-1.686-8.313-4.686-11.314l-8-8C341.058,205.065,330.927,205.065,324.679,211.314z M335.992,232c-4.418,0-8-3.582-8-8c0-4.418,3.582-8,8-8s8,3.582,8,8C343.992,228.418,340.411,232,335.992,232z" style="fill: rgb(255, 209, 0);"></path></g><g><path d="M346.821,227.797l-2.991-2.991c-0.423,4.02-3.705,7.194-7.837,7.194s-7.415-3.174-7.837-7.194 l-2.991,2.991c-0.742,0.75-1.172,1.773-1.172,2.828V292h24v-61.375C347.992,229.57,347.563,228.547,346.821,227.797z" style="fill: rgb(255, 149, 0);"></path></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
                   <!-- <svg  aria-hidden="true" focusable="false" data-prefix="fad" data-icon="sun" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class=" svg-inline--fa fa-sun fa-w-16 fa-7x"> <g class="fa-group"> <path fill="currentColor" d="M502.42 240.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.41-94.8a17.31 17.31 0 0 0-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4a17.31 17.31 0 0 0 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.41-33.5 47.3 94.7a17.31 17.31 0 0 0 31 0l47.31-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3a17.33 17.33 0 0 0 .2-31.1zm-155.9 106c-49.91 49.9-131.11 49.9-181 0a128.13 128.13 0 0 1 0-181c49.9-49.9 131.1-49.9 181 0a128.13 128.13 0 0 1 0 181z" class="fa-secondary"></path> <path fill="currentColor" d="M352 256a96 96 0 1 1-96-96 96.15 96.15 0 0 1 96 96z" class="fa-primary"></path></g></svg> -->
                 <span class="link-text" >Categlories</span >
               </a>
             </router-link>
-          <div class="expandable-categlory" id="expandable-categlory">
+          <div class="expandable-all-products" id="expandable-all-products">
             <ul>
               <li v-for="categlories in products" class="nav-item"  >
                 <router-link class="router-links" :to="`${categlories}`">
@@ -125,9 +125,9 @@ export default {
       },
       
       
-    showProductsCateglory() {
-      var button = document.getElementById('show-products-categlory');
-      var expander = document.getElementById('expandable-categlory');
+    showProductsAll() {
+      var button = document.getElementById('show-products-all-products');
+      var expander = document.getElementById('expandable-all-products');
       if (!expander.classList.contains('maxheight-expand')) {
         expander.classList.add("maxheight-expand");
       } else {
@@ -172,12 +172,12 @@ export default {
   },
 mounted () {
     // var element = document.getElementById('product-line');
-    // var button = document.getElementById('show-products-categlory');
-      var expander_categlory = document.getElementById('expandable-categlory');
+    // var button = document.getElementById('show-products-all-products');
+      var expander_all_products = document.getElementById('expandable-all-products');
       var expander_stores = document.getElementById('expandable-stores');
       var navbar = document.getElementById('navbar');
       navbar.addEventListener('mouseleave', function (e) {
-        expander_categlory.classList.remove("maxheight-expand");
+        expander_all_products.classList.remove("maxheight-expand");
         expander_stores.classList.remove("maxheight-expand");
         
         });
@@ -204,7 +204,7 @@ mounted () {
  } 
 a { text-decoration: none; }  
 
-.expandable-categlory {
+.expandable-all-products {
   overflow: hidden;
   transition: all var(--transition-speed-primary-faster) ease-in-out;
   max-height: 0px;
@@ -316,7 +316,7 @@ font-family: 'Overpass';
     /* margin: 0px; */
   /* margin: 0rem 1.2rem -.4rem; */
 }
-  .expandable-categlory {
+  .expandable-all-products {
     display: none;
   }
   .expandable-stores {
