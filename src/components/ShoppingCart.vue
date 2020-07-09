@@ -188,7 +188,7 @@ export default {
     margin: 25px;
     align-items: center;
     /* height: 100%; */
-    /* height: 17%; */
+    height: 60px;
     margin-top: 0;
     grid-template-columns: 40px 36px;
     place-content: center;
