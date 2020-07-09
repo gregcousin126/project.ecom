@@ -172,24 +172,23 @@ export default {
     animation: float-coin-data-v-ee9c2650 3s ease-in-out infinite;
     width: 100%;
     z-index: 0;
-    top: -3px;
+    top: 7px;
     /* margin: 9px 0 18px 4px; */
     display: inline-grid;
     position: relative;
     -webkit-filter: drop-shadow(1px 2px 3px gold) contrast(.95) grayscale(0) saturate(.85);
     filter: drop-shadow(0 1px 3px gold) contrast(.95) grayscale(0) saturate(.85);
-
-  
   
   }
 .coin-container{
   
 grid-gap: 20px;
     margin: auto 25px;
-    -webkit-box-align: center;
+    /* -webkit-box-align: center; */
     -ms-flex-align: center;
-    align-items: center;
+    /* align-items: center; */
     /* height: 100%; */
+    /* top: 0px; */
     height: 60px;
     margin-top: 0;
     grid-template-columns: 40px 36px;
