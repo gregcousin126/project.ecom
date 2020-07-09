@@ -195,11 +195,24 @@ export default {
 .quantity{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .quantity__minus,.quantity__plus{
   
-  cursor: pointer;
-  display:block;width:34px;    border-radius: 3px;height:34px;margin:6px;background:var(--text-floogle);text-decoration:none;text-align:center;line-height:34px}
-.quantity__minus:hover:hover {
+cursor: pointer;
+    display: block;
+    width: 34px;
+    border-radius: 3px;
+    height: 34px;
+    color: var(--my-white);
+    font-size: 20px;
+    margin: 6px;
+    background: var(--text-floogle);
+    text-decoration: none;
+    text-align: center;
+    line-height: 34px;
+  
+  }
+  
+.quantity__minus:hover {
     background: var(--bg-subtract);
-    color: var(--text-secondary)
+    /* color: var(--text-secondary) */
     
 }
 
@@ -207,7 +220,7 @@ export default {
   
   
   background: var(--bg-add);
-  color: var(--text-secondary)
+  /* color: var(--text-secondary) */
 
 
 
@@ -218,7 +231,7 @@ export default {
     animation: float-coin-data-v-ee9c2650 3s ease-in-out infinite;
     width: 100%;
     z-index: 0;
-    top: 7px;
+    top: -3px;
     /* margin: 9px 0 18px 4px; */
     display: inline-grid;
     position: relative;

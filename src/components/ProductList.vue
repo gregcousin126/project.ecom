@@ -79,28 +79,14 @@ export default {
   },
   
   computed : {
-      stores() { 
-        
-      // console.log('mainJsonCart: ', this.$store.state.stores);
-        
-        
+      stores() {  
         return this.$store.state.stores
-      
-      
        },
       products() {
-      // return this.$store.state.products.filter(el => this.$store.state.sale ? el.price < this.$store.state.highprice && el.sale : el.price < this.$store.state.highprice);
       const mainJsonCart = this.$store.state.products.filter(el => this.$store.state.sale ? el.price < this.$store.state.highprice && el.sale : el.price < this.$store.state.highprice).map(x => x)
       const firebaseCart = this.$store.state.cart.map(x => x.product)
       const replacedResult = mainJsonCart.map(item =>  firebaseCart.find(item2 => item.product_id === item2.product_id) || item)
       const productResult = [...new Set(replacedResult)]
-
-    // const store_id = this.$store.state.stores.map(x => x.store_id)
-    // const prod_id = [...new Set(productResult.map(x => x.store_id))];
-    // var store = Object.assign({}, this.$store.state.stores);
-     
-
-
       return productResult
     },
     

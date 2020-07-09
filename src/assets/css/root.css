@@ -25,9 +25,13 @@
 /* Dark Theme */
 
 .dark {
+  --tag-bg: #1d62b6;
+--tag-bg-hover: var(--button-highlight);
+  --tag-text-color: var(--text-light);
+  --text-light: #f8f8f8;
   --text-primary: #b6b6b6;
   --text-secondary: #ececec;
-  --button-highlight: blue;
+  --button-highlight: rgba(95, 105, 252, 0.699);
   --bg-subtract: #3f3a578e;
   --bg-add: #3f3a578e;
   --bg-primary: #23232e;
@@ -42,12 +46,17 @@
 /* Light Theme */
 
 .light {
+  --tag-bg: #55abfcce;
+  --text-light: #fcfcfc;
+--tag-bg-hover: #3b2dfa8c;
+--tag-text-color: var(--text-light);
+  
   --text-primary: #1f1f1f;
   --text-secondary: #000000;
   --bg-primary: #ffffff;
   --bg-subtract: rgba(0, 0, 255, 0.199);
   --bg-add: rgba(0, 0, 255, 0.199);
-  --button-highlight: blue;
+  --button-highlight: rgba(31, 128, 255, 0.753);
   --bg-secondary: #e4e4e4;
   --text-floogle: #dfdfdf;
   --bg-low-opacity: #1414181c;

@@ -13,27 +13,50 @@
       </a>
   </button> 
 
-    <div class="expandable-sidebar" id="expandable-sidebar">
-    <div class="mygif"></div>
-    <div class="aside-block">
-        <h4>Super Sale</h4>
-        <label class="checkbox-control">
-          <span class="label-name">Show only sale item</span>
-          <input type="checkbox" v-model="check" @change="updateSale">
-          <div class="checkbox-box"></div>
-        </label>
-    </div>
-    <div class="aside-block">
-      <h4>Support</h4>
-      <p><p style="display:inline" v-if="JSON.stringify(currentUser) !== '{}'">{{currentUser.displayName}}, </p>Get in touch with us for any queries at <a href="mailto: xotopolo@gmail.com">xotopolo@gmail.com</a></p>
-    </div>
-  </div>
+  <div class="expandable-sidebar" id="expandable-sidebar">
+      <div class="mygif"></div>
+      <div class="aside-block">
+          <h4>Categlories</h4>
+          
+          <ul  class="categlory-tag-container">
+          <li v-for="categlories in products">
+            <router-link :to="`${categlories}`">
+              <!-- <a class="nav-link"> -->
+                <!-- <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 509.418 509.418" style="enable-background:new 0 0 509.418 509.418;" xml:space="preserve"><g><g><g><path style="fill:#B8BAC0;" d="M254.497,214.694c-4.422,0-8-3.578-8-8v-32.625c0-7.875,5.906-14.656,13.734-15.781 c10.852-1.555,20.711-7.633,27.047-16.672c6.414-9.141,8.656-20.375,6.313-31.617c-3.141-15.047-15.352-27.258-30.398-30.398 c-12.141-2.508-24.508,0.391-33.906,8.039c-9.398,7.641-14.789,18.961-14.789,31.055c0,4.422-3.578,8-8,8s-8-3.578-8-8 c0-16.938,7.547-32.781,20.695-43.477c13.141-10.68,30.367-14.805,47.266-11.273c21.18,4.414,38.375,21.609,42.789,42.789 c3.258,15.617,0.109,31.266-8.867,44.07c-8.859,12.641-22.664,21.141-37.875,23.328l-0.008,32.563 C262.497,211.116,258.919,214.694,254.497,214.694z"/></g></g><g><path style="fill:#5C546A;" d="M499.442,376.998L261.317,212.826c-4.109-2.828-9.523-2.82-13.633,0.008L9.856,377.092 c-8.266,5.703-11.805,16.016-8.797,25.664c2.958,9.506,11.567,15.9,21.438,15.945v4.008c0,13.234,10.766,24,24,24h40 c4.422,0,8-3.578,8-8s-3.578-8-8-8h-40c-4.414,0-8-3.586-8-8v-4h432v4c0,4.414-3.586,8-8,8h-40c-4.422,0-8,3.578-8,8s3.578,8,8,8 h40c13.234,0,24-10.766,24-24v-4h0.32c9.977,0,18.648-6.469,21.578-16.094C511.364,392.881,507.716,382.553,499.442,376.998z M254.513,237.287l228.328,157.422H26.575L254.513,237.287z"/></g><g><path style="fill:#8A8895;" d="M262.497,174.709h-16c-4.418,0-8,3.582-8,8v30c0,4.418,3.582,8,8,8h16c4.418,0,8-3.582,8-8v-30 C270.497,178.291,266.915,174.709,262.497,174.709z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg> -->
+                
+               <div class="categlory-tag">#{{categlories}}</div>
+              <!-- </a> -->
+            </router-link>
+          </li>
+          </ul>
+          <label class="categlories-control">
+            
+            
+            <!-- <span class="label-name"></span> -->
+            <input type="checkbox" v-model="check" @change="">
+            <!-- <div class="checkbox-box"></div> -->
+          </label>
+      </div>
+      <div class="aside-block">
+          <h4>Super Sale</h4>
+          <label class="checkbox-control">
+            <span class="label-name">Show only sale item</span>
+            <input type="checkbox" v-model="check" @change="updateSale">
+            <div class="checkbox-box"></div>
+          </label>
+      </div>
+      <div class="aside-block">
+        <h4>Support</h4>
+        <p><p style="display:inline" v-if="JSON.stringify(currentUser) !== '{}'">{{currentUser.displayName}}, </p>Get in touch with us for any queries at <a href="mailto: xotopolo@gmail.com">xotopolo@gmail.com</a></p>
+      </div>
     <div class="aside-block">
       <label for="pricerange">Maximum Price: <span>${{ pricerange }}</span></label>
       <input class="slider" id="pricerange" tabindex="0" :value="pricerange" type="range" :min="min" :max="max" step="0.1" @input="updateHighPrice($event)" />
       <span class="min">${{ min }}</span>
       <span class="max">${{ max }}</span>
    </div>
+  </div>
+
   </aside>
 </template>
 
@@ -56,6 +79,14 @@ export default {
   computed: { 
     pricerange() { return this.$store.state.highprice },
     checked() { return this.$store.state.sale;},
+    
+    products() {
+      var product_arr = []; 
+      this.$store.state.products.forEach((item) => {product_arr.push(item.category)});
+      var product_arrayFiltered = product_arr.filter((v, i, a) => a.indexOf(v) === i); 
+      return product_arrayFiltered; 
+    },
+    
     ...mapGetters({currentUser : 'currentUser'}),
   },
   
@@ -186,6 +217,39 @@ export default {
   /* overflow: scroll; */
   /* max-height: 500px; */
   max-height: 1000px;
+}
+
+.categlory-tag {
+  font-size: 13px;
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0.4em .8em .4em;
+    border-radius: 2px;
+    background: var(--tag-bg);
+    color: var(--tag-text-color);
+    font-weight: 600;
+    margin: .25em .2em;
+}
+.categlory-tag:hover {
+
+    background: var(--tag-bg-hover);
+    
+}
+
+.categlory-tag-container {
+display: -webkit-box;
+    display: -ms-flexbox;
+    width: 100%;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 #search {
