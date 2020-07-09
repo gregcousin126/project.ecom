@@ -184,8 +184,10 @@ export default {
   }
 .coin-container{
   
-    grid-gap: 20px;
-    margin: 25px;
+grid-gap: 20px;
+    margin: auto 25px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     /* height: 100%; */
     height: 60px;
@@ -220,7 +222,7 @@ img{width:100%;object-fit:cover;height:209px}
   
   
       border-radius: 3px;
-  display:block;width:37px;height:37px;font-size:22px;margin:10px;background:var(--text-floogle);text-decoration:none;text-align:center;line-height:37px} .shopping-cart-items{flex-direction:column} img{width:100%;height:190px} .cart-product-card{margin:0 5px 20px 5px} ul{justify-content:space-around} }
+  display:block;width:37px;height:37px;font-size:22px;margin:10px;background:var(--text-floogle);text-decoration:none;text-align:center;line-height:37px} .shopping-cart-items{flex-direction:column} img{width:100%;height:180px} .cart-product-card{margin:0 0px 20px 0px} ul{justify-content:space-around} }
 
 
 </style>
