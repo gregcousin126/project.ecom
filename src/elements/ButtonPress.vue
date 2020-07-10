@@ -28,11 +28,11 @@ export default {
 .button-cart span {
   background: #9bc2f5;
   color: #f0f0f0;
-  border: 4px solid #a1c6f74d;
+  border: 3px solid #a1c6f74d;
   -webkit-border-radius: 3px;
   -webkit-transition: -webkit-transform 0.2s ease-in-out;
   display: inline-block;
-  padding: 3px 5px;
+  padding: 1px 4px;
   text-transform: uppercase;
   font-family: inherit;
   font-weight: 700;
@@ -50,5 +50,11 @@ export default {
 .button-cart:active span {
   -webkit-transform: translate(0, 5px);
 }
+@media(max-width: 650px) {
+  .button-cart span {
 
+  padding: 0px 2px;
+  
+}
+}
 </style>

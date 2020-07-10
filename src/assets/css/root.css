@@ -72,8 +72,8 @@
 	
   --display-primary: flex;
   
-  --button-boxshadow-passive-primary: 0px 1px   .4px  #9bc2f5, 0px 2px  .4px   #8dbaf5, 0px 3px  .4px   #79adf1, 0px 4px  .4px   rgba(113, 168, 241, 0.781), 0px 5px  .4px   #68a4f3ad, 0px 6px  .4px   #5d9becb2, 0px 10px 5px -1px rgba(128, 128, 128, 1);
-  --button-boxshadow-active-primary: 0px 2px 0px  #afcef7, 0px 3px 0px  #98c0f3, 0px 4px 0px  rgb(150, 192, 247), 0px 5px 0px  #89b6f1, 0px 6px 0px  #80b3f7, 0px 7px 0px #72aaf3, 0px 10px 2px 0px rgba(128, 128, 128, 0.6);
+  --button-boxshadow-passive-primary: 0px 1px   .4px  #9bc2f5, 0px 2px  .4px   #8dbaf5, 0px 3px  .4px   #79adf1, 0px 4px  .4px   rgba(113, 168, 241, 0.781), 0px 5px  .4px   #68a4f3ad, 0px 6px  .4px   #5d9becb2, 0px 8px 5px -1px rgba(128, 128, 128, 1);
+  --button-boxshadow-active-primary: 0px 2px 0px  #afcef7, 0px 3px 0px  #98c0f3, 0px 4px 0px  rgb(150, 192, 247), 0px 5px 0px  #89b6f1, 0px 6px 0px  #80b3f7, 0px 7px 0px #72aaf3, 0px 8px 2px 0px rgba(128, 128, 128, 0.6);
   
 }
 
