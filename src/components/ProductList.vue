@@ -14,27 +14,10 @@
       
       <transition-group name="card" tag="div" v-else>
       <div id="each-store" v-for="store in stores" :key="store.store_id" >
-        <!-- <div id="each-store" > -->
-      <h1  id="store-title" class="list-items-title">
-        
-      <img :src='`./stores/static/${store.store_name.toLowerCase()}/logo.svg`' class="company-svg">
-        {{store.store_name}}<hr>
-        
-        </h1>
-      
-      <!-- <h1 :class="[  ? 'takeout' : '' ] " id="store-title">{{store.store_name}}<hr></h1> -->
-      
+      <h1  id="store-title" class="list-items-title"><img :src='`./stores/static/${store.store_name.toLowerCase()}/logo.svg`' class="company-svg">{{store.store_name}}<hr></h1>
       <ul id="store-list">
           <li v-for="product in products" :key="product.product_id" :track-by="product.product_id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ] " tabindex="0" v-show="category === product.category || category === 'allproducts'">
-            
-            <!-- {{}} -->
-            
-          <!-- <li v-for="(product, key ) in products" :key="product.product_id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ]" tabindex="0" v-show="category === product.category || category === 'allproducts'"> -->
-            
             <div v-if="store.store_id == product.store_id" id="main-list">
-              
-              <!-- {{product}} -->
-              
               <span class="sale-banner" v-if="product.sale">Sale</span>
               <span class="out-of-stock-banner" v-show="!productInStock(product)">Out of Stock</span>
                 <div class="product-list-container">
@@ -43,14 +26,15 @@
                       <div class="text">{{product.description}}</div>
                     </div>
                 </div>
-                    <!-- <button @click="addProductToCart(product)" class="add-to-cart-btn" id="buttonToggle">Add to cart</button> -->
-                    <a @click="addProductToCart(product)" >
-                        <ButtonPress @click="addProductToCart(product)" class="add-to-cart-btn" id="buttonToggle"/>
+                  <!-- <button @click="addProductToCart(product)" class="add-to-cart-btn" id="buttonToggle">Add to cart</button> -->
+                  <a @click="addProductToCart(product)" ontouchstart="" class="add-to-cart-btn">
+                    
+                    <ButtonPress @click="addProductToCart(product)"  text="Add To Cart" id="buttonToggle"/>
+                          <!-- <router-link to="/info"> -->
+                    <ButtonPress @click="addProductToCart(product)"  text="Get Info" id="buttonToggle"/>
+                          <!-- </router-link> -->
+
                     </a>
-                
-                    
-                    
-              <!-- <span class="product-store">{{store.store_name}}</span> -->
               <span class="product-title">{{product.title}}</span>
               <br>
               <span class="product-price"> {{product.price | currency}}</span>
@@ -248,14 +232,14 @@ border-radius: 2px 0px;
   display: none;
 } */
  .add-to-cart-btn {
-   z-index: 0;
-    display: block;
+     z-index: 0;
+    display: flex;
     opacity: 0;
-    margin-bottom: 10px;
+    place-content: space-evenly;
+    /* margin-bottom: 10px; */
     overflow: visible;
-    margin-top: -55px;
+    /* margin-top: -55px; */
     height: 48px;
-   
    
        /* z-index: 0;
     display: block;
@@ -266,9 +250,14 @@ border-radius: 2px 0px;
 
    /* z-index: 0;
     display: block;
-    opacity: 0;
-    margin-top: -50px; */
+    opacity: 0;*/
+    margin-bottom: -50px; 
  }
+ 
+ #buttonToggle {
+     margin: 0 2%;
+ }
+ 
  @media (max-width: 600px) {
     .product-title {
       
@@ -278,13 +267,13 @@ border-radius: 2px 0px;
     /* font-family: FoobarPro; */
  }
  .product-description {
-    margin-top: -3px;
+    /* margin-top: -3px; */
     width: 100%;
     padding: 10px 20px 3px 20px;
     font-size: 11px;
     font-family: Helvetica Neue;
     color: rgba(110, 110, 110, 0.773);
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
  }
  .product-price {
    font-weight: bold;
@@ -293,7 +282,7 @@ border-radius: 2px 0px;
  }
    .add-to-cart-btn {
      opacity: 1;
-     margin-top:10px;
+     margin: 10px 10px;
    }
    
  }
@@ -303,11 +292,10 @@ border-radius: 2px 0px;
  }
  .product-card:hover .add-to-cart-btn{
    overflow: hidden;
-
-   transition: margin-top var(--transition-speed-primary-faster) ease-in-out, opacity var(--transition-speed-primary-faster) ease-in-out;
+   transition: margin-bottom var(--animation-speed-secondary-slower) ease-in-out, opacity var(--animation-speed-secondary-slower) ease-in-out;
    opacity: 1;
-   margin-top: 10px;
-   display: block;
+   margin: 10px 10px;
+   /* display: block; */
  }
 
  .product-title {

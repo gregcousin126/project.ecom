@@ -2,7 +2,7 @@
   font-size: 16px;
   font-family: 'Open Sans';
   --text-primary: #b6b6b6;
-  --button-font-primary: 12px;
+  --button-font-primary: 11px;
   --button-font-secondary: 14px;
   --text-secondary: #ececec;
   --bg-primary: #23232e;
@@ -12,6 +12,7 @@
   --transition-speed-secondary-faster: 1s;
   --animation-speed-primary-slower: 6s;
   --animation-speed-primary-faster: .6s;
+  --animation-speed-secondary-slower: .2s;
 	--page-transition-speed-primary: .3s;
   --blue-primary: #5044ff;
   --my-white: #fff;

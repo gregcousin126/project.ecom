@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     
-    <TopNavigation/>
+    <SideNavigation/>
       <div class="content-wrapper" id="wrapper">
 
         <router-view/>
@@ -11,14 +11,14 @@
 </template>
 
 <script>
-import TopNavigation from '@/components/TopNavigation'
+import SideNavigation from '@/components/SideNavigation'
 import Footer from '@/components/Footer'
 
 export default {
   name: 'App',
   components: {
     Footer,
-    TopNavigation
+    SideNavigation
   }
 }
 </script>

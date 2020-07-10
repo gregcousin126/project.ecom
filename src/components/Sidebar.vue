@@ -216,7 +216,6 @@ export default {
 }
 
 .categlory-tag {
-  font-size: 13px;
     display: inline-block;
     border-radius: 3px;
     padding: 0.4em .8em .4em;
@@ -268,6 +267,7 @@ display: -webkit-box;
     -webkit-transition: var(--page-transition-speed-primary);
     transition: var(--page-transition-speed-primary);
 }
+
 #search:hover {
 cursor: text;
 }
