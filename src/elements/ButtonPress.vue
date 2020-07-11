@@ -17,11 +17,11 @@ export default {
   
       background: #9bc2f5;
     color: #f0f0f0;
-    border: 2px solid #a1c6f74d;
-    -webkit-border-radius: 2px;
+    border: 3px solid #a1c6f74d;
+    -webkit-border-radius: 3px;
     -webkit-transition: -webkit-transform .2s ease-in-out;
     display: flex;
-    padding: 1px 3px;
+    padding: 1px 5px;
     word-spacing: -.5px;
     text-transform: uppercase;
     font-family: inherit;
