@@ -17,10 +17,10 @@
      	<li class="nav-item">
           <router-link to="/"><a class="nav-link" id="show-products-all-products" @click="showProductsAll"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"><g><g><rect x="159.992" width="192" height="120" style="fill: rgb(82, 121, 145);"></rect></g><g><path d="M507.235,141.633c-0.031-0.055-0.07-0.109-0.102-0.164l-50.891-83.082 C434.188,22.371,394.235,0,351.992,0c-4.422,0-8,3.582-8,8c0,48.523-39.477,88-88,88s-88-39.477-88.008-88c0-4.418-3.586-8-8-8 C117.742,0,77.797,22.371,55.742,58.387L4.75,141.633c-4.203,7.246-2.195,16.328,4.672,21.133l66.836,46.789 c3.664,2.547,8.242,3.461,12.633,2.516c4.359-0.969,8.148-3.742,10.391-7.609l4.711-8.133V496c0,8.82,7.18,16,16,16h272 c8.82,0,16-7.18,16-16V196.328l4.711,8.133c2.242,3.867,6.031,6.641,10.391,7.609c4.391,0.953,8.969,0.039,12.625-2.516 l66.844-46.789C509.43,157.961,511.438,148.879,507.235,141.633z" style="fill: var(--my-turk);"></path></g><g><g><path d="M335.992,215.995c-4.422,0-8-3.578-8-8c0-35.703-18.203-90.035-45.297-114.008 c-3.313-2.926-3.625-7.984-0.695-11.293s8.008-3.605,11.289-0.691c31.32,27.703,50.703,86.969,50.703,125.992 C343.992,212.417,340.414,215.995,335.992,215.995z" style="fill: rgb(255, 149, 0);"></path></g></g><g><path d="M279.992,40h-48c-4.418,0-8-3.582-8-8v-8c0-4.418,3.582-8,8-8h48c4.418,0,8,3.582,8,8v8 C287.992,36.418,284.411,40,279.992,40z" style="fill: rgb(92, 84, 106);"></path></g><g><path d="M99.281,204.461l3.346-5.776L9.664,133.61l-4.914,8.022c-4.203,7.246-2.195,16.328,4.672,21.133 l66.836,46.789c3.664,2.547,8.242,3.461,12.633,2.516C93.25,211.102,97.039,208.328,99.281,204.461z" style="fill: rgb(82, 121, 145);"></path></g><g><path d="M412.719,204.461l-3.346-5.776l92.963-65.074l4.914,8.022c4.203,7.246,2.195,16.328-4.672,21.133 l-66.836,46.789c-3.664,2.547-8.242,3.461-12.633,2.516C418.75,211.102,414.961,208.328,412.719,204.461z" style="fill: rgb(82, 121, 145);"></path></g><g><path d="M103.992,488v8c0,8.82,7.18,16,16,16h272c8.82,0,16-7.18,16-16v-8H103.992z" style="fill: rgb(82, 121, 145);"></path></g><g><path d="M324.679,211.314l-8,8c-3.001,3.001-4.686,7.07-4.686,11.314V296c0,4.418,3.582,8,8,8h32 c4.418,0,8-3.582,8-8v-65.373c0-4.243-1.686-8.313-4.686-11.314l-8-8C341.058,205.065,330.927,205.065,324.679,211.314z M335.992,232c-4.418,0-8-3.582-8-8c0-4.418,3.582-8,8-8s8,3.582,8,8C343.992,228.418,340.411,232,335.992,232z" style="fill: rgb(255, 209, 0);"></path></g><g><path d="M346.821,227.797l-2.991-2.991c-0.423,4.02-3.705,7.194-7.837,7.194s-7.415-3.174-7.837-7.194 l-2.991,2.991c-0.742,0.75-1.172,1.773-1.172,2.828V292h24v-61.375C347.992,229.57,347.563,228.547,346.821,227.797z" style="fill: rgb(255, 149, 0);"></path></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg><span class="link-text" >Categlories</span ></a></router-link>
           <div class="expandable-all-products" id="expandable-all-products">
-            <ul>
-            <li v-for="categlories in products" class="nav-item" >
-              <router-link class="router-links" :to="`${categlories}`"><a class="nav-link"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 509.418 509.418" style="enable-background:new 0 0 509.418 509.418;" xml:space="preserve"><g><g><g><path style="fill:#B8BAC0;" d="M254.497,214.694c-4.422,0-8-3.578-8-8v-32.625c0-7.875,5.906-14.656,13.734-15.781 c10.852-1.555,20.711-7.633,27.047-16.672c6.414-9.141,8.656-20.375,6.313-31.617c-3.141-15.047-15.352-27.258-30.398-30.398 c-12.141-2.508-24.508,0.391-33.906,8.039c-9.398,7.641-14.789,18.961-14.789,31.055c0,4.422-3.578,8-8,8s-8-3.578-8-8 c0-16.938,7.547-32.781,20.695-43.477c13.141-10.68,30.367-14.805,47.266-11.273c21.18,4.414,38.375,21.609,42.789,42.789 c3.258,15.617,0.109,31.266-8.867,44.07c-8.859,12.641-22.664,21.141-37.875,23.328l-0.008,32.563 C262.497,211.116,258.919,214.694,254.497,214.694z"/></g></g><g><path style="fill:#5C546A;" d="M499.442,376.998L261.317,212.826c-4.109-2.828-9.523-2.82-13.633,0.008L9.856,377.092 c-8.266,5.703-11.805,16.016-8.797,25.664c2.958,9.506,11.567,15.9,21.438,15.945v4.008c0,13.234,10.766,24,24,24h40 c4.422,0,8-3.578,8-8s-3.578-8-8-8h-40c-4.414,0-8-3.586-8-8v-4h432v4c0,4.414-3.586,8-8,8h-40c-4.422,0-8,3.578-8,8s3.578,8,8,8 h40c13.234,0,24-10.766,24-24v-4h0.32c9.977,0,18.648-6.469,21.578-16.094C511.364,392.881,507.716,382.553,499.442,376.998z M254.513,237.287l228.328,157.422H26.575L254.513,237.287z"/></g><g><path style="fill:#8A8895;" d="M262.497,174.709h-16c-4.418,0-8,3.582-8,8v30c0,4.418,3.582,8,8,8h16c4.418,0,8-3.582,8-8v-30 C270.497,178.291,266.915,174.709,262.497,174.709z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg><span class="link-text"><div >{{categlories}}</div></span></a></router-link>
-            </li>
+           <ul>
+              <li v-for="categlories in products" class="nav-item" >
+                <router-link class="router-links" :to="`${categlories}`"><a class="nav-link"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 509.418 509.418" style="enable-background:new 0 0 509.418 509.418;" xml:space="preserve"><g><g><g><path style="fill:#B8BAC0;" d="M254.497,214.694c-4.422,0-8-3.578-8-8v-32.625c0-7.875,5.906-14.656,13.734-15.781 c10.852-1.555,20.711-7.633,27.047-16.672c6.414-9.141,8.656-20.375,6.313-31.617c-3.141-15.047-15.352-27.258-30.398-30.398 c-12.141-2.508-24.508,0.391-33.906,8.039c-9.398,7.641-14.789,18.961-14.789,31.055c0,4.422-3.578,8-8,8s-8-3.578-8-8 c0-16.938,7.547-32.781,20.695-43.477c13.141-10.68,30.367-14.805,47.266-11.273c21.18,4.414,38.375,21.609,42.789,42.789 c3.258,15.617,0.109,31.266-8.867,44.07c-8.859,12.641-22.664,21.141-37.875,23.328l-0.008,32.563 C262.497,211.116,258.919,214.694,254.497,214.694z"/></g></g><g><path style="fill:#5C546A;" d="M499.442,376.998L261.317,212.826c-4.109-2.828-9.523-2.82-13.633,0.008L9.856,377.092 c-8.266,5.703-11.805,16.016-8.797,25.664c2.958,9.506,11.567,15.9,21.438,15.945v4.008c0,13.234,10.766,24,24,24h40 c4.422,0,8-3.578,8-8s-3.578-8-8-8h-40c-4.414,0-8-3.586-8-8v-4h432v4c0,4.414-3.586,8-8,8h-40c-4.422,0-8,3.578-8,8s3.578,8,8,8 h40c13.234,0,24-10.766,24-24v-4h0.32c9.977,0,18.648-6.469,21.578-16.094C511.364,392.881,507.716,382.553,499.442,376.998z M254.513,237.287l228.328,157.422H26.575L254.513,237.287z"/></g><g><path style="fill:#8A8895;" d="M262.497,174.709h-16c-4.418,0-8,3.582-8,8v30c0,4.418,3.582,8,8,8h16c4.418,0,8-3.582,8-8v-30 C270.497,178.291,266.915,174.709,262.497,174.709z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg><span class="link-text"><div >{{categlories}}</div></span></a></router-link>
+              </li>
           </ul>
         </div>
       </li>
@@ -57,11 +57,7 @@ export default {
   data() {
     return { email: '', password: '', displayName: null, photoURL: null, newPassword: null, favoriteFood: null, authUser: null }
   },
-    
-  components: {
-    logo, 
-  },
-  
+
   methods :{
     signOut () {
       firebaseAuth().signOut();
@@ -109,30 +105,35 @@ export default {
     ...mapGetters({ currentUser : 'currentUser', }),
   },
   
-mounted () {
-      var expander_all_products = document.getElementById('expandable-all-products');
-      var expander_stores = document.getElementById('expandable-stores');
-      var navbar = document.getElementById('navbar');
-      
-      navbar.addEventListener('mouseleave', function (e) {
-        expander_all_products.classList.remove("maxheight-expand");
-        expander_stores.classList.remove("maxheight-expand");
-      });
+  mounted () {
+        var expander_all_products = document.getElementById('expandable-all-products');
+        var expander_stores = document.getElementById('expandable-stores');
+        var navbar = document.getElementById('navbar');
         
-      var tmp = null;
-      const themeMap = { dark: "light", light: "dark" }; 
-      const theme = localStorage.getItem('theme') || (tmp = Object.keys(themeMap)[0], localStorage.setItem('theme', tmp), tmp);
-      const bodyClass = document.body.classList;
-      bodyClass.add(theme);
-      
-      function toggleTheme() {
-        const current = localStorage.getItem('theme');
-        const next = themeMap[current];
-        bodyClass.replace(current, next);
-        localStorage.setItem('theme', next);
-      };
-      document.getElementById('themeButton').onclick = toggleTheme;
-  }
+        navbar.addEventListener('mouseleave', function (e) {
+          expander_all_products.classList.remove("maxheight-expand");
+          expander_stores.classList.remove("maxheight-expand");
+        });
+          
+        var tmp = null;
+        const themeMap = { dark: "light", light: "dark" }; 
+        const theme = localStorage.getItem('theme') || (tmp = Object.keys(themeMap)[0], localStorage.setItem('theme', tmp), tmp);
+        const bodyClass = document.body.classList;
+        bodyClass.add(theme);
+        
+        function toggleTheme() {
+          const current = localStorage.getItem('theme');
+          const next = themeMap[current];
+          bodyClass.replace(current, next);
+          localStorage.setItem('theme', next);
+        };
+        document.getElementById('themeButton').onclick = toggleTheme;
+    },
+        
+  components: {
+    logo, 
+  },
+  
 }
 </script>
 

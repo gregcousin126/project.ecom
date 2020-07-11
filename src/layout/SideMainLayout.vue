@@ -1,7 +1,6 @@
 <template>
   <div class="product-page">
     <div class="sidebar-wrap">
-      <!-- <Sidebar/> -->
       <Filterbar/>
     </div>
     <div class="product-list-wrap">
@@ -14,7 +13,6 @@
 
 <script>
 import Filterbar from '@/components/Filterbar'
-// import Sidebar from '@/components/Sidebar'
 import ProductList from '@/components/ProductList'
 
 export default {
