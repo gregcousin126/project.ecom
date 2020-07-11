@@ -1,7 +1,8 @@
 <template>
   <div class="product-page">
     <div class="sidebar-wrap">
-      <Sidebar/>
+      <!-- <Sidebar/> -->
+      <Filterbar/>
     </div>
     <div class="product-list-wrap">
       <transition name="fade">
@@ -12,15 +13,18 @@
 </template>
 
 <script>
-import Sidebar from '@/components/Sidebar'
+import Filterbar from '@/components/Filterbar'
+// import Sidebar from '@/components/Sidebar'
 import ProductList from '@/components/ProductList'
 
 export default {
   components: {
-    Sidebar,
+    // Sidebar,
+    Filterbar,
     ProductList
   }
 }
+
 </script>
 
 <style>

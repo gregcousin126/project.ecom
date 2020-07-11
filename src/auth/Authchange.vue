@@ -50,66 +50,24 @@ export default {
         newPassword: null,
         favoriteFood: null,
         authUser: null,
-        // currentUser: null
       }
     },
     methods :{
-      signOut () {
-        firebase.auth().signOut()
-      },
-      // linkGoogle () {
-      //   const provider = new firebase.auth.GoogleAuthProvider()
-      //   this.currentUser.linkWithPopup(provider).catch(error => alert('🤕' + error.message))
-      // },
-      // unlinkGoogle () {
-      //   this.authUser.unlink('google.com')
-      // },
-      updateProfile () {
-        this.currentUser.updateProfile({ displayName: this.displayName, photoURL: this.photoURL })
-      },
-      updateCustomDetails () {
-        firebase.database().ref('users').child(this.currentUser.uid)
-          .update({favoriteFood: this.favoriteFood})
-      },
-      updateEmail () {
-        this.currentUser.updateEmail(this.email)
-      },
-      updatePassword () {
-        this.currentUser.updatePassword(this.newPassword)
-          .then(() => { this.newPassword = null }).catch(error => alert('🤕' + error.message))
-      }
+      // linkGoogle () { const provider = new firebase.auth.GoogleAuthProvider();this.currentUser.linkWithPopup(provider).catch(error => alert('🤕' + error.message));}, 
+      // unlinkGoogle () { this.authUser.unlink('google.com');},
+      signOut () { firebase.auth().signOut() },
+      updateProfile () {this.currentUser.updateProfile({ displayName: this.displayName, photoURL: this.photoURL })},
+      updateCustomDetails () {firebase.database().ref('users').child(this.currentUser.uid).update({favoriteFood: this.favoriteFood})},
+      updateEmail () {this.currentUser.updateEmail(this.email)},
+      updatePassword () {this.currentUser.updatePassword(this.newPassword).then(() => { this.newPassword = null }).catch(error => alert('🤕' + error.message))}
     },
     computed: {
-      
-    ...mapGetters({
-          currentUser : 'currentUser',
-    }),
-
+    ...mapGetters({ currentUser : 'currentUser', }),
     },
 		
-    created () {
-      
-      
-      
-      
-      // firebase.auth().onAuthStateChanged(user => {
-      //   this.currentUser = user
-      //   if (user) {
-      //     this.displayName = user.displayName
-      //     this.photoURL = user.photoURL
-      //     this.email = user.email
-          // firebase.database().ref('users').child(user.uid).once('value', snapshot => {
-          //   if (snapshot.val()) {
-          //     this.favoriteFood = snapshot.val().favoriteFood
-          //     Vue.set(this.currentUser, 'favoriteFood', this.favoriteFood)
-          //   }
-          // })
-        // }
-      // })
-    },
-    
+    created () {},
 }
+
 </script>
 <style lang="css">
-
 </style>

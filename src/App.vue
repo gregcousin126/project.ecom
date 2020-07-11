@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-    
-    <SideNavigation/>
+    <Sidebar/>
       <div class="content-wrapper" id="wrapper">
-
         <router-view/>
       </div>
     <Footer/>
@@ -11,14 +9,14 @@
 </template>
 
 <script>
-import SideNavigation from '@/components/SideNavigation'
+import Sidebar from '@/components/Sidebar'
 import Footer from '@/components/Footer'
 
 export default {
   name: 'App',
   components: {
-    Footer,
-    SideNavigation
+    Sidebar,
+    Footer
   }
 }
 </script>
