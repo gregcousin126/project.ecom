@@ -28,7 +28,7 @@
                 </div>
                   <a @click="addProductToCart(product)" ontouchstart="" class="add-to-cart-btn">
                     <ButtonPress @click="addProductToCart(product)"  text="Add To Cart" id="buttonToggle"/>
-                    <ButtonPress @click="addProductToCart(product)"  text="Get Info" id="buttonToggle"/>
+                    <ButtonPress @click="addProductToCart(product)"  text="View" id="buttonToggle"/>
                   </a>
                 <span class="product-title">{{product.title}}</span><br>
                 <span class="product-price"> {{product.price | currency}}</span>

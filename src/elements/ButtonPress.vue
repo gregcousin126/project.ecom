@@ -35,7 +35,7 @@ export default {
 .button-cart span:hover{color:(--bg-button);cursor:pointer}
 .button-cart:active{-webkit-box-shadow:var(--button-boxshadow-active-primary)}
 .button-cart:active span{-webkit-transform:translate(0,5px)}
-@media(max-width: 650px) { .button-cart span{padding:0 2px;} 
+@media(max-width: 650px) { .button-cart span{padding:0 3px;} 
 
 
 
