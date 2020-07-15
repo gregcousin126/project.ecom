@@ -88,7 +88,7 @@ export default {
 .authchoice{display:grid;grid-auto-flow:column;margin-top:25px;border-radius:4px;list-style:none;border:2px solid;place-content:center;grid-auto-columns:-webkit-min-content;font-weight:500;padding:22px;font-size:14px;width:100%;font-family:'Roboto Condensed',sans-serif;grid-gap:28px}
 .top-register-container{z-index:0;justify-content:center;padding:5% 7%;transition:opacity var(--transition-speed-primary-faster);display:flex;text-align:-webkit-center}
 .register-container{height:auto;-webkit-box-shadow:0 15px 25px rgba(0,0,0,0.603);box-shadow:0 15px 25px rgba(0,0,0,0.603);display:flex;border-radius:5px}
-.image-register{flex:35%;background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(../assets/jamesbond.jpg);background-size:cover;text-align:center;color:#fff;font-family:'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif}
+.image-register{flex:35%;background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(../assets/images/jamesbond.jpg);background-size:cover;text-align:center;color:#fff;font-family:'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif}
 .image-register h1{margin-top:17%;padding-left:20px;padding-right:20px;letter-spacing:2px;font-weight:100;margin-bottom:10px;font-family:'Bungee'}
 .colorspan{color:#7fff00}
 .register-content{flex:50%;justify-content:center;background-color:var(--my-white);text-align:center;padding:50px;font-family:'Montserrat',sans-serif}

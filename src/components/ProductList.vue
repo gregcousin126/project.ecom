@@ -107,7 +107,7 @@ ul:empty{display:none}
 .text{color:#fff;font-size:15px;font-family:Bungee;margin:0 auto;display:inline-flex;align-items:center;justify-content:center;position:relative;align-content:center;height:100%;text-align:center}
 .sale-banner{border-radius:2px 0;background:#e82319;color:#fff;font-family:sans-serif;position:absolute;padding:4px 10px 5px;text-transform:uppercase;left:0;top:0;font-size:12px;font-weight:700;z-index:1}
 .out-of-stock-banner{border-radius:2px 0;background:#505050;color:#f9f9f9;font-family:sans-serif;position:absolute;padding:4px 10px 5px;text-transform:uppercase;left:0;top:0;font-size:12px;font-weight:700;z-index:1}
-.add-to-cart-btn{z-index:0;display:-webkit-box;display:-ms-flexbox;display:flex;align-items:center;opacity:0;place-content:center;overflow:visible;margin-top:-5px;height:48px;margin-bottom:-40px}
+.add-to-cart-btn{z-index:0;display:-webkit-box;display:-ms-flexbox;display:flex;align-items:center;opacity:0;place-content:center;overflow:visible;margin-top:-2px;height:48px;margin-bottom:-40px}
 #buttonToggle{margin:0 2%}
 .product-card:hover,.product-card:focus{outline:none}
 .product-card:hover .add-to-cart-btn{overflow:hidden;transition:margin-bottom var(--animation-speed-secondary-slower) ease-in-out,opacity var(--animation-speed-secondary-slower) ease-in-out;opacity:1;margin-bottom:10px}

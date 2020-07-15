@@ -14,7 +14,7 @@
       <li class="nav-item" >
         <router-link to="/cart" ><a class="nav-link"  ><div v-if="noItems > 0" class="cart-link__count" id="link__count__regular">{{ noItems }}</div><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"	 viewBox="0 0 504 504" style="0 0 484 481" xml:space="preserve"><g>	<g>		<path style="fill:#B8BAC0;" d="M485.617,114.305C484.125,112.828,482.102,112,480,112c-0.031,0-0.07,0-0.109,0l-374.5,4.941			c-2.531,0.035-4.906,1.27-6.383,3.328c-1.484,2.059-1.898,4.699-1.125,7.113l62.5,195.059c1.063,3.313,4.141,5.559,7.617,5.559			h280c22.055,0,40-17.945,40-40V120C488,117.859,487.141,115.809,485.617,114.305z M208,288c0,4.418-3.578,8-8,8s-8-3.582-8-8V168			c0-4.418,3.578-8,8-8s8,3.582,8,8V288z M248,288c0,4.418-3.578,8-8,8s-8-3.582-8-8V168c0-4.418,3.578-8,8-8s8,3.582,8,8V288z			 M288,288c0,4.418-3.578,8-8,8s-8-3.582-8-8V168c0-4.418,3.578-8,8-8s8,3.582,8,8V288z M328,288c0,4.418-3.578,8-8,8s-8-3.582-8-8			V168c0-4.418,3.578-8,8-8s8,3.582,8,8V288z M368,288c0,4.418-3.578,8-8,8s-8-3.582-8-8V168c0-4.418,3.578-8,8-8s8,3.582,8,8V288z			 M408,288c0,4.418-3.578,8-8,8s-8-3.582-8-8V168c0-4.418,3.578-8,8-8s8,3.582,8,8V288z M448,288c0,4.418-3.578,8-8,8s-8-3.582-8-8			V168c0-4.418,3.578-8,8-8s8,3.582,8,8V288z"/>	</g>	<g>		<circle style="fill:#5C546A;" cx="144" cy="416" r="32"/>	</g>	<g>		<circle style="fill:#5C546A;" cx="456" cy="416" r="32"/>	</g>	<g>		<path style="fill:#8A8895;" d="M492,108H108c-0.316,0-0.614,0.069-0.924,0.093l-6.85-23.039C96.539,72.656,84.937,64,72.008,64			L72,64.001V64H56v16h16v-0.001L72.008,80c5.898,0,11.195,3.953,12.875,9.613l73.242,246.348			c3.032,10.188,8.988,18.919,16.632,25.696l-37.156,49.542c-2.656,3.535-1.938,8.551,1.602,11.199			c1.438,1.082,3.117,1.602,4.789,1.602c2.438,0,4.836-1.105,6.406-3.199l37.713-50.286c7.295,3.45,15.317,5.485,23.693,5.485H448			v40c0,4.418,3.578,8,8,8s8-3.582,8-8v-40h16c4.422,0,8-3.582,8-8s-3.578-8-8-8H211.805c-17.563,0-33.328-11.762-38.336-28.602			L114.184,132H492c6.625,0,12-5.371,12-12S498.625,108,492,108z"/>	</g>	<g>		<path style="fill:#5C546A;" d="M56,88H16C7.163,88,0,80.837,0,72v0c0-8.837,7.163-16,16-16h40c8.837,0,16,7.163,16,16v0			C72,80.837,64.837,88,56,88z"/>	</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg><span class="link-text">Cart</span></a></router-link>
       </li>
-     	<li class="nav-item">
+     	<!-- <li class="nav-item">
           <router-link to="/"><a class="nav-link" id="show-products-all-products" @click="showProductsAll"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"><g><g><rect x="159.992" width="192" height="120" style="fill: rgb(82, 121, 145);"></rect></g><g><path d="M507.235,141.633c-0.031-0.055-0.07-0.109-0.102-0.164l-50.891-83.082 C434.188,22.371,394.235,0,351.992,0c-4.422,0-8,3.582-8,8c0,48.523-39.477,88-88,88s-88-39.477-88.008-88c0-4.418-3.586-8-8-8 C117.742,0,77.797,22.371,55.742,58.387L4.75,141.633c-4.203,7.246-2.195,16.328,4.672,21.133l66.836,46.789 c3.664,2.547,8.242,3.461,12.633,2.516c4.359-0.969,8.148-3.742,10.391-7.609l4.711-8.133V496c0,8.82,7.18,16,16,16h272 c8.82,0,16-7.18,16-16V196.328l4.711,8.133c2.242,3.867,6.031,6.641,10.391,7.609c4.391,0.953,8.969,0.039,12.625-2.516 l66.844-46.789C509.43,157.961,511.438,148.879,507.235,141.633z" style="fill: var(--my-turk);"></path></g><g><g><path d="M335.992,215.995c-4.422,0-8-3.578-8-8c0-35.703-18.203-90.035-45.297-114.008 c-3.313-2.926-3.625-7.984-0.695-11.293s8.008-3.605,11.289-0.691c31.32,27.703,50.703,86.969,50.703,125.992 C343.992,212.417,340.414,215.995,335.992,215.995z" style="fill: rgb(255, 149, 0);"></path></g></g><g><path d="M279.992,40h-48c-4.418,0-8-3.582-8-8v-8c0-4.418,3.582-8,8-8h48c4.418,0,8,3.582,8,8v8 C287.992,36.418,284.411,40,279.992,40z" style="fill: rgb(92, 84, 106);"></path></g><g><path d="M99.281,204.461l3.346-5.776L9.664,133.61l-4.914,8.022c-4.203,7.246-2.195,16.328,4.672,21.133 l66.836,46.789c3.664,2.547,8.242,3.461,12.633,2.516C93.25,211.102,97.039,208.328,99.281,204.461z" style="fill: rgb(82, 121, 145);"></path></g><g><path d="M412.719,204.461l-3.346-5.776l92.963-65.074l4.914,8.022c4.203,7.246,2.195,16.328-4.672,21.133 l-66.836,46.789c-3.664,2.547-8.242,3.461-12.633,2.516C418.75,211.102,414.961,208.328,412.719,204.461z" style="fill: rgb(82, 121, 145);"></path></g><g><path d="M103.992,488v8c0,8.82,7.18,16,16,16h272c8.82,0,16-7.18,16-16v-8H103.992z" style="fill: rgb(82, 121, 145);"></path></g><g><path d="M324.679,211.314l-8,8c-3.001,3.001-4.686,7.07-4.686,11.314V296c0,4.418,3.582,8,8,8h32 c4.418,0,8-3.582,8-8v-65.373c0-4.243-1.686-8.313-4.686-11.314l-8-8C341.058,205.065,330.927,205.065,324.679,211.314z M335.992,232c-4.418,0-8-3.582-8-8c0-4.418,3.582-8,8-8s8,3.582,8,8C343.992,228.418,340.411,232,335.992,232z" style="fill: rgb(255, 209, 0);"></path></g><g><path d="M346.821,227.797l-2.991-2.991c-0.423,4.02-3.705,7.194-7.837,7.194s-7.415-3.174-7.837-7.194 l-2.991,2.991c-0.742,0.75-1.172,1.773-1.172,2.828V292h24v-61.375C347.992,229.57,347.563,228.547,346.821,227.797z" style="fill: rgb(255, 149, 0);"></path></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg><span class="link-text" >Categlories</span ></a></router-link>
           <div class="expandable-all-products" id="expandable-all-products">
            <ul>
@@ -23,7 +23,7 @@
               </li>
           </ul>
         </div>
-      </li>
+      </li> -->
      	<li class="nav-item">
           <router-link to="/"><a class="nav-link" id="show-products-stores" @click="showProductsStores"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59 61"><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="32" y1="11.833" x2="32" y2="29.18" spreadMethod="reflect"><stop offset="0" stop-color="#6dc7ff"/><stop offset="1" stop-color="#e6abff"/></linearGradient><path d="M37 11v13a5 5 0 0 1-10 0V11h10z" fill="url(#a)"/><linearGradient id="b" gradientUnits="userSpaceOnUse" x1="52" y1="11.833" x2="52" y2="29.18" spreadMethod="reflect"><stop offset="0" stop-color="#6dc7ff"/><stop offset="1" stop-color="#e6abff"/></linearGradient><path d="M47 24a5.005 5.005 0 0 0 6.008 4.901C55.382 28.438 57 26.204 57 23.785v-.052a8.017 8.017 0 0 0-.717-3.312l-3.217-7.077A4 4 0 0 0 49.425 11H47v13z" fill="url(#b)"/><linearGradient id="c" gradientUnits="userSpaceOnUse" x1="12" y1="11.833" x2="12" y2="29.18" spreadMethod="reflect"><stop offset="0" stop-color="#6dc7ff"/><stop offset="1" stop-color="#e6abff"/></linearGradient><path d="M17 11h-2.425a4 4 0 0 0-3.641 2.344l-3.217 7.077A8.022 8.022 0 0 0 7 23.734v.052c0 2.611 1.909 4.943 4.509 5.191A5.002 5.002 0 0 0 17 24V11z" fill="url(#c)"/><linearGradient id="d" gradientUnits="userSpaceOnUse" x1="25" y1="10" x2="25" y2="54.561" spreadMethod="reflect"><stop offset="0" stop-color="#1a6dff"/><stop offset="1" stop-color="#c822ff"/></linearGradient><path fill="url(#d)" d="M24 44h2v4h-2z"/><linearGradient id="e" gradientUnits="userSpaceOnUse" x1="41" y1="10" x2="41" y2="54.561" spreadMethod="reflect"><stop offset="0" stop-color="#1a6dff"/><stop offset="1" stop-color="#c822ff"/></linearGradient><path d="M34 46h14c1.103 0 2-.897 2-2v-8c0-1.103-.897-2-2-2H34c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2zm0-10h14v8H34v-8z" fill="url(#e)"/><linearGradient id="f" gradientUnits="userSpaceOnUse" x1="32" y1="10" x2="32" y2="54.561" spreadMethod="reflect"><stop offset="0" stop-color="#1a6dff"/><stop offset="1" stop-color="#c822ff"/></linearGradient><path d="M54 51V29.647c2.357-.838 4-3.175 4-5.914a8.912 8.912 0 0 0-.808-3.726l-3.217-7.076A5.005 5.005 0 0 0 49.425 10H14.575a5.008 5.008 0 0 0-4.551 2.931l-3.217 7.077A8.988 8.988 0 0 0 6 23.785c0 2.665 1.672 4.999 4 5.857V51c0 .352.072.686.184 1H6v2h52v-2h-4.184c.112-.314.184-.648.184-1zM28 38h-8v-2h8v2zm0-4h-8c-1.103 0-2 .897-2 2v12h-6V29.998a6.027 6.027 0 0 0 4.035-1.557c.372-.338.69-.723.962-1.135A6 6 0 0 0 22 30a5.997 5.997 0 0 0 5-2.69c1.075 1.62 2.914 2.69 5 2.69s3.925-1.071 5-2.69A5.995 5.995 0 0 0 42 30a5.995 5.995 0 0 0 5.001-2.693c.326.491.72.942 1.187 1.327A5.996 5.996 0 0 0 52 29.999V48H30V36c0-1.103-.897-2-2-2zm24.155-20.241l3.217 7.077c.417.915.628 1.89.628 2.949 0 2.035-1.339 3.774-3.184 4.135-1.224.241-2.417-.056-3.356-.83A3.99 3.99 0 0 1 48 24V12h1.425c1.174 0 2.245.69 2.73 1.759zM46 12v12c0 2.206-1.794 4-4 4s-4-1.794-4-4V12h8zM36 24c0 2.206-1.794 4-4 4s-4-1.794-4-4V12h8v12zM26 12v12c0 2.206-1.794 4-4 4s-4-1.794-4-4V12h8zM8 23.733c0-1.008.211-1.982.628-2.897l3.217-7.078A3.004 3.004 0 0 1 14.575 12H16v12a4.013 4.013 0 0 1-1.31 2.961 3.99 3.99 0 0 1-3.087 1.021C9.583 27.788 8 25.945 8 23.733zM13 52a1 1 0 0 1-1-1v-1h6v2h-5zm7 0V40h8v12h-8zm10 0v-2h22v1a1 1 0 0 1-1 1H30z" fill="url(#f)"/></svg><span class="link-text" >Stores</span ></a></router-link>
           <div class="expandable-stores" id="expandable-stores">
@@ -35,7 +35,7 @@
         </div>
       </li>
       <li class="nav-item" id="themeButton"> 
-        <a class="nav-link"><svg id="lightIcon" aria-hidden="true" focusable="false" data-prefix="fad" data-icon="moon-stars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 574 695" class="theme-icon svg-inline--fa fa-moon-stars fa-w-16 fa-7x"><g class="fa-group"><path fill="currentColor" d="M320 32L304 0l-16 32-32 16 32 16 16 32 16-32 32-16zm138.7 149.3L432 128l-26.7 53.3L352 208l53.3 26.7L432 288l26.7-53.3L512 208z" class="fa-secondary"></path> <path fill="currentColor" d="M332.2 426.4c8.1-1.6 13.9 8 8.6 14.5a191.18 191.18 0 0 1-149 71.1C85.8 512 0 426 0 320c0-120 108.7-210.6 227-188.8 8.2 1.6 10.1 12.6 2.8 16.7a150.3 150.3 0 0 0-76.1 130.8c0 94 85.4 165.4 178.5 147.7z" class="fa-primary"></path></g></svg><svg id="solarIcon" aria-hidden="true" focusable="false" data-prefix="fad" data-icon="sun" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 574 695" class="theme-icon svg-inline--fa fa-sun fa-w-16 fa-7x"> <g class="fa-group"> <path fill="currentColor" d="M502.42 240.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.41-94.8a17.31 17.31 0 0 0-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4a17.31 17.31 0 0 0 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.41-33.5 47.3 94.7a17.31 17.31 0 0 0 31 0l47.31-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3a17.33 17.33 0 0 0 .2-31.1zm-155.9 106c-49.91 49.9-131.11 49.9-181 0a128.13 128.13 0 0 1 0-181c49.9-49.9 131.1-49.9 181 0a128.13 128.13 0 0 1 0 181z" class="fa-secondary"></path> <path fill="currentColor" d="M352 256a96 96 0 1 1-96-96 96.15 96.15 0 0 1 96 96z" class="fa-primary"></path></g></svg><svg id="darkIcon" aria-hidden="true" focusable="false" data-prefix="fad" data-icon="sunglasses" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 574 695" class="theme-icon svg-inline--fa fa-sunglasses fa-w-18 fa-7x"> <g class="fa-group"> <path fill="currentColor" d="M574.09 280.38L528.75 98.66a87.94 87.94 0 0 0-113.19-62.14l-15.25 5.08a16 16 0 0 0-10.12 20.25L395.25 77a16 16 0 0 0 20.22 10.13l13.19-4.39c10.87-3.63 23-3.57 33.15 1.73a39.59 39.59 0 0 1 20.38 25.81l38.47 153.83a276.7 276.7 0 0 0-81.22-12.47c-34.75 0-74 7-114.85 26.75h-73.18c-40.85-19.75-80.07-26.75-114.85-26.75a276.75 276.75 0 0 0-81.22 12.45l38.47-153.8a39.61 39.61 0 0 1 20.38-25.82c10.15-5.29 22.28-5.34 33.15-1.73l13.16 4.39A16 16 0 0 0 180.75 77l5.06-15.19a16 16 0 0 0-10.12-20.21l-15.25-5.08A87.95 87.95 0 0 0 47.25 98.65L1.91 280.38A75.35 75.35 0 0 0 0 295.86v70.25C0 429 51.59 480 115.19 480h37.12c60.28 0 110.38-45.94 114.88-105.37l2.93-38.63h35.76l2.93 38.63c4.5 59.43 54.6 105.37 114.88 105.37h37.12C524.41 480 576 429 576 366.13v-70.25a62.67 62.67 0 0 0-1.91-15.5zM203.38 369.8c-2 25.9-24.41 46.2-51.07 46.2h-37.12C87 416 64 393.63 64 366.11v-37.55a217.35 217.35 0 0 1 72.59-12.9 196.51 196.51 0 0 1 69.91 12.9zM512 366.13c0 27.5-23 49.87-51.19 49.87h-37.12c-26.69 0-49.1-20.3-51.07-46.2l-3.12-41.24a196.55 196.55 0 0 1 69.94-12.9A217.41 217.41 0 0 1 512 328.58z" class="fa-secondary"></path> <path fill="currentColor" d="M64.19 367.9c0-.61-.19-1.18-.19-1.8 0 27.53 23 49.9 51.19 49.9h37.12c26.66 0 49.1-20.3 51.07-46.2l3.12-41.24c-14-5.29-28.31-8.38-42.78-10.42zm404-50l-95.83 47.91.3 4c2 25.9 24.38 46.2 51.07 46.2h37.12C489 416 512 393.63 512 366.13v-37.55a227.76 227.76 0 0 0-43.85-10.66z" class="fa-primary"></path></g></svg> 
+        <a class="nav-link"><svg id="lightIcon" aria-hidden="true" focusable="false" data-prefix="fad" data-icon="moon-stars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 574 695" class="theme-icon svg-inline--fa fa-moon-stars fa-w-16 fa-7x"><g class="fa-group"><path fill="currentColor" d="M320 32L304 0l-16 32-32 16 32 16 16 32 16-32 32-16zm138.7 149.3L432 128l-26.7 53.3L352 208l53.3 26.7L432 288l26.7-53.3L512 208z" class="fa-secondary"></path> <path fill="currentColor" d="M332.2 426.4c8.1-1.6 13.9 8 8.6 14.5a191.18 191.18 0 0 1-149 71.1C85.8 512 0 426 0 320c0-120 108.7-210.6 227-188.8 8.2 1.6 10.1 12.6 2.8 16.7a150.3 150.3 0 0 0-76.1 130.8c0 94 85.4 165.4 178.5 147.7z" class="fa-primary"></path></g></svg><svg id="eclipseIcon" aria-hidden="true" focusable="false" data-prefix="fad" data-icon="sun" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 574 695" class="theme-icon svg-inline--fa fa-sun fa-w-16 fa-7x"> <g class="fa-group"> <path fill="currentColor" d="M502.42 240.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.41-94.8a17.31 17.31 0 0 0-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4a17.31 17.31 0 0 0 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.41-33.5 47.3 94.7a17.31 17.31 0 0 0 31 0l47.31-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3a17.33 17.33 0 0 0 .2-31.1zm-155.9 106c-49.91 49.9-131.11 49.9-181 0a128.13 128.13 0 0 1 0-181c49.9-49.9 131.1-49.9 181 0a128.13 128.13 0 0 1 0 181z" class="fa-secondary"></path> <path fill="currentColor" d="M352 256a96 96 0 1 1-96-96 96.15 96.15 0 0 1 96 96z" class="fa-primary"></path></g></svg><svg id="darkIcon" aria-hidden="true" focusable="false" data-prefix="fad" data-icon="sunglasses" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 574 695" class="theme-icon svg-inline--fa fa-sunglasses fa-w-18 fa-7x"> <g class="fa-group"> <path fill="currentColor" d="M574.09 280.38L528.75 98.66a87.94 87.94 0 0 0-113.19-62.14l-15.25 5.08a16 16 0 0 0-10.12 20.25L395.25 77a16 16 0 0 0 20.22 10.13l13.19-4.39c10.87-3.63 23-3.57 33.15 1.73a39.59 39.59 0 0 1 20.38 25.81l38.47 153.83a276.7 276.7 0 0 0-81.22-12.47c-34.75 0-74 7-114.85 26.75h-73.18c-40.85-19.75-80.07-26.75-114.85-26.75a276.75 276.75 0 0 0-81.22 12.45l38.47-153.8a39.61 39.61 0 0 1 20.38-25.82c10.15-5.29 22.28-5.34 33.15-1.73l13.16 4.39A16 16 0 0 0 180.75 77l5.06-15.19a16 16 0 0 0-10.12-20.21l-15.25-5.08A87.95 87.95 0 0 0 47.25 98.65L1.91 280.38A75.35 75.35 0 0 0 0 295.86v70.25C0 429 51.59 480 115.19 480h37.12c60.28 0 110.38-45.94 114.88-105.37l2.93-38.63h35.76l2.93 38.63c4.5 59.43 54.6 105.37 114.88 105.37h37.12C524.41 480 576 429 576 366.13v-70.25a62.67 62.67 0 0 0-1.91-15.5zM203.38 369.8c-2 25.9-24.41 46.2-51.07 46.2h-37.12C87 416 64 393.63 64 366.11v-37.55a217.35 217.35 0 0 1 72.59-12.9 196.51 196.51 0 0 1 69.91 12.9zM512 366.13c0 27.5-23 49.87-51.19 49.87h-37.12c-26.69 0-49.1-20.3-51.07-46.2l-3.12-41.24a196.55 196.55 0 0 1 69.94-12.9A217.41 217.41 0 0 1 512 328.58z" class="fa-secondary"></path> <path fill="currentColor" d="M64.19 367.9c0-.61-.19-1.18-.19-1.8 0 27.53 23 49.9 51.19 49.9h37.12c26.66 0 49.1-20.3 51.07-46.2l3.12-41.24c-14-5.29-28.31-8.38-42.78-10.42zm404-50l-95.83 47.91.3 4c2 25.9 24.38 46.2 51.07 46.2h37.12C489 416 512 393.63 512 366.13v-37.55a227.76 227.76 0 0 0-43.85-10.66z" class="fa-primary"></path></g></svg> 
           <span class="link-text">Themify</span>
         </a>
       </li>
@@ -65,15 +65,15 @@ export default {
       this.$store.state.cart= []; 
     },
       
-    showProductsAll() {
-      var button = document.getElementById('show-products-all-products');
-      var expander = document.getElementById('expandable-all-products');
-      if (!expander.classList.contains('maxheight-expand')) {
-        expander.classList.add("maxheight-expand");
-      } else {
-        expander.classList.remove("maxheight-expand");
-      }
-    },
+    // showProductsAll() {
+    //   var button = document.getElementById('show-products-all-products');
+    //   var expander = document.getElementById('expandable-all-products');
+    //   if (!expander.classList.contains('maxheight-expand')) {
+    //     expander.classList.add("maxheight-expand");
+    //   } else {
+    //     expander.classList.remove("maxheight-expand");
+    //   }
+    // },
     
     showProductsStores() {
       var button = document.getElementById('show-products-stores');
@@ -106,12 +106,12 @@ export default {
   },
   
   mounted () {
-        var expander_all_products = document.getElementById('expandable-all-products');
+        // var expander_all_products = document.getElementById('expandable-all-products');
         var expander_stores = document.getElementById('expandable-stores');
         var navbar = document.getElementById('navbar');
         
         navbar.addEventListener('mouseleave', function (e) {
-          expander_all_products.classList.remove("maxheight-expand");
+          // expander_all_products.classList.remove("maxheight-expand");
           expander_stores.classList.remove("maxheight-expand");
         });
           
@@ -140,8 +140,8 @@ export default {
 <style lang="css">
 #slide-content{margin:50px}
 a{text-decoration:none}
-.expandable-all-products{overflow:hidden;transition:all var(--transition-speed-primary-faster) ease-in-out;max-height:0}
-.expandable-stores{overflow:hidden;transition:all var(--transition-speed-primary-faster) ease-in-out;max-height:0}
+/* .expandable-all-products{overflow:hidden;transition:all var(--transition-speed-secondary-slower) ease-in-out;max-height:0} */
+.expandable-stores{overflow:hidden;transition:all var(--transition-speed-secondary-slower) ease-in-out;max-height:0}
 .maxheight-expand{overflow:scroll;max-height:500px}
 ul{list-style:none}
 .innerdrop ul{margin-left:0;padding-left:0;list-style:none;position:relative}
@@ -171,7 +171,7 @@ main{margin-left:4rem;padding:1rem}
 .navbar:hover .logo svg{transform:rotate(-180deg)}
 @media (max-width: 600px) {
 .nav-link svg{width:1.9rem;min-width:1.9rem;margin:0 2rem}
-.expandable-all-products{display:none}
+/* .expandable-all-products{display:none} */
 .expandable-stores{display:none}
 .nav-link{display:inline-flex;vertical-align:middle}
 .nav-item:hover{background:var(--bg-secondary);color:var(--text-secondary);filter:grayscale(0%) opacity(1)}
@@ -188,11 +188,11 @@ main{margin:0}
 .navbar{top:0;position:relative;display:inline-flex;width:4.5rem;min-height:100vh}
 .navbar:hover{width:13rem}
 .navbar:hover .link-text{display:inline;cursor:pointer}
-.navbar:hover .logo svg{margin-left:11rem}
+.navbar:hover .logo svg{margin-left:10rem}
 .navbar:hover .logo-text{left:5px;font-size:17px}
 }
 .theme-icon{display:none}
 .dark #darkIcon{display:block}
 .light #lightIcon{display:block}
-.solar #solarIcon{display:block}
+.eclipse #eclipseIcon{display:block}
 </style>

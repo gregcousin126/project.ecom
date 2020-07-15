@@ -1,88 +1,148 @@
+/* reff : https://material.io/design/color/the-color-system.html#tools-for-picking-colors */
+
+/* Color Palet Theme */
 :root {
-  font-size: 16px;
-  font-family: 'Open Sans';
-  --text-primary: #b6b6b6;
-  --button-font-primary: 11px;
-  --button-font-secondary: 14px;
-  --text-secondary: #ececec;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
-  --transition-speed-primary-slower:.6s;
-  --transition-speed-primary-faster: 150ms;
-  --transition-speed-secondary-faster: 1s;
-  --animation-speed-primary-slower: 6s;
-  --animation-speed-primary-faster: .6s;
-  --animation-speed-secondary-slower: .2s;
-	--page-transition-speed-primary: .3s;
-  --blue-primary: #5044ff;
-  --my-white: #fff;
-  --blue-secondary: #1100ff23;
-  --my-pink: #E049A6;
-	--font-mobile-primary : 14px;
-	--font-mobile-secondary : 12px;
-	--font-desktop-primary : 17px;
-	--font-desktop-secondary : 14px;
+  --pastel-green   : #e1f7d5;
+  --pastel-pink    : #ffbdbd;
+  --pastel-blue    : #c9c9ff;
+  --pastel-white   : #ffffff;
+  --pastel-purple  : #f1cbff;
+  --pastel-salmon  : #FF9AA2;
+  --pastel-yellow  : #FFDAC1;
+  --pastel-turk    : #B5EAD7;
+  
+  
+  --turk-light     : #03DAC5;
+  
+        
+--red: #ff3860;
+    --red-dark: #ff1443;
+    --red-light: #ff5c7c;
+    --blue: #498afb;
+    --blue-dark: #2674fa;
+    --blue-light: #6ca0fc;
+    --orange: #fa8142;
+    --orange-dark: #f96a1f;
+    --orange-light: #fb9865;
+    --green: #09c372;
+    --green-dark: #07a15e;
+    --green-light: #0be586;
+    --purple: #9166cc;
+    --purple-dark: #7d4bc3;
+    --purple-light: #a481d5;
+    --yellow: #ffdd57;
+    --yellow-dark: #ffd633;
+    --yellow-light: #ffe47a;
+    --pink: #ff4088;
+    --pink-dark: #ff1c72;
+    --pink-light: #ff649e;
 }
+
+
+
+
+/* Root Colors */
+
+:root {
+  font-size                            : 16px;
+  font-family                          : 'Open Sans';
+  --text-primary                       : #b6b6b6;
+  --button-font-primary                : 11px;
+  --button-font-secondary              : 14px;
+  --text-secondary                     : #ececec;
+  --bg-primary                         : #23232e;
+  --bg-secondary                       : #141418;
+  --transition-speed-primary-slower    : .6s;
+  --transition-speed-primary-faster    : 150ms;
+  --transition-speed-secondary-slower : .4s;
+  --transition-speed-secondary-faster  : 1s;
+  --animation-speed-primary-slower     : 6s;
+  --animation-speed-primary-faster     : .6s;
+  --animation-speed-secondary-slower   : .2s;
+  --page-transition-speed-primary      : .3s;
+  --blue-primary                       : #5044ff;
+  --my-white                           : #fff;
+  --blue-secondary                     : #1100ff23;
+  --my-pink                            : #E049A6;
+  --font-mobile-primary                : 14px;
+  --font-mobile-secondary              : 12px;
+  --font-desktop-primary               : 17px;
+  --font-desktop-secondary             : 14px;
+  
+  
+  
+  
+  
+}
+
 
 
 /* Dark Theme */
 
 .dark {
-  --tag-bg: #1d62b6;
---tag-bg-hover: var(--button-highlight);
-  --tag-text-color: var(--text-light);
-  --text-light: #f8f8f8;
-  --text-primary: #b6b6b6;
-  --text-secondary: #ececec;
-  --button-highlight: rgba(95, 105, 252, 0.699);
-  --bg-subtract: #3f3a578e;
-  --bg-add: #3f3a578e;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
-  --text-floogle: #363441;
-  --bg-low-opacity: #1414181c;
-  --my-turk: #18c2c2;
-  --image-filter: grayscale(0) brightness(1.1) saturate(1);
-  --display-primary: none;
+  --tag-bg                            : #1d62b6;
+  --tag-bg-hover                      : var(--button-highlight);
+  --tag-text-color                    : var(--text-light);
+  --text-light                        : #f8f8f8;
+  --text-primary                      : #b6b6b6;
+  --text-secondary                    : #ececec;
+  --text-hover                    : #ececec;
+  --button-highlight                  : rgba(95, 105, 252, 0.699);
+  --button-hover                  : rgba(95, 105, 252, 0.075);
+  --bg-subtract                       : #3f3a578e;
+  --bg-add                            : #3f3a578e;
+  --bg-primary                        : #23232e;
+  --bg-secondary                      : #141418;
+  --text-floogle                      : #363441;
+  --bg-low-opacity                    : #1414181c;
+  --my-turk                           : #18c2c2;
+  --image-filter                      : grayscale(0) brightness(1.1) saturate(1);
+  --display-primary                   : none;
+  --button-boxshadow-backround  : #5044ff;
+  --button-boxshadow-passive-primary  : 
   
-  --button-boxshadow-passive-primary: none;
-  --button-boxshadow-active-primary:  none;
-  
+  0px 1px .4px #5044ff, 
+  0px 2px .4px #483bff, 
+  0px 3px .4px #3a2cff, 
+  0px 4px .4px #2f20ff, 
+  0px 5px .4px #2213ff, 
+  0px 6px .4px #1505ff, 
+  0px 8px 5px -1px #1505ff;
+  --button-boxshadow-active-primary   : 0px 2px 0px #5044ff, 0px 3px 0px #483bff, 0px 4px 0px #3a2cff, 0px 6px 0px #2f20ff, 0px 7px 0px #2213ff, 0px 8px 0px #1505ff, 0px 8px 2px 0px #1505ff;
 }
 
 /* Light Theme */
 
 .light {
-  --tag-bg: #9bc2f5;
-  --text-light: #fcfcfc;
---tag-bg-hover: #3b2dfa8c;
---tag-text-color: var(--text-light);
-  
-  --text-primary: #1f1f1f;
-  --text-secondary: #000000;
-  --bg-primary: #ffffff;
-  --bg-subtract: rgba(0, 0, 255, 0.199);
-  --bg-add: rgba(0, 0, 255, 0.199);
-  --button-highlight: rgba(31, 128, 255, 0.753);
-  --bg-secondary: #e4e4e4;
-  --text-floogle: #dfdfdf;
-  --bg-low-opacity: #1414181c;
-  --my-turk: #76b7f3;
-  --image-filter: grayscale(0) brightness(1.1) saturate(1);
-	
-  --display-primary: flex;
-  
-  --button-boxshadow-passive-primary: 0px 1px   .4px  #9bc2f5, 0px 2px  .4px   #8dbaf5, 0px 3px  .4px   #79adf1, 0px 4px  .4px   rgba(113, 168, 241, 0.781), 0px 5px  .4px   #68a4f3ad, 0px 6px  .4px   #5d9becb2, 0px 8px 5px -1px rgba(128, 128, 128, 1);
-  --button-boxshadow-active-primary: 0px 2px 0px  #afcef7, 0px 3px 0px  #98c0f3, 0px 4px 0px  rgb(150, 192, 247), 0px 5px 0px  #89b6f1, 0px 6px 0px  #80b3f7, 0px 7px 0px #72aaf3, 0px 8px 2px 0px rgba(128, 128, 128, 0.6);
-  
+  --tag-bg                            : #9bc2f5;
+  --text-light                        : #fcfcfc;
+  --tag-bg-hover                      : #3b2dfa8c;
+  --tag-text-color                    : var(--text-light);
+  --text-primary                      : #1f1f1f;
+  --text-secondary                    : #000000;
+  --text-hover                    : #000000;
+  --bg-primary                        : #ffffff;
+  --bg-subtract                       : rgba(0, 0, 255, 0.199);
+  --bg-add                            : rgba(0, 0, 255, 0.199);
+  --button-highlight                  : rgba(31, 128, 255, 0.753);
+  --button-hover                  : rgba(31, 128, 255, 0.021);
+  --bg-secondary                      : #e4e4e4;
+  --text-floogle                      : #dfdfdf;
+  --bg-low-opacity                    : #1414181c;
+  --my-turk                           : #76b7f3;
+  --image-filter                      : grayscale(0) brightness(1.1) saturate(1);
+  --display-primary                   : flex;
+  --button-boxshadow-backround: #9bc2f5;
+  --button-boxshadow-passive-primary  : 0px 1px .4px #9bc2f5, 0px 2px .4px #8dbaf5, 0px 3px .4px #79adf1,           0px 4px .4px rgba(113, 168, 241, 0.781), 0px 5px .4px #68a4f3ad, 0px 6px .4px #5d9becb2, 0px 8px 5px -1px #9bc2f5;
+  --button-boxshadow-active-primary   : 0px 2px 0px #afcef7,  0px 3px 0px #98c0f3,  0px 4px 0px rgb(150, 192, 247), 0px 5px 0px #89b6f1,                     0px 6px 0px #80b3f7,    0px 7px 0px #72aaf3,    0px 8px 2px 0px #afcef7;
 }
 
-/* Solar Theme */
+/* Other Theme */
 
-.solar {
-  --text-primary: #576e75;
-  --text-secondary: #35535c;
-  --bg-primary: #fdf6e3;
-  --bg-secondary: #f5e5b8;
-  --text-floogle: #ececec;
+.eclipse {
+  --text-primary    : #576e75;
+  --text-secondary  : #35535c;
+  --bg-primary      : #fdf6e3;
+  --bg-secondary    : #f5e5b8;
+  --text-floogle    : #ececec;
 }

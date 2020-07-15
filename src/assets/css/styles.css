@@ -27,13 +27,16 @@ html {
   overflow-x: hidden
 }
 
-button,
+.header {
+  float: left
+}
+
 input[type=button],
 input[type=reset],
 input[type=submit] {
-  background: 0 0;
+  /* background: 0 0; */
   border: 0;
-  color: inherit;
+  /* color: inherit; */
   font: inherit;
   line-height: normal;
   overflow: visible;
@@ -45,20 +48,9 @@ input[type=submit] {
 }
 
 
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0
-}
-
-.header {
-  float: left
-}
-
 hr {
     height: 10px;
-    color: rgba(0, 0, 0, .1);
+    /* color: rgba(0, 0, 0, .1); */
     border: none;
     border-radius: 0px;
     margin-bottom: 27px;
@@ -69,30 +61,6 @@ hr {
 
 a {
   text-decoration: none
-}
-
-button {
-    padding: 9px;
-    font-size: 10px;
-    border-radius: 3px;
-    font-weight: 600;
-    cursor: pointer;
-    border: 1px solid var(--blue-primary);
-    text-transform: uppercase;
-    margin: 10px auto;
-    -webkit-transition: var(--transition-speed-primary-faster);
-    transition: var(--transition-speed-primary-faster);
-    -moz-transition: var(--transition-speed-primary-faster);
-    -ms-transition: var(--transition-speed-primary-faster);
-    -o-transition: var(--transition-speed-primary-faster);
-}
-
-button:hover {
-  background: var(--bg-add);
-  color: var(--blue-primary);
-  -webkit-transition: var(--transition-speed-primary-faster) all ease-in;
-  transition: var(--transition-speed-primary-faster) all ease-in;
-  outline: 0
 }
 
 .sidebar-wrap a {
@@ -111,11 +79,18 @@ footer a {
   margin: 0
 }
 
+ input::-moz-focus-inner {
+  border: 0;
+  padding: 0
+}
+
+
+
 input:-moz-placeholder,
 input:-ms-input-placeholder,
 input::-moz-placeholder,
 input::-webkit-input-placeholder {
-  color: #aab8c3
+  /* color: #aab8c3 */
 }
 
 input:-moz-placeholder,
@@ -123,7 +98,7 @@ input:-ms-input-placeholder,
 input::-moz-placeholder,
 input::-webkit-input-placeholder,
 input::placeholder {
-  color: #aab8c3
+  /* color: #aab8c3 */
 }
 
 h1 {
@@ -136,9 +111,7 @@ h1 {
   font-family: FoobarPro
 }
 
-a:hover {
-  color: var(--my-pink)
-}
+/* a:hover {color: var(--my-pink);} */
 
 input:focus,
 select:focus,
@@ -179,7 +152,7 @@ textarea:focus {
   padding-left: 40px
 }
 
-@media(max-width:1024px) {
+@media(max-width:1420px) {
   .product-list-wrap {
     padding-left: 30px
   }
@@ -195,12 +168,12 @@ textarea:focus {
 
 .product-list ul {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   padding: 0;
   grid-gap: 0 25px
 }
 
-@media(max-width:1024px) {
+@media(max-width:1420px) {
   .product-list ul {
     grid-template-columns: repeat(3, 1fr)
   }
@@ -255,10 +228,10 @@ input[type=password] {
 .sig {
   cursor: pointer;
   width: 11%;
-  background-color: #fff;
+  /* background-color: #fff; */
   vertical-align: center;
   font: 500 14px/40px Helvetica Neue;
-  color: rgba(0, 0, 0, .54);
+  /* color: rgba(0, 0, 0, .54); */
   border-radius: 7px;
   margin: 25px;
   -webkit-box-shadow: 0 0 1px 0 rgba(0, 0, 0, .12);
@@ -273,7 +246,7 @@ input[type=password] {
 }
 
 .sig:active {
-  background-color: #eee
+  /* background-color: var(--my-white); */
 }
 
 .g {
@@ -315,6 +288,11 @@ form {
   position: relative
 }
 
+Button {
+  background: 0 0;
+  color: var(--blue-primary);
+}
+
 .product-card img {
   -o-object-fit: cover;
   object-fit: cover;
@@ -322,14 +300,17 @@ form {
   border-radius: 2px;
   max-height: 228px;
   height: 228px;
-
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
 }
 
 .product-card:hover img {
-  background-color: #eee
+  background-color: var(--my-white);
 }
 
-@media(max-width:1024px) {
+@media(max-width:1420px) {
   .sidebar-wrap {
     padding-right: 20px
   }

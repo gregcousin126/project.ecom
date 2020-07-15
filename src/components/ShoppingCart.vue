@@ -3,9 +3,13 @@
 
   <div class="shopping-cart">
     <div v-if="$store.state.cart.length <= 0" class="empty-cart-container">
-      <div  class="empty-cart">
+      <div class="empty-cart">
         <p>Your cart is currently empty. 😱</p>
-        <router-link to="/"><button>Shop Now!</button></router-link>
+        <router-link to="/">
+        
+        <ButtonSimple text="Shop Now!"/>
+        
+       </router-link>
       </div>
     </div>
     <div v-else class="shopping-cart-items">
@@ -43,6 +47,7 @@
        
 import {mapState, mapGetters, mapActions} from 'vuex'
 import ButtonExplode from '../elements/ButtonExplode'
+import ButtonSimple from '../elements/ButtonSimple'
 
 export default {
   name: 'ShoppingCart',
@@ -56,7 +61,8 @@ export default {
   }, 
 
   components : {
-    ButtonExplode
+    ButtonExplode,
+    ButtonSimple
   }
 }
 

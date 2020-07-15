@@ -15,9 +15,10 @@ export default {
 .button-cart{display:inline-block;margin:0 auto;-webkit-border-radius:3px;-webkit-box-shadow:var(--button-boxshadow-passive-primary);-webkit-transition:-webkit-box-shadow .2s ease-in-out}
 .button-cart span{
   
-      background: #9bc2f5;
+    background: var(--button-boxshadow-backround);
     color: #f0f0f0;
-    border: 3px solid #a1c6f74d;
+    border: 3px solid var(--button-boxshadow-backround);
+    /* border: 3px solid #a1c6f74d; */
     -webkit-border-radius: 3px;
     -webkit-transition: -webkit-transform .2s ease-in-out;
     display: flex;
