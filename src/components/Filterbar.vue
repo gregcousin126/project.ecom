@@ -1,16 +1,25 @@
 <template>
   <aside id="sidebar-info">
-  <div id="search">
+    <div class="sidebar-mainitems-container">
+      
+      
+    
+
+
+    <div id="search">
     <i class="fas fa-search" id="search-icon"></i>
     <form>
       <input type="text" id="search-input" class="form-control"  name="search"  placeholder="Search" autocomplete="off" @input="searchFilter($event)">
     </form>
   </div>
-  <button type="checkbox" class="sidebarbutton">
+    <button type="checkbox" class="sidebarbutton">
     <a ontouchstart="" id="show-sidebar" @click="toggleFilterBar">
       <span class="filter-btn"><p id="remove-filter">filter +</p><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="10" width="18" height="2" fill="var(--blue-primary)" class="fltr-line1"></rect><rect x="7" y="20" width="18" height="2" fill="var(--blue-primary)" class="fltr-line2"></rect><circle cx="13" cy="21" r="2.5" fill="white" stroke="var(--blue-primary)" class="fltr-crcl1"></circle><circle cx="19" cy="11" r="2.5" fill="white" stroke="var(--blue-primary)" class="fltr-crcl2"></circle></svg></span>
     </a>
   </button>
+    </div>
+  
+  
   <div class="expandable-sidebar" id="expandable-sidebar">
       <div class="filter-gif"></div>
       <div class="aside-block">
@@ -154,7 +163,10 @@ input[type="checkbox"]:hover ~ .checkbox-box,input[type="checkbox"]:focus ~ .che
 input[type="checkbox"]:checked ~ .checkbox-box::before{content:'';position:absolute;width:14px;height:14px;top:2px;left:2px;background:#5044ff}
 
 .filter-gif{-webkit-box-flex:50%;-ms-flex:50%;flex:50%;display:none;width:290px;position:relative;border-radius:27px;margin:5% auto 0;filter:var(--image-filter);height:218px;background:url(../assets/images/pick-dress.gif);background-repeat:no-repeat;background-size:contain;text-align:center}
-.sidebarbutton{font-size:13px;padding:2px;letter-spacing:1px;font-weight:700;width:-webkit-fill-available;border-radius:0;opacity:.7;cursor:pointer;border:2px solid var(--blue-primary);text-transform:uppercase;margin:20px 0 0;-webkit-transition:var(--transition-speed-secondary-slower);transition:var(--transition-speed-secondary-slower);-moz-transition:var(--transition-speed-secondary-slower);-ms-transition:var(--transition-speed-secondary-slower);-o-transition:var(--transition-speed-secondary-slower)}
+.sidebarbutton{
+  
+  
+  font-size:13px;padding:2px;letter-spacing:1px;font-weight:700;width:-webkit-fill-available;border-radius:0;opacity:.7;cursor:pointer;border:2px solid var(--blue-primary);text-transform:uppercase;margin:20px 0 0;-webkit-transition:var(--transition-speed-secondary-slower);transition:var(--transition-speed-secondary-slower);-moz-transition:var(--transition-speed-secondary-slower);-ms-transition:var(--transition-speed-secondary-slower);-o-transition:var(--transition-speed-secondary-slower)}
 .filter-btn{display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;place-content:center; background: none;}
 .filter-btn:active{background: var(--button-highlight);}
 .filter-btn:hover{background: var(--button-hover);}
@@ -169,7 +181,7 @@ p#remove-filter:hover {color: var(--text-hover)}
 #show-sidebar button:checked ~ span circle{opacity:0}
 #show-sidebar button:checked ~ span .fltr-line1{transform:rotate(45deg) translateY(5.5px)}
 #show-sidebar button:checked ~ span .fltr-line2{transform:rotate(-45deg) translateY(-4.5px)}
-.expandable-sidebar{overflow:hidden;transition:all var(--transition-speed-secondary-slower) ease-in-out;max-height:0}
+.expandable-sidebar{overflow:scroll;transition:all var(--transition-speed-secondary-slower) ease-in-out;max-height:0}
 .maxheight-expand-sidebar{max-height:1000px}
 /* .categlory-tag{display:inline-block;border-radius:3px;padding:.4em .8em;border-radius:2px;background:var(--tag-bg);color:var(--tag-text-color);font-weight:600;margin:.25em .2em} */
 .categlory-tag{display:inline-block;border-radius:3px;padding:.4em .8em;border-radius:2px;color:var(--tag-text-color);font-weight:600;margin:.25em .2em}
@@ -188,13 +200,35 @@ p#remove-filter:hover {color: var(--text-hover)}
 .checkbox-box{width:22px;height:22px;border:2px solid var(--text-floogle);position:relative;cursor:pointer;float:left;top:0;margin-top:2.2px}
 
 @media (max-width: 600px) {
-.sidebarbutton{font-size:14px}
+  
+  .expandable-sidebar {
+        margin-bottom: 40px;
+  }
+  
+  .sidebar-mainitems-container {
+    display: flex;
+    place-content: space-between;
+        flex-direction: row-reverse;
+  }
+.sidebarbutton{font-size:14px;
+margin: 0 0 0;
+    width: 48%;
+    float: left;
+    padding: 0px;
+
+}
 .filter-gif{display:var(--display-primary)}
 input[type="checkbox"]:checked ~ .checkbox-box::before{width:16px;height:16px}
 .checkbox-box{width:24px;height:24px}
 .checkbox-control{grid-template-rows:18px 30px}
 #show-sidebar svg{width:45px;height:45px}
-#search{padding:8px}
+#search{
+padding: 8px;
+    font-size: 14px;
+    width: 48%;
+    /* float: right; */
+    display: inline-flex;
+}
 
 
 }

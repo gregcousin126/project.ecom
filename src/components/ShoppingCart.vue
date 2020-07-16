@@ -96,6 +96,152 @@ img{width:100%;object-fit:cover;height:209px}
 .cart-product-card:hover{transform:translateY(-.3rem) translateX(-.3rem) scale(1.0125);box-shadow:6px 6px 1.5px 0 rgba(0,0,0,.2);border-radius:2px}
 .product-price{margin-bottom:5px}
 
-@media(max-width:600px) { .cart-detail{padding:5px} .cart-product-card{width:47%;box-shadow:6px 6px 1.5px 0 rgba(0,0,0,.2);border-radius:2px} .cart-product-card:hover{transform:none} .quantity__minus,.quantity__plus{border-radius:3px;display:block;width:37px;height:37px;font-size:22px;margin:10px;background:var(--text-floogle);text-decoration:none;text-align:center;line-height:37px} .shopping-cart-items{flex-direction:column} img{width:100%;height:180px} .cart-product-card{margin:0 0 20px} ul{justify-content:space-around} }
+@media(max-width:600px) {
+  
+  
+  
+  
+  
+  
+  
+  ul {
+display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    /* -webkit-box-flex: 10; */
+    width: 100%;
+    flex-flow: column;
+    -ms-flex: 10;
+    /* flex: 10; */
+    padding-left: 0;
+    /* -webkit-box-pack: center; */
+    -ms-flex-pack: center;
+  }
+  
+  
+  
+  .cart-product-card{
+  display: inline-flex;
+    flex-direction: row-reverse;
+  
+    -ms-flex-align: center;
+    align-items: center;
+    height: -moz-min-content;
+    /* height: min-content; */
+    display: flex;
+    /* -webkit-box-orient: vertical; */
+    /* -webkit-box-direction: normal; */
+    -ms-flex-direction: column;
+    /* flex-direction: column; */
+    /* margin-right: 25px; */
+    width: 100%;
+    overflow: hidden;
+    max-width: 100%;
+    /* background: var(--bg-primary); */
+    /* margin-bottom: 25px; */
+    /* border-radius: 2px; */
+    /* -webkit-box-shadow: 2px 3px 4.5px 0.5px rgba(0,0,0,.3); */
+    box-shadow: 2px 2px 7px 0px rgba(0,0,0,.2);
+    /* -webkit-transition: -webkit-transform .25s ease-in-out,-webkit-box-shadow .25s; */
+    /* transition: -webkit-transform .25s ease-in-out,-webkit-box-shadow .25s; */
+    /* transition: transform .25s ease-in-out,box-shadow .25s; */
+  }
+  
+  .cart-product-card:hover {
+    transform:translateY(-.2rem) translateX(-.2rem) scale(1);
+        box-shadow: 2px 3px 8px 0px rgba(0,0,0,.2);
+
+  }
+  
+  img {
+    width: 85px;
+    height: 80px;
+    place-self: center;
+    border-radius: 0px 2px 2px 0px;
+}
+.product-price {
+  margin-bottom : 0px; 
+  width: 50%;
+}
+
+.product-description {
+    /* width: 100%; */
+width: 50%; 
+    padding: 0px 14px 0px 14px;
+    /* font-size: 11px; */
+    margin: 0px;
+    /* font-size: 11px; */
+    /* font-family: Helvetica Neue; */
+    /* color: hsla(0,0%,43.1%,.773); */
+    
+}
+
+.quantity {
+    width: 10%;
+    flex-direction: column-reverse;
+}
+
+.product-title {
+  width: 50%;
+}
+
+
+   .quantity__minus,.quantity__plus{
+border-radius: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 23px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-family: -webkit-pictograph;
+    font-weight: 300;
+    margin: 0px;
+    background: none;
+    color: var(--text-primary);
+    text-decoration: none;
+    text-align: center;
+    /* line-height: 37px;
+    /* line-height: 37px; */
+     
+     
+     /* border-radius:3px;display:block;width:37px;height:37px;font-size:22px;margin:5px;background:var(--text-floogle);text-decoration:none;text-align:center;line-height:37px */
+     
+     } 
+  
+   .cart-detail{
+    padding: 0px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+   }
+      
+   /* .cart-detail{padding:5px}  */
+   /* .cart-product-card{
+     
+     
+     width:47%;box-shadow:6px 6px 1.5px 0 rgba(0,0,0,.2);
+     border-radius:2px}  */
+   /* .cart-product-card:hover{transform:none}  */
+   /* .quantity__minus,.quantity__plus{border-radius:3px;display:block;width:37px;height:37px;font-size:22px;margin:10px;background:var(--text-floogle);text-decoration:none;text-align:center;line-height:37px}  */
+   .shopping-cart-items{flex-direction:column} 
+   
+   /* img{width:100%;height:180px}  */
+   /* .cart-product-card{margin:0 0 20px} ul{justify-content:space-around}  */
+   
+   
+}
+   
+   
 @keyframes float-coin { 0%{transform:translatey(0)} 50%{transform:translatey(-3px)} 100%{transform:translatey(0)} }
 </style>

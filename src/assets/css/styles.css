@@ -28,6 +28,7 @@ html {
 }
 
 .header {
+  z-index: 5;
   float: left
 }
 
@@ -312,7 +313,7 @@ Button {
 
 @media(max-width:1420px) {
   .sidebar-wrap {
-    padding-right: 20px
+    /* padding-right: 20px */
   }
 }
 
@@ -335,9 +336,15 @@ Button {
 
   .sidebar-wrap {
     width: 100%;
-    padding-right: 0;
-    border-right: 0;
-    margin-bottom: 40px
+    border-bottom: 4px solid rgba(0,0,0,0.1);
+    position: fixed;
+    right: 0;
+    left: 0;
+    padding: 15px;
+    z-index: 3;
+    background: var(--bg-primary);
+    top: 55px;
+    display: contents;
   }
 
   .aside-block {
