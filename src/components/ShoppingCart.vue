@@ -124,8 +124,6 @@ display: -webkit-box;
   .cart-product-card{
   display: inline-flex;
     flex-direction: row-reverse;
-  
-    -ms-flex-align: center;
     align-items: center;
     height: -moz-min-content;
     /* height: min-content; */
@@ -138,7 +136,11 @@ display: -webkit-box;
     /* margin-right: 25px; */
     width: 100%;
     overflow: hidden;
+    
     max-width: 100%;
+    transform:translateY(0rem) translateX(0rem) scale(1);
+        /* box-shadow: 2px 3px 8px 0px rgba(0,0,0,.2); */
+
     /* background: var(--bg-primary); */
     /* margin-bottom: 25px; */
     /* border-radius: 2px; */
