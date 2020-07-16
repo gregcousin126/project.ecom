@@ -24,7 +24,8 @@ html {
 }
 
 html {
-  overflow-x: hidden
+  overflow-x: hidden;
+  /* background: var */
 }
 
 .header {
@@ -327,7 +328,7 @@ Button {
 
 @media(max-width:600px) {
   .content-wrapper {
-    padding: 80px 15px
+    padding: 75px 15px
   }
 
   .product-list ul {
@@ -621,6 +622,7 @@ input[type=range].slider:focus::-ms-fill-upper {
 
   body,
   html {
+        background:var(--bg-primary);
     padding: 0;
     margin: 0;
     font-size: 16px;

@@ -202,7 +202,7 @@ p#remove-filter:hover {color: var(--text-hover)}
 @media (max-width: 600px) {
   
   .expandable-sidebar {
-        margin-bottom: 40px;
+        margin-bottom: 25px;
   }
   
   .sidebar-mainitems-container {

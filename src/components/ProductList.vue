@@ -28,7 +28,7 @@
                 </div>
                   <a @click="addProductToCart(product)" ontouchstart="" class="add-to-cart-btn">
                     <ButtonPress @click="addProductToCart(product)"  text="Add To Cart" id="buttonToggle"/>
-                    <ButtonPress @click="addProductToCart(product)"  text="View" id="buttonToggle"/>
+                    <ButtonPress @click="addProductToCart(product)"  text="View Item" id="buttonToggle"/>
                   </a>
                 <span class="product-title">{{product.title}}</span><br>
                 <span class="product-price"> {{product.price | currency}}</span>
@@ -76,7 +76,7 @@ export default {
   
   created() {
     this.loading = true; 
-    this.fetchProducts().then(() => {this.fetchStores().then(() => {}); setTimeout(() => { this.loading = false;}, 630);})
+    this.fetchProducts().then(() => {this.fetchStores().then(() => {}); this.loading = false; }) // setTimeout(() => { }, 630);
   },
   
   methods : {
@@ -107,8 +107,25 @@ ul:empty{display:none}
 .text{color:#fff;font-size:15px;font-family:Bungee;margin:0 auto;display:inline-flex;align-items:center;justify-content:center;position:relative;align-content:center;height:100%;text-align:center}
 .sale-banner{border-radius:2px 0;background:#e82319;color:#fff;font-family:sans-serif;position:absolute;padding:4px 10px 5px;text-transform:uppercase;left:0;top:0;font-size:12px;font-weight:700;z-index:1}
 .out-of-stock-banner{border-radius:2px 0;background:#505050;color:#f9f9f9;font-family:sans-serif;position:absolute;padding:4px 10px 5px;text-transform:uppercase;left:0;top:0;font-size:12px;font-weight:700;z-index:1}
-.add-to-cart-btn{z-index:0;display:-webkit-box;display:-ms-flexbox;display:flex;align-items:center;opacity:0;place-content:center;overflow:visible;margin-top:-2px;height:48px;margin-bottom:-40px}
-#buttonToggle{margin:0 2%}
+.add-to-cart-btn{
+     z-index: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    opacity: 0;
+    align-items: center;
+    overflow: visible;
+    margin-top: -2px;
+    place-content: space-between;
+    height: 48px;
+    margin-bottom: -40px; 
+}
+  
+  /* z-index:0;display:-webkit-box;display:-ms-flexbox;display:flex;align-items:center;opacity:0;place-content:center;overflow:visible;margin-top:-2px;height:48px;margin-bottom:-40px} */
+/* #buttonToggle{margin:0 2%} */
+#buttonToggle{margin:0 0%}
 .product-card:hover,.product-card:focus{outline:none}
 .product-card:hover .add-to-cart-btn{overflow:hidden;transition:margin-bottom var(--animation-speed-secondary-slower) ease-in-out,opacity var(--animation-speed-secondary-slower) ease-in-out;opacity:1;margin-bottom:10px}
 .product-title{font-family:FoobarPro}

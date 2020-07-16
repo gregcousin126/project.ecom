@@ -22,7 +22,9 @@ export default {
     -webkit-border-radius: 3px;
     -webkit-transition: -webkit-transform .2s ease-in-out;
     display: flex;
-    padding: 1px 5px;
+    
+    padding: 2.5px 19px;
+    /* padding: 1px 5px; */
     word-spacing: -.5px;
     text-transform: uppercase;
     font-family: inherit;
@@ -36,12 +38,22 @@ export default {
 .button-cart span:hover{color:(--bg-button);cursor:pointer}
 .button-cart:active{-webkit-box-shadow:var(--button-boxshadow-active-primary)}
 .button-cart:active span{-webkit-transform:translate(0,5px)}
-@media(max-width: 650px) { .button-cart span{padding:1px 4px;
-
-} 
 
 
-
-
-}
+@media(max-width: 1710px) { .button-cart span{padding:1px 8px;} }
+@media(max-width: 1100px) { .button-cart span{padding:1px 13px;} }
+@media(max-width: 990px) { .button-cart span{padding:1px 4px;} }
+@media(max-width: 770px) { .button-cart span{padding:1px 4px;} }
+@media(max-width: 650px) { .button-cart span{padding:1px 0px;} }
+@media(max-width: 600px) { .button-cart span{padding:2px 25px;} }
+@media(max-width: 550px) { .button-cart span{padding:2px 20px;} }
+@media(max-width: 510px) { .button-cart span{padding:2px 15px;} }
+@media(max-width: 470px) { .button-cart span{padding:2px 10px;} }
+@media(max-width: 430px) { .button-cart span{padding:2px 5px;} }
+@media(max-width: 390px) { .button-cart span{padding:2px 2px;} }
+@media(max-width: 370px) { .button-cart span{padding:6px 45px;} }
+@media(max-width: 360px) { .button-cart span{padding:6px 40px;} }
+@media(max-width: 340px) { .button-cart span{padding:6px 35px;} }
+@media(max-width: 320px) { .button-cart span{padding:6px 30px;} }
+@media(max-width: 290px) { .button-cart span{padding:6px 15px;} }
 </style>
