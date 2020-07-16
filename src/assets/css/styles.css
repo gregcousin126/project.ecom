@@ -196,7 +196,7 @@ textarea:focus {
   display: block;
   border-radius: 4px;
   padding: 0;
-  margin: 17px;
+  margin-bottom: 17px;
   border: 1px solid rgba(0, 0, 0, .7);
   -webkit-font-smoothing: antialiased;
   -webkit-box-orient: vertical;
@@ -518,6 +518,11 @@ input[type=range].slider:focus::-ms-fill-upper {
   opacity: 0
 }
 
+@media(max-width:900px) {
+    .inputbox {
+         width: 100%;
+    }
+}
 @media(max-width:600px) {
   .inputbox.with-transform:hover {
     transform: none;
@@ -545,7 +550,7 @@ input[type=range].slider:focus::-ms-fill-upper {
     background-position: top, right, bottom, left;
     background-size: 5px 3px, 3px 5px;
     background-repeat: repeat-x, repeat-y;
-    margin: 17px;
+  
     border: none;
     -webkit-font-smoothing: antialiased;
     -webkit-box-orient: vertical;
