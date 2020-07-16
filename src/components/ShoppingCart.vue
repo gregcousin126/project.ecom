@@ -204,7 +204,7 @@ border-radius: 0px;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    font-family: -webkit-pictograph;
+    /* font-family: -webkit-pictograph; */
     font-weight: 300;
     margin: 0px;
     background: none;
