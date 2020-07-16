@@ -166,7 +166,7 @@ input[type="checkbox"]:checked ~ .checkbox-box::before{content:'';position:absol
 .sidebarbutton{
   
   
-  font-size:13px;padding:2px;letter-spacing:1px;font-weight:700;width:-webkit-fill-available;border-radius:0;opacity:.7;cursor:pointer;border:2px solid var(--blue-primary);text-transform:uppercase;margin:20px 0 0;-webkit-transition:var(--transition-speed-secondary-slower);transition:var(--transition-speed-secondary-slower);-moz-transition:var(--transition-speed-secondary-slower);-ms-transition:var(--transition-speed-secondary-slower);-o-transition:var(--transition-speed-secondary-slower)}
+  font-size:13px;padding:2px;letter-spacing:2px;font-weight:700;width:-webkit-fill-available;border-radius:0;opacity:.7;cursor:pointer;border:2px solid var(--blue-primary);text-transform:uppercase;margin:20px 0 0;-webkit-transition:var(--transition-speed-secondary-slower);transition:var(--transition-speed-secondary-slower);-moz-transition:var(--transition-speed-secondary-slower);-ms-transition:var(--transition-speed-secondary-slower);-o-transition:var(--transition-speed-secondary-slower)}
 .filter-btn{display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;place-content:center; background: none;}
 .filter-btn:active{background: var(--button-highlight);}
 .filter-btn:hover{background: var(--button-hover);}
