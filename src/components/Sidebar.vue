@@ -173,7 +173,7 @@ display: -webkit-inline-box;
     display: grid;
     position: relative;
     grid-gap: 2px;
-margin-bottom: -10px;
+/* margin-bottom: -10px; */
     width: 20px;
     height: 20px;
     margin-left: 36px;
