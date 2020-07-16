@@ -145,7 +145,7 @@ display: -webkit-box;
     /* flex-direction: column; */
     /* margin-right: 25px; */
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     
     max-width: 100%;
     /* transform:translateY(0rem) translateX(0rem) scale(1); */
