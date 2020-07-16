@@ -2,40 +2,36 @@
 
 /* Color Palet Theme */
 :root {
-  --pastel-green   : #e1f7d5;
-  --pastel-pink    : #ffbdbd;
-  --pastel-blue    : #c9c9ff;
-  --pastel-white   : #ffffff;
-  --pastel-purple  : #f1cbff;
-  --pastel-salmon  : #FF9AA2;
-  --pastel-yellow  : #FFDAC1;
-  --pastel-turk    : #B5EAD7;
-  
-  
-  --turk-light     : #03DAC5;
-  
-        
---red: #ff3860;
-    --red-dark: #ff1443;
-    --red-light: #ff5c7c;
-    --blue: #498afb;
-    --blue-dark: #2674fa;
-    --blue-light: #6ca0fc;
-    --orange: #fa8142;
-    --orange-dark: #f96a1f;
-    --orange-light: #fb9865;
-    --green: #09c372;
-    --green-dark: #07a15e;
-    --green-light: #0be586;
-    --purple: #9166cc;
-    --purple-dark: #7d4bc3;
-    --purple-light: #a481d5;
-    --yellow: #ffdd57;
-    --yellow-dark: #ffd633;
-    --yellow-light: #ffe47a;
-    --pink: #ff4088;
-    --pink-dark: #ff1c72;
-    --pink-light: #ff649e;
+--pastel-green   : #e1f7d5;
+--pastel-pink    : #ffbdbd;
+--pastel-blue    : #c9c9ff;
+--pastel-white   : #ffffff;
+--pastel-purple  : #f1cbff;
+--pastel-salmon  : #FF9AA2;
+--pastel-yellow  : #FFDAC1;
+--pastel-turk    : #B5EAD7;
+--turk-light     : #03DAC5;
+--red            : #ff3860;
+--red-dark       : #ff1443;
+--red-light      : #ff5c7c;
+--blue           : #498afb;
+--blue-dark      : #2674fa;
+--blue-light     : #6ca0fc;
+--orange         : #fa8142;
+--orange-dark    : #f96a1f;
+--orange-light   : #fb9865;
+--green          : #09c372;
+--green-dark     : #07a15e;
+--green-light    : #0be586;
+--purple         : #9166cc;
+--purple-dark    : #7d4bc3;
+--purple-light   : #a481d5;
+--yellow         : #ffdd57;
+--yellow-dark    : #ffd633;
+--yellow-light   : #ffe47a;
+--pink           : #ff4088;
+--pink-dark      : #ff1c72;
+--pink-light     : #ff649e;
 }
 
 
@@ -86,9 +82,9 @@
   --text-light                        : #f8f8f8;
   --text-primary                      : #b6b6b6;
   --text-secondary                    : #ececec;
-  --text-hover                    : #ececec;
+  --text-hover                        : #ececec;
   --button-highlight                  : rgba(95, 105, 252, 0.699);
-  --button-hover                  : rgba(95, 105, 252, 0.075);
+  --button-hover                      : rgba(95, 105, 252, 0.075);
   --bg-subtract                       : #3f3a578e;
   --bg-add                            : #3f3a578e;
   --bg-primary                        : #23232e;
@@ -98,9 +94,8 @@
   --my-turk                           : #18c2c2;
   --image-filter                      : grayscale(0) brightness(1.1) saturate(1);
   --display-primary                   : none;
-  --button-boxshadow-backround  : #5044ff;
+  --button-boxshadow-backround        : #5044ff;
   --button-boxshadow-passive-primary  : 
-  
   0px 1px .4px #5044ff, 
   0px 2px .4px #483bff, 
   0px 3px .4px #3a2cff, 
