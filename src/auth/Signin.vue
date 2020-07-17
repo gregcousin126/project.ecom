@@ -76,7 +76,7 @@ export default {
   .image-signin h1{margin-top:60%;padding-left:20px;padding-right:20px;letter-spacing:2px;font-weight:100;margin-bottom:10px;font-family:'Bungee'}
   .colorspan{color:#7fff00}
   .signin-content{flex:50%;justify-content:center;background-color:var(--my-white);text-align:center;padding:50px;font-family:'Montserrat',sans-serif}
-  .signin-content h1{padding-bottom:20px;margin-bottom:0;padding-bottom:-10px;font-family:'Niconne',cursive;font-size:40px;text-align:center;color:#c446c9}
+  .signin-content h1{font-family:'Niconne',cursive;font-size:40px;text-align:center;color:#c446c9}
   .signin-banner{font-size:25px;line-height:35px}
   #txt{margin:10px;padding:5px;border:none;background-color:rgba(156,77,156,0.3);border-radius:10px;font-weight:700;font-size:small;font-family:'Montserrat',sans-serif;color:#aa38a4}
   #txt:focus{outline:none}

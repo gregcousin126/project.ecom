@@ -201,7 +201,7 @@ border-radius: 33px;
 .fa-primary{color:#ff7eee}
 .fa-secondary{color:#df49a6}
 .fa-primary,.fa-secondary{transition:var(--transition-speed-primary-faster)}
-.logo{font-weight:700;text-transform:uppercase;margin-bottom:0;text-align:center;color:var(--text-secondary);background:var(--bg-secondary);font-size:1.5rem;letter-spacing:.3ch;width:100%}
+.logo{font-weight:700;text-transform:uppercase;text-align:center;color:var(--text-secondary);background:var(--bg-secondary);font-size:1.5rem;letter-spacing:.3ch;width:100%}
 .logo svg{transform:rotate(0deg);transition:var(--transition-speed-primary-faster)}
 .logo-text{display:inline;position:absolute;left:-999px;transition:var(--transition-speed-primary-faster)}
 .navbar:hover .logo svg{transform:rotate(-180deg)}
