@@ -314,7 +314,7 @@ Button {
 
 @media(max-width:1420px) {
   .sidebar-wrap {
-    /* padding-right: 20px */
+    padding-right: 20px
   }
 }
 

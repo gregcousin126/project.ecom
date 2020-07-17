@@ -241,6 +241,11 @@ padding: 8px;
     grid-auto-flow: row;
 }
 }
+@media(min-width: 600px) and (max-width: 740px) { 
+#remove-filter {
+  display: none;
+}
 
+}
 
 </style>

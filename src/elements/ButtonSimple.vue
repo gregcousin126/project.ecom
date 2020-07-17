@@ -36,7 +36,7 @@ export default {
 .button-simple button {
     padding: 9px;
     font-size: 10px;
-    border-radius: 3px;
+    border-radius: 2px;
     font-weight: 600;
     cursor: pointer;
     border: 1px solid var(--blue-primary);
