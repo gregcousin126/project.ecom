@@ -12,14 +12,17 @@
     <div v-else class="shopping-cart-items">
       <ul>
         <li v-for="product in products" class="cart-product-card">
-          <img :src="`./stores/static/${product.store_name.toLowerCase()}/images/${product.img}`" :alt="`Image of ${product.title}`">
+          <!-- {{}} -->
           <div class="cart-detail">
+          <img :src="`./stores/static/${product.store_name.toLowerCase()}/images/${product.img}`" :alt="`Image of ${product.title}`">
+           <div class="cart-information">
           <p class="product-title">{{product.title}}</p>
           <p class="product-description"> {{product.description}}</p>
           <p class="product-price"> {{product.price | currency}} X {{product.quantity}} </p>
           <div class="quantity">
             <a @click="subtractCartItem(product)" class="quantity__minus" ><span>-</span></a>
             <a @click="addCartItem(product)" class="quantity__plus"><span>+</span></a>
+          </div>
           </div>
           </div>
         </li>
@@ -43,7 +46,7 @@
   <div class="_order-info" >	
      <span class="left">1 Product</span>
      <span class="right">{{ total | currency}}</span><br>
-    <span class="left ">Estimated shipping costs</span>
+    <span class="left ">Estimated shipping</span>
       <span class="right ">{{ total | currency}}</span><br><br>
     <h4 class="left">TOTAL</h4>
     <h4 class="right">{{ total | currency}}</h4><br>
@@ -94,7 +97,14 @@ export default {
   }
 }
 </script>
+
 <style lang="css" scoped>
+.cart-information {
+  display: block;
+  
+  padding: 15px
+}
+
 .checkout-item {
   float: right;
  font-size: 12px;
@@ -107,19 +117,22 @@ export default {
   float: left;
 }
 ._order-info {
-  background: rgba(128, 128, 128, 0.123);
-  width: 100%;
-  font-size: 12px;
-  padding: 15px;
-  border-radius: 2px;
-  float: left;
+    background: rgba(128, 128, 128, 0.123);
+    width: 199px;
+    font-size: 12px;
+    padding: 15px;
+    border-radius: 2px;
+    /* float: left; */
   /* height: max-content; */
 }
 
 ._order-continue {
   width: 100%;
 }
-ul{display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;max-width:1500px;flex:10;padding-left:0;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:space-around}
+ul{display:flex;
+
+flex: 2;
+-ms-flex-wrap:wrap;flex-wrap:wrap;max-width:1500px;flex:10;padding-left:0;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:space-around}
 .cart-product-card img{width:100%;object-fit:cover;height:209px}
 .quantity{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .quantity__minus,.quantity__plus{cursor:pointer;display:block;width:34px;border-radius:2px;height:34px;color:var(--my-white);font-size:20px;margin:6px;background:var(--text-floogle);text-decoration:none;text-align:center;line-height:34px}
@@ -133,7 +146,7 @@ ul{display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;max-width:1500px;flex:10;paddi
 .quantity__minus:visited,.quantity__plus:visited{color:#fff}
 .card-image{display:block;min-height:20rem;background:#fff center center no-repeat;background-size:cover;filter:blur(3px)}
 .card-image.is-loaded{filter:none;transition:filter var(--transition-speed-primary-faster)}
-.cart-detail{padding:15px}
+/* .cart-detail{padding:15px} */
 .empty-cart{position:absolute;top:45%;left:50%;transform:translate(-50%,-45%)}
 .empty-cart p{margin-bottom:30px}
 .shopping-cart-items{display:flex;flex-direction:row}
@@ -144,19 +157,103 @@ ul{display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;max-width:1500px;flex:10;paddi
 .cart-product-card{-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:-webkit-min-content;height:-moz-min-content;height:min-content;display:inline-block;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;margin-right:25px;width:47%;overflow:hidden;max-width:210px;background:var(--bg-primary);margin-bottom:25px;border-radius:2px;-webkit-box-shadow:2px 3px 4.5px .5px rgba(0,0,0,.3);box-shadow:2px 3px 4.5px .5px rgba(0,0,0,.3);-webkit-transition:-webkit-transform .25s ease-in-out,-webkit-box-shadow .25s;transition:-webkit-transform .25s ease-in-out,-webkit-box-shadow .25s;transition:transform .25s ease-in-out,box-shadow .25s;transition:transform .25s ease-in-out,box-shadow .25s,-webkit-transform .25s ease-in-out,-webkit-box-shadow .25s}
 .cart-product-card:hover{ transform:translateY(-.3rem) translateX(-.3rem) scale(1.0125);box-shadow:6px 6px 1.5px 0 rgba(0,0,0,.2);border-radius:2px}
 .product-price{margin-bottom:5px}
+
+
+
+
+@media(max-width: 700px) {
+  .cart-information {
+    padding: 10px;
+  }
+  
+  .cart-detail {
+    padding: 0px;
+  }
+  
+  .cart-product-card {
+margin-right: 17px;
+  }
+  
+  .cart-product-card {
+    width: 55%;
+  }
+  .product-title {
+    
+    /* font-size: ; */
+    
+  }
+  
+  .product-description {
+    display: none;
+  }
+  
+ .cart-product-card img {
+    height: 140px;
+  }
+   /* .button-cart span{padding:1px 0px;}  */
+
+
+
+}
+
+
 @media(max-width:600px) {
+  
+  .quantity {
+    margin-left: 10%;
+  }
+  
+  .cart-information {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+    /* .cart-product-card { */
+    /* width: 100%; */
+  /* } */
+  
+  ._order-info {
+    width: 100%;
+
+}
+
+
+
+.cart-detail {
+    /* padding: 5px; */
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: block;
+}
+  
+  .product-description {
+  display: none;
+}
   .cart-checkout{margin-left: unset;}
   .cart-product-card{
-    
-    margin-right:0px;
-  display: inline-flex;
+margin-right: 0px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-    display: flex;
+    display: inline-grid;
     /* padding: 2%; */
     -ms-flex-direction: column;
     width: 100%;
     max-width: 100%;
+    -webkit-box-shadow: 2px 2px 7px 0px rgba(0,0,0,.2);
     box-shadow: 2px 2px 7px 0px rgba(0,0,0,.2);
   }
   .cart-product-card:hover {
@@ -171,6 +268,7 @@ ul{display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;max-width:1500px;flex:10;paddi
     /* border-radius: 0px 2px 2px 0px; */
 }
 .product-price {
+  font-size: var(--button-font-primary);
   margin-bottom : 0px; 
   width: 50%;
   font-weight: 300;
@@ -223,10 +321,11 @@ ul{display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;max-width:1500px;flex:10;paddi
  100%  { background: var(--bg-primary); }
 }
    .cart-detail{
-    padding: 5px;
+    /* padding: 5px; */
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    flex-direction: row-reverse;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -234,10 +333,6 @@ ul{display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;max-width:1500px;flex:10;paddi
    .shopping-cart-items{flex-direction:column} 
 }
 @keyframes float-coin { 0%{transform:translatey(0)} 50%{transform:translatey(-3px)} 100%{transform:translatey(0)} }
-
-
-
-
 
 
 

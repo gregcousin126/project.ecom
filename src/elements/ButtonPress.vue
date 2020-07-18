@@ -12,17 +12,12 @@ export default {
 
 </script>
 <style scoped>
-.button-cart{
-  
-  
-  width: 100%;
-  display:inline-block;margin:0 auto;-webkit-border-radius:1px;-webkit-box-shadow:var(--button-boxshadow-passive-primary);-webkit-transition:-webkit-box-shadow .2s ease-in-out}
+.button-cart{ width: 100%;display:inline-block;margin:0 auto;-webkit-border-radius:1px;-webkit-box-shadow:var(--button-boxshadow-passive-primary);-webkit-transition:-webkit-box-shadow .2s ease-in-out}
 .button-cart span{
   width: 100%;
 background: var(--button-boxshadow-backround);
 color: #f0f0f0;
 border: 3px solid var(--button-boxshadow-backround);
-/* border: 3px solid #a1c6f74d; */
 -webkit-border-radius: 1px;
 -webkit-transition: -webkit-transform .2s ease-in-out;
 display: -webkit-box;
@@ -31,7 +26,7 @@ flex-wrap: nowrap;
 display: -ms-flexbox;
 /* width: 108px; */
 display: inline-grid;
-padding: 1px 22px;
+/* padding: 1px 22px; */
 /* padding: 1px 5px; */
 word-spacing: -.5px;
 text-transform: uppercase;

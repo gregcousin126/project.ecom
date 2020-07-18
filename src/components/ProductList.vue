@@ -118,10 +118,12 @@ filter: saturate(.2);
     width: 100%;
     display:grid;
     grid-gap: 6px;
+    
     -webkit-box-align: center;
     -ms-flex-align: center;
     opacity: 0;
     z-index: 0;
+    
     /* align-items: center; */
     overflow: visible;
     /* margin-top: -2px; */
@@ -137,8 +139,8 @@ filter: saturate(.2);
 #buttonToggle{margin:0 0%}
 .product-card:hover,.product-card:focus{outline:none}
 .product-card:hover .add-to-cart-btn{transition:margin-bottom var(--animation-speed-secondary-slower) ease-in-out,opacity var(--animation-speed-secondary-slower) ease-in-out;opacity:1;margin-bottom:10px}
-.product-title{font-family:FoobarPro}
-.product-description{margin-top:-3px;width:100%;padding:10px 20px 3px;font-size:11px;font-family:Helvetica Neue;color:rgba(110,110,110,0.773);margin-bottom:10px}
+.product-title{font-family:FoobarPro; padding-bottom: 5px;}
+.product-description{width:100%;padding:3px 20px 3px;font-size:11px;font-family:Helvetica Neue;color:rgba(110,110,110,0.773);margin-bottom:10px}
 .product-price{font-weight:700}
 .product-card.out-of-stock{pointer-events:none}
 .product-card.out-of-stock button{display:none}
