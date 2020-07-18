@@ -102,8 +102,25 @@ export default {
 <style>
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700);
-.button-explode{padding:20px}
-.btn-splatter{ color: #fff;font-family: inherit;font-weight: 700;background-color: #4487ed;width: 10em;height: 3.5em;border: 0;outline: 0;padding: 0;margin: 0;position: relative;border-radius: .9em;box-shadow: 0 0.3em 0.4em rgba(0,0,0,.2);-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transform: translateY(-.5em);transform: translateY(-.5em);-webkit-transition: background-color .3s cubic-bezier(.18,.89,.32,1.28),-webkit-box-shadow .3s cubic-bezier(.18,.89,.32,1.28),-webkit-transform .3s cubic-bezier(.18,.89,.32,1.28);transition: background-color .3s cubic-bezier(.18,.89,.32,1.28),-webkit-box-shadow .3s cubic-bezier(.18,.89,.32,1.28),-webkit-transform .3s cubic-bezier(.18,.89,.32,1.28);transition: background-color .3s cubic-bezier(.18,.89,.32,1.28),box-shadow .3s cubic-bezier(.18,.89,.32,1.28),transform .3s cubic-bezier(.18,.89,.32,1.28);transition: background-color .3s cubic-bezier(.18,.89,.32,1.28),box-shadow .3s cubic-bezier(.18,.89,.32,1.28),transform .3s cubic-bezier(.18,.89,.32,1.28),-webkit-box-shadow .3s cubic-bezier(.18,.89,.32,1.28),-webkit-transform .3s cubic-bezier(.18,.89,.32,1.28);}
+/* .button-explode{padding:20px} */
+.btn-splatter{ 
+  /* color: #fff;font-family: inherit;font-weight: 700;background-color: #4487ed;width: 10em;height: 3.5em;border: 0; */
+  
+  color: #fff;
+    font-family: inherit;
+    font-weight: 700;
+    background-color: #4487ed;
+    width: 100%;
+    height: 4em;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    border-radius: 2px;
+ box-shadow: 0 0.3em 0.4em rgba(0,0,0,.2);-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-transform: translateY(-.5em);transform: translateY(-.5em);-webkit-transition: background-color .3s cubic-bezier(.18,.89,.32,1.28),-webkit-box-shadow .3s cubic-bezier(.18,.89,.32,1.28),-webkit-transform .3s cubic-bezier(.18,.89,.32,1.28);transition: background-color .3s cubic-bezier(.18,.89,.32,1.28),-webkit-box-shadow .3s cubic-bezier(.18,.89,.32,1.28),-webkit-transform .3s cubic-bezier(.18,.89,.32,1.28);transition: background-color .3s cubic-bezier(.18,.89,.32,1.28),box-shadow .3s cubic-bezier(.18,.89,.32,1.28),transform .3s cubic-bezier(.18,.89,.32,1.28);transition: background-color .3s cubic-bezier(.18,.89,.32,1.28),box-shadow .3s cubic-bezier(.18,.89,.32,1.28),transform .3s cubic-bezier(.18,.89,.32,1.28),-webkit-box-shadow .3s cubic-bezier(.18,.89,.32,1.28),-webkit-transform .3s cubic-bezier(.18,.89,.32,1.28);
+
+}
 .btn-splatter:focus{outline:0}
 .btn-splatter:active{background-color:#2770df;box-shadow:0 0 0 rgba(0,0,0,.5);transform:translateY(0) scale(.9);transition:background-color 150ms ease-out,box-shadow 150ms ease-out,transform 150ms ease-out}
 .splatter{position:absolute;top:0;left:0}

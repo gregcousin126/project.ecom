@@ -1,9 +1,7 @@
 <template>
 <body>
-  <div>
-		<div v-if="JSON.stringify(currentUser) !== '{}'">
-				<authchange/>
-		</div>
+ <div v-if="!currentUser.displayName">
+		<div v-if="JSON.stringify(currentUser) !== '{}'"><authchange/></div>
     <div v-if="JSON.stringify(currentUser) === '{}'">
       <div class="top-signin-container cardcontainer" id="target">
       <div class="signin-container card">
@@ -26,6 +24,17 @@
       </div>
     </div>
     </div>
+  </div>
+  
+  <div v-else-if="currentUser.displayName">
+    <h2>Hi {{currentUser.displayName}},</h2><br/>
+    <p>It Looks like you are already signed in 🧐. What would you like to do?</p>
+    <ul class="authchoice">
+      <li><router-link to="/register"><a class="log-link">register</a></router-link></li>
+      <li><router-link to="/signin"><a class="log-link">log-in</a></router-link></li>
+      <li><router-link to="/userinfo"><a class="log-link">user</a></router-link></li>
+      <li><router-link to="/"><a @click="signOut" class="log-link">signout</a></router-link></li>
+    </ul>
   </div>
 </body>
 </template>
@@ -53,6 +62,10 @@ export default {
     }),
     },
     methods: {
+       signOut() {
+      firebase.auth().signOut();
+    },
+    
       registerAnim() {
         const target = document.getElementById("target");
         target.style.opacity = '0';
@@ -68,6 +81,7 @@ export default {
 }
 </script>
 <style lang="css">
+
   .log-link{color:var(--text-secondary);text-transform:uppercase}
   .authchoice{display:grid;grid-auto-flow:column;margin-top:25px;border-radius:4px;list-style:none;border:2px solid;place-content:center;grid-auto-columns:-webkit-min-content;font-weight:500;padding:22px;font-size:14px;width:100%;font-family:'Roboto Condensed',sans-serif;grid-gap:28px}
   .top-signin-container{text-align:-webkit-center;margin:0 auto;justify-content:center;z-index:0;padding:5% 7%;transition:opacity .2s;display:flex;text-align:-webkit-center;margin:0 auto}

@@ -111,6 +111,7 @@ ul:empty{display:none}
 .out-of-stock-banner{border-radius:2px 0;background:#505050;color:#f9f9f9;font-family:sans-serif;position:absolute;padding:4px 10px 5px;text-transform:uppercase;left:0;top:0;font-size:12px;font-weight:700;z-index:1}
 .add-to-cart-btn{
 z-index: 0;
+filter: saturate(.2);
     display: -webkit-box;
     display: -ms-flexbox;
     grid-auto-flow: column;

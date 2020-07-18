@@ -1,6 +1,6 @@
 <template>
 <body >
-  <div v-if="!currentUser.displayName" >
+<div v-if="!currentUser.displayName" >
     <div class="top-register-container register-card-container" id="target">
       <div class="register-container card">
         <div class="image-register">
@@ -19,17 +19,10 @@
         </div>
       </div>
     </div>
-    </div>
-  <div v-if="currentUser.displayName">
-    <h2>Hi {{currentUser.displayName}},</h2><br/>
-    <p>It Looks like you are already signed in 🧐. What would you like to do?</p>
-    <ul class="authchoice">
-      <li><router-link to="/register"><a class="dropdown log-link">register</a></router-link></li>
-      <li><router-link to="/signin"><a class="dropdown log-link">log-in</a></router-link></li>
-      <li><router-link to="/userinfo"><a class="dropdown log-link">user</a></router-link></li>
-      <li><router-link to="/"><a @click="signOut" class="dropdown log-link">signout</a></router-link></li>
-    </ul>
   </div>
+  
+  
+
 </body>
 </template>
 
@@ -63,10 +56,7 @@ export default {
         setTimeout( () => { this.$router.push('/signin');}, 300); 
     },
     
-    signOut() {
-      firebase.auth().signOut();
-    },
-    
+   
     register() {
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password).catch((error) => alert('🤕' + error.message)).then(() => {firebaseAuth().currentUser.updateProfile({displayName: this.displayName}).catch((error) => alert('🤕' + error.message)).then(() => {this.$router.push('/');});});
     },
@@ -84,7 +74,6 @@ export default {
 };
 </script>
 <style lang="css">
-.log-link{color:var(--text-secondary);text-transform:uppercase}
 .authchoice{display:grid;grid-auto-flow:column;margin-top:25px;border-radius:4px;list-style:none;border:2px solid;place-content:center;grid-auto-columns:-webkit-min-content;font-weight:500;padding:22px;font-size:14px;width:100%;font-family:'Roboto Condensed',sans-serif;grid-gap:28px}
 .top-register-container{z-index:0;justify-content:center;padding:5% 7%;transition:opacity var(--transition-speed-primary-faster);display:flex;text-align:-webkit-center}
 .register-container{height:auto;-webkit-box-shadow:0 15px 25px rgba(0,0,0,0.603);box-shadow:0 15px 25px rgba(0,0,0,0.603);display:flex;border-radius:5px}
@@ -98,7 +87,7 @@ export default {
 #txt:focus{outline:none}
 .fp{text-decoration:none;font-weight:700;font-size:small;transition:var(--transition-speed-primary-faster);display:block;margin:30px}
 .fp:hover{color:#c446c9}
-.btn-register{width:95px;margin:0 4px 20px;display:inline-flex;place-content:center;border:none;background:-webkit-gradient(linear,left top,right top,from(#4568dc),to(#b06ab3));background:linear-gradient(to right,#4568dc,#b06ab3);border-radius:4px;-webkit-transition:var(--transition-speed-primary-faster);transition:var(--transition-speed-primary-faster)}
+.btn-register{width:95px; height: 40px; font-size:12.5px;margin:0 4px 20px;display:inline-flex;place-content:center;border:none;background:-webkit-gradient(linear,left top,right top,from(#4568dc),to(#b06ab3));background:linear-gradient(to right,#4568dc,#b06ab3);border-radius:4px;-webkit-transition:.2s;transition:.2s}
 .btn-register:hover{transform:scale(1.1);letter-spacing:1px}
 .btn-register{text-decoration:none;color:#fff}
 .register-card-container{animation:float var(--animation-speed-primary-slower) ease-in-out infinite}

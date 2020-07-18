@@ -545,13 +545,12 @@ input[type=range].slider:focus::-ms-fill-upper {
     width: 80%;
     text-align: -webkit-center;
     display: block;
-    border-radius: 4px;
+    border-radius: var(--button-font-secondary);
     padding: 0;
-    background-image: radial-gradient(circle at 1.5px, rgba(0, 0, 0, .7) .5px, rgba(255, 255, 255, 0) 1.5px), radial-gradient(circle, rgba(0, 0, 0, .7) .5px, rgba(255, 255, 255, 0) 1.5px), radial-gradient(circle at 1.5px, rgba(0, 0, 0, .7) .5px, rgba(255, 255, 255, 0) 1.5px), radial-gradient(circle, rgba(0, 0, 0, .7) .5px, rgba(255, 255, 255, 0)1.5px);
+    background-image: radial-gradient(circle at 1.5px, rgba(0, 0, 0, .6) .5px, rgba(255, 255, 255, 0) 1.5px), radial-gradient(circle, rgba(0, 0, 0, .6) .5px, rgba(255, 255, 255, 0) 1.5px), radial-gradient(circle at 1.5px, rgba(0, 0, 0, .6) .5px, rgba(255, 255, 255, 0) 1.5px), radial-gradient(circle, rgba(0, 0, 0, .6) .5px, rgba(255, 255, 255, 0)1.5px);
     background-position: top, right, bottom, left;
-    background-size: 5px 3px, 3px 5px;
+    background-size: 3px 4px, 3px 3px;
     background-repeat: repeat-x, repeat-y;
-  
     border: none;
     -webkit-font-smoothing: antialiased;
     -webkit-box-orient: vertical;
@@ -565,16 +564,16 @@ input[type=range].slider:focus::-ms-fill-upper {
     -ms-flex-pack: center;
     justify-content: center;
     transition: all var(--page-transition-speed-primary);
-    font: normal 13px Overpass;
+    font: normal 12px Overpass;
     -webkit-transition: all var(--page-transition-speed-primary);
     -moz-transition: all var(--page-transition-speed-primary);
     -ms-transition: all var(--page-transition-speed-primary);
     -o-transition: all var(--page-transition-speed-primary);
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
-  }
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
+}
 
   .aside-block {
     padding: 25px 0
