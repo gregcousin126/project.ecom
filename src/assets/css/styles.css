@@ -549,7 +549,7 @@ input[type=range].slider:focus::-ms-fill-upper {
     display: block;
     border-radius: 3px;
     padding: 0;
-    background-image: radial-gradient(circle at 1.5px, rgba(0, 0, 0, .6) .5px, rgba(255, 255, 255, 0) 1.5px), radial-gradient(circle, rgba(0, 0, 0, .6) .5px, rgba(255, 255, 255, 0) 1.5px), radial-gradient(circle at 1.5px, rgba(0, 0, 0, .6) .5px, rgba(255, 255, 255, 0) 1.5px), radial-gradient(circle, rgba(0, 0, 0, .6) .5px, rgba(255, 255, 255, 0)1.5px);
+    background-image: radial-gradient(circle at 1.5px, rgba(0, 0, 0, .4) .5px, rgba(255, 255, 255, 0) 1.5px), radial-gradient(circle, rgba(0, 0, 0, .4) .5px, rgba(255, 255, 255, 0) 1.5px), radial-gradient(circle at 1.5px, rgba(0, 0, 0, .4) .5px, rgba(255, 255, 255, 0) 1.5px), radial-gradient(circle, rgba(0, 0, 0, .4) .5px, rgba(255, 255, 255, 0)1.5px);
     background-position: top, right, bottom, left;
     background-size: 3px 4px, 3px 3px;
     background-repeat: repeat-x, repeat-y;

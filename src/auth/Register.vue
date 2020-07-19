@@ -81,13 +81,43 @@ export default {
 .image-register h1{margin-top:17%;padding-left:20px;padding-right:20px;letter-spacing:2px;font-weight:100;margin-bottom:10px;font-family:'Bungee'}
 .colorspan{color:#7fff00}
 .register-content{flex:50%;justify-content:center;background-color:var(--my-white);text-align:center;padding:50px;font-family:'Montserrat',sans-serif}
-.register-content h1{font-family:'Niconne',cursive;font-size:40px;text-align:center;color:#c446c9}
+.register-content h1{
+font-size: 22px;
+    font-family: Mellody;
+    text-align: center;
+    color: var(--text-primary);
+    /* text-shadow: -4px 3px black; */
+    /* color: #717171; */
+    /* color: #7d7d7d; */
+    color: #505050;
+  /* font-family:'Niconne',cursive;font-size:40px;text-align:center;color:#c446c9 */
+  
+  }
 .register-banner{font-size:25px;line-height:35px}
 #txt{margin:10px;padding:5px;border:none;background-color:rgba(156,77,156,0.3);border-radius:10px;font-weight:700;font-size:small;font-family:'Montserrat',sans-serif;color:#aa38a4}
 #txt:focus{outline:none}
 .fp{text-decoration:none;font-weight:700;font-size:small;transition:var(--transition-speed-primary-faster);display:block;margin:30px}
 .fp:hover{color:#c446c9}
-.btn-register{width:95px; height: 40px; font-size:12.5px;margin:0 4px 20px;display:inline-flex;place-content:center;border:none;background:-webkit-gradient(linear,left top,right top,from(#4568dc),to(#b06ab3));background:linear-gradient(to right,#4568dc,#b06ab3);border-radius:4px;-webkit-transition:.2s;transition:.2s}
+.btn-register{
+  width: 95px;
+    height: 40px;
+    font-size: 12.5px;
+    margin: 0 4px 20px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    place-content: center;
+    filter: grayscale(.3);
+    border: none;
+    background: var(--button-highlight);
+    /* background: -webkit-gradient(linear,left top, right top,from(#4568dc),to(#b06ab3)); */
+    /* background: linear-gradient(to right,#4568dc,#b06ab3); */
+    border-radius: 4px;
+    -webkit-transition: .2s;
+    transition: .2s;
+  /* width:95px; height: 40px; font-size:12.5px;margin:0 4px 20px;display:inline-flex;place-content:center;border:none;background:-webkit-gradient(linear,left top,right top,from(#4568dc),to(#b06ab3));background:linear-gradient(to right,#4568dc,#b06ab3);border-radius:4px;-webkit-transition:.2s;transition:.2s */
+  
+  }
 .btn-register:hover{transform:scale(1.1);letter-spacing:1px}
 .btn-register{text-decoration:none;color:#fff}
 .register-card-container{animation:float var(--animation-speed-primary-slower) ease-in-out infinite}
