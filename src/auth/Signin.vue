@@ -113,7 +113,7 @@ font-size: 22px;
     -webkit-transition: .3s;
     transition: .3s;
     display: block;
-    margin: 30px;
+    margin: 0px  30px 40px;
     /* text-decoration:none;font-weight:700;font-size:small;transition:.3s;display:block;margin:30px */
     
     }

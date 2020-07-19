@@ -96,7 +96,17 @@ font-size: 22px;
 .register-banner{font-size:25px;line-height:35px}
 #txt{margin:10px;padding:5px;border:none;background-color:rgba(156,77,156,0.3);border-radius:10px;font-weight:700;font-size:small;font-family:'Montserrat',sans-serif;color:#aa38a4}
 #txt:focus{outline:none}
-.fp{text-decoration:none;font-weight:700;font-size:small;transition:var(--transition-speed-primary-faster);display:block;margin:30px}
+.fp{
+  
+        text-decoration: none;
+    font-weight: 500;
+    font-size: small;
+    font-family: monospace;
+    -webkit-transition: .3s;
+    transition: .3s;
+    display: block;
+    margin: 0px  30px 40px;
+  }
 .fp:hover{color:#c446c9}
 .btn-register{
   width: 95px;

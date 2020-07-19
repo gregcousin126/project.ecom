@@ -147,7 +147,7 @@ flex: 2;
 .cart-checkout p{mix-blend-mode:multiply;margin-top:10px;margin-bottom:10px;font-size:18px;z-index:1}
 .shopping-cart{position:relative}
 .cart-product-card{-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:-webkit-min-content;height:-moz-min-content;height:min-content;display:inline-block;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;margin-right:25px;width:47%;overflow:hidden;max-width:210px;background:var(--bg-primary);margin-bottom:25px;border-radius:2px;-webkit-box-shadow:2px 3px 4.5px .5px rgba(0,0,0,.3);box-shadow:2px 3px 4.5px .5px rgba(0,0,0,.3);-webkit-transition:-webkit-transform .25s ease-in-out,-webkit-box-shadow .25s;transition:-webkit-transform .25s ease-in-out,-webkit-box-shadow .25s;transition:transform .25s ease-in-out,box-shadow .25s;transition:transform .25s ease-in-out,box-shadow .25s,-webkit-transform .25s ease-in-out,-webkit-box-shadow .25s}
-.cart-product-card:hover{ transform:translateY(-.3rem) translateX(-.3rem) scale(1.0125);box-shadow:6px 6px 1.5px 0 rgba(0,0,0,.2);border-radius:2px}
+/* .cart-product-card:hover{ transform:translateY(-.3rem) translateX(-.3rem) scale(1.0125);box-shadow:6px 6px 1.5px 0 rgba(0,0,0,.2);border-radius:2px} */
 .product-price{margin-bottom:5px}
 
 
@@ -267,12 +267,12 @@ width: 10px;
     -webkit-box-shadow: 2px 2px 7px 0px rgba(0,0,0,.2);
     box-shadow: 2px 2px 7px 0px rgba(0,0,0,.2);
   }
-  .cart-product-card:hover {
+  /* .cart-product-card:hover {
     border-radius:2px;
     transform:none;
     box-shadow: 2px 3px 8px 0px rgba(0,0,0,.2);
   }
-  
+   */
 
 .product-price {
   font-size: var(--button-font-primary);
@@ -313,12 +313,11 @@ width: 10px;
     text-decoration: none;
     text-align: center;
      } 
- .quantity__minus:hover,.quantity__plus:hover, .quantity__minus:active,.quantity__plus:active{
-  /* background-image:none !important;  */
+ /* .quantity__minus:hover,.quantity__plus:hover, .quantity__minus:active,.quantity__plus:active{
   -o-animation: buttonTrans var(--animation-speed-primary-faster) ease-in-out; 
   animation: buttonTrans var(--animation-speed-primary-faster) ease-in-out; 
    background: none;
- }
+ } */
   @-o-keyframes buttonTrans {
   0%   { background: var(--text-floogle); }
  100%  { background: var(--bg-primary); }
@@ -346,8 +345,8 @@ width: 10px;
    
    
    .product-price img{
-       filter: contrast(0);
-width: 10px;
+    filter: contrast(0);
+    width: 10px;
     height: 10px;
     /* padding: 0; */
     transform: scale(1.5);
