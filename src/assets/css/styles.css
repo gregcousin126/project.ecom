@@ -216,10 +216,10 @@ textarea:focus {
   -moz-transition: all var(--page-transition-speed-primary);
   -ms-transition: all var(--page-transition-speed-primary);
   -o-transition: all var(--page-transition-speed-primary);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
+  -webkit-border-radius:;
+  -moz-border-radius:;
+  -ms-border-radius:;
+  -o-border-radius:;
 }
 
 input[type=password] {
@@ -328,7 +328,7 @@ Button {
 
 @media(max-width:600px) {
   .content-wrapper {
-    padding: 75px 15px
+    padding: 80px 15px
   }
 
   .product-list ul {
@@ -537,6 +537,8 @@ input[type=range].slider:focus::-ms-fill-upper {
     box-shadow: none
   }
 
+
+
   .inputbox {
     line-height: 23px;
     font-size: 12px;
@@ -545,7 +547,7 @@ input[type=range].slider:focus::-ms-fill-upper {
     width: 80%;
     text-align: -webkit-center;
     display: block;
-    border-radius: var(--button-font-secondary);
+    border-radius: 3px;
     padding: 0;
     background-image: radial-gradient(circle at 1.5px, rgba(0, 0, 0, .6) .5px, rgba(255, 255, 255, 0) 1.5px), radial-gradient(circle, rgba(0, 0, 0, .6) .5px, rgba(255, 255, 255, 0) 1.5px), radial-gradient(circle at 1.5px, rgba(0, 0, 0, .6) .5px, rgba(255, 255, 255, 0) 1.5px), radial-gradient(circle, rgba(0, 0, 0, .6) .5px, rgba(255, 255, 255, 0)1.5px);
     background-position: top, right, bottom, left;
@@ -569,10 +571,10 @@ input[type=range].slider:focus::-ms-fill-upper {
     -moz-transition: all var(--page-transition-speed-primary);
     -ms-transition: all var(--page-transition-speed-primary);
     -o-transition: all var(--page-transition-speed-primary);
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
 }
 
   .aside-block {
@@ -621,7 +623,7 @@ input[type=range].slider:focus::-ms-fill-upper {
 
   body,
   html {
-        background:var(--bg-primary);
+    background:var(--bg-primary);
     padding: 0;
     margin: 0;
     font-size: 16px;
@@ -631,3 +633,6 @@ input[type=range].slider:focus::-ms-fill-upper {
 }
 
 
+input, select {
+  font-size: 100%;
+}

@@ -176,12 +176,14 @@ ul{list-style:none}
 main{margin-left:4rem;padding:1rem}
 .navbar{z-index:2;position:fixed;background-color:var(--bg-primary);transition:width var(--transition-speed-primary-faster) ease-out;overflow:scroll;width:100%;-webkit-box-shadow:inset -15px 0 16px -20px rgba(0,0,0,0.68);-moz-box-shadow:inset -15px 0 16px -20px rgba(0,0,0,0.68);box-shadow:inset -15px 0 16px -20px rgba(0,0,0,0.68)}
 .cart-link__count{
-border-radius: 33px;
+    border-radius: 33px;
     width: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    padding: 5px;
     height: 20px;
+    justify-content: center;
     place-content: center;
     place-items: center;
     margin-top: -22px;
@@ -196,7 +198,7 @@ border-radius: 33px;
 .navbar-nav{width:100%;list-style:none;padding:0;margin:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:100%}
 .nav-item{width:100%}
 .nav-item:last-child{margin-top:auto}
-.nav-link{display:flex;align-items:center;height:4rem;color:var(--text-primary);text-decoration:none;filter:grayscale(100%) opacity(0.7);transition:var(--transition-speed-primary-faster)}
+.nav-link{display:flex;align-items:center;height:4rem;color:var(--text-primary);text-decoration:none;filter:grayscale(100%) opacity(0.9);transition:var(--transition-speed-primary-faster)}
 .nav-link:hover{filter:grayscale(0%) opacity(1);background:var(--bg-secondary);color:var(--text-secondary)}
 .link-text{display:none;margin-left:1rem;font-family:'Overpass'}
 .nav-link svg,.nav-link img{width:1.6rem;min-width:1.6rem;margin:0 1.45rem}
@@ -226,13 +228,21 @@ main{margin:0}
 
 @media only screen and (min-width: 600px) {
 .navbar{top:0;position:relative;display:inline-flex;width:4.5rem;min-height:100vh}
-.navbar:hover{width:13rem}
+.navbar:hover{width:12rem}
 .navbar:hover .link-text{display:inline;cursor:pointer}
-.navbar:hover .logo svg{margin-left:10rem}
+.navbar:hover .logo svg{margin-left:9.5rem}
 .navbar:hover .logo-text{left:5px;font-size:17px}
 }
 .theme-icon{display:none}
 .dark #darkIcon{display:block}
 .light #lightIcon{display:block}
 .eclipse #eclipseIcon{display:block}
+
+
+
+
+
+/* bottom section */
+
+
 </style>

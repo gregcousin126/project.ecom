@@ -18,7 +18,7 @@
            <div class="cart-information">
           <p class="product-title">{{product.title}}</p>
           <p class="product-description"> {{product.description}}</p>
-          <p class="product-price"> {{product.price | currency}} X {{product.quantity}} </p>
+          <p class="product-price"> {{product.price | currency}} <img :src="`https://upload.wikimedia.org/wikipedia/commons/f/f9/Times_symbol.svg`" > {{product.quantity}} </p>
           <div class="quantity">
             <a @click="subtractCartItem(product)" class="quantity__minus" ><span>-</span></a>
             <a @click="addCartItem(product)" class="quantity__plus"><span>+</span></a>
@@ -27,18 +27,6 @@
           </div>
         </li>
       </ul>
-    
-    
-    
-    
-    
-    
-<!-- <section class="extra-space _shop-cart" style=""> -->
-
-  
-
-    
-    
     
     
       <div class="cart-checkout">
@@ -99,6 +87,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+
 .cart-information {
   display: block;
   
@@ -116,6 +106,8 @@ export default {
 .left {
   float: left;
 }
+
+
 ._order-info {
     background: rgba(128, 128, 128, 0.123);
     width: 199px;
@@ -159,9 +151,29 @@ flex: 2;
 .product-price{margin-bottom:5px}
 
 
-
+.product-price img{
+  
+  filter: contrast(0);
+width: 10px;
+    height: 10px;
+    /* padding: 0; */
+    transform: scale(1.5);
+    font-weight: bolder;
+    /* bottom: 0px; */
+    display: inline;
+    /* background-position: center top; */
+    /* left: 0; */
+    position: relative;
+    top: 1px;
+    padding: 0;
+    margin: 0 auto;
+}
 
 @media(max-width: 700px) {
+  
+  .product-price {
+    font-size: var(--font-mobile-secondary);
+  }
   .cart-information {
     padding: 10px;
   }
@@ -172,16 +184,10 @@ flex: 2;
   
   .cart-product-card {
 margin-right: 17px;
+   width: 55%;
   }
-  
-  .cart-product-card {
-    width: 55%;
-  }
-  .product-title {
-    
-    /* font-size: ; */
-    
-  }
+
+ 
   
   .product-description {
     display: none;
@@ -189,19 +195,33 @@ margin-right: 17px;
   
  .cart-product-card img {
     height: 140px;
+    width: 100%;
   }
    /* .button-cart span{padding:1px 0px;}  */
 
-
+.product-price img{
+    filter: contrast(0);
+width: 10px;
+    height: 10px;
+    /* padding: 0; */
+    transform: scale(1.5);
+    font-weight: bolder;
+    /* bottom: 0px; */
+    display: inline;
+    /* background-position: center top; */
+    /* left: 0; */
+    position: relative;
+    top: 1px;
+    padding: 0;
+    margin: 0 auto;
+}
 
 }
 
 
 @media(max-width:600px) {
   
-  .quantity {
-    margin-left: 10%;
-  }
+
   
   .cart-information {
     display: -webkit-inline-box;
@@ -237,7 +257,7 @@ margin-right: 17px;
 }
   .cart-checkout{margin-left: unset;}
   .cart-product-card{
-margin-right: 0px;
+    margin-right: 0px;
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -261,11 +281,10 @@ margin-right: 0px;
     transform:none;
     box-shadow: 2px 3px 8px 0px rgba(0,0,0,.2);
   }
+  
  .cart-product-card img {
     width: 65px;
     height: 100%;
-    /* place-self: center; */
-    /* border-radius: 0px 2px 2px 0px; */
 }
 .product-price {
   font-size: var(--button-font-primary);
@@ -331,6 +350,22 @@ margin-right: 0px;
     display: flex;
    }
    .shopping-cart-items{flex-direction:column} 
+   .product-price img{
+       filter: contrast(0);
+width: 10px;
+    height: 10px;
+    /* padding: 0; */
+    transform: scale(1.5);
+    font-weight: bolder;
+    /* bottom: 0px; */
+    display: inline;
+    /* background-position: center top; */
+    /* left: 0; */
+    position: relative;
+    top: 1px;
+    padding: 0;
+    margin: 0 auto;
+}
 }
 @keyframes float-coin { 0%{transform:translatey(0)} 50%{transform:translatey(-3px)} 100%{transform:translatey(0)} }
 

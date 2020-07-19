@@ -117,4 +117,10 @@ export default {
 .register-container{box-shadow:0 9px 19px -7px rgba(0,0,0,0.603);width:100%}
 .register-content{border-radius:5px}
 }
+
+  
+  @media (max-width: 700px) {
+  .register-content{padding: 9%;}
+
+  }
 </style>

@@ -45,15 +45,17 @@
       <div class="aside-block">
           <h4>Super Sale</h4>
           <label class="checkbox-control">
-            <span class="">Show only sale item</span>
+            <span class="">Items on sale</span>
             <input type="checkbox" v-model="check" @change="updateSale">
             <div class="checkbox-box"></div>
           </label>
       </div>
       <div class="aside-block">
         <h4>Support</h4>
-        <p style="display:inline" v-if="JSON.stringify(currentUser) !== '{}'">{{currentUser.displayName}}, 
-        Get in touch with us for any queries at </p>
+        <p style="display:inline" v-if="JSON.stringify(currentUser) !== '{}'">{{currentUser.displayName}}, Get in touch with us for any queries at </p>
+        <p style="display:inline" v-else>Get in touch with us for any queries at </p>
+        
+        
         <a href="mailto: xotopolo@gmail.com">xotopolo@gmail.com</a>
       </div>
   </div>
@@ -199,10 +201,32 @@ p#remove-filter:hover {color: var(--text-hover)}
 .checkbox-control{grid-auto-flow:column;position:relative;display:inline-grid;place-items:center;grid-gap:10px;vertical-align:middle}
 .checkbox-box{width:22px;height:22px;border:2px solid var(--text-floogle);position:relative;cursor:pointer;float:left;top:0;margin-top:2.2px}
 
-@media (max-width: 600px) {
+
+@media(max-width:1420px) {
+.current-price {
+  display: block;
+}
+.checkbox-control {
+    grid-auto-flow: row;
+}
+}
+@media(min-width: 600px) and (max-width: 740px) { 
+
   
+#remove-filter {
+  display: none;
+}
+
+}
+
+
+@media (max-width: 600px) {
+    .current-price {
+  display: inline-block;
+}
+
   .expandable-sidebar {
-        margin-bottom: 25px;
+        margin-bottom: 35px;
   }
   
   .sidebar-mainitems-container {
@@ -222,6 +246,7 @@ input[type="checkbox"]:checked ~ .checkbox-box::before{width:16px;height:16px}
 .checkbox-box{width:24px;height:24px}
 .checkbox-control{grid-template-rows:18px 30px}
 #show-sidebar svg{width:45px;height:45px}
+
 #search{
 padding: 8px;
     font-size: 14px;
@@ -230,21 +255,6 @@ padding: 8px;
     display: inline-flex;
 }
 
-
-}
-
-@media(max-width:1420px) {
-.current-price {
-  display: block;
-}
-.checkbox-control {
-    grid-auto-flow: row;
-}
-}
-@media(min-width: 600px) and (max-width: 740px) { 
-#remove-filter {
-  display: none;
-}
 
 }
 

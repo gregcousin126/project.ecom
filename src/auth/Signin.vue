@@ -126,4 +126,9 @@ export default {
   .signin-container{box-shadow:0 9px 19px -7px rgba(0,0,0,0.603);width:100%}
   .signin-content{border-radius:5px}
   }
+  
+  @media (max-width: 700px) {
+  .signin-content{padding: 9%;}
+
+  }
 </style>

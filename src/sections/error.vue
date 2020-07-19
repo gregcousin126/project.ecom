@@ -165,7 +165,7 @@ html {
 @keyframes catHeadShake { 0%, 67%, 100% { transform: rotate(0deg); } 70%, 97% { transform: rotate(-10deg); } }
 @keyframes phoneLCD { 0%, 70%, 100% { background: black; } 72%, 93% { background: white; } }
 
-@media(max-width: 600px) { .error-page-container { width: 0px; height: 0px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(.5);; } }
+@media(max-width: 600px) { .error-page-container { width: 0px; height: 0px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(.4); } }
 
 </style>
 
