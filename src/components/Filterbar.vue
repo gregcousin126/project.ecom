@@ -105,12 +105,21 @@ export default {
     toggleFilterBar() {
       var ptag = document.getElementById('remove-filter');
       var expander = document.getElementById('expandable-sidebar');
+      var wrapper = document.getElementById('wrapper');
+            ptag.style.display = 'none';
+
       if (!expander.classList.contains('maxheight-expand-sidebar')) { 
         expander.classList.add("maxheight-expand-sidebar");
+        wrapper.classList.add("item-blur");
+
         ptag.style.display = 'none';
       } else { expander.classList.remove("maxheight-expand-sidebar");
        ptag.style.display = 'block';
+         wrapper.classList.remove("item-blur");
+       
       }
+      
+      
   
     },
     
@@ -172,7 +181,9 @@ input[type="checkbox"]:checked ~ .checkbox-box::before{content:'';position:absol
 .filter-btn{display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;place-content:center; background: none;}
 .filter-btn:active{background: var(--button-highlight);}
 .filter-btn:hover{background: var(--button-hover);}
-p#remove-filter:hover {color: var(--text-hover)}
+#remove-filter:hover {color: var(--text-hover)}
+/* #remove-filter {display: none;} */
+/* #remove-filter {display: none;} */
 
 #show-sidebar span svg *{transition:.15s cubic-bezier(0.35,0.35,0,1.0)}
 #show-sidebar span circle{will-change:transform}
@@ -203,6 +214,7 @@ p#remove-filter:hover {color: var(--text-hover)}
 
 
 @media(max-width:1420px) {
+  /* #remove-filter {display: block;} */
 .current-price {
   display: block;
 }
@@ -210,9 +222,9 @@ p#remove-filter:hover {color: var(--text-hover)}
     grid-auto-flow: row;
 }
 }
-@media(min-width: 600px) and (max-width: 740px) { 
 
-  
+
+@media(min-width: 600px) and (max-width: 740px) { 
 #remove-filter {
   display: none;
 }
@@ -221,12 +233,14 @@ p#remove-filter:hover {color: var(--text-hover)}
 
 
 @media (max-width: 600px) {
+  
+  .maxheight-expand-sidebar{max-height:1000px; margin-bottom: 40px;}
     .current-price {
   display: inline-block;
 }
 
   .expandable-sidebar {
-        margin-bottom: 35px;
+        /* margin-bottom: 35px; */
   }
   
   .sidebar-mainitems-container {

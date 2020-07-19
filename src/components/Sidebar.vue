@@ -217,9 +217,14 @@ border-radius: 33px;
 .nav-link{display:inline-flex;vertical-align:middle}
 .nav-item:hover{background:var(--bg-secondary);color:var(--text-secondary);filter:grayscale(0%) opacity(1)}
 .nav-link:hover{background:none}
-.navbar{overflow:hidden;width:none;-webkit-box-shadow:none;box-shadow:none}
+
 #down-triangle{margin-left:0}
-.navbar{width:100vw;overflow:scroll;height:3.5rem;border-bottom:4px solid rgba(0,0,0,0.1);overflow-y:hidden}
+.navbar{
+  overflow:hidden;width:none;-webkit-box-shadow:none;box-shadow:none;
+  bottom: 0;
+  width:100vw;overflow:scroll;height:3.5rem;border-top:4px solid rgba(0,0,0,0.1);overflow-y:hidden
+  
+  }
 .logo{display:none}
 .navbar-nav{flex-direction:row}
 .nav-link{justify-content:center}

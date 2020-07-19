@@ -8,7 +8,7 @@
 <script>
 import ProductList from '@/components/ProductList'
 import SideMainLayout from '@/layout/SideMainLayout'
-import Filterbar from '@/components/Filterbar'
+// import Filterbar from '@/components/Filterbar'
 
 export default {
   name: 'allproducts',

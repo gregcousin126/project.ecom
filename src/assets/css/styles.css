@@ -1,3 +1,4 @@
+
 body,
 html {
   padding: 0;
@@ -21,6 +22,10 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-primary)
+}
+
+body {
+  overflow: hidden
 }
 
 html {
@@ -123,11 +128,16 @@ textarea:focus {
 
 .content-wrapper {
   overflow: auto;
+  transition: all var(--page-transition-speed-primary) ease-out;
   padding: 2% 2%;
   min-height: 100vh;
   max-width: 100%;
   position: relative;
-  display: flow-root
+  display: flow-root;
+  -webkit-transition: all var(--page-transition-speed-primary) ease-out;
+  -moz-transition: all var(--page-transition-speed-primary) ease-out;
+  -ms-transition: all var(--page-transition-speed-primary) ease-out;
+  -o-transition: all var(--page-transition-speed-primary) ease-out;
 }
 
 .product-page {
@@ -139,11 +149,13 @@ textarea:focus {
 
 .sidebar-wrap {
   width: 20%;
+      display: inline-block;
 
+float: left;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  padding-right: 40px;
+padding: 26px 40px;
   border-right: 1px solid var(--text-floogle)
 }
 
@@ -311,7 +323,7 @@ Button {
 
 @media(max-width:1420px) {
   .sidebar-wrap {
-    padding-right: 20px
+    padding: 26px 20px;
   }
 }
 
@@ -325,7 +337,7 @@ Button {
 
 @media(max-width:600px) {
   .content-wrapper {
-    padding: 80px 15px
+    padding: 110px 15px
   }
 
   .product-list ul {
@@ -333,16 +345,16 @@ Button {
   }
 
   .sidebar-wrap {
-    width: 100%;
+width: 100%;
     border-bottom: 4px solid rgba(0,0,0,0.1);
     position: fixed;
     right: 0;
     left: 0;
+    /* display: flex; */
     padding: 15px;
     z-index: 3;
     background: var(--bg-primary);
-    top: 55px;
-    display: contents;
+    top: 0;
   }
 
   .aside-block {
@@ -489,7 +501,10 @@ input[type=range].slider:focus::-ms-fill-upper {
 
 .card-enter-active {
   -webkit-transition: all var(--page-transition-speed-primary) ease-out;
-  transition: all var(--page-transition-speed-primary) ease-out
+  transition: all var(--page-transition-speed-primary) ease-out;
+  -moz-transition: all var(--page-transition-speed-primary) ease-out;
+  -ms-transition: all var(--page-transition-speed-primary) ease-out;
+  -o-transition: all var(--page-transition-speed-primary) ease-out;
 }
 
 .card-enter,
@@ -632,4 +647,34 @@ input[type=range].slider:focus::-ms-fill-upper {
 
 input, select {
   font-size: 100%;
+}
+
+.typewriter {
+  overflow: hidden;
+  /*border-right: .15em solid orange;
+  */white-space: nowrap;
+  margin: 20px auto;
+  /*letter-spacing: .15em;
+  */animation:  typing 1s steps(10, end), blink-caret .5s step-end infinite;
+  -webkit-animation: typing 1s steps(10, end),;
+}
+
+
+@keyframes typing {
+  from { width: 0;  border-right: .2em solid orange; border-right-width: 5px; }
+  to { width: 30%;border-color: transparent;  border-right: .2em solid orange; border-right-width: 5px;  }
+  
+  
+}
+
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: orange; }
+}
+
+
+.item-blur {
+  filter: blur(2px) grayscale(.8);
+  -webkit-filter: blur(2px) grayscale(.8);
 }

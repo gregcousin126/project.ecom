@@ -7,12 +7,12 @@
       <div class="signin-container card">
         <div class="image-signin">
           <h1 class="signin-banner">
-            Welcome To
-            <span class="colorspan">Xotpolo</span>
+            Welcome To <br>
+            <p class="colorspan">Xotpolo</p>
           </h1>
         </div>
         <div class="signin-content">
-          <h1>Sign in</h1>
+          <h1 class="typewriter">Sign in</h1>
           <form @submit.prevent="signIn">
             <input type="email" class="inputbox with-transform" v-model="email" placeholder="Type your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Do you have an email 📧'"/>
             <input type="password" class="inputbox with-transform" v-model="password" placeholder="Pick your password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your data is safe 🔒'"/>
@@ -98,6 +98,7 @@ font-size: 22px;
     /* text-shadow: -4px 3px black; */
     /* color: #717171; */
     /* color: #7d7d7d; */
+    /* width: 120px; */
     color: #505050;
     /* ont-family:'Niconne',cursive;font-size:40px;text-align:center;color:#c446c9 */
     

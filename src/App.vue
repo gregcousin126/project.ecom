@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <Sidebar/>
+    <div class="sidebar-wrap">
+      <Filterbar/>
+    </div>
     <!-- <Filterbar/> -->
       <div class="content-wrapper" id="wrapper">
         <router-view/>
@@ -11,13 +14,13 @@
 
 <script>
 import Sidebar from '@/components/Sidebar'
-// import Filterbar from '@/components/Filterbar'
+import Filterbar from '@/components/Filterbar'
 import Footer from '@/components/Footer'
 
 export default {
   name: 'App',
   components: {
-    // Filterbar,
+    Filterbar,
     Sidebar,
     Footer
   }

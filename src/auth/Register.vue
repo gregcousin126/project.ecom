@@ -7,7 +7,7 @@
           <h1 class="register-banner">Welcome To<span class="colorspan">Xotpolo</span></h1>
         </div>
         <div class="register-content">
-          <h1>Register</h1>
+          <h1 class="typewriter">Register</h1>
           <form @submit.prevent="register">
             <input type="displayName" class="inputbox with-transform" v-model="displayName" placeholder="Hi 🖐️, whats your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'We need your name 😉'"/>
             <input type="email" class="inputbox with-transform" v-model="email" placeholder="Type your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Do you have an email 📧'"/>
