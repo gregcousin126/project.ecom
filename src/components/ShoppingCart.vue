@@ -360,10 +360,10 @@ margin-right: 17px;
    }
    .shopping-cart-items{flex-direction:column} 
    
- .cart-detail img {
+ /* .cart-detail img {
     width: 66px;
     height: 100%;
-}
+} */
    
    
    .product-price img{
