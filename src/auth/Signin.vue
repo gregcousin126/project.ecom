@@ -118,7 +118,25 @@ font-size: 22px;
     
     }
   .fp:hover{color:#c446c9}
-  .btn-signin{width:95px; height: 40px; font-size:12.5px;margin:0 4px 20px;display:inline-flex;place-content:center;border:none;background:-webkit-gradient(linear,left top,right top,from(#4568dc),to(#b06ab3));background:linear-gradient(to right,#4568dc,#b06ab3);border-radius:4px;-webkit-transition:.2s;transition:.2s}
+  .btn-signin{
+    /* width:95px; height: 40px; font-size:12.5px;margin:0 4px 20px;display:inline-flex;place-content:center;border:none;background:-webkit-gradient(linear,left top,right top,from(#4568dc),to(#b06ab3));background:linear-gradient(to right,#4568dc,#b06ab3);border-radius:4px;-webkit-transition:.2s;transition:.2s */
+    width: 95px;
+    height: 40px;
+    font-size: 12.5px;
+    margin: 0 4px 20px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    place-content: center;
+    filter: grayscale(.3);
+    border: none;
+    background: var(--button-highlight);
+    /* background: -webkit-gradient(linear,left top, right top,from(#4568dc),to(#b06ab3)); */
+    /* background: linear-gradient(to right,#4568dc,#b06ab3); */
+    border-radius: 4px;
+    -webkit-transition: .2s;
+    transition: .2s;
+    }
   .btn-signin:hover{transform:scale(1.1);letter-spacing:1px}
   .btn-signin{text-decoration:none;color:#fff}
   .cardcontainer{animation:float var(--animation-speed-primary-slower) ease-in-out infinite}
