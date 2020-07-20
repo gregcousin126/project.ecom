@@ -16,7 +16,7 @@
       <div id="each-store" v-for="store in stores" :key="store.store_id" >
       <h1  id="store-title" class="list-items-title"><img :src='`./stores/static/${store.store_name.toLowerCase()}/logo.svg`' class="company-svg">{{store.store_name}}<hr></h1>
       <ul id="store-list">
-          <li v-for="product in products" :key="product.product_id" :track-by="product.product_id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ] " tabindex="0" v-show="category === product.category || category === 'allproducts'">
+          <li v-for="product in products" :key="product.product_id" :track-by="product.product_id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ] " tabindex="0" v-show="category === product.category || category === 'all-products'">
             <div v-if="store.store_id == product.store_id" id="main-list">
               <span class="sale-banner" v-if="product.sale">Sale</span>
               <span class="out-of-stock-banner" v-show="!productInStock(product)">Out of Stock</span>
@@ -106,7 +106,7 @@ ul:empty{display:none}
 .list-items-title{text-align:left;margin-bottom:20px;font-size:19px;font-weight:700;top:-30px;margin-top:-10px;line-height:59px;font-weight:900;color:var(--text-primary);font-family:Mellody}
 .overlay{position:absolute;top:0;padding:8%;bottom:0;border-radius:2px;left:0;right:0;max-height:228px;height:228px;width:100%;opacity:0;-webkit-transition:var(--animation-speed-primary-faster) ease-in-out;transition:var(--animation-speed-primary-faster) ease-in-out;background-color:rgba(0,0,39,0.5)}
 .product-list-container:hover .overlay{opacity:1}
-.text{color:#fff;font-size:15px;font-family:Bungee;margin:0 auto;display:inline-flex;align-items:center;justify-content:center;position:relative;align-content:center;height:100%;text-align:center}
+.text{color:#fff;font-size:15px;font-family:Bungee;margin:0 auto;display:inline-flex;align-items:center;justify-content:center;position:relative;align-content:center;height:100%;text-align:center; width: 100%;}
 .sale-banner{border-radius:2px 0;background:#e82319;color:#fff;font-family:sans-serif;position:absolute;padding:4px 10px 5px;text-transform:uppercase;left:0;top:0;font-size:12px;font-weight:700;z-index:1}
 .out-of-stock-banner{border-radius:2px 0;background:#505050;color:#f9f9f9;font-family:sans-serif;position:absolute;padding:4px 10px 5px;text-transform:uppercase;left:0;top:0;font-size:12px;font-weight:700;z-index:1}
 .add-to-cart-btn{

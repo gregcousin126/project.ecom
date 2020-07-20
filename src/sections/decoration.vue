@@ -1,9 +1,6 @@
 <template>
   <section class="decoration">
-    
-    <Banner/>
-    
-    
+    <!-- <Banner/> -->
     <h1>Decoration</h1>
        <hr>
     <ProductList category="decoration"/>
@@ -11,6 +8,7 @@
 </template>
 
 <script>
+
 import ProductList from '@/components/ProductList'
 import SideMainLayout from '@/layout/SideMainLayout'
 import Banner from '@/layout/Banner'

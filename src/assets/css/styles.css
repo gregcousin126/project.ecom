@@ -1,4 +1,19 @@
 
+/* li:empty {
+  display: none;
+} */
+
+div:empty, li:empty {
+  display: none;
+}
+
+
+
+
+
+
+
+
 body,
 html {
   padding: 0;

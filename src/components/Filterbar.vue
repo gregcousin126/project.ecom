@@ -1,11 +1,6 @@
 <template>
   <aside id="sidebar-info">
     <div class="sidebar-mainitems-container">
-      
-      
-    
-
-
     <div id="search">
     <i class="fas fa-search" id="search-icon"></i>
     <form>

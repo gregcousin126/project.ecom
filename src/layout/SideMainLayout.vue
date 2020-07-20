@@ -4,7 +4,9 @@
       <Filterbar/>
     </div> -->
     <div class="product-list-wrap">
-      <transition name="fade"><router-view /></transition>
+      <transition name="fade">
+        <router-view />
+      </transition>
     </div>
   </div>
 </template>

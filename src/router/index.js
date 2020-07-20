@@ -6,6 +6,7 @@ import cart from '@/sections/cart'
 import decoration from '@/sections/decoration'
 import ErrorPage from '@/sections/error'
 import furniture from '@/sections/furniture'
+import FeatureList from '@/components/FeatureList'
 import home from '@/sections/home'
 import wall from '@/sections/wall'
 import Vue from 'vue'
@@ -24,7 +25,8 @@ export default new Router({
       path: '/',
       component: SideMainLayout,
       children: [
-        { path: '/', component: home, name : 'home' },
+        { path: '/', component: FeatureList, name : 'FeatureList' },
+        { path: '/home', component: home, name : 'home' },
         { path: '/furniture', name: 'furniture', component: furniture,  meta: { title: 'Nested - furniture Page' }},
         { path: '/wall', name: 'wall', component: wall,  meta: { title: 'Nested - wall Page' }},
         { path: '/decoration', name: 'decoration', component: decoration, meta: { title: 'Nested - decoration Page' } },
@@ -39,7 +41,7 @@ export default new Router({
     { path: '/register', component: Register },
     { path: '/signin', component: Signin },
     { path: '/cart', name: 'cart', component: cart },
-    {path: '*', redirect: '/error',  },
+    {path: '/*', redirect: '/error',  },
     {path: '/error', component: ErrorPage}
     
     
