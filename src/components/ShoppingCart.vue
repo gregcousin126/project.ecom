@@ -360,23 +360,19 @@ margin-right: 17px;
    }
    .shopping-cart-items{flex-direction:column} 
    
- /* .cart-detail img {
+ .cart-detail img {
     width: 66px;
     height: 100%;
-} */
+}
    
    
    .product-price img{
     filter: contrast(0);
     width: 10px;
     height: 10px;
-    /* padding: 0; */
     transform: scale(1.5);
     font-weight: bolder;
-    /* bottom: 0px; */
     display: inline;
-    /* background-position: center top; */
-    /* left: 0; */
     position: relative;
     top: 1px;
     padding: 0;

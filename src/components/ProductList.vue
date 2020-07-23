@@ -16,7 +16,8 @@
       <div id="each-store" v-for="store in stores" :key="store.store_id" >
       <h1  id="store-title" class="list-items-title"><img :src='`./stores/static/${store.store_name.toLowerCase()}/logo.svg`' class="company-svg">{{store.store_name}}<hr></h1>
       <ul id="store-list">
-          <li v-for="product in products" :key="product.product_id" :track-by="product.product_id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ] " tabindex="0" v-show="category === product.category || category === 'all-products'">
+        <!-- :key="product.product_id"  -->
+          <li v-for="product in products" :track-by="product.product_id" class="product-card" :class="[ !productInStock(product) ? 'out-of-stock' : '' ] " tabindex="0" v-show="category === product.category || category === 'all-products'">
             <div v-if="store.store_id == product.store_id" id="main-list">
               <span class="sale-banner" v-if="product.sale">Sale</span>
               <span class="out-of-stock-banner" v-show="!productInStock(product)">Out of Stock</span>

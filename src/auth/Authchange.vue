@@ -61,6 +61,7 @@ export default {
       updateEmail () {this.currentUser.updateEmail(this.email)},
       updatePassword () {this.currentUser.updatePassword(this.newPassword).then(() => { this.newPassword = null }).catch(error => alert('🤕' + error.message))}
     },
+    
     computed: {
     ...mapGetters({ currentUser : 'currentUser', }),
     },

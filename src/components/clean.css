@@ -1,0 +1,119 @@
+export default {
+  name: 'Filterbar',
+  data() {
+    return {
+      content: `click-this`,
+      input_active: null,
+      min: 0,
+      max: 2000,
+      check: this.checked,
+      displayName: null,
+      colors: [ "#ff3860", "#2674fa", "#6ca0fc", "#fa8142", "#ff1443", "#f96a1f", "#fb9865", "#09c372", "#ff5c7c", "#07a15e", "#498afb", "#0be586", "#7d4bc3", "#a481d5", "#ffdd57", "#9166cc", "#ffd633", "#ffe47a", "#ff4088", "#ff1c72", "#ff649e", ],
+    };
+  },
+  computed: { 
+    form_control: function() {
+        var searchbar = document.getElementById('search-arrow')
+			if (this.input_active == false) {
+			}
+			if (this.input_active == true) {
+      searchbar.classList.remove("remove-search-arrow");
+      searchbar.classList.add("add-search-arrow");
+			}
+
+		},
+    pricerange() { return this.$store.state.highprice },
+    checked() { return this.$store.state.sale;},
+    products() {
+      var product_arr = []; 
+      this.$store.state.products.forEach((item) => {product_arr.push(item.category)});
+      var product_arrayFiltered = product_arr.filter((v, i, a) => a.indexOf(v) === i); 
+      return product_arrayFiltered; 
+    },
+    ...mapGetters({currentUser : 'currentUser'}),
+  },
+  methods: {
+    onFocus: function(event) {
+	    	    this.input_active = true;
+		},
+		onBlur: function(event) {
+	    	    this.input_active = false;
+		},
+ expandFilterBar() {
+    var expander = document.getElementById('expandable-sidebar');
+     
+    if (!expander.classList.contains('maxheight-expand-sidebar')) { 
+        expander.classList.add("maxheight-expand-sidebar");
+   
+   
+           
+       
+      } 
+ },
+ compressFilterBar() {
+    var expander = document.getElementById('expandable-sidebar');
+    if (expander.classList.contains('maxheight-expand-sidebar')) { 
+        expander.classList.remove("maxheight-expand-sidebar");
+      } 
+ },
+    toggleFilterArrowss() {
+var searchbar = document.getElementById('search-arrow')
+var expander = document.getElementById('expandable-sidebar');
+    if (!expander.classList.contains('maxheight-expand-sidebar')) { 
+      } else if (expander.classList.contains('maxheight-expand-sidebar')) { 
+            this.compressFilterBar(); 
+             searchbar.classList.remove("add-search-arrow");
+             searchbar.classList.add("remove-search-arrow");
+      }
+    },
+    toggleFilter () {
+      var ptag = document.getElementById('remove-label');
+      var expander = document.getElementById('expandable-sidebar');
+      var wrapper = document.getElementById('wrapper');
+      ptag.style.display = 'none';
+      if (!expander.classList.contains('maxheight-expand-sidebar')) { 
+        wrapper.classList.add("item-blur");
+        ptag.style.display = 'none';
+      } else if (expander.classList.contains('maxheight-expand-sidebar')) { 
+       ptag.style.display = 'block';
+       wrapper.classList.remove("item-blur");
+      }
+    },
+    
+    toggleFilterBar () {
+      this.expandFilterBar();
+      this.toggleFilterArrows();
+      this.toggleFilter();
+    },
+    
+    
+    toggleSimpleFilters () {
+      var expander = document.getElementById('expandable-sidebar');
+      if (!expander.classList.contains('maxheight-expand-sidebar')) { 
+        expander.classList.add("maxheight-expand-sidebar");
+      } else if (expander.classList.contains('maxheight-expand-sidebar')) { 
+        expander.classList.remove("maxheight-expand-sidebar");
+      }
+    },
+    updateHighPrice($event) { this.$store.commit('setHighPrice', $event.target.value) },
+    searchFilter($event) { this.$store.dispatch('setSearchName', $event.target.value) },
+    updateSale() { this.$store.commit('toggleSale');},
+  },
+  
+  
+  mounted() {
+    const body = document.querySelector('body');
+    const searchBtn = document.querySelector('#search');
+    const searchInput = document.querySelector('#search-input');
+    let active = false;
+    body.addEventListener('click', (e) => {
+      if(e.target.product_id === 'search' || e.target.product_id === 'search-input' || e.target.product_id === 'search-icon') {
+        if(!active) {
+         searchBtn.classList.add('active');
+         searchInput.classList.add('active');
+         active = true;
+        }
+      } 
+    });
+  }
+}

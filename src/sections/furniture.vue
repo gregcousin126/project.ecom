@@ -1,6 +1,10 @@
 <template>
   <section class="furniture">
     <h1>Furniture</h1>
+    
+
+    
+    
        <hr class="hr-categlory">
     <ProductList category="furniture"/>
   </section>

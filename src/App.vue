@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Sidebar/>
-    <div class="sidebar-wrap">
+    <div class="sidebar-wrap" id="sidebar-wrap">
       <Filterbar/>
     </div>
     <!-- <Filterbar/> -->
@@ -31,8 +31,4 @@ export default {
 @import './assets/css/styles.css'; 
 @import './assets/css/loading.css'; 
 @import './assets/css/fonts.css';
-
-
-
-
 </style>

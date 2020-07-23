@@ -20,7 +20,6 @@ export default new Router({
 
   mode: 'history',
   routes: [
-    
     {
       path: '/',
       component: SideMainLayout,
@@ -41,12 +40,13 @@ export default new Router({
     { path: '/register', component: Register },
     { path: '/signin', component: Signin },
     { path: '/cart', name: 'cart', component: cart },
-    {path: '/*', redirect: '/error',  },
-    {path: '/error', component: ErrorPage}
+    // { path: '*', redirect: '/error',  },
+    { path: '*', component: ErrorPage}
     
     
 
   ],
+  
    scrollBehavior: (to, from, savedPosition) => {
     if (savedPosition) {
       return savedPosition;

@@ -13,7 +13,7 @@
         "sale": true,
         "img": "sofa2.jpg",
         "inventory": 3,
-        "product_data": {}
+        "product_data": { }
       },
       {
         "feature" : true,

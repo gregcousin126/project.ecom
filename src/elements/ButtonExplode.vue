@@ -112,7 +112,7 @@ export default {
     background-color: #4487ed;
     width: 100%;
     height: 4em;
-    font-size: ;
+    /* font-size: ; */
     border: 0;
     outline: 0;
     padding: 0;

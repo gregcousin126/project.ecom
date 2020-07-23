@@ -7,7 +7,7 @@
 
 <script>
 import ProductList from '@/components/ProductList'
-import FeatureList from '@/components/FeatureList'
+// import FeatureList from '@/components/FeatureList'
 import SideMainLayout from '@/layout/SideMainLayout'
 // import Filterbar from '@/components/Filterbar'
 
@@ -15,7 +15,7 @@ export default {
   name: 'all-products',
   components: {
     ProductList,
-    FeatureList,
+    // FeatureList,
     SideMainLayout
   }
 }

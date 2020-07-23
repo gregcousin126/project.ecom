@@ -7,7 +7,6 @@ export default {
 		state.products = products;
 	},
 	
-	
 	setStores(state, stores) { 
 		state.stores = stores;
 	},

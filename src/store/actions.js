@@ -91,7 +91,6 @@ export default {
 	},
 
 	firebaseShoppingCart(context) {
-		
     if(context.state.user.displayName !== null && context.state.user.displayName !== '') {
       return ref.child('users').child(context.state.user.displayName).child('cart').once('value').then((cart) => {
         var fireBaseUserCart = cart.val();
