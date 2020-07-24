@@ -346,7 +346,24 @@ padding: 20px;
 .current-price{display:inline-block}
 .sidebar-mainitems-container{margin:7px 11px;display:flex;place-content:space-between;flex-direction:row-reverse}
 .sidebar-button{font-size:14px;margin:0 0 0;width:100%;float:left;border-radius:30px;padding:0}
-.filter-gif{display:var(--display-primary)}
+.filter-gif {
+-webkit-box-flex: 50%;
+    -ms-flex: 50%;
+    /* flex: 50%; */
+    display: var(--display-primary);
+    width: 56vw;
+    position: relative;
+    border-radius: 27px;
+    margin: 0px auto;
+    -webkit-filter: var(--image-filter);
+    filter: var(--image-filter);
+    height: 45vw;
+    background: url(/stores/img/pick-dress.fa3d91e.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+}
+/* .filter-gif{display:var(--display-primary)} */
 input[type=checkbox]:checked~.checkbox-box::before{width:16px;height:16px}
 .checkbox-box{width:24px;height:24px}
 .checkbox-control{grid-template-rows:18px 30px}

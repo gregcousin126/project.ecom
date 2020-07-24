@@ -214,7 +214,7 @@ main{margin-left:4rem;padding:1rem}
 .navbar{z-index:2;position:fixed;background-color:var(--bg-primary);transition:width var(--transition-speed-primary-faster) ease-out;overflow:scroll;width:100%;-webkit-box-shadow:inset -15px 0 16px -20px rgba(0,0,0,0.68);-moz-box-shadow:inset -15px 0 16px -20px rgba(0,0,0,0.68);box-shadow:inset -15px 0 16px -20px rgba(0,0,0,0.68)}
 .cart-link__count{
 border-radius: 4px;
-    width: 16px;
+    width: 17px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: block;

@@ -104,7 +104,7 @@ export default {
 
 .favorite-svg {
 width: 23px;
-    z-index: 999999;
+    z-index: 0;
     top: 0;
     padding: 2px;
     margin: 4px;
