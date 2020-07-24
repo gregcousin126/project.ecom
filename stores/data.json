@@ -1,6 +1,6 @@
 [
   {
-    "store_data": [{"store_name": "Johnson", "store_id": 2222, "feature_caption" : "where the plants grow"}],
+    "store_data": [{"store_name": "Johnson", "store_id": 2222, "feature_caption" : "Where the plants grow"}],
     "store_items": [
       {
         "feature" : false,
@@ -84,7 +84,7 @@
   },
   
   {
-    "store_data": [{"store_name": "Mark", "store_id": 8888, "feature_caption" : "gift to the ones"}],
+    "store_data": [{"store_name": "Mark", "store_id": 8888, "feature_caption" : "Gift to the ones"}],
     "store_items": [
       {
         "feature" : false,

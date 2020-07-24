@@ -211,7 +211,16 @@ ul{list-style:none}
 .innerdrop ul ul li{float:none;position:relative}
 #down-triangle{float:right;width:0;height:0;margin-left:20px;margin-top:5px;border-top:10px solid #2ecc71;border-left:10px solid transparent;border-right:10px solid transparent}
 main{margin-left:4rem;padding:1rem}
-.navbar{z-index:2;position:fixed;background-color:var(--bg-primary);transition:width var(--transition-speed-primary-faster) ease-out;overflow:scroll;width:100%;-webkit-box-shadow:inset -15px 0 16px -20px rgba(0,0,0,0.68);-moz-box-shadow:inset -15px 0 16px -20px rgba(0,0,0,0.68);box-shadow:inset -15px 0 16px -20px rgba(0,0,0,0.68)}
+.navbar{
+  
+  z-index:11;
+position:fixed;
+background-color:var(--bg-primary);
+transition:width var(--transition-speed-primary-faster) ease-out;
+overflow:scroll;width:100%;
+-webkit-box-shadow:inset -15px 0 16px -20px rgba(0,0,0,0.68);
+-moz-box-shadow:inset -15px 0 16px -20px rgba(0,0,0,0.68);
+box-shadow:inset -15px 0 16px -20px rgba(0,0,0,0.68)}
 .cart-link__count{
 border-radius: 4px;
     width: 17px;
@@ -220,7 +229,7 @@ border-radius: 4px;
     display: block;
     padding: 0px;
     /* padding: 6px; */
-    padding: 0px;
+    /* padding: 0px; */
     height: 17px;
     /* -webkit-box-pack: center; */
     -ms-flex-pack: center;
@@ -241,7 +250,7 @@ border-radius: 4px;
 .navbar-nav{width:100%;list-style:none;padding:0;margin:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:100%}
 .nav-item{width:100%}
 /* .nav-item:last-child{margin-top:auto} */
-.nav-link{display:flex;align-items:center;height:3.5rem;color:var(--text-primary);text-decoration:none;filter:grayscale(100%) opacity(0.9);transition:var(--transition-speed-primary-faster)}
+.nav-link{display:flex;align-items:center;height:4rem;color:var(--text-primary);text-decoration:none;filter:grayscale(100%) opacity(1);transition:var(--transition-speed-primary-faster)}
 .nav-link:hover{filter:grayscale(0%) opacity(1);background:var(--bg-secondary);color:var(--text-secondary)}
 .link-text{display:none;margin-left:1rem;font-family:'Overpass'}
 .nav-link svg,.nav-link img{
@@ -291,7 +300,7 @@ margin-bottom:2px;
 .navbar{
   overflow:hidden;width:none;-webkit-box-shadow:none;box-shadow:none;
   bottom: 0;
-  width:100vw;overflow:scroll;height:3.5rem;border-top:4px solid rgba(0,0,0,0.1);overflow-y:hidden
+  width:100vw;overflow:scroll;height:4rem;border-top:4px solid rgba(0,0,0,0.1);overflow-y:hidden
   
   }
 .logo{display:none}

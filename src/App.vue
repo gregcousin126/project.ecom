@@ -27,8 +27,8 @@ export default {
 }
 </script>
 <style> 
-@import './assets/css/root.css'; 
-@import './assets/css/styles.css'; 
-@import './assets/css/loading.css'; 
-@import './assets/css/fonts.css';
+  @import './assets/css/root.css'; 
+  @import './assets/css/styles.css'; 
+  @import './assets/css/loading.css'; 
+  @import './assets/css/fonts.css';
 </style>

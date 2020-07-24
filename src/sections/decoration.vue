@@ -1,8 +1,10 @@
 <template>
   <section class="decoration">
-    <!-- <Banner/> -->
-    <h1>Decoration</h1>
-       <hr>
+    <div class="categlory-title-container">
+      <h1 class="categlory-title-tag">Decoration</h1>
+    </div>
+    <hr class="hr-categlory">
+    
     <ProductList category="decoration"/>
   </section>
 </template>

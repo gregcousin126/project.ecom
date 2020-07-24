@@ -38,8 +38,12 @@
     <div class="aside-block">
       <label for="pricerange">Maximum Price: <span class="current-price">${{ pricerange }}</span></label>
       <input class="slider" id="pricerange" tabindex="0" :value="pricerange" type="range" :min="min" :max="max" step="0.1" @input="updateHighPrice($event)" />
+      <div class="min-max">
+        
       <span class="min">${{ min }}</span>
       <span class="max">${{ max }}</span>
+        
+      </div>
    </div>
       <div class="aside-block">
           <h4>Super Sale</h4>
@@ -61,7 +65,7 @@
 <script>
 import store from '@/store/index'
 import {mapState, mapGetters, mapActions} from 'vuex'
-
+import utils from '@/utils'
 
 export default {
 	name: 'Filterbar',
@@ -73,7 +77,9 @@ export default {
       max: 2000,
       check: this.checked,
       displayName: null,
-      tagColors: [ "#ff3860", "#2674fa", "#6ca0fc", "#fa8142", "#ff1443", "#f96a1f", "#fb9865", "#09c372", "#ff5c7c", "#07a15e", "#498afb", "#0be586", "#7d4bc3", "#a481d5", "#ffdd57", "#9166cc", "#ffd633", "#ffe47a", "#ff4088", "#ff1c72", "#ff649e", ],
+      tagColors: utils.tagColors()
+      
+      
     };
 	},
 	computed: {
@@ -84,8 +90,6 @@ export default {
           
         }
 				if (this.input_active == true) {
-					// searchbar.classList.remove("remove-search-arrow");
-					// searchbar.classList.add("add-search-arrow");
 				}
 			},
 			
@@ -124,11 +128,7 @@ export default {
 			var searchbar = document.getElementById('search-arrow')
 			var expander = document.getElementById('expandable-sidebar');
 			if (!expander.classList.contains('maxheight-expand-sidebar')) {
-        // searchbar.classList.remove("add-search-arrow");
-				// searchbar.classList.add("remove-search-arrow");
-        // alert('hello')
 			} else if (expander.classList.contains('maxheight-expand-sidebar')) {
-				// this.compressFilterBar();
 				searchbar.classList.remove("remove-search-arrow");
 				searchbar.classList.add("add-search-arrow");
 			}
@@ -144,15 +144,11 @@ export default {
 		},
 		
 		toggleFilter() {
-			// var ptag = document.getElementById('remove-label');
 			var expander = document.getElementById('expandable-sidebar');
 			var wrapper = document.getElementById('wrapper');
-			// ptag.style.display = 'none';
 			if (!expander.classList.contains('maxheight-expand-sidebar')) {
 				wrapper.classList.add("item-blur");
-				// ptag.style.display = 'none';
 			} else if (expander.classList.contains('maxheight-expand-sidebar')) {
-				// ptag.style.display = 'block';
 				wrapper.classList.remove("item-blur");
 			}
 		},
@@ -177,8 +173,6 @@ export default {
         
 			} else if (expander.classList.contains('maxheight-expand-sidebar')) {
 				expander.classList.remove("maxheight-expand-sidebar");
-                // searchbar.classList.remove("add-search-arrow");
-				// searchbar.classList.add("remove-search-arrow");
         
 			}
 		},
@@ -219,11 +213,13 @@ margin-left:-150px;
 .filterbar-buttons{display:flex;width:100%;}
 
 .show-sidebar{
-  
-  /* margin:10px 0; */
 
 
 border:2px solid;width:100%}
+.min-max {
+/* margin-top: -px; */
+    margin-bottom: 20px;
+}
 .input-group{font-size:17px;display:block;width:100%;max-width:100%;height:40px;border:0;background-color:var(--bg-low-opacity);border-radius:2px;position:relative;color:#a7b4c1;-webkit-transition:opacity .2s ease-in-out,-webkit-filter .2s ease-in-out,-webkit-box-shadow .1s ease-in-out;transition:opacity .2s ease-in-out,-webkit-filter .2s ease-in-out,-webkit-box-shadow .1s ease-in-out}
 .input-group input{
 	
@@ -302,10 +298,15 @@ fill: var(--text-primary);
 .show-sidebar button:checked~span circle{opacity:0}
 .show-sidebar button:checked~span .fltr-line1{transform:rotate(45deg) translateY(5.5px)}
 .show-sidebar button:checked~span .fltr-line2{transform:rotate(-45deg) translateY(-4.5px)}
-.expandable-sidebar{width:100%;overflow:scroll;transition:all var(--transition-speed-secondary-slower) ease-in-out;max-height:0}
-.maxheight-expand-sidebar{max-height:1000px}
+.expandable-sidebar{
+  /* overflow-wrap: normal; */
+  overflow-y:scroll;
+  overflow-x:hidden;
+  /* overflow-y:none; */
+  width:100%;transition:all var(--transition-speed-secondary-slower) ease-in-out;max-height:0}
+.maxheight-expand-sidebar{max-height:700px}
 .categlory-tag{display:inline-block;border-radius:3px;padding:.4em .8em;border-radius:2px;color:var(--tag-text-color);font-weight:600;margin:.25em .2em}
-.categlory-tag:hover{background:var(--tag-bg-hover)}
+/* .categlory-tag:hover{background:var(--tag-bg-hover)} */
 .categlory-tag-container{display:-webkit-box;display:-ms-flexbox;width:100%;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-wrap:wrap;margin:0;padding:0;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .aside-block{padding:30px 0;border-bottom:1px solid var(--text-floogle)}
 .min{float:left}
@@ -325,6 +326,11 @@ fill: var(--text-primary);
 #remove-label{display:none}
 }
 @media (max-width:600px){
+  
+  /* .expandable-sidebar{
+    overflow:scroll;
+    } */
+
 	
 	.filter-btn-filter{
 		
@@ -339,7 +345,9 @@ fill: var(--text-primary);
 .show-sidebar{border:none}
 #remove-label{display:none}
 .sidebar-button{display:none}
-.maxheight-expand-sidebar{max-height:1000px;margin-bottom:40px; 
+.maxheight-expand-sidebar{
+  max-height:700px;
+  /* margin-bottom:40px;  */
 
 padding: 20px;
 }

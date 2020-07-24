@@ -1,10 +1,10 @@
 <template>
-  <section class="wall">
+  <section class="men">
     <div class="categlory-title-container">
-      <h1 class="categlory-title-tag">Walls</h1>
+      <h1 class="categlory-title-tag">Men</h1>
     </div>
     <hr class="hr-categlory">
-    <ProductList category="wall"/>
+    <ProductList category="men"/>
   </section>
 </template>
 

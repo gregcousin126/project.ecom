@@ -1,11 +1,9 @@
 <template>
   <section class="furniture">
-    <h1>Furniture</h1>
-    
-
-    
-    
-       <hr class="hr-categlory">
+    <div class="categlory-title-container">
+      <h1 class="categlory-title-tag">Furniture</h1>
+    </div>
+    <hr class="hr-categlory">
     <ProductList category="furniture"/>
   </section>
 </template>
@@ -26,10 +24,4 @@ export default {
 </script>
 
 <style>
-
-.hr-categlory {
-    width: 105px;
-    height: 8px;
-    opacity: .8;
-}
 </style>

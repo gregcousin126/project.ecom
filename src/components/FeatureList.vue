@@ -13,11 +13,12 @@
       <transition-group name="card" tag="div" v-else>
   <div id="each-store-feature" v-for="store in stores" :key="store.store_id" >
       <a class="see-more-caption-feature">see more</a>
-      <h1  class="list-items-title-feature">
-        {{store.store_name}}
+      <h1  class="store-caption-feature">
+        {{store.feature_caption}}
+        
       <hr>
       </h1>
-      <h2 class="store-caption-feature">{{store.feature_caption}}</h2>
+      <h2 class="store-title-feature">{{store.store_name}}</h2>
       <ul id="store-list-feature">
           <li v-for="product in products"  :track-by="product.product_id" class="product-card-feature" :class="[ !productInStock(product) ? 'out-of-stock' : '' ] " tabindex="0">
             <div v-if="store.store_id == product.store_id && product.feature == true">
@@ -108,14 +109,15 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
+img {
+  /* z-index: 10; */
+}
 
 .favorite-svg {
 width: 23px;
-    /* height: 20px; */
-    z-index: 999999;
-    /* color: white; */
+    /* z-index: 10; */
     top: 0;
+    height: 23px;
     padding: 2px;
     margin: 4px;
     right: 0;
@@ -130,7 +132,7 @@ div:empty, li:empty {
   display: none;
 }
 
-.store-caption-feature {
+.store-title-feature {
     font-size: 12px;
     display: table-footer-group;
     position: absolute;
@@ -142,13 +144,14 @@ div:empty, li:empty {
 }
 
 .see-more-caption-feature {
-  margin-top: 12px;
-  cursor: pointer;
-  text-transform: capitalize;
-  color: var(--text-feature-primary);
-  font-size: 10px;
-  float: right;
-  font-family: lato;
+    margin-top: 6px;
+    cursor: pointer;
+    text-transform: capitalize;
+    color: var(--text-feature-primary);
+    font-size: 10px;
+    float: right;
+    color: var(--blue-dark);
+    font-family: OverPass;
 }
 .see-more-caption-feature:hover {
   color: var(--text-feature-hover);
@@ -163,15 +166,16 @@ div:empty, li:empty {
     border-radius: 2px;
 box-shadow: 1px 2px 4px 0px rgba(0,0,0,.4);
 }
-.list-items-title-feature{
- text-align: left;
-    font-size: 17px;
-    font-weight: 700;
+.store-caption-feature{
+text-align: left;
+    font-size: 13px;
+    letter-spacing: 0px;
+    font-weight: 500;
     line-height: 45px;
-    font-weight: 900;
+    /* font-weight: 900; */
     color: var(--text-feature-primary);
-    font-family: 'Prata';
-    text-shadow: 3px 2px 0px var(--bg-primary);
+    /* font-family: 'Prata'; */
+    /* text-shadow: 3px 2px 0px var(--bg-primary);*/
   } 
 
 .product-list-container-feature:hover .overlay-feature{opacity:1}
