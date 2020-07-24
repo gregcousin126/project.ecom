@@ -46,8 +46,8 @@
   --button-font-primary                : 12px;
   --button-font-secondary              : 14px;
   --text-secondary                     : #ececec;
-  --bg-primary                         : #23232e;
-  --bg-secondary                       : #141418;
+  /* --bg-primary                         : #23232e; */
+  /* --bg-secondary                       : #141418; */
   --transition-speed-primary-slower    : .6s;
   --transition-speed-primary-faster    : 150ms;
   --transition-speed-secondary-slower : .4s;

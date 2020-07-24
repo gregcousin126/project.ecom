@@ -8,7 +8,12 @@
 
 
 
-
+.icon {
+  margin: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: currentColor;
+}
 
 
 body,
@@ -351,7 +356,7 @@ Button {
 
 @media(max-width:600px) {
   .content-wrapper {
-    padding: 110px 15px
+    padding: 80px 15px
   }
 
   .product-list ul {
@@ -365,7 +370,7 @@ width: 100%;
     right: 0;
     left: 0;
     /* display: flex; */
-    padding: 15px;
+    padding: 1px;
     z-index: 3;
     background: var(--bg-primary);
     top: 0;
@@ -428,13 +433,13 @@ input[type=range].slider::-webkit-slider-thumb {
   -webkit-box-shadow: 0 0 0 rgba(0, 0, 62, 0), 0 0 0 rgba(0, 0, 88, 0);
   box-shadow: 0 0 0 rgba(0, 0, 62, 0), 0 0 0 rgba(0, 0, 88, 0);
   border: 1.9px solid #3e63ea;
-  height: 18px;
-  width: 18px;
+  height: 20px;
+  width: 20px;
   border-radius: 31px;
   background: var(--bg-primary);
   cursor: pointer;
   -webkit-appearance: none;
-  margin-top: -7px
+  margin-top: -8px
 }
 
 input[type=range].slider:focus::-webkit-slider-runnable-track {
@@ -691,4 +696,14 @@ input, select {
 .item-blur {
   filter: blur(2px) grayscale(.8);
   -webkit-filter: blur(2px) grayscale(.8);
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 13px;
+    /* background: #eee; */
+  }
 }

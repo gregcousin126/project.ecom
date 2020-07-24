@@ -22,6 +22,12 @@
               <span class="sale-banner" v-if="product.sale">Sale</span>
               <span class="out-of-stock-banner" v-show="!productInStock(product)">Out of Stock</span>
                 <div class="product-list-container">
+                                    <div class="favorite-svg">
+                    
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"><g><path d="M986.8,312.3C966.5,166.1,838.4,66.5,702.6,66.5c-41.6,0-84,9.4-124.1,29.6c-28.2,14.2-53.5,34.3-81.6,52.7c0,0-1.8-1.4-3.5-3c-55.5-52.2-125.8-79.2-197-79.2c-49,0-98.4,12.8-143.6,38.9C49,165.6-6.2,283.9,14.2,401.9c11.7,67.8,44.7,123.9,92.5,172c90.2,90.9,246.2,247.7,332.1,334c16.9,17,39.1,25.5,61.3,25.5c22.1,0,44.3-8.5,61.2-25.4c88.2-88.3,250.4-251.4,344.1-348C971.4,492,1000.1,407.8,986.8,312.3z M854.8,510.3C745.5,623,549.6,819.3,511.5,857.5c-3.9,3.9-8.4,4.7-11.4,4.7c-3,0-7.5-0.8-11.4-4.8c-85.9-86.3-241.8-243-332-333.9c-40.5-40.8-64.3-84.6-72.8-133.9C68.6,301.5,110.5,212.1,188,167.3c33.3-19.3,70.8-29.5,108.4-29.5c54.8,0,107.6,21.3,148.7,60c18.1,17.1,36.1,22.3,51.3,22.3c19.5,0,34.4-8.6,38.9-11.5c9.6-6.3,18.9-12.7,28-19.1c16.5-11.5,32-22.3,46.8-29.7c29.1-14.7,60.2-22.1,92.5-22.1c107.5,0,199.6,79.3,214.2,184.4C927,395.2,906.7,456.7,854.8,510.3z"/></g></svg>
+                    
+                  </div>
+                  
                   <img :src="`./stores/static/${store.store_name.toLowerCase()}/images/${product.img}`" :alt="`image of ${product.title}`">
                     <div class="overlay">
                       <div class="text">{{product.description}}</div>
@@ -95,6 +101,20 @@ export default {
 
 </script>
 <style lang="css">
+
+.favorite-svg {
+width: 23px;
+    z-index: 999999;
+    top: 0;
+    padding: 2px;
+    margin: 4px;
+    right: 0;
+    fill: white;
+    position: absolute;
+    display: block;
+}
+
+
 li:empty{display:none}
 ul:empty{display:none}
 #store-list ul:empty{display:none}
