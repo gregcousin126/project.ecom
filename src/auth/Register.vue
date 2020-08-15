@@ -2,7 +2,7 @@
 <body >
 <div v-if="!currentUser.displayName" >
     <div class="top-register-container register-card-container" id="target">
-      <div class="register-container card">
+      <div class="register-container register-card">
         <div class="image-register">
           <h1 class="register-banner">Welcome To<span class="colorspan">Xotpolo</span></h1>
         </div>
@@ -97,6 +97,7 @@ font-size: 22px;
 #txt{margin:10px;padding:5px;border:none;background-color:rgba(156,77,156,0.3);border-radius:10px;font-weight:700;font-size:small;font-family:'Montserrat',sans-serif;color:#aa38a4}
 #txt:focus{outline:none}
 .fp{
+  cursor: pointer;
   
         text-decoration: none;
     font-weight: 500;
@@ -109,6 +110,7 @@ font-size: 22px;
   }
 .fp:hover{color:#c446c9}
 .btn-register{
+  cursor: pointer;
   width: 95px;
     height: 40px;
     font-size: 12.5px;
@@ -131,8 +133,8 @@ font-size: 22px;
 .btn-register:hover{transform:scale(1.1);letter-spacing:1px}
 .btn-register{text-decoration:none;color:#fff}
 .register-card-container{animation:float var(--animation-speed-primary-slower) ease-in-out infinite}
-.card{background:#fff;-webkit-perspective:1000px;perspective:1000px;-webkit-transition:all var(--transition-speed-primary-slower) ease;transition:all var(--transition-speed-primary-slower) ease;-webkit-animation:shadeanm var(--animation-speed-primary-slower) ease-in-out infinite,fadeup var(--animation-speed-primary-faster) ease-in-out;animation:shadeanm var(--animation-speed-primary-slower) ease-in-out infinite,fadeup var(--animation-speed-primary-faster) ease-in-out}
-.card:hover{transform:rotate3D(0,0,0,0deg)}
+.register-card{background:#fff;-webkit-perspective:1000px;perspective:1000px;-webkit-transition:all var(--transition-speed-primary-slower) ease;transition:all var(--transition-speed-primary-slower) ease;-webkit-animation:shadeanm var(--animation-speed-primary-slower) ease-in-out infinite,fadeup var(--animation-speed-primary-faster) ease-in-out;animation:shadeanm var(--animation-speed-primary-slower) ease-in-out infinite,fadeup var(--animation-speed-primary-faster) ease-in-out}
+.register-card:hover{transform:rotate3D(0,0,0,0deg)}
 @keyframes float {
 0%{transform:translatey(0px)}
 50%{transform:translatey(-13px)}
@@ -152,9 +154,19 @@ font-size: 22px;
 .image-register{display:none}
 .top-register-container{padding:0}
 .register-content{padding:20px}
-.card{background:#fff;-webkit-perspective:1000px;perspective:1000px;transition:fadeup 0.var(--animation-speed-primary-slower) ease;-webkit-animation:fadeup .7s ease-in-out;animation:fadeup .7s ease-in-out}
+.register-card{
+  
+         box-shadow:none; 
+     
+     -webkit-perspective:1000px;perspective:1000px;transition:fadeup 0.var(--animation-speed-primary-slower) ease;-webkit-animation:fadeup .7s ease-in-out;animation:fadeup .7s ease-in-out
+
+}
 .register-card-container{-webkit-animation:none;animation:none}
-.register-container{box-shadow:0 9px 19px -7px rgba(0,0,0,0.603);width:100%}
+.register-container{
+  /* box-shadow:0 9px 19px -7px rgba(0,0,0,0.603); */
+  width:100%
+  
+  }
 .register-content{border-radius:5px}
 }
 

@@ -38,20 +38,6 @@ export default {};
 
 <style lang="css">
 
-/* Options */
-/* body {
-  background-color: #423852;
-  overflow: hidden;
-}
-
-body,
-html {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-} */
-
 .empty-cart-svg {
   width: 100%;
   height: 100%;

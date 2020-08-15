@@ -4,8 +4,7 @@
     <div class="filterbar-buttons">
     <a ontouchstart="" @click="compressFilterArrows"  class="search-arrow-btn search-arrow show-sidebar" type="check"  id="search-arrow">
       <span class="filter-btn-filter">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 -450 1200 2000" ><g><path d="M241.5,453.5L665.9,29.1c25.5-25.5,67-25.5,92.5,0c25.5,25.5,25.5,67,0,92.5L380.1,500l378.3,378.3c25.5,25.5,25.5,67,0,92.5c-25.5,25.5-67,25.5-92.5,0L241.5,546.5c-12.8-12.8-19.1-29.6-19.1-46.5S228.7,466.4,241.5,453.5z"/></g></svg>
-				
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 -450 1200 2000" ><g><path d="M241.5,453.5L665.9,29.1c25.5-25.5,67-25.5,92.5,0c25.5,25.5,25.5,67,0,92.5L380.1,500l378.3,378.3c25.5,25.5,25.5,67,0,92.5c-25.5,25.5-67,25.5-92.5,0L241.5,546.5c-12.8-12.8-19.1-29.6-19.1-46.5S228.7,466.4,241.5,453.5z"/></g></svg>
       <!-- <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x"><g class="fa-group"><path fill="currentColor" d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z" class="fa-secondary"></path><path fill="currentColor" d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z" class="fa-primary"></path></g></svg> -->
       </span>
     </a>
@@ -27,9 +26,11 @@
       <div class="aside-block">
           <h4>Categlories</h4>
           <ul  class="categlory-tag-container">
-            <li v-for="(categlories, index) in products" @click="compressFilterBar" >
-              <router-link :to="`${categlories}`" >
-                    <div class="categlory-tag" :style="{backgroundColor: tagColors[index]}">#{{categlories}}</div>
+            <li v-for="(categlories, index) in products" v-on:click="tagchosen($event)">
+              <!-- {{products}} -->
+              <router-link :to="`/categlories`" >
+              <!-- <router-link :to="`${categlories}`" > -->
+                    <div class="categlory-tag" :style="{backgroundColor: tagColors[index]}">{{categlories}}</div>
                 </router-link>
             </li>
           </ul>
@@ -39,10 +40,8 @@
       <label for="pricerange">Maximum Price: <span class="current-price">${{ pricerange }}</span></label>
       <input class="slider" id="pricerange" tabindex="0" :value="pricerange" type="range" :min="min" :max="max" step="0.1" @input="updateHighPrice($event)" />
       <div class="min-max">
-        
       <span class="min">${{ min }}</span>
       <span class="max">${{ max }}</span>
-        
       </div>
    </div>
       <div class="aside-block">
@@ -58,6 +57,10 @@
         <p style="display:inline" v-if="JSON.stringify(currentUser) !== '{}'">{{currentUser.displayName}}, Get in touch with us for any queries at </p>
         <p style="display:inline" v-else>Get in touch with us for any queries at </p>
         <a href="mailto: xotopolo@gmail.com">xotopolo@gmail.com</a>
+      </div>
+      <div class="aside-block">
+        <h4>About</h4>
+        <p style="display:inline">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
       </div>
   </div>
   </aside>
@@ -77,30 +80,42 @@ export default {
       max: 2000,
       check: this.checked,
       displayName: null,
-      tagColors: utils.tagColors()
-      
-      
+      tagColors: utils.tagColors() 
     };
 	},
+  
 	computed: {
 		form_control: function() {
 				var searchbar = document.getElementById('search-arrow')
-				if (this.input_active == false) {
-          
-          
-        }
-				if (this.input_active == true) {
-				}
+				if (this.input_active == false) {}
+				if (this.input_active == true) {}
 			},
 			
 		pricerange() { return this.$store.state.highprice},
 		checked() { return this.$store.state.sale;},
-		products() {
-			var product_arr = [];
-			this.$store.state.products.forEach((item) => {product_arr.push(item.category)});
-			var product_arrayFiltered = product_arr.filter((v, i, a) => a.indexOf(v) === i);
-			return product_arrayFiltered;
-		},
+    
+   products() {
+      var product_arr = []; 
+       const allElements = []
+      this.$store.state.stores.forEach(storeItems => { allElements.push(storeItems.products) });
+      var concatProductAray = Array.prototype.concat.apply([], allElements);
+      concatProductAray.forEach(element => {
+        // console.log('element: ', element);
+        product_arr.push(element.category)
+      });
+      
+      let unique = [...new Set(product_arr)]; 
+      // console.log('unique: ', unique);
+      // console.log('concatProductAray: ', concatProductAray);
+      // var mainJsonCart = concatProductAray.filter(el => this.$store.state.sale ? el.price < this.$store.state.highprice && el.sale : el.price < this.$store.state.highprice).map(x => x)
+      //  product_arr.push(item.category)}
+      // this.$store.state.stores.forEach((item) => {
+        // product_arr.push(item.category)});
+      // console.log('this.$store.state.stores.products: ', this.$store.state);
+      // var product_arrayFiltered = product_arr.filter((v, i, a) => a.indexOf(v) === i); 
+      // console.log('product_arrayFiltered: ', product_arrayFiltered);
+      return unique; 
+    },
 		...mapGetters({currentUser: 'currentUser'}),
 	},
 	
@@ -116,12 +131,34 @@ export default {
 		compressFilterBar() {
 			var expander = document.getElementById('expandable-sidebar');
 			if (expander.classList.contains('maxheight-expand-sidebar')) { 
-        
         expander.classList.remove("maxheight-expand-sidebar"); 
         this.compressFilterArrows();
-      
-      
       }
+		},
+    
+		tagchosen(e) {
+      
+                let el = e.target;
+                // let el = e.target;
+                // console.log('e: ', el);
+                // console.log('el: ', el.style.backgroundColor);
+                
+                
+                // el.style.backgroundColor
+                this.$store.state.tagchoice = [el.innerHTML, el.style.backgroundColor];
+                      			// this.$store.state.stores.products.forEach((item) => {product_arr.push(item.category)});
+
+                			// this.$store.state.stores.products.forEach((item) => {product_arr.push(item.category)});
+
+
+      // console.log('item')
+      // console.log('item', $event)
+      
+      this.compressFilterBar(); 
+      
+      
+
+	
 		},
 		
 		expandFilterArrows() {
@@ -155,7 +192,6 @@ export default {
 		
 
 		toggleFilterBar() {
-      // alert('sd')
 			this.expandFilterBar();
 			this.expandFilterArrows();
 			this.toggleFilter();
@@ -163,21 +199,24 @@ export default {
 		
 
 		toggleSimpleFilters() {
-      
-      			var searchbar = document.getElementById('search-arrow')
-
+      var searchbar = document.getElementById('search-arrow')
 			var expander = document.getElementById('expandable-sidebar');
 			if (!expander.classList.contains('maxheight-expand-sidebar')) {
 				expander.classList.add("maxheight-expand-sidebar");
-        
-        
 			} else if (expander.classList.contains('maxheight-expand-sidebar')) {
 				expander.classList.remove("maxheight-expand-sidebar");
         
 			}
 		},
 		
-		updateHighPrice($event) { this.$store.commit('setHighPrice', $event.target.value)},
+		updateHighPrice($event) {
+      // console.log('$event: ', $event);
+       this.$store.commit('setHighPrice', $event.target.value)
+       
+      //  console.log(this.$store.state.stores.for)
+      //  if() 
+       
+    },
 		searchFilter($event) { this.$store.dispatch('setSearchName', $event.target.value)},
 		updateSale() { this.$store.commit('toggleSale');},
 	},
@@ -210,7 +249,10 @@ export default {
 margin-left:-150px;
 -ms-flex-item-align:center;width:46px;border:none;display:none;-webkit-transform:rotate(180deg);transform:rotate(180deg);float:left;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-pack:end;-webkit-box-pack:center;justify-content:center}
 .sidebar-container{display:flex;align-items:center;text-align:center;-webkit-box-orient:horizontal;display:flex;flex-direction:column-reverse}
-.filterbar-buttons{display:flex;width:100%;}
+.filterbar-buttons{display:flex;width:100%;
+
+
+}
 
 .show-sidebar{
 
@@ -316,6 +358,7 @@ fill: var(--text-primary);
 .checkbox-box{width:22px;height:22px;border:2px solid var(--text-floogle);position:relative;cursor:pointer;float:left;top:0;margin-top:2.2px}
 .sidebar-container{display:flex;flex-direction:column-reverse}
 .sidebar-mainitems-container{
+  
   margin-bottom: 20px;
   display:-webkit-box;width:100%;display:-ms-flexbox;display:inline-block;place-content:space-between;-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}
 @media(max-width:1420px){
@@ -346,13 +389,17 @@ fill: var(--text-primary);
 #remove-label{display:none}
 .sidebar-button{display:none}
 .maxheight-expand-sidebar{
-  max-height:700px;
+  max-height:950px;
   /* margin-bottom:40px;  */
 
 padding: 20px;
 }
 .current-price{display:inline-block}
-.sidebar-mainitems-container{margin:7px 11px;display:flex;place-content:space-between;flex-direction:row-reverse}
+.sidebar-mainitems-container{
+  
+  margin:7px 7px 7px 4px;
+
+display:flex;place-content:space-between;flex-direction:row-reverse}
 .sidebar-button{font-size:14px;margin:0 0 0;width:100%;float:left;border-radius:30px;padding:0}
 .filter-gif {
 -webkit-box-flex: 50%;
@@ -377,7 +424,9 @@ input[type=checkbox]:checked~.checkbox-box::before{width:16px;height:16px}
 .checkbox-control{grid-template-rows:18px 30px}
 #search{padding:8px;font-size:14px;width:48%;display:inline-flex}
 /* .filter-btn-filter{width:55px} */
-.filterbar-buttons{display:flex;width:fit-content}
+.filterbar-buttons{display:flex;width:fit-content;
+padding: 3px;
+}
 /* .filterbar-buttons a{margin:0 10px} */
 /* .filterbar-buttons a{ margin:0 10px;} */
 

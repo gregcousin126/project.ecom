@@ -1,5 +1,6 @@
 <template>
   <div class="product-list-feature">
+    
       <div id='preloader' v-if="loading">
         <div class='preloader loading spinner'>
           <span class='slice'></span>
@@ -10,13 +11,19 @@
           <span class='slice'></span>
         </div>
       </div>
-      <transition-group name="card" tag="div" v-else>
-  <div id="each-store-feature" v-for="store in stores" :key="store.store_id" >
+      
+  <transition-group name="card" tag="div" v-else>
+    <!-- <div v-if="products.length > 1"> -->
+    
+    <!-- {{products}} -->
+  <div class="each-store-feature" v-for="store in stores" :key="store.store_id" >
+      <!-- <div v-if="emptyStoreIndex.includes(index)"> -->
+        
+      <!-- <h1  id="store-title" class="list-items-title"><img :src='`./stores/static/${store.store_id}/logo.svg`' class="company-svg">{{store.store_name}}<hr class="hr-product-list"></h1> -->
       <a class="see-more-caption-feature">see more</a>
       <h1  class="store-caption-feature">
         {{store.feature_caption}}
-        
-      <hr>
+      <hr class="hr-featured">
       </h1>
       <h2 class="store-title-feature">{{store.store_name}}</h2>
       <ul id="store-list-feature">
@@ -26,21 +33,20 @@
               <span class="out-of-stock-banner-feature" v-show="!productInStock(product)">Out of Stock</span>
                 <div class="product-list-container-feature">
                   <div class="favorite-svg">
-                    
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"><g><path d="M986.8,312.3C966.5,166.1,838.4,66.5,702.6,66.5c-41.6,0-84,9.4-124.1,29.6c-28.2,14.2-53.5,34.3-81.6,52.7c0,0-1.8-1.4-3.5-3c-55.5-52.2-125.8-79.2-197-79.2c-49,0-98.4,12.8-143.6,38.9C49,165.6-6.2,283.9,14.2,401.9c11.7,67.8,44.7,123.9,92.5,172c90.2,90.9,246.2,247.7,332.1,334c16.9,17,39.1,25.5,61.3,25.5c22.1,0,44.3-8.5,61.2-25.4c88.2-88.3,250.4-251.4,344.1-348C971.4,492,1000.1,407.8,986.8,312.3z M854.8,510.3C745.5,623,549.6,819.3,511.5,857.5c-3.9,3.9-8.4,4.7-11.4,4.7c-3,0-7.5-0.8-11.4-4.8c-85.9-86.3-241.8-243-332-333.9c-40.5-40.8-64.3-84.6-72.8-133.9C68.6,301.5,110.5,212.1,188,167.3c33.3-19.3,70.8-29.5,108.4-29.5c54.8,0,107.6,21.3,148.7,60c18.1,17.1,36.1,22.3,51.3,22.3c19.5,0,34.4-8.6,38.9-11.5c9.6-6.3,18.9-12.7,28-19.1c16.5-11.5,32-22.3,46.8-29.7c29.1-14.7,60.2-22.1,92.5-22.1c107.5,0,199.6,79.3,214.2,184.4C927,395.2,906.7,456.7,854.8,510.3z"/></g></svg>
-                    
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"><g><path d="M986.8,312.3C966.5,166.1,838.4,66.5,702.6,66.5c-41.6,0-84,9.4-124.1,29.6c-28.2,14.2-53.5,34.3-81.6,52.7c0,0-1.8-1.4-3.5-3c-55.5-52.2-125.8-79.2-197-79.2c-49,0-98.4,12.8-143.6,38.9C49,165.6-6.2,283.9,14.2,401.9c11.7,67.8,44.7,123.9,92.5,172c90.2,90.9,246.2,247.7,332.1,334c16.9,17,39.1,25.5,61.3,25.5c22.1,0,44.3-8.5,61.2-25.4c88.2-88.3,250.4-251.4,344.1-348C971.4,492,1000.1,407.8,986.8,312.3z M854.8,510.3C745.5,623,549.6,819.3,511.5,857.5c-3.9,3.9-8.4,4.7-11.4,4.7c-3,0-7.5-0.8-11.4-4.8c-85.9-86.3-241.8-243-332-333.9c-40.5-40.8-64.3-84.6-72.8-133.9C68.6,301.5,110.5,212.1,188,167.3c33.3-19.3,70.8-29.5,108.4-29.5c54.8,0,107.6,21.3,148.7,60c18.1,17.1,36.1,22.3,51.3,22.3c19.5,0,34.4-8.6,38.9-11.5c9.6-6.3,18.9-12.7,28-19.1c16.5-11.5,32-22.3,46.8-29.7c29.1-14.7,60.2-22.1,92.5-22.1c107.5,0,199.6,79.3,214.2,184.4C927,395.2,906.7,456.7,854.8,510.3z"/></g></svg>
                   </div>
-                  
-                  <!-- <img src="" alt=""> -->
-                  <img :src="`./stores/static/${store.store_name.toLowerCase()}/images/${product.img}`" :alt="`image of ${product.title}`">
-                    <div class="overlay-feature">
-                      <div class="text-feature">{{product.description}}</div>
+                  <img :src="`./stores/static/${store.store_id}/images/${product.img}`" :alt="`image of ${product.title}`">
+                  <div class="overlay-feature">
+                    <div class="text-feature">
+                      {{product.description}}
                     </div>
+                  </div>
                 </div>
               </div>
             </li>
           </ul>
   </div>
+  <!-- </div> -->
       </transition-group>
   </div>
 </template>
@@ -54,19 +60,33 @@ export default {
     return {
       loading: false,
       highprice: 2000,
+      emptyStoreIndex: []
     };
   },
   computed : {
     
-      stores() { return this.$store.state.stores },
-      products() {
-        
-        
-      const mainJsonCart = this.$store.state.products.filter(el => this.$store.state.sale ? el.price < this.$store.state.highprice && el.sale : el.price < this.$store.state.highprice).map(x => x)
-      const firebaseCart = this.$store.state.cart.map(x => x.product)
-      const replacedResult = mainJsonCart.map(item =>  firebaseCart.find(item2 => item.product_id === item2.product_id) || item)
-      const productResult = [...new Set(replacedResult)]
-      return productResult
+    stores() { return this.$store.state.stores },
+      
+    products() {
+        this.emptyStoreIndex = []
+        const CurrentCartItems = [];
+        const firebaseCart = this.$store.state.cart.map(x => x.product);
+        this.$store.state.stores.forEach(storeItems => { 
+          CurrentCartItems.push(storeItems.products.filter(el => this.$store.state.sale ? el.price < this.$store.state.highprice && el.sale : el.price < this.$store.state.highprice).map(x => x)) 
+        });
+           CurrentCartItems.forEach((items, index) => { 
+             items.forEach(products => {
+               if (products.feature != false) {
+                  if (products.length > 1) { 
+            this.emptyStoreIndex.push(index);
+            } 
+               
+               }
+          })
+             })
+             
+    
+        return [...new Set(Array.prototype.concat.apply([], CurrentCartItems).map(item => firebaseCart.find(item2 => item.product_id === item2.product_id) || item))]
     },
     ...mapGetters({productInStock: 'productInStock',})
   },
@@ -77,28 +97,17 @@ export default {
     
 
     this.loading = true; 
-    this.fetchProducts().then(() => {this.fetchStores().then(() => {
+   this.fetchStores().then(() => {
+     this.loading = false; 
+   }); // setTimeout(() => {}, 630);
+    
 
-      
-      
-    }); this.loading = false; }) // setTimeout(() => { }, 630);
-    
-    // var wrapper = document.getElementById('wrapper')
-    // var sidebar = document.getElementById('sidebar-wrap')
-    // wrapper.style.padding = '20px 15px'
-    // sidebar.style.display = 'none'
-    
   },
-  
-  // mounted () {
-
-  // },
   
   
   methods : {
     ...mapActions({
       fetchStores: 'fetchStores',
-      fetchProducts: 'fetchProducts',
       addProductToCart: 'addProductToCart',
     }),
   },
@@ -109,13 +118,24 @@ export default {
 </script>
 
 <style lang="css" scoped>
-img {
-  /* z-index: 10; */
+li:empty{display:none}
+ul:empty{display:none} 
+
+
+.hr-featured {
+    height: 12px;
+    /* color: rgba(0, 0, 0, .005); */
+    border: none;
+    border-radius: 0px;
+    margin-bottom: 27px;
+    margin-top: -23px;
+    background: rgba(0, 0, 0, .08);
+    width: 100%;
 }
 
 .favorite-svg {
 width: 23px;
-    /* z-index: 10; */
+    z-index: 1;
     top: 0;
     height: 23px;
     padding: 2px;
@@ -128,9 +148,7 @@ width: 23px;
 
 
 
-div:empty, li:empty {
-  display: none;
-}
+
 
 .store-title-feature {
     font-size: 12px;
@@ -236,5 +254,6 @@ text-align: left;
     height: 139px;
 
   }
+  
   
 </style>

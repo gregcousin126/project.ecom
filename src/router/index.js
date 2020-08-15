@@ -3,16 +3,21 @@ import Signin from '@/auth/Signin'
 import Userinfo from '@/auth/Authchange'
 import SideMainLayout from '@/layout/SideMainLayout'
 import cart from '@/sections/cart'
-import men from '@/sections/men'
-import other from '@/sections/other'
-import decoration from '@/sections/decoration'
+// import men from '@/sections/men'
+// import other from '@/sections/other'
+// import decoration from '@/sections/decoration'
 import ErrorPage from '@/sections/error'
-import furniture from '@/sections/furniture'
+// import furniture from '@/sections/furniture'
 import FeatureList from '@/components/FeatureList'
+// import StoreList from '@/components/StoreList'
 import home from '@/sections/home'
-import wall from '@/sections/wall'
+// import wall from '@/sections/wall'
 import Vue from 'vue'
 import Router from 'vue-router'
+
+
+import categlories from '@/sections/categlories'
+
 
 
 Vue.use(Router); 
@@ -28,11 +33,14 @@ export default new Router({
       children: [
         { path: '/', component: FeatureList, name : 'FeatureList' },
         { path: '/home', component: home, name : 'home' },
-        { path: '/furniture', name: 'furniture', component: furniture,  meta: { title: 'Nested - furniture Page' }},
-        { path: '/wall', name: 'wall', component: wall,  meta: { title: 'Nested - wall Page' }},
-        { path: '/men', name: 'men', component: men,  meta: { title: 'Nested - men Page' }},
-        { path: '/other', name: 'other', component: other,  meta: { title: 'Nested - other Page' }},
-        { path: '/decoration', name: 'decoration', component: decoration, meta: { title: 'Nested - decoration Page' } },
+        // { path: '/StoreList', component: StoreList, name : 'StoreList' },
+        { path: '/categlories', component: categlories, name : 'categlories' },
+        
+        // { path: '/furniture', name: 'furniture', component: furniture,  meta: { title: 'Nested - furniture Page' }},
+        // { path: '/wall', name: 'wall', component: wall,  meta: { title: 'Nested - wall Page' }},
+        // { path: '/men', name: 'men', component: men,  meta: { title: 'Nested - men Page' }},
+        // { path: '/other', name: 'other', component: other,  meta: { title: 'Nested - other Page' }},
+        // { path: '/decoration', name: 'decoration', component: decoration, meta: { title: 'Nested - decoration Page' } },
         // { path: '/home', name: 'home', component: home, meta: { title: 'Nested - home Page' } }
       ]
     },

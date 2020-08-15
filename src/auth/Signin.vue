@@ -3,8 +3,8 @@
  <div v-if="!currentUser.displayName">
 		<div v-if="JSON.stringify(currentUser) !== '{}'"><authchange/></div>
     <div v-if="JSON.stringify(currentUser) === '{}'">
-      <div class="top-signin-container cardcontainer" id="target">
-      <div class="signin-container card">
+      <div class="top-signin-container signin-card-container" id="target">
+      <div class="signin-container signin-card">
         <div class="image-signin">
           <h1 class="signin-banner">
             Welcome To <br>
@@ -85,7 +85,7 @@ export default {
   .log-link{color:var(--text-secondary);text-transform:uppercase}
   .authchoice{display:grid;grid-auto-flow:column;margin-top:25px;border-radius:4px;list-style:none;border:2px solid;place-content:center;grid-auto-columns:-webkit-min-content;font-weight:500;padding:22px;font-size:14px;width:100%;font-family:'Roboto Condensed',sans-serif;grid-gap:28px}
   .top-signin-container{text-align:-webkit-center;margin:0 auto;justify-content:center;z-index:0;padding:5% 7%;transition:opacity .2s;display:flex;text-align:-webkit-center;margin:0 auto}
-  .signin-container{height:auto;-webkit-box-shadow:0 15px 25px rgba(0,0,0,0.603);box-shadow:0 15px 25px rgba(0,0,0,0.603);display:flex;border-radius:5px}
+  .signin-container{height:auto;box-shadow:0 15px 25px rgba(0,0,0,0.603);display:flex;border-radius:5px}
   .image-signin{background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(../assets/images/stylewoman.jpg);background-size:cover;text-align:center;color:#fff;font-family:'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif}
   .image-signin h1{margin-top:60%;padding-left:20px;padding-right:20px;letter-spacing:2px;font-weight:100;margin-bottom:10px;font-family:'Bungee'}
   .colorspan{color:#7fff00}
@@ -106,8 +106,9 @@ font-size: 22px;
   .signin-banner{font-size:25px;line-height:35px}
   #txt{margin:10px;padding:5px;border:none;background-color:rgba(156,77,156,0.3);border-radius:10px;font-weight:700;font-size:small;font-family:'Montserrat',sans-serif;color:#aa38a4}
   #txt:focus{outline:none}
-  .fp{
-        text-decoration: none;
+  .fp {
+    cursor: pointer;
+    text-decoration: none;
     font-weight: 500;
     font-size: small;
     font-family: monospace;
@@ -116,10 +117,11 @@ font-size: 22px;
     display: block;
     margin: 0px  30px 40px;
     /* text-decoration:none;font-weight:700;font-size:small;transition:.3s;display:block;margin:30px */
+  }
     
-    }
   .fp:hover{color:#c446c9}
   .btn-signin{
+    cursor: pointer;
     /* width:95px; height: 40px; font-size:12.5px;margin:0 4px 20px;display:inline-flex;place-content:center;border:none;background:-webkit-gradient(linear,left top,right top,from(#4568dc),to(#b06ab3));background:linear-gradient(to right,#4568dc,#b06ab3);border-radius:4px;-webkit-transition:.2s;transition:.2s */
     width: 95px;
     height: 40px;
@@ -140,9 +142,44 @@ font-size: 22px;
     }
   .btn-signin:hover{transform:scale(1.1);letter-spacing:1px}
   .btn-signin{text-decoration:none;color:#fff}
-  .cardcontainer{animation:float var(--animation-speed-primary-slower) ease-in-out infinite}
-  .card{-webkit-perspective:1000px;perspective:1000px;-webkit-transition:all var(--transition-speed-primary-slower) ease;transition:all var(--transition-speed-primary-slower) ease;-webkit-animation:shadeanm var(--animation-speed-primary-slower) ease-in-out infinite,fadeup (--animation-speed-primary-slower) ease-in-out;animation:shadeanm var(--animation-speed-primary-slower) ease-in-out infinite,fadeup (--animation-speed-primary-slower) ease-in-out}
+  .signin-card-container{animation:float var(--animation-speed-primary-slower) ease-in-out infinite}
+  .signin-card{
+    perspective:1000px;
+    transition:all var(--transition-speed-primary-slower) ease;
+    /* animation:shadeanm var(--animation-speed-primary-slower) ease-in-out infinite,fadeup (--animation-speed-primary-slower) ease-in-out */
+  }
   .card:hover{transform:rotate3D(0,0,0,0deg)}
+  
+  @media (max-width: 600px) {
+  .image-signin{display:none}
+  .signin-content{padding:20px;
+    box-shadow:none; 
+  
+  }
+  
+  .signin-card-container{-webkit-animation:none;animation:none}
+  
+    .signin-card{
+      
+       box-shadow:none; 
+     
+     -webkit-perspective:1000px;perspective:1000px;transition:fadeup 0.var(--animation-speed-primary-slower) ease;-webkit-animation:fadeup .7s ease-in-out;animation:fadeup .7s ease-in-out
+
+      /* animation:fadeup (--animation-speed-primary-slower) ease-in-out */
+    }
+
+  
+  
+  .top-signin-container{padding:0}
+  .signin-container{
+    /* box-shadow:0 9px 19px -7px rgba(0,0,0,0.603); */
+  width:100%}
+  .signin-content{border-radius:5px}
+  }
+  
+  @media (max-width: 700px) {
+  .signin-content{padding: 9%;}
+  }
   @keyframes float {
   0%{transform:translatey(0px)}
   50%{transform:translatey(-13px)}
@@ -158,18 +195,5 @@ font-size: 22px;
   70%{transform:translate(0,-20px);-webkit-transform:translate(0,-20px);-moz-transform:translate(0,-20px);-ms-transform:translate(0,-20px);-o-transform:translate(0,-20px)}
   100%{transform:translate(0,0);-webkit-transform:translate(0,0);-moz-transform:translate(0,0);-ms-transform:translate(0,0);-o-transform:translate(0,0)}
   }
-  @media (max-width: 600px) {
-  .image-signin{display:none}
-  .signin-content{padding:20px}
-  .card{background:#fff;-webkit-perspective:1000px;perspective:1000px}
-  .cardcontainer{-webkit-animation:none;animation:none}
-  .top-signin-container{padding:0}
-  .signin-container{box-shadow:0 9px 19px -7px rgba(0,0,0,0.603);width:100%}
-  .signin-content{border-radius:5px}
-  }
   
-  @media (max-width: 700px) {
-  .signin-content{padding: 9%;}
-
-  }
 </style>

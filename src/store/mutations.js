@@ -18,6 +18,7 @@ export default {
 	},
   
 	pushProductToCart(state, product) {
+		// state.cart.push({product_id: product.product_id, store_id: product.store_id, store_name: product.store_name,  product: product, quantity: 1});
 		state.cart.push({product_id: product.product_id, store_id: product.store_id, store_name: product.store_name,  product: product, quantity: 1});
 		state.cartItems++;
 	},

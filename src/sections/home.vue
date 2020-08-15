@@ -1,6 +1,8 @@
 <template>
   <section class="all-products">
-    <ProductList category="all-products"/>
+            <ProductList category="all-products" />
+
+    <!-- <StoreList/> -->
   </section>
 </template>
 

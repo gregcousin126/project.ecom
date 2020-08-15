@@ -1,19 +1,21 @@
 /*** MOCKING CLIENT-SERVER PROCESSING */
-
 var data = require('../../stores/data.json')
+// var _products = [],
+var _stores = [];
 
-var _products = [], _stores = []; 
-data.forEach(element => { _products.push(...element.store_items); _stores.push(...element.store_data );});
+data.forEach((element, index) => { 
+_stores.push(...element.store_data);
+});
+
+// var _productList = Array.prototype.concat.apply([], _products);
 
 export default {
-  getProducts (cb) {
-    setTimeout(() => cb(_products), 100)
-  },
-  
+  // getProducts (cb) {
+  //   setTimeout(() => cb(_stores), 100)
+  // },
   getStores (cb) {
     setTimeout(() => cb(_stores), 100)
   },
-  
   buyProducts (products, cb, errorCb) {
     // SIMULATE RANDOM CHECKOUT FAILURE.
     setTimeout(() => {

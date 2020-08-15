@@ -10,11 +10,13 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    products: [],
+    // products: [],
     stores: [],
+    tagchoice: [],
     cart: [],
     firebaseCart: [], 
     cartItems: 0,
+    storeIds: [],
     checkoutStatus: null,
     highprice: 2000,
     sale: false,

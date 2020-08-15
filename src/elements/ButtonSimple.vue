@@ -51,6 +51,7 @@ export default {
 
 .button-simple button:hover {
   background: var(--button-hover);
+  /* background: var(--button-hover); */
   color: var(--blue-primary);
   -webkit-transition: var(--transition-speed-primary-faster) all ease-in;
   transition: var(--transition-speed-primary-faster) all ease-in;

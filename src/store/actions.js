@@ -4,14 +4,14 @@ import { ref, firebaseAuth } from '../../config/firebase';
 export default {
 	
 	// actions = methods
-	fetchProducts(context) {
-    return new Promise(function (resolve, reject) {
-      shop.getProducts(products => {
-        context.commit('setProducts', products);
-        resolve();
-      });
-    });
-	},
+	// fetchProducts(context) {
+  //   return new Promise(function (resolve, reject) {
+  //     shop.getProducts(products => {
+  //       context.commit('setProducts', products);
+  //       resolve();
+  //     });
+  //   });
+	// },
 	
 	fetchStores(context) {
 		// console.log('context: ', context);
@@ -19,11 +19,12 @@ export default {
       shop.getStores(stores => {
         context.commit('setStores', stores);
         resolve();
-      });
+      }); 
     });
 	},
 
 	addProductToCart(context, product) { 
+		// console.log('product: ', product);
 
 
     if (context.getters.productInStock(product)) {
@@ -55,15 +56,23 @@ export default {
 	},
 
 	addCartItem(context, product) {
+		// console.log('product: ', product);
+		// console.log('context.getters.productInStock(product): ', context.getters.productInStock(product));
 	if (context.getters.productInStock(product)) {
+		// console.log('product: ', product);
+		
+		// console.log('product: ', product);
 		const cartItem = context.state.cart.find(item => item.product_id === product.product_id);
-		if (cartItem) { context.commit('incrementItemQty', cartItem, product); }
-        } else {
+
+		
+				if (cartItem && cartItem.quantity <= cartItem.product.inventory)  { context.commit('incrementItemQty', cartItem, product); }
+         else {
           alert(`out of this stock for , ${product.title}`)
 					// var newCart = context.state.cart.filter((item) => {return item.product_id !== product.product_id})
 					// context.commit('removeCartItem', newCart);
         }
 		if (JSON.stringify(context.getters.currentUser) !== '{}') { ref.child('users').child(context.getters.currentUser.displayName).child('cart/').set(context.state.cart) }
+	}
 	},
 
 	// addCartItem(context, product) {
@@ -80,6 +89,13 @@ export default {
 	//   // }
 	//     if (JSON.stringify(context.getters.currentUser) !== '{}') { ref.child('users').child(context.getters.currentUser.displayName).child('cart/').set(context.state.cart) }
 	// },
+	
+	 
+  // filteredStoreInventory(context, product) {
+		
+		
+    
+  // },
 	
 		setSearchName(context, event) {
 		if (context.state.products.length < 0) {

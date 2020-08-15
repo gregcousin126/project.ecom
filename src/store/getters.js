@@ -12,6 +12,8 @@ export default {
 		} else { return {}; }
 	},
   
+ 
+  
   availableProducts(state, getters) {
     return state.products.filter(product => product.inventory > 0);
   },
@@ -28,11 +30,13 @@ export default {
     
     
     return state.cart.map(cartItem => { 
-      console.log('cartItem: ', cartItem);
+      // console.log('cartItem: ', cartItem);
+      // console.log('cartItem: ', cartItem);
       // const product = state.products.find(product => product.product_id === cartItem.product_id);
       return {
         product_id: cartItem.product_id,
         store_id: cartItem.store_id,
+        inventory: cartItem.product.inventory,
         store_name: cartItem.store_name,
         title: cartItem.product.title,
         price: cartItem.product.price,
@@ -48,7 +52,10 @@ export default {
     return getters.cartProducts.reduce((total, product) => total + product.price * product.quantity, 0);
   },
   
-  productInStock() {
+  productInStock(product) {
+    // console.log('product getter: ', product.inventory);
+    // alert(product.tostrin)
+    // console.log('product: ', product);
     return product => {
       return product.inventory > 0;
     };
